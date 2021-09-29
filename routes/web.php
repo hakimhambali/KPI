@@ -16,6 +16,7 @@ use App\Http\Livewire\Rtl;
 
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
+use App\Http\Controller\UserController;
 
 use Illuminate\Http\Request;
 
@@ -30,6 +31,13 @@ use Illuminate\Http\Request;
 |
 */
 
+//New Route =================================================
+
+
+
+
+// ==========================================================
+
 Route::get('/', Login::class)->name('login');
 
 Route::get('/sign-up', SignUp::class)->name('sign-up');
@@ -41,6 +49,7 @@ Route::get('/reset-password/{id}',ResetPassword::class)->name('reset-password')-
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
+    //Route::get('/admin', Admin::class)->name('admin');
     Route::get('/billing', Billing::class)->name('billing');
     Route::get('/profile', Profile::class)->name('profile');
     Route::get('/tables', Tables::class)->name('tables');
