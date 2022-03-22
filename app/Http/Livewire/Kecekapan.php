@@ -62,7 +62,7 @@ class Kecekapan extends Component
     }
 
     public function kecekapan_save(Request $request, $date_id, $user_id, $year, $month){
-        //check here 
+        //CHECK HERE
         $kecekapans = Kecekapan_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->get();
         $total_percent = 0;
         foreach ($kecekapans as $key => $kecekapan) {
@@ -132,19 +132,19 @@ class Kecekapan extends Component
 
     public function render()
     {
-        if (Auth::user()->role == "manager" || Auth::user()->role == "hr") {
-            $date_id = $this->date_id;
-            $user_id = $this->user_id;
-            $year = $this->year;
-            $month = $this->month;
-            $kecekapan = Kecekapan_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('kecekapan_teras')->get();
-            $userdepartment = auth()->user()->department;
-            $users = User::where([['department', '=', $userdepartment] , ['role', '=', 'employee']])->orderBy('created_at','desc')->get();
-            $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
+        // if (Auth::user()->role == "manager" || Auth::user()->role == "hr") {
+        //     $date_id = $this->date_id;
+        //     $user_id = $this->user_id;
+        //     $year = $this->year;
+        //     $month = $this->month;
+        //     $kecekapan = Kecekapan_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('kecekapan_teras')->get();
+        //     $userdepartment = auth()->user()->department;
+        //     $users = User::where([['department', '=', $userdepartment] , ['role', '=', 'employee']])->orderBy('created_at','desc')->get();
+        //     $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
             
-            return view('livewire.kecekapan-manager.all', compact('kecekapan', 'users', 'date_id', 'user_id', 'year', 'month', 'status'));
-        }
-        else {
+        //     return view('livewire.kecekapan-manager.all', compact('kecekapan', 'users', 'date_id', 'user_id', 'year', 'month', 'status'));
+        // }
+        // else {
             $date_id = $this->date_id;
             $user_id = $this->user_id;
             $year = $this->year;
@@ -153,6 +153,6 @@ class Kecekapan extends Component
             $kecekapan = Kecekapan_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('kecekapan_teras')->get();
 
             return view('livewire.kecekapan.all', compact('kecekapan', 'date_id', 'user_id', 'year', 'month', 'status'));
-        }
+        // }
     }
 }

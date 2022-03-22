@@ -54,7 +54,7 @@
                             <i class="fa fa-ellipsis-v text-secondary"></i>
                           </a>
                           <ul class="dropdown-menu px-2 py-3 ms-n4 ms-n5" aria-labelledby="dropdownTable">
-                            <li><a href="{{ url('add-date/'.$ceoemps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
+                            <li><a href="{{ url('view-date/'.$ceoemps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
                           </ul>
                         </div>
                       </div>
@@ -121,7 +121,7 @@
                             <i class="fa fa-ellipsis-v text-secondary"></i>
                           </a>
                           <ul class="dropdown-menu px-2 py-3 ms-n4 ms-n5" aria-labelledby="dropdownTable">
-                            <li><a href="{{ url('add-date/'.$hremps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
+                            <li><a href="{{ url('view-date/'.$hremps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
                           </ul>
                         </div>
                       </div>
@@ -187,7 +187,7 @@
                             <i class="fa fa-ellipsis-v text-secondary"></i>
                           </a>
                           <ul class="dropdown-menu px-2 py-3 ms-n4 ms-n5" aria-labelledby="dropdownTable">
-                            <li><a href="{{ url('add-date/'.$afemps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
+                            <li><a href="{{ url('view-date/'.$afemps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
                           </ul>
                         </div>
                       </div>
@@ -253,7 +253,7 @@
                             <i class="fa fa-ellipsis-v text-secondary"></i>
                           </a>
                           <ul class="dropdown-menu px-2 py-3 ms-n4 ms-n5" aria-labelledby="dropdownTable">
-                            <li><a href="{{ url('add-date/'.$salesemps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
+                            <li><a href="{{ url('view-date/'.$salesemps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
                           </ul>
                         </div>
                       </div>
@@ -319,7 +319,7 @@
                             <i class="fa fa-ellipsis-v text-secondary"></i>
                           </a>
                           <ul class="dropdown-menu px-2 py-3 ms-n4 ms-n5" aria-labelledby="dropdownTable">
-                            <li><a href="{{ url('add-date/'.$marketingemps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
+                            <li><a href="{{ url('view-date/'.$marketingemps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
                           </ul>
                         </div>
                       </div>
@@ -385,7 +385,7 @@
                             <i class="fa fa-ellipsis-v text-secondary"></i>
                           </a>
                           <ul class="dropdown-menu px-2 py-3 ms-n4 ms-n5" aria-labelledby="dropdownTable">
-                            <li><a href="{{ url('add-date/'.$operationemps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
+                            <li><a href="{{ url('view-date/'.$operationemps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
                           </ul>
                         </div>
                       </div>
@@ -451,7 +451,7 @@
                             <i class="fa fa-ellipsis-v text-secondary"></i>
                           </a>
                           <ul class="dropdown-menu px-2 py-3 ms-n4 ms-n5" aria-labelledby="dropdownTable">
-                            <li><a href="{{ url('add-date/'.$hncemps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
+                            <li><a href="{{ url('view-date/'.$hncemps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
                           </ul>
                         </div>
                       </div>
@@ -517,7 +517,7 @@
                           <i class="fa fa-ellipsis-v text-secondary"></i>
                         </a>
                         <ul class="dropdown-menu px-2 py-3 ms-n4 ms-n5" aria-labelledby="dropdownTable">
-                          <li><a href="{{ url('add-date/'.$rndemps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
+                          <li><a href="{{ url('view-date/'.$rndemps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
                         </ul>
                       </div>
                     </div>

@@ -104,7 +104,7 @@ class Date extends Component
         }
     }
 
-    public function create_date($user_id)
+    public function view_date($user_id)
     {
         $kpiall = KPIAll_::all();
         $user = User::where('id', '=', $user_id)->get();

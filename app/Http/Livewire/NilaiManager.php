@@ -15,19 +15,6 @@ use Illuminate\Support\Carbon;
 
 class NilaiManager extends Component
 {
-
-    public function nilai_save(Request $request){
-        $validatedData = $request->validate([
-            'skor_penyelia' => ['required'],
-        ]);
-        Nilai_::insert([
-        'skor_penyelia'=> $request->skor_penyelia,
-        'skor_sebenar' => $request->skor_sebenar,
-        ]);
-        
-        return redirect()->back()->with('message', 'Skor penyelia has been successfully inserted');
-    } 
-    
     public function nilai_edit($id_user, $id, $date_id, $user_id, $year, $month) {
         $nilai = Nilai_::find($id);
         $user = User::find($id_user);
@@ -94,10 +81,10 @@ class NilaiManager extends Component
 
         public function render()
     {
-        $nilai = Nilai_::where('user_id', '=', auth()->user()->id)->orderBy('nilai_teras')->get();
-        $userdepartment = auth()->user()->department;
-        $users = Nilai::where([['department', '=', $userdepartment] , ['role', '=', 'employee']])->orderBy('created_at','desc')->get();
+        // $nilai = Nilai_::where('user_id', '=', auth()->user()->id)->orderBy('nilai_teras')->get();
+        // $userdepartment = auth()->user()->department;
+        // $users = Nilai::where([['department', '=', $userdepartment] , ['role', '=', 'employee']])->orderBy('created_at','desc')->get();
 
-        return view('livewire.nilai.all', compact('nilai', 'users'));
+        return view('livewire.nilai.all');
     }
 }

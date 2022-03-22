@@ -51,15 +51,15 @@
                   <tr>
                     <th rowspan="2">(%)</th>
                     <th rowspan="2">Measurement</th>
-                    @if ((Auth::user()->role == "employee") || (Auth::user()->role == "pro") || (Auth::user()->role == "dc") || (Auth::user()->role == "admin"))
+                    {{-- @if ((Auth::user()->role == "employee") || (Auth::user()->role == "pro") || (Auth::user()->role == "dc") || (Auth::user()->role == "admin"))
                     <th rowspan="2">Employee Score</th>
                     @else
-                    @endif
+                    @endif --}}
 
-                    @if ((Auth::user()->role == "manager") || (Auth::user()->role == "admin"))
-                    <th rowspan="2">Manager Score</th>
-                    @else
-                    @endif
+                    {{-- @if ((Auth::user()->role == "manager") || (Auth::user()->role == "admin")) --}}
+                    <th rowspan="2">Manager Score (Enter score from 1 to 4 only)</th>
+                    {{-- @else
+                    @endif --}}
                     <th rowspan="2">Actual Score</th>
                   </tr>
                 </thead>

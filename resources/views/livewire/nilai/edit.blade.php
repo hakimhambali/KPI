@@ -1,4 +1,4 @@
-{{--------------------------------------------------- EDIT NILAI --------------------------------------------------}}
+{{--------------------------------------------------- EDIT NILAI (ALL USER) --------------------------------------------------}}
 @section('content')
 <div>
   @extends('layouts.app')
@@ -59,15 +59,15 @@
                   <tr>
                     <th rowspan="2">Peratus (%)</th>
                     <th rowspan="2">Measurement</th>
-                    @if ((Auth::user()->role == "employee") || (Auth::user()->role == "pro") || (Auth::user()->role == "dc") || (Auth::user()->role == "admin"))
+                    {{-- @if ((Auth::user()->role == "employee") || (Auth::user()->role == "pro") || (Auth::user()->role == "dc") || (Auth::user()->role == "admin")) --}}
                     <th rowspan="2">Employee Score</th>
-                    @else
-                    @endif
+                    {{-- @else
+                    @endif --}}
 
-                    @if ((Auth::user()->role == "manager") || (Auth::user()->role == "admin"))
+                    {{-- @if ((Auth::user()->role == "manager") || (Auth::user()->role == "admin"))
                     <th rowspan="2">Manager Score</th>
                     @else
-                    @endif
+                    @endif --}}
                     <th rowspan="2">Actual Score</th>
                   </tr>
                 </thead>
@@ -81,21 +81,21 @@
                       <input type="text"  class="form-control" id="ukuran" name="ukuran" value="Percentage" selected readonly>
                     </td>
 
-                    @if ((Auth::user()->role == "employee") || (Auth::user()->role == "pro") || (Auth::user()->role == "dc") || (Auth::user()->role == "admin"))
+                    {{-- @if ((Auth::user()->role == "employee") || (Auth::user()->role == "pro") || (Auth::user()->role == "dc") || (Auth::user()->role == "admin")) --}}
                     <td style="word-break: break-all;" class="border-dark" class="@error('skor_pekerja') border border-danger rounded-3 @enderror">
                       <input type="text" class="form-control " pattern="[1-4]+" maxlength="1" id="skor_pekerja" name="skor_pekerja" value="{{ $nilai->skor_pekerja }}">
                       @error('skor_pekerja') <div class="text-danger">{{ $message }}</div> @enderror
                     </td>
-                    @else
-                    @endif
+                    {{-- @else
+                    @endif --}}
 
-                    @if ((Auth::user()->role == "manager") || (Auth::user()->role == "admin"))
+                    {{-- @if ((Auth::user()->role == "manager") || (Auth::user()->role == "admin"))
                     <td style="word-break: break-all;" class="border-dark" class="@error('skor_penyelia') border border-danger rounded-3 @enderror">
                       <input type="text" pattern="[1-4]+" maxlength="1"  class="form-control" id="skor_penyelia" name="skor_penyelia" value="{{ $nilai->skor_pekerja }}" onkeyup="masterClac();" min="0" >
                       @error('skor_penyelia') <div class="text-danger">{{ $message }}</div> @enderror
                     </td>
                     @else
-                    @endif
+                    @endif --}}
 
                     <td class="font-weight-bold border-dark">
                       <input type="text"  class="form-control"  id="skor_sebenar" name="skor_sebenar" value="{{ $nilai->skor_sebenar }}" readonly>

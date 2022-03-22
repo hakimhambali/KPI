@@ -1,7 +1,5 @@
-{{--------------------------------------------------- NILAI (EMPLOYEE) --------------------------------------------------}}
-<div class="container-fluid py-4">
-  <div class="row">
-
+{{--------------------------------------------------- NILAI (ALL USER) --------------------------------------------------}}
+<div>
     <div class="container-fluid py-4">
       <div class="row">
         <div class="col-md-12">
@@ -228,15 +226,15 @@
                       <tr>
                           <th rowspan="2">(%)</th>
                           <th rowspan="2">Measurement</th>
-                          @if ((Auth::user()->role == "employee") || (Auth::user()->role == "pro") || (Auth::user()->role == "dc") || (Auth::user()->role == "admin"))
-                          <th rowspan="2">Employee Score</th>
-                          @else
-                          @endif
+                          {{-- @if ((Auth::user()->role == "employee") || (Auth::user()->role == "pro") || (Auth::user()->role == "dc") || (Auth::user()->role == "admin")) --}}
+                          <th rowspan="2">Employee Score (Enter score from 1 to 4 only)</th>
+                          {{-- @else
+                          @endif --}}
 
-                          @if ((Auth::user()->role == "manager") || (Auth::user()->role == "admin"))
-                          <th rowspan="2">Manager Score</th>
+                          {{-- @if ((Auth::user()->role == "manager") || (Auth::user()->role == "admin"))
+                          <th rowspan="2">Manager Score (Enter score from 1 to 4 only)</th>
                           @else
-                          @endif
+                          @endif --}}
 
                           <th rowspan="2">Actual Score</th>
                       </tr>
@@ -251,21 +249,21 @@
                           <input type="text"  class="form-control" id="ukuran" name="ukuran" value="Percentage" selected readonly>
                         </td>
 
-                        @if ((Auth::user()->role == "employee") || (Auth::user()->role == "pro") || (Auth::user()->role == "dc") || (Auth::user()->role == "admin"))
+                        {{-- @if ((Auth::user()->role == "employee") || (Auth::user()->role == "pro") || (Auth::user()->role == "dc") || (Auth::user()->role == "admin")) --}}
                         <td style="word-break: break-all;" class="border-dark" class="@error('skor_pekerja') border border-danger rounded-3 @enderror">
                           <input type="text" pattern="[1-4]+" maxlength="1" class="form-control" id="skor_pekerja" name="skor_pekerja" onkeyup="masterClac();" min="0" >
                           @error('skor_pekerja') <div class="text-danger">{{ $message }}</div> @enderror
                         </td>
-                        @else
-                        @endif
+                        {{-- @else
+                        @endif --}}
 
-                        @if ((Auth::user()->role == "manager") || (Auth::user()->role == "admin"))
+                        {{-- @if ((Auth::user()->role == "manager") || (Auth::user()->role == "admin"))
                         <td style="word-break: break-all;" class="border-dark" class="@error('skor_penyelia') border border-danger rounded-3 @enderror">
                           <input type="text" pattern="[1-4]+" maxlength="1" class="form-control" id="skor_penyelia" name="skor_penyelia" onkeyup="masterClac();" min="0" >
                           @error('skor_penyelia') <div class="text-danger">{{ $message }}</div> @enderror
                         </td>
                         @else
-                        @endif
+                        @endif --}}
 
                         <td class="font-weight-bold border-dark">
                           <input type="text"  class="form-control"  id="skor_sebenar" name="skor_sebenar" value="0" readonly>
@@ -283,7 +281,7 @@
     </div>
   </div>
     
-    @if (Auth::user()->role == "employee" || Auth::user()->role == "dc" || Auth::user()->role == "pro")
+    {{-- @if (Auth::user()->role == "employee" || Auth::user()->role == "dc" || Auth::user()->role == "pro") --}}
         <div class="container-fluid py-4">
           <div class="row">
             <div class="col-12">
@@ -295,7 +293,6 @@
                         <tr>
                           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nilai Teras</th>
-                          {{-- <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Expected Result</th> --}}
                           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">%</th>
                           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Measurement</th>
                           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employee Score</th>
@@ -318,90 +315,6 @@
                             <td>
                               <p class="text-xs font-weight-bold mb-0" value="{{ $nilais -> nilai_teras }}">{{ $nilais -> nilai_teras }}</p>
                             </td>
-
-                            {{-- @if ($nilais -> nilai_teras == "Kepimpinan")
-                            <td class="text-xs font-weight-bold mb-0">
-                              <span class="text-secondary text-xs font-weight-bold" value="">
-                                1. Kami adalah pemimpin yang bertanggungjawab.
-                                <br>
-                                2. Kami memberikan contoh yang baik.
-                                <br>
-                                3. Kami melaksanakan setiap apa yang diperkatakan.
-                                <br>
-                                4. Kami menjadi inspirasi untuk berubah lebih baik.</span>
-                            </td>
-                            @else
-                            @endif
-
-                            @if ($nilais -> nilai_teras == "Perkembangan")
-                            <td class="text-xs font-weight-bold mb-0">
-                              <span class="text-secondary text-xs font-weight-bold" value="">
-                                1. Kami ambil peduli dengan peningkatan hidup sendiri.
-                                <br>
-                                2. Kami sentiasa menambah dan meningkatkan ilmu pengetahuan.
-                                <br>
-                                3. Kami memupuk sikap ingin sentiasa berjaya.
-                                <br>
-                                4. Kami sentiasa memperbaiki dan memajukan diri di setiap saat.</span>
-                            </td>
-                            @else
-                            @endif
-
-                            @if ($nilais -> nilai_teras == "Keputusan")
-                            <td class="text-xs font-weight-bold mb-0">
-                              <span class="text-secondary text-xs font-weight-bold" value="">
-                                1. Kami membantu menggilap potensi orang lain.
-                                <br>
-                                2. Kami memastikan pelanggan mencapai keputusan cemerlang.
-                                <br>
-                                3. Kami komited dengan hasil usaha yang dilakukan.
-                                <br>
-                                4. Kami berusaha untuk memberikan yang terbaik.</span>
-                            </td>
-                            @else
-                            @endif
-
-                            @if ($nilais -> nilai_teras == "Sumbangan")
-                            <td class="text-xs font-weight-bold mb-0">
-                              <span class="text-secondary text-xs font-weight-bold" value="">
-                                1. Kami menghulurkan bantuan dengan sepenuh semangat dan jiwa kami.
-                                <br>
-                                2. Kami membantu mengatasi kelemahan dan membina kekuatan pelanggan.
-                                <br>
-                                3. Kami komited untuk memberi manfaat dan menyebarkan kebaikan.
-                                <br>
-                                4. Kami bertanggungjawab dengan orang sekeliling dan persekitaran.</span>
-                            </td>
-                            @else
-                            @endif
-
-                            @if ($nilais -> nilai_teras == "Rohani")
-                            <td class="text-xs font-weight-bold mb-0">
-                              <span class="text-secondary text-xs font-weight-bold" value="">
-                                1. Kami adalah hamba Allah.
-                                <br>
-                                2. Kami membantu orang untuk mendapat kehidupan yang lebih baik.
-                                <br>
-                                3. Kami bangkit berjaya dengan memajukan orang lain.
-                                <br>
-                                4. Kami sentiasa beriman dan percaya dengan Qada’ dan Qadar.</span>
-                            </td>
-                            @else
-                            @endif
-
-                            @if ($nilais -> nilai_teras == "Keluarga")
-                            <td class="text-xs font-weight-bold mb-0">
-                              <span class="text-secondary text-xs font-weight-bold" value="">
-                                1. Kami sangat menyayangi keluarga kami.
-                                <br>
-                                2. Kami berusaha untuk berikan yang terbaik kepada keluarga kami.
-                                <br>
-                                3. Kami tidak akan mengabaikan keluarga kami.
-                                <br>
-                                4. Kami percaya kebahagiaan keluarga adalah kebahagiaan kami.</span>
-                            </td>
-                            @else
-                            @endif --}}
 
                             <td class="align-middle text-center">
                               <span class="text-secondary text-xs font-weight-bold" value="{{ '20%' }}">{{ '20%' }}</span>
@@ -443,10 +356,10 @@
             </div>
           </div>
         </div> 
-        @else
-        @endif 
+        {{-- @else
+        @endif  --}}
 
-        @if (Auth::user()->role == "manager")
+        {{-- @if (Auth::user()->role == "manager")
         <div class="container-fluid py-4">
           <div class="row">
             <div class="col-12">
@@ -608,9 +521,8 @@
           </div>
         </div> 
         @else
-        @endif 
+        @endif  --}}
   </div>
-</div>  
 
   @push('scripts')
     

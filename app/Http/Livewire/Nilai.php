@@ -124,19 +124,19 @@ class Nilai extends Component
 
     public function render()
     {
-        if (Auth::user()->role == "manager" || Auth::user()->role == "hr") {
-            $date_id = $this->date_id;
-            $user_id = $this->user_id;
-            $year = $this->year;
-            $month = $this->month;
-            $nilai = Nilai_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('nilai_teras')->get();
-            $userdepartment = auth()->user()->department;
-            $users = User::where([['department', '=', $userdepartment] , ['role', '=', 'employee']])->orderBy('created_at','desc')->get();
-            $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
-            return view('livewire.nilai-manager.all', compact('nilai', 'users', 'date_id', 'user_id', 'year', 'month', 'status'));
-        }
+        // if (Auth::user()->role == "manager" || Auth::user()->role == "hr") {
+        //     $date_id = $this->date_id;
+        //     $user_id = $this->user_id;
+        //     $year = $this->year;
+        //     $month = $this->month;
+        //     $nilai = Nilai_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('nilai_teras')->get();
+        //     $userdepartment = auth()->user()->department;
+        //     $users = User::where([['department', '=', $userdepartment] , ['role', '=', 'employee']])->orderBy('created_at','desc')->get();
+        //     $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
+        //     return view('livewire.nilai-manager.all', compact('nilai', 'users', 'date_id', 'user_id', 'year', 'month', 'status'));
+        // }
 
-        else {
+        // else {
             $date_id = $this->date_id;
             $user_id = $this->user_id;
             $year = $this->year;
@@ -144,6 +144,6 @@ class Nilai extends Component
             $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
             $nilai = Nilai_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('nilai_teras')->get();
             return view('livewire.nilai.all', compact('nilai', 'date_id', 'user_id', 'year', 'month', 'status'));
-        }
+        // }
     }
 }

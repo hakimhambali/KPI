@@ -154,7 +154,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/complaint', Complaint::class)->name('complaint');
     Route::get('/core-value', CoreValue::class)->name('core-value');
     Route::get('/organizational-chart', OrganizationalChart::class)->name('organizational-chart');
-    Route::get('/add-date/{user_id}', [Date::class, 'create_date']);
+    Route::get('/view-date/{user_id}', [Date::class, 'view_date']);
     Route::post('/date/save',[Date::class, 'date_save'])->name('date_save');
     Route::get('/laravel-view-profile', ViewProfile::class)->name('view-profile');
     Route::get('/laravel-edit-profile', EditProfile::class)->name('edit-profile');
