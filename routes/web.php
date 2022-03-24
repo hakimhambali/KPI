@@ -121,7 +121,11 @@ Route::post('/hr/messageup/kpi/{date_id}', [ManagerKPI::class, 'messageuphr']);
 Route::post('/hr/create/memo', [Memo::class, 'create']);
 Route::get('/hr/edit/memo/{id}', [Memo::class, 'edit']);
 Route::post('/hr/update/memo/{id}', [Memo::class, 'update']);
-Route::get('/markAsRead', [Memo::class, 'readNotification']);
+// Route::get('/markAsRead', [Memo::class, 'readNotification']);
+Route::get('markAsRead', function(){
+    auth()->user()->unreadNotifications->markAsRead();
+    return redirect()->back();
+})->name('markRead');
 
 //SOP Route
 Route::post('/dc/create/sop', [SOP::class, 'create']);

@@ -56,6 +56,7 @@ class MemoNotification extends Notification
     public function toArray($notifiable)
     {
         return [
+            'memoId' => $this->memoId,
             'title' => $this->title
         ];
     }

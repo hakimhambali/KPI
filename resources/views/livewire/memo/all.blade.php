@@ -40,13 +40,13 @@
                               @csrf  
                               <div class="card-body p-3">
                                 <div class="row">
-                                  <label class="font-weight-bold">Title</label>
+                                  <label class="font-weight-bold">Title<span class="text-danger">*</span></label>
                                   <div class="card card-plain border-radius-lg align-items-center">
-                                      <input class="form-control form-control-lg" type="text" name="title" value="" required>
+                                      <input class="form-control form-control-lg" type="text" name="title" value="{{ old('title') }}" required>
                                   </div>
                                   <div class="col-md-4 mt-2" id="memoupload">
                                       <div class="form-group">
-                                          <label class="font-weight-bold">Memo Upload</label>
+                                          <label class="font-weight-bold">Memo Upload<span class="text-danger">*</span></label>
                                           <div
                                               x-data="{ isUploading: false, progress: 0 }"
                                               x-on:livewire-upload-start="isUploading = true"
@@ -63,7 +63,7 @@
                                       </div>
                                   </div>
                                   <div class="col-md-6">
-                                      <label class="font-weight-bold" >Description</label>
+                                      <label class="font-weight-bold" >Description<span class="text-danger">*</span></label>
                                       <textarea class="form-control card card-body border card-plain border-radius-lg d-flex align-items-center flex-row" name="description" id="description" cols="60" rows="10" placeholder="Type your description here..."  required></textarea>
                                       </div>
                                   </div>

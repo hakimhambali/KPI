@@ -22,7 +22,7 @@
                         <form wire:submit.prevent="register" action="#" method="POST" role="form text-left">
                             <div class="mb-3">
                                 <div class="@error('name') border border-danger rounded-3  @enderror">
-                                    <input wire:model="name" type="text" class="form-control" placeholder="Name"
+                                    <input wire:model="name" type="text" class="form-control" placeholder="Full Name (same in* IC)"
                                         aria-label="Name" aria-describedby="email-addon">
                                 </div>
                                 @error('name') <div class="text-danger">{{ $message }}</div> @enderror

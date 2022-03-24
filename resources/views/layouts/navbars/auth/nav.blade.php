@@ -45,32 +45,61 @@
             </nav>
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 d-flex justify-content-end" id="navbar">
                 <ul class="navbar-nav justify-content-end">
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-bell"></i><b>{{ $user->notifications->count() }}</b> Notification<span class="caret"></span>
+<!-- s ---------------------------------------->
+                    <li class="nav-item dropdown pe-2 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="badge bg-gradient-dark"><i class="fa fa-bell cursor-pointer"></i>&nbsp;&nbsp;{{ $user->unreadNotifications->count() }}</span>
                         </a>
-                        <div  class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown" width="100px" height="100px">
+                        <ul class="dropdown-menu  dropdown-menu-end  px-2 py-1 me-sm-n4" aria-labelledby="dropdownMenuButton">
                             @if ($user->notifications->count() > 0)
+                                <li>
+                                    <a class="dropdown-item border-radius-md" style="color: green" href="{{ route('markRead') }}">Mark all as Read</a>
+                                </li>
                                 @foreach ($user->unreadNotifications as $notification)
-                                    @if (strlen($notification) > 14)
-                                        <a href="/memo" style="background-color: lightgray">New Memo {{ substr($notification->data['title'], 0,14) . '..' }}</a><br>
-                                    @else
-                                        <a href="/memo">{{ $notification->data['title'] }} = {{ $notification }}</a><br>
-                                    @endif
+                                    <li>
+                                        <a class="dropdown-item border-radius-sm bg-dark" href="/memo">
+                                            <div class="d-flex">
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="text-sm font-weight-normal mb-1">
+                                                        <span style="color: white"><b>New Memo</b> {{ $notification->data['title'] }}</span>
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
                                 @endforeach
 
                                 @foreach ($user->readNotifications as $notification)
-                                    @if (strlen($notification) > 14)
-                                        <a href="/memo">{{ substr($notification->data['title'], 0,14) . '..' }}</a><br>
-                                    @else
-                                        <a href="/memo">{{ $notification->data['title'] }} = {{ $notification }}</a><br>
-                                    @endif
+                                    <li>
+                                        <a class="dropdown-item border-radius-md" href="/memo">
+                                            <div class="d-flex">
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="text-sm font-weight-normal mb-1">
+                                                        <span class="font-weight-bold">{{ $notification->data['title'] }}
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
                                 @endforeach
                             @else
-                                <a class="dropdown-item">No Memo found</a>
+                                <li>
+                                    <a class="dropdown-item border-radius-md" href="">
+                                        <div class="d-flex">
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="text-sm font-weight-normal mb-1">
+                                                    <span class="font-weight-bold">No Memo
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
                             @endif
-                        </div>
+                        </ul>
                     </li>
+
+<!-- s ---------------------------------------->
+
                     <li class="nav-item d-flex align-items-center">
                         <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
                             <livewire:auth.logout />
