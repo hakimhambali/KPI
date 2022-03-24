@@ -1075,10 +1075,8 @@ class KPI extends Component
             $skor_sebenar = 0;
  
             if ($total_score < 30 ) {
-                $value1 = $total_score;
-                $value2 = 65;
-                $skor_kpi = ((($value1/$value2)*35));
-                $skor_sebenar = (($percent_master/100)*$skor_kpi);
+                $skor_kpi = 0;
+                $skor_sebenar = 0;
             }
             elseif ($total_score >= 30 && $total_score < 65) {
                 $value1 = $total_score - 30;
