@@ -753,8 +753,8 @@ class KPI extends Component
             $skor_sebenar = 0;
  
             if ($total_score < 30 ) {
-                $skor_kpi = 0;
-                $skor_sebenar = 0;
+                $skor_kpi = $total_score;
+                $skor_sebenar = (($percent_master/100)*$skor_kpi);
             }
             elseif ($total_score >= 30 && $total_score < 65) {
                 $value1 = $total_score - 30;
@@ -1075,8 +1075,8 @@ class KPI extends Component
             $skor_sebenar = 0;
  
             if ($total_score < 30 ) {
-                $skor_kpi = 0;
-                $skor_sebenar = 0;
+                $skor_kpi = $total_score;
+                $skor_sebenar = (($percent_master/100)*$skor_kpi);
             }
             elseif ($total_score >= 30 && $total_score < 65) {
                 $value1 = $total_score - 30;
