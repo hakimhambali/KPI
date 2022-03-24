@@ -250,7 +250,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: sans-serif;
+  font-family: var(--bs-font-monospace);
   font-size: 1em;
   direction: ltr
     /* rtl:ignore */
