@@ -18,50 +18,56 @@ class DepartmentSeeder extends Seeder
     {  
         $department1 = Department::create([
             'id' => '1',
-            'name' => 'CEO Office',    
+            'name' => 'Senior Leadership Team',    
         ]);
         $department1->save();
-
+        
         $department2 = Department::create([
             'id' => '2',
-            'name' => 'Human Resource (HR) & Administration', 
+            'name' => 'CEO Office',    
         ]);
         $department2->save();
 
         $department3 = Department::create([
             'id' => '3',
-            'name' => 'Account & Finance (A&F)',
+            'name' => 'Human Resource (HR) & Administration', 
         ]);
         $department3->save();
 
         $department4 = Department::create([
             'id' => '4',
-            'name' => 'Sales',
+            'name' => 'Account & Finance (A&F)',
         ]);
         $department4->save();
 
         $department5 = Department::create([
             'id' => '5',
-            'name' => 'Marketing',
+            'name' => 'Sales',
         ]);
         $department5->save();
 
         $department6 = Department::create([
             'id' => '6',
-            'name' => 'Operation',
+            'name' => 'Marketing',
         ]);
         $department6->save();
 
         $department7 = Department::create([
             'id' => '7',
-            'name' => 'High Network Client (HNC)',
+            'name' => 'Operation',
         ]);
         $department7->save();
 
         $department8 = Department::create([
             'id' => '8',
-            'name' => 'Research & Development (R&D)',
+            'name' => 'High Network Client (HNC)',
         ]);
         $department8->save();
+
+        $department9 = Department::create([
+            'id' => '9',
+            'name' => 'Research & Development (R&D)',
+        ]);
+        $department9->save();
     }
 }

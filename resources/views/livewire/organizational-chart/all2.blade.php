@@ -128,24 +128,49 @@
                     </div>
                 </div>
                 <div class="card-body p-3">
-                    <div class="row">
+                    <div class="row justify-content-center ">
                         <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                             <div class="card card-blog card-plain">
                                 <div class="position-relative">
                                     <a class="d-block shadow-xl border-radius-xl" style="background-color:#808080">
-                                        <img src="../assets/img/rahfity.png" alt="img-blur-shadow"
+                                        <img src="../assets/img/syakirin.png" alt="img-blur-shadow"
                                         class="img-fluid shadow border-radius-xl" style="background-color:#808080">
                                     </a>
                                 </div>
                                 <div class="card-body px-1 pb-0">
-                                    <p class="text-gradient text-dark mb-2 text-sm">CEO Office</p>
+                                    <p class="text-gradient text-dark mb-2 text-sm">Marketing</p>
+                                    <a href="javascript:;">
+                                        <h5>
+                                            Manager of Marketing
+                                        </h5>
+                                    </a>
+                                    <p class="mb-4 text-sm">
+                                        Mohd Syakirin Bin Hashim
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body p-3">
+                    <div class="row justify-content-center ">
+                        <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                            <div class="card card-blog card-plain">
+                                <div class="position-relative">
+                                    <a class="d-block shadow-xl border-radius-xl" style="background-color:#808080">
+                                        <img src="../assets/img/danial.png" alt="img-blur-shadow"
+                                        class="img-fluid shadow border-radius-xl" style="background-color:#808080">
+                                    </a>
+                                </div>
+                                <div class="card-body px-1 pb-0">
+                                    <p class="text-gradient text-dark mb-2 text-sm">Research & Development</p>
                                     <a href="javascript:;">
                                         <h5>
                                             Asst. Manager
                                         </h5>
                                     </a>
                                     <p class="mb-4 text-sm">
-                                        Mohammad Rahfity Bin Abdul Aziz
+                                        Mohammad Danial Bin Mohammad Adzhar 
                                     </p>
                                 </div>
                             </div>
@@ -154,19 +179,19 @@
                             <div class="card card-blog card-plain">
                                 <div class="position-relative">
                                     <a class="d-block shadow-xl border-radius-xl" style="background-color:#808080">
-                                        <img src="../assets/img/ain.png" alt="img-blur-shadow"
+                                        <img src="../assets/img/fikry.png" alt="img-blur-shadow"
                                         class="img-fluid shadow border-radius-xl" style="background-color:#808080">
                                     </a>
                                 </div>
                                 <div class="card-body px-1 pb-0">
-                                    <p class="text-gradient text-dark mb-2 text-sm">Human Resource & Administration</p>
+                                    <p class="text-gradient text-dark mb-2 text-sm">High Networth Client</p>
                                     <a href="javascript:;">
                                         <h5>
-                                            Leader of Recruitment
+                                            Asst. Manager
                                         </h5>
                                     </a>
                                     <p class="mb-4 text-sm">
-                                        Nur Izzatul Ain Binti Dahizat        
+                                        Mohd Fikry Bin Fuzi                                        
                                     </p>
                                 </div>
                             </div>
@@ -209,94 +234,6 @@
                                     </a>
                                     <p class="mb-4 text-sm">
                                         Mazian Bin Musa
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body p-3">
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                            <div class="card card-blog card-plain">
-                                <div class="position-relative">
-                                    <a class="d-block shadow-xl border-radius-xl" style="background-color:#808080">
-                                        <img src="../assets/img/syakirin.png" alt="img-blur-shadow"
-                                        class="img-fluid shadow border-radius-xl" style="background-color:#808080">
-                                    </a>
-                                </div>
-                                <div class="card-body px-1 pb-0">
-                                    <p class="text-gradient text-dark mb-2 text-sm">Marketing</p>
-                                    <a href="javascript:;">
-                                        <h5>
-                                            Manager of Marketing
-                                        </h5>
-                                    </a>
-                                    <p class="mb-4 text-sm">
-                                        Mohd Syakirin Bin Hashim
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                            <div class="card card-blog card-plain">
-                                <div class="position-relative">
-                                    <a class="d-block shadow-xl border-radius-xl" style="background-color:#808080">
-                                        <img src="../assets/img/amin.png" alt="img-blur-shadow"
-                                        class="img-fluid shadow border-radius-xl" style="background-color:#808080">
-                                    </a>
-                                </div>
-                                <div class="card-body px-1 pb-0">
-                                    <p class="text-gradient text-dark mb-2 text-sm">Operation</p>
-                                    <a href="javascript:;">
-                                        <h5>
-                                            Head of Operation
-                                        </h5>
-                                    </a>
-                                    <p class="mb-4 text-sm">
-                                        Mohamad Zulamin Bin Mohd Samuri
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                            <div class="card card-blog card-plain">
-                                <div class="position-relative">
-                                    <a class="d-block shadow-xl border-radius-xl" style="background-color:#808080">
-                                        <img src="../assets/img/danial.png" alt="img-blur-shadow"
-                                        class="img-fluid shadow border-radius-xl" style="background-color:#808080">
-                                    </a>
-                                </div>
-                                <div class="card-body px-1 pb-0">
-                                    <p class="text-gradient text-dark mb-2 text-sm">Research & Development</p>
-                                    <a href="javascript:;">
-                                        <h5>
-                                            Asst. Manager
-                                        </h5>
-                                    </a>
-                                    <p class="mb-4 text-sm">
-                                        Mohammad Danial Bin Mohammad Adzhar 
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                            <div class="card card-blog card-plain">
-                                <div class="position-relative">
-                                    <a class="d-block shadow-xl border-radius-xl" style="background-color:#808080">
-                                        <img src="../assets/img/fikry.png" alt="img-blur-shadow"
-                                        class="img-fluid shadow border-radius-xl" style="background-color:#808080">
-                                    </a>
-                                </div>
-                                <div class="card-body px-1 pb-0">
-                                    <p class="text-gradient text-dark mb-2 text-sm">High Networth Client</p>
-                                    <a href="javascript:;">
-                                        <h5>
-                                            Asst. Manager
-                                        </h5>
-                                    </a>
-                                    <p class="mb-4 text-sm">
-                                        Mohd Fikry Bin Fuzi                                        
                                     </p>
                                 </div>
                             </div>

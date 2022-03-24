@@ -75,6 +75,7 @@
                                 <div class="@error('department') border border-danger rounded-3 @enderror">
                                         <select wire:model="department" name="department" id="department" class="form-control custom-select" data-placeholder="Choose Department" tabindex="1">
                                             <option class="text-center" value="">-- Choose Department --</option>
+                                            <option value="Senior Leadership Team">Senior Leadership Team</option>
                                             <option value="CEO Office">CEO Office</option>
                                             <option value="Human Resource (HR) & Administration">Human Resource (HR) & Administration</option>
                                             <option value="Account & Finance (A&F)">Account & Finance (A&F)</option>
