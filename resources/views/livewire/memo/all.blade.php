@@ -97,9 +97,8 @@
                         <tr>
                           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                           <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Title</th>
-                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Team</th>
-                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Position</th>
-                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Description</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Posted</th>
                           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Memo</th>
                           @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin'|| auth()->user()->department == 'Operation')
                           <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
@@ -118,15 +117,15 @@
                               </div>
                             </td>
                             <td>
-                              <p class="text-xs font-weight-bold mb-0" value="{{ $memos->title }}">{{ $memos->title }}</p>
+                              <pre class="text-xs font-weight-bold mb-0" value="{{ $memos->title }}">{{ $memos->title }}</pre>
                             </td>
                             <td>
-                              <p class="text-xs font-weight-bold mb-0" value="{{ $memos->user->name }}">{{  $memos->user->name }}</p>
+                              <pre class="text-xs mb-0" value="{{ $memos->description }}">{{  $memos->description }}</pre>
                             </td>
-                            <td>
-                              <p class="text-xs font-weight-bold mb-0" value="{{ $memos->user->position }}">{{  $memos->user->position }}</p>
+                            <td class="text-xs mb-0">
+                              <b>{{date('j F Y', strtotime($memos->updated_at))}} </b> <br>
+                              by {{  $memos->user->name }}
                             </td>
-                            <td class="text-xs font-weight-bold mb-0">{{date('j F Y', strtotime($memos->updated_at))}} </td>
                             <td class="align-middle text-center">
                               <a href=" {{ $memos->memo_path }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">View</a>
                             </td>
