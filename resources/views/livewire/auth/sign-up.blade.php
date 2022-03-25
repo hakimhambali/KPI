@@ -104,7 +104,7 @@
                                         <option value="Driver & Logistic">Driver & Logistic</option>
                                         {{-- HR & Admin --}}
                                         <option class="text-center" value="">-- Human Resource (HR) & Administration --</option>
-                                        <option value="Payroll and C&B">Payroll and C&B</option>
+                                        <option value="Payroll & C&B">Payroll & C&B</option>
                                         <option value="Training & Development">Training & Development</option>
                                         <option value="Admin Procurement">Admin Procurement</option>
                                         <option value="Recruitment">Recruitment</option>
