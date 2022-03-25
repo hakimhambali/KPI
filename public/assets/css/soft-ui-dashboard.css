@@ -19,7 +19,7 @@
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
   --bs-primary: #cb09cf;
-  --bs-secondary: #8392AB;
+  --bs-secondary: #000000;
   --bs-success: #82d616;
   --bs-info: #17c1e8;
   --bs-warning: #f53939;
@@ -50,7 +50,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #67748e;
+  color: #000000;
   background-color: #fff;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -58,7 +58,8 @@ body {
 
 hr {
   margin: 1rem 0;
-  color: inherit;
+  color: black;
+  border-color: black;
   background-color: currentColor;
   border: 0;
   opacity: 0.25;
@@ -250,7 +251,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: sans-serif;
+  font-family: var(--bs-font-monospace);
   font-size: 1em;
   direction: ltr
     /* rtl:ignore */
@@ -259,6 +260,8 @@ samp {
 }
 
 pre {
+  font-family: "Open Sans";
+  padding: 1.5rem;
   display: block;
   margin-top: 0;
   margin-bottom: 1rem;
@@ -328,7 +331,7 @@ tfoot,
 tr,
 td,
 th {
-  border-color: inherit;
+  border-color: black;
   border-style: solid;
   border-width: 0;
 }
@@ -2002,15 +2005,15 @@ progress {
 
 .table {
   --bs-table-bg: transparent;
-  --bs-table-striped-color: #67748e;
+  --bs-table-striped-color: #000000;
   --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
-  --bs-table-active-color: #67748e;
+  --bs-table-active-color: #000000;
   --bs-table-active-bg: rgba(0, 0, 0, 0.1);
-  --bs-table-hover-color: #67748e;
+  --bs-table-hover-color: #000000;
   --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
   width: 100%;
   margin-bottom: 1rem;
-  color: #67748e;
+  color: #000000;
   vertical-align: top;
   border-color: #e9ecef;
 }
@@ -3065,7 +3068,7 @@ textarea.form-control.is-invalid {
   display: inline-block;
   font-weight: 700;
   line-height: 1.4;
-  color: #67748e;
+  color: #000000;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -3085,7 +3088,7 @@ textarea.form-control.is-invalid {
 }
 
 .btn:hover {
-  color: #67748e;
+  color: #000000;
 }
 
 .btn-check:focus+.btn,
@@ -3148,8 +3151,8 @@ fieldset:disabled .btn {
 
 .btn-secondary {
   color: #000;
-  background-color: #8392AB;
-  border-color: #8392AB;
+  background-color: #000000;
+  border-color: #000000;
 }
 
 .btn-secondary:hover {
@@ -3187,8 +3190,8 @@ fieldset:disabled .btn {
 .btn-secondary:disabled,
 .btn-secondary.disabled {
   color: #000;
-  background-color: #8392AB;
-  border-color: #8392AB;
+  background-color: #000000;
+  border-color: #000000;
 }
 
 .btn-success {
@@ -3547,14 +3550,14 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-secondary {
-  color: #8392AB;
-  border-color: #8392AB;
+  color: #000000;
+  border-color: #000000;
 }
 
 .btn-outline-secondary:hover {
   color: #000;
-  background-color: #8392AB;
-  border-color: #8392AB;
+  background-color: #000000;
+  border-color: #000000;
 }
 
 .btn-check:focus+.btn-outline-secondary,
@@ -3568,8 +3571,8 @@ fieldset:disabled .btn {
 .btn-outline-secondary.active,
 .btn-outline-secondary.dropdown-toggle.show {
   color: #000;
-  background-color: #8392AB;
-  border-color: #8392AB;
+  background-color: #000000;
+  border-color: #000000;
 }
 
 .btn-check:checked+.btn-outline-secondary:focus,
@@ -3582,7 +3585,7 @@ fieldset:disabled .btn {
 
 .btn-outline-secondary:disabled,
 .btn-outline-secondary.disabled {
-  color: #8392AB;
+  color: #000000;
   background-color: transparent;
 }
 
@@ -3964,7 +3967,7 @@ fieldset:disabled .btn {
   padding: 0.5rem 0;
   margin: 0;
   font-size: 0.875rem;
-  color: #67748e;
+  color: #000000;
   text-align: left;
   list-style: none;
   background-color: #fff;
@@ -4250,7 +4253,6 @@ fieldset:disabled .btn {
   background-color: transparent;
   border: 0;
 }
-
 .dropdown-item:hover,
 .dropdown-item:focus {
   color: #252f40;
@@ -4259,7 +4261,7 @@ fieldset:disabled .btn {
 
 .dropdown-item.active,
 .dropdown-item:active {
-  color: #67748e;
+  color: #000000;
   text-decoration: none;
   background-color: transparent;
 }
@@ -4287,7 +4289,7 @@ fieldset:disabled .btn {
 .dropdown-item-text {
   display: block;
   padding: 0.3rem 1rem;
-  color: #67748e;
+  color: #000000;
 }
 
 .dropdown-menu-dark {
@@ -4308,7 +4310,7 @@ fieldset:disabled .btn {
 
 .dropdown-menu-dark .dropdown-item.active,
 .dropdown-menu-dark .dropdown-item:active {
-  color: #67748e;
+  color: #000000;
   background-color: transparent;
 }
 
@@ -4498,7 +4500,7 @@ fieldset:disabled .btn {
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #000000;
+  color: #495057;
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
@@ -5119,7 +5121,7 @@ fieldset:disabled .btn {
   width: 100%;
   padding: 1rem 1rem;
   font-size: 1rem;
-  color: #67748e;
+  color: #000000;
   text-align: left;
   background-color: transparent;
   border: 0;
@@ -5584,7 +5586,7 @@ fieldset:disabled .btn {
 }
 
 .list-group-item-action:active {
-  color: #67748e;
+  color: #000000;
   background-color: #e9ecef;
 }
 
@@ -6671,7 +6673,7 @@ fieldset:disabled .btn {
 
 .popover-body {
   padding: 1rem 1rem;
-  color: #67748e;
+  color: #000000;
 }
 
 .carousel {
@@ -7053,7 +7055,7 @@ fieldset:disabled .btn {
 }
 
 .link-secondary {
-  color: #8392AB;
+  color: #000000;
 }
 
 .link-secondary:hover,
@@ -7483,7 +7485,7 @@ fieldset:disabled .btn {
 }
 
 .border-secondary {
-  border-color: #8392AB !important;
+  border-color: #000000 !important;
 }
 
 .border-success {
@@ -8466,7 +8468,7 @@ fieldset:disabled .btn {
 }
 
 .text-secondary {
-  color: #8392AB !important;
+  color: #000000 !important;
 }
 
 .text-success {
@@ -8498,7 +8500,7 @@ fieldset:disabled .btn {
 }
 
 .text-body {
-  color: #67748e !important;
+  color: #000000 !important;
 }
 
 .text-muted {
@@ -8522,7 +8524,7 @@ fieldset:disabled .btn {
 }
 
 .bg-secondary {
-  background-color: #8392AB !important;
+  background-color: #000000 !important;
 }
 
 .bg-success {
@@ -12718,8 +12720,8 @@ fieldset:disabled .btn {
 * Soft UI Dashboard - v1.0.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Product Page: https://momentuminternet.com/
+* Copyright 2021 Creative Tim (https://momentuminternet.com/)
 * Licensed under MIT (site.license)
 
 * Coded by www.creative-tim.com
@@ -12865,7 +12867,7 @@ fieldset:disabled .btn {
 }
 
 .badge.bg-secondary {
-  background: #8392AB;
+  background: #000000;
 }
 
 .badge.bg-success {
@@ -12927,7 +12929,7 @@ fieldset:disabled .btn {
 }
 
 .btn.bg-white:hover {
-  color: #67748e;
+  color: #000000;
 }
 
 .btn.btn-link {
@@ -13039,13 +13041,13 @@ fieldset:disabled .btn {
 
 .btn-secondary:hover,
 .btn.bg-gradient-secondary:hover {
-  background-color: #8392AB;
-  border-color: #8392AB;
+  background-color: #000000;
+  border-color: #000000;
 }
 
 .btn-secondary .btn.bg-outline-secondary,
 .btn.bg-gradient-secondary .btn.bg-outline-secondary {
-  border: 1px solid #8392AB;
+  border: 1px solid #000000;
 }
 
 .btn-secondary:not(:disabled):not(.disabled).active,
@@ -13054,8 +13056,8 @@ fieldset:disabled .btn {
 .btn.bg-gradient-secondary:not(:disabled):not(.disabled).active,
 .btn.bg-gradient-secondary:not(:disabled):not(.disabled):active,
 .show>.btn.bg-gradient-secondary.dropdown-toggle {
-  color: color-yiq(#8392AB);
-  background-color: #8392AB;
+  color: color-yiq(#000000);
+  background-color: #000000;
 }
 
 .btn-secondary.focus,
@@ -13073,7 +13075,7 @@ fieldset:disabled .btn {
   background-color: transparent;
   opacity: .75;
   box-shadow: none;
-  color: #8392AB;
+  color: #000000;
 }
 
 .btn-success:hover,
@@ -14208,7 +14210,7 @@ label,
 }
 
 .bg-gradient-faded-secondary-vertical {
-  background-image: radial-gradient(200px circle at 50% 70%, rgba(131, 146, 171, 0.3) 0, #8392AB 100%);
+  background-image: radial-gradient(200px circle at 50% 70%, rgba(131, 146, 171, 0.3) 0, #000000 100%);
 }
 
 .bg-gradient-faded-success-vertical {
@@ -14730,7 +14732,7 @@ hr.horizontal.gray-light {
 
 .navbar .sidenav-toggler-inner .sidenav-toggler-line {
   transition: all 0.15s ease;
-  background: #67748e;
+  background: #000000;
   border-radius: 0.125rem;
   position: relative;
   display: block;
@@ -14954,6 +14956,7 @@ hr.horizontal.gray-light {
   text-transform: capitalize;
   letter-spacing: 0px;
   border-bottom: 1px solid #e9ecef;
+  border-color: black;
 }
 
 .table th {
@@ -14968,7 +14971,7 @@ hr.horizontal.gray-light {
 
 .table td,
 .table th {
-  white-space: nowrap;
+  border-color: black;
 }
 
 .table.align-items-center td,
@@ -14981,7 +14984,7 @@ hr.horizontal.gray-light {
 }
 
 .table> :not(:last-child)> :last-child>* {
-  border-bottom-color: #e9ecef;
+  border-bottom-color: black;
 }
 
 .timeline {
@@ -15098,7 +15101,7 @@ html * {
 }
 
 body {
-  color: #67748e;
+  color: #000000;
   font-weight: 400;
   line-height: 1.6;
   background-color: #fff;
@@ -15494,7 +15497,7 @@ p {
 }
 
 .text-muted {
-  color: #67748e !important;
+  color: #000000 !important;
 }
 
 .text-black-50 {
@@ -20309,7 +20312,7 @@ p {
   padding-left: 1rem;
   padding-right: 1rem;
   font-weight: 500;
-  color: #67748e;
+  color: #000000;
 }
 
 .navbar-vertical .navbar-nav .nav-link>i {
@@ -20944,7 +20947,7 @@ p {
 }
 
 .sidenav[data-color="secondary"] .navbar-nav>.nav-item>.nav-link.active .icon {
-  background-image: linear-gradient(310deg, #8392AB 0%, #8392AB 100%);
+  background-image: linear-gradient(310deg, #000000 0%, #000000 100%);
 }
 
 .sidenav[data-color="success"] .navbar-nav>.nav-item>.nav-link.active .icon {
@@ -20981,7 +20984,7 @@ p {
 }
 
 .sidenav {
-  z-index: 9999;
+  z-index: 990;
 }
 
 .sidenav .navbar-brand,
