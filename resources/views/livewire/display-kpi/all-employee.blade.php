@@ -1688,7 +1688,7 @@
           <h6>SCORE CARD - Nilai Teras <span style="color:red;">(Current total weightage = {{$nilai_master}})</span></h6>
         </div>
         <div class="card-body px-0 pt-0 pb-2">
-          <div class="p-0">
+          <div class="p-0 table-responsive">
             <table id="data" class="table align-items-center mb-0">
               <thead>
                 <tr>
