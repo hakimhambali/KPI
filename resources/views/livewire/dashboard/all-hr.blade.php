@@ -1,11 +1,79 @@
+{{--------------------------------------------------- EMPLOYEE DETAILS --------------------------------------------------}}
 <div class="container-fluid py-4">
+{{--------------------------------------------------- SENIOR LEADERSHIP TEAM (SLT) DEPARTMENT EMPLOYEE --------------------------------------------------}}
   <div class="row">
     <div class="col-12">
       <div class="card mb-4">
         <div class="card-header pb-0">
           <h6>Employee Details</h6>
-{{--------------------------------------------------- EMPLOYEE DETAILS --------------------------------------------------}}
           <p><strong>{{$userscount}} employees</strong> in this company</p>
+          <p><strong>{{$sltempcount}} employees</strong> in Senior Leadership Team (SLT) department</p>
+        </div>
+        <div class="card-body px-0 pt-0 pb-2">
+          <div class="p-0">
+            <table class="table align-items-center mb-0">
+              <thead>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-6">Name</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 col-2">Position</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-1">ID No</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-2">Unit</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-1"></th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach ($sltemp as $sltemps)
+                <tr>
+                  <td>    
+                    <div class="d-flex px-2 py-1">
+                      <div>
+                        <img src="../assets/img/profileavatar.png" class="avatar avatar-sm me-3" alt="user1">
+                      </div>
+                      
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="mb-0 text-sm" value="{{$sltemps->id}}">{{$sltemps->name}}</h6>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <p class="text-xs font-weight-bold mb-0" value="{{$sltemps->id}}">{{$sltemps->position}}</p>
+                  </td>
+                  <td class="align-middle text-center">
+                    <span class="text-secondary text-xs font-weight-bold" value="{{$sltemps->id}}">{{$sltemps->nostaff}}</span>
+                  </td>
+                  <td class="align-middle text-center">
+                    <span class="text-secondary text-xs font-weight-bold" value="{{$sltemps->id}}">{{$sltemps->unit}}</span>
+                  </td>
+                  <div class="d-flex flex-column justify-content-center">
+                  </div>
+                  <div class="d-flex flex-column justify-content-center">
+                    <td class="align-middle">
+                      <div class="col-lg-6 col-5 my-auto text-middle">
+                        <div class="dropdown float-lg-start pe-4">
+                          <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-ellipsis-v text-secondary"></i>
+                          </a>
+                          <ul class="dropdown-menu px-2 py-3 ms-n4 ms-n5" aria-labelledby="dropdownTable">
+                            <li><a href="{{ url('view-date/'.$sltemps->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </div>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{--------------------------------------------------- CEO OFFICE DEPARTMENT EMPLOYEE --------------------------------------------------}}
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-4">
+        <div class="card-header pb-0">
           <p><strong>{{$ceoempcount}} employees</strong> in CEO Office department</p>
         </div>
         <div class="card-body px-0 pt-0 pb-2">
@@ -20,7 +88,6 @@
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-1"></th>
                 </tr>
               </thead>
-{{--------------------------------------------------- CEO OFFICE DEPARTMENT EMPLOYEE --------------------------------------------------}}
               <tbody>
                 @foreach ($ceoemp as $ceoemps)
                 <tr>

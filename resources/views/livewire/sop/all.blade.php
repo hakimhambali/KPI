@@ -50,6 +50,7 @@
                                         <label class="font-weight-bold">For Department</label>
                                         <div class="card card-plain border-radius-lg align-items-center">
                                           <select class="form-select form-select-lg" id="department" name="department">
+                                              <option value="Senior Leadership Team (SLT)">Senior Leadership Team (SLT)</option>
                                               <option value="CEO Office">CEO Office</option>
                                               <option value="Human Resource (HR) & Administration">Human Resource (HR) & Administration</option>
                                               <option value="Account & Finance (A&F)">Account & Finance (A&F)</option>
@@ -83,6 +84,7 @@
                                     <div class="col-md-6 mb-md-0">
                                       <label class="font-weight-bold">View by Department</label>
                                       <br>
+                                        <input type="checkbox" id="departmentview" name="departmentview[]" value="Senior Leadership Team (SLT)"><label for="departmentview">Senior Leadership Team (SLT)</label><br>
                                         <input type="checkbox" id="departmentview" name="departmentview[]" value="CEO Office"><label for="departmentview">CEO Office</label><br>
                                         <input type="checkbox" id="departmentview" name="departmentview[]" value="Human Resource (HR) & Administration"><label for="departmentview">Human Resource (HR) & Administration</label><br>
                                         <input type="checkbox" id="departmentview" name="departmentview[]" value="Account & Finance (A&F)"><label for="departmentview">Account & Finance (A&F)</label><br>

@@ -50,8 +50,8 @@
                             @if (Auth::user()->position != "Director (TM1)")
                             <option value="Director (TM1)">Director (TM1)</option>
                             @endif
-                            @if (Auth::user()->position != "Senior Leadership Team (UM1)")
-                            <option value="Senior Leadership Team (UM1)">Senior Leadership Team (UM1)</option>
+                            @if (Auth::user()->position != "Senior Leadership Team (SLT) (UM1)")
+                            <option value="Senior Leadership Team (SLT) (UM1)">Senior Leadership Team (SLT) (UM1)</option>
                             @endif
                             @if (Auth::user()->position != "Senior Manager (M3)")
                             <option value="Senior Manager (M3)">Senior Manager (M3)</option>
@@ -86,7 +86,12 @@
                           <div class="card card-plain border-radius-lg align-items-center">
                             <select class="form-select form-select-lg" id="department" name="department">
                                 <option selected class="bg-secondary text-white" value="{{ Auth::user()->department }}" >{{ Auth::user()->department }}</option>
-                                    
+                                
+                                @if (Auth::user()->department != "Senior Leadership Team (SLT)")
+                                <option value="Senior Leadership Team (SLT)">Senior Leadership Team (SLT)</option>
+                                @else
+                                @endif
+
                                 @if (Auth::user()->department != "CEO Office")
                                 <option value="CEO Office">CEO Office</option>
                                 @else
@@ -145,8 +150,8 @@
                                 @if (Auth::user()->unit != "Head Department")
                                 <option value="Head Department">Head Department</option>
                                 @endif
-                                @if (Auth::user()->unit != "Senior Leadership Team")
-                                <option value="Senior Leadership Team">Senior Leadership Team</option>
+                                @if (Auth::user()->unit != "Senior Leadership Team (SLT)")
+                                <option value="Senior Leadership Team (SLT)">Senior Leadership Team (SLT)</option>
                                 @endif
 
                                 <option class="text-center" value="">-- CEO Office --</option>

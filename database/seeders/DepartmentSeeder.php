@@ -18,7 +18,7 @@ class DepartmentSeeder extends Seeder
     {  
         $department1 = Department::create([
             'id' => '1',
-            'name' => 'Senior Leadership Team',    
+            'name' => 'Senior Leadership Team (SLT)',    
         ]);
         $department1->save();
         

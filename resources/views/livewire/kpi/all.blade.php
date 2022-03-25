@@ -168,22 +168,22 @@ input[type=file]::file-selector-button:hover {
                         </td>
 
                         <td class="border-dark" class="@error('threshold') border border-danger rounded-3 @enderror">
-                          <input type="text" class="form-control" pattern="[0-9]+" maxlength="6" class="input_threshold w-75" id="threshold" name="threshold" onkeyup="masterClac();" min="0" >
+                          <input type="text" class="form-control" pattern="^\d*(\.\d{0,2})?$\-^\d*(\.\d{0,2})?$" maxlength="7" class="input_threshold w-75" id="threshold" name="threshold" onkeyup="masterClac();" min="0" >
                           @error('threshold') <div class="text-danger">{{ $message }}</div> @enderror
                         </td>
                   
                         <td class="border-dark" class="@error('base') border border-danger rounded-3 @enderror">
-                          <input type="text" class="form-control" pattern="[0-9]+" maxlength="6" class="input_base w-75" id="base" name="base" onkeyup="masterClac();" min="0" >
+                          <input type="text" class="form-control" pattern="^\d*(\.\d{0,2})?$\-^\d*(\.\d{0,2})?$" maxlength="7" class="input_base w-75" id="base" name="base" onkeyup="masterClac();" min="0" >
                           @error('base') <div class="text-danger">{{ $message }}</div> @enderror
                         </td>
                   
                         <td class="border-dark" class="@error('stretch') border border-danger rounded-3 @enderror">
-                          <input type="text" class="form-control" pattern="[0-9]+" maxlength="6" class="input_stretch w-75" id="stretch" name="stretch" onkeyup="masterClac();" min="0" >
+                          <input type="text" class="form-control" pattern="^\d*(\.\d{0,2})?$\-^\d*(\.\d{0,2})?$" maxlength="7" class="input_stretch w-75" id="stretch" name="stretch" onkeyup="masterClac();" min="0" >
                           @error('stretch') <div class="text-danger">{{ $message }}</div> @enderror
                         </td>
                   
                         <td class="border-dark" class="@error('pencapaian') border border-danger rounded-3 @enderror">
-                          <input type="text" class="form-control" pattern="^\d*(\.\d{0,2})?$" maxlength="7" class="input_pencapaian w-75" id="pencapaian" name="pencapaian" onkeyup="masterClac();" min="0" >
+                          <input type="text" class="form-control" pattern="^\d*(\.\d{0,2})?$\-^\d*(\.\d{0,2})?$" maxlength="7" class="input_pencapaian w-75" id="pencapaian" name="pencapaian" onkeyup="masterClac();" min="0" >
                           @error('pencapaian') <div class="text-danger">{{ $message }}</div> @enderror
                         </td>
                   

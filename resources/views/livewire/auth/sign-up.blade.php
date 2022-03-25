@@ -58,7 +58,7 @@
                                             <option value="Senior General Manager (UM3)">Senior General Manager (UM3)</option>
                                             <option value="General Manager (UM2)">General Manager (UM2)</option>
                                             <option value="Deputy General Manager (UM1)">Deputy General Manager (UM1)</option> --}}
-                                            <option value="Senior Leadership Team (UM1)">Senior Leadership Team (UM1)</option>
+                                            <option value="Senior Leadership Team (SLT) (UM1)">Senior Leadership Team (SLT) (UM1)</option>
                                             <option value="Senior Manager (M3)">Senior Manager (M3)</option>
                                             <option value="Manager (M2)">Manager (M2)</option>
                                             <option value="Assistant Manager (M1)">Assistant Manager (M1)</option>
@@ -75,7 +75,7 @@
                                 <div class="@error('department') border border-danger rounded-3 @enderror">
                                         <select wire:model="department" name="department" id="department" class="form-control custom-select" data-placeholder="Choose Department" tabindex="1">
                                             <option class="text-center" value="">-- Choose Department --</option>
-                                            <option value="Senior Leadership Team">Senior Leadership Team</option>
+                                            <option value="Senior Leadership Team (SLT)">Senior Leadership Team (SLT)</option>
                                             <option value="CEO Office">CEO Office</option>
                                             <option value="Human Resource (HR) & Administration">Human Resource (HR) & Administration</option>
                                             <option value="Account & Finance (A&F)">Account & Finance (A&F)</option>
@@ -96,7 +96,7 @@
                                         {{-- Head Department --}}
                                         <option class="text-center" value="">-- Others --</option>
                                         <option value="Head Department">Head Department</option>
-                                        <option value="Senior Leadership Team">Senior Leadership Team</option>
+                                        <option value="Senior Leadership Team (SLT)">Senior Leadership Team (SLT)</option>
                                         {{-- CEO Office --}}
                                         <option class="text-center" value="">-- CEO Office --</option>
                                         <option value="Personal Assistant">Personal Assistant</option>
