@@ -4,29 +4,26 @@
 <main>  
     <div class="container-fluid py-4">
       <div class="row">
+
         <div class="col-lg-6 p-1">
-          <div class="h-100 p-1">
             <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../assets/img/ivancik.jpg');">
               <span class="mask bg-gradient-dark"></span>
               <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3 bg-danger bg-gradient border-radius-lg py-3 pe-1 mb-1">
               <h5 class="card-title text-white text-center font-weight-bolder mb-4">VISION</h5>
-                <p class="text-white">''Blink Your Business To The World''</p>
+                <p class="text-white text-center">''Blink Your Business To The World''</p>
               </div>
             </div>
-          </div>
         </div>
 {{--------------------------------------------------- MISSION --------------------------------------------------}}
         <div class="col-lg-6 p-1">
-            <div class="h-100 p-1">
               <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../assets/img/ivancik.jpg');">
                 <span class="mask bg-gradient-dark"></span>
-                <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3 bg-danger bg-gradient border-radius-lg py-3 pe-1 mb-1">
-                  <h5 class="text-white font-weight-bolder mb-4 pt-2">MISSION</h5>
+                <div class="card-body d-flex justify-content-center position-relative z-index-1 d-flex flex-column h-100 p-3 bg-danger bg-gradient border-radius-lg py-3 pe-1 mb-1">
+                  <h5 class="card-title text-white text-center font-weight-bolder mb-4">MISSION</h5>
                   <p class="text-white">''Empowering Entrepreneurs To Get More Customer Using The Latest Technologies To Fullfil Their Dreams''</p>
                 </div>
               </div>
             </div>
-          </div>
       </div>
 {{--------------------------------------------------- CAROUSEL --------------------------------------------------}}
       <div class="row">

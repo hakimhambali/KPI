@@ -75,6 +75,8 @@
     <script src="{{ url('assets/plugins/custom.min.js') }}"></script>
     <!-- Sweet alert -->
     <script src="{{asset('assets/plugins/sweetalert/sweetalert2.min.js')}}"></script>
+    <!-- Icon font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     
     <!-- Magnific popup JavaScript -->
     <script src="{{url('assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup.min.js')}}"></script>
