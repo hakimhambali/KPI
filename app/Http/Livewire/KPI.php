@@ -749,7 +749,7 @@ class KPI extends Component
             $kpiall = KPIAll_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->get();
             $percent_master = DB::table('kpi_master')->where('id', '=', $kpimasters_id)->where('year', '=', $year)->where('month', '=', $month)->value('percent_master');
             $total_score = $total_past + $total_present;
-            $skor_kpi = 0;
+            $skor_kpi =0;
             $skor_sebenar = 0;
  
             if ($total_score < 30 ) {
