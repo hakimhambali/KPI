@@ -32,7 +32,7 @@ class Complaint extends Component
 
     public function create(Request $request)
     {
-        if ($request->all()['office'] != NULL) 
+        if ($request->office != NULL) 
         {
             $input['office'] = json_encode($request->all()['office']);
             $input['category'] = json_encode($request->all()['category']);
@@ -74,7 +74,7 @@ class Complaint extends Component
 
     public function update(Request $request, $id) 
     {
-        if ($request->all()['office'] != NULL) 
+        if ($request->office != NULL) 
         {
             $input['office'] = json_encode($request->all()['office']);
             $input['category'] = json_encode($request->all()['category']);
