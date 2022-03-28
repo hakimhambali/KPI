@@ -32,6 +32,13 @@ class Memo extends Component
         $memo = Memo_::find($this->id_memo);
         $memo->delete();
 
+        $noti = DatabaseNotification::where('data->memoId', $this->id_memo)->get();
+        for($i=0; $i<count($noti); $i++)
+        {
+            $del = DatabaseNotification::where('data->memoId', $this->id_memo);
+            $del->delete();
+        }        
+
         return redirect()->back()->with('message', 'Memo deleted successfully');
     }
 
@@ -114,7 +121,7 @@ class Memo extends Component
         return redirect('/memo')->with('message', 'Memo Updated Successfully');
     }
 
-    //add
+    //update read status on Notification
     public function readNotification() {
         $user = Auth::user();
         $user->unreadNotifications()->update(['read_at' => now()]);
@@ -124,7 +131,7 @@ class Memo extends Component
 
     public function render()
     {
-        $memo = Memo_::all();
+        $memo = Memo_::orderBy('id', 'desc')->get();
         return view('livewire.memo.all', compact('memo'));
     }
 }

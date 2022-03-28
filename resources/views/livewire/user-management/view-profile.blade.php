@@ -31,7 +31,7 @@
 
 <div class="container-fluid py-4">
     <div class="row">
-      <div class="col-12 col-xl-4">
+      <div class="col-6">
         <div class="card h-200">
           <div class="card-header pb-0 p-3">
             <div class="row">
@@ -47,23 +47,24 @@
           </div>
           <div class="card-body p-3">
             <p class="text-sm">
-              Hi, I’m {{ Auth::user()->name }}, My ID No is {{ Auth::user()->nostaff }} and i'm in {{ Auth::user()->unit }} unit at {{ Auth::user()->department }} department.
+              Hi, I’m {{ Auth::user()->name }}, <br>
+              My ID No is {{ Auth::user()->nostaff }} and i'm in {{ Auth::user()->unit }} unit at {{ Auth::user()->department }} department.
             </p>
-            <hr class="horizontal gray-light my-4">
+            <hr>
             <ul class="list-group">
-              <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Full Name:</strong> &nbsp; {{ Auth::user()->name }}</li>
-              <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">ID No:</strong> &nbsp; {{ Auth::user()->nostaff }}</li>
-              <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Position:</strong> &nbsp; {{ Auth::user()->position }}</li>
-              <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Department:</strong> &nbsp; {{ Auth::user()->department }}</li>
-              <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Unit:</strong> &nbsp; {{ Auth::user()->unit }}</li>
-              <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; {{ Auth::user()->email}}</li>
+              <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Full Name:</strong> {{ Auth::user()->name }}</li>
+              <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">ID No:</strong> {{ Auth::user()->nostaff }}</li>
+              <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Position:</strong> {{ Auth::user()->position }}</li>
+              <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Department:</strong> {{ Auth::user()->department }}</li>
+              <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Unit:</strong> {{ Auth::user()->unit }}</li>
+              <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> {{ Auth::user()->email}}</li>
             </ul>
           </div>
         </div>
       </div>
-      {{-- @if ($userdata->role != "employee")
-      @else
-      <div class="col-lg-5 ms-auto text-center mt-lg-0">
+      
+     
+      <!-- <div class="col-lg-5 ms-auto text-center mt-lg-0">
         <img src="../assets/img/shapes/waves-white.svg" class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
         <div class="position-relative d-flex align-items-center justify-content-center h-100">
             @foreach ($kpialls as $key => $kpiall)
@@ -156,9 +157,9 @@
             </div>
           </div>
         </div>
-      </div>
-      @endif
+      </div> -->
+      
     </div>
-</div> --}}
+</div> 
 </body>
 @endsection

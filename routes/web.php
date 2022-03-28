@@ -139,8 +139,7 @@ Route::post('/hr/update/policy/{id}', [Policy::class, 'update']);
 
 //Complaint Route
 Route::post('/pro/create/complaint', [Complaint::class, 'create']);
-Route::get('/pro/edit/complaint/{id}', [Complaint::class, 'edit']);
-Route::post('/pro/update/complaint/{id}', [Complaint::class, 'update']);
+Route::post('/pro/update/complaint/{id}', [Complaint::class, 'update'])->name('complaint/update');
 
 //ANNOUNCEMENT FOR HOME PAGE
 Route::post('/hr/announcementuphr/{id_announcement}', [Homepage::class, 'announcementuphr']);
@@ -161,10 +160,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/organizational-chart', OrganizationalChart::class)->name('organizational-chart');
     Route::get('/view-date/{user_id}', [Date::class, 'view_date']);
     Route::post('/date/save',[Date::class, 'date_save'])->name('date_save');
-    Route::get('/laravel-view-profile', ViewProfile::class)->name('view-profile');
-    Route::get('/laravel-edit-profile', EditProfile::class)->name('edit-profile');
-    Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
-    Route::get('/laravel-user-management-admin', UserManagementAdmin::class)->name('user-management-admin');
+    Route::get('/profile/view', ViewProfile::class)->name('view-profile');
+    Route::get('/profile/edit', EditProfile::class)->name('edit-profile');
+    Route::get('/user-management', UserManagement::class)->name('user-management');
+    Route::get('/user-management-admin', UserManagementAdmin::class)->name('user-management-admin');
 
 });
 

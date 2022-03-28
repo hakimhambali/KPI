@@ -17,6 +17,7 @@ class Complaint_ extends Model
         'category',
         'description',
         'user_id',
+        'status'
     ];
 
     public function user(){

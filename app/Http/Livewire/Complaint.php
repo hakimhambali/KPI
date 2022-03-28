@@ -46,6 +46,7 @@ class Complaint extends Component
                 'office'=> $input['office'],
                 'category'=> $input['category'],
                 'description'=> $request->description,
+                'status'=> 'Incomplete'
                 ]);
         } else {
             $input['category'] = json_encode($request->all()['category']);
@@ -58,9 +59,10 @@ class Complaint extends Component
                 'level'=> $request->level,
                 'category'=> $input['category'],
                 'description'=> $request->description,
+                'status'=> 'Incomplete'
                 ]);
-        } 
-
+        }
+        
         return redirect()->back()->with('message', 'Complaint has been successfully inserted');
     }
 
@@ -74,41 +76,16 @@ class Complaint extends Component
 
     public function update(Request $request, $id) 
     {
-        if ($request->office != NULL) 
-        {
-            $input['office'] = json_encode($request->all()['office']);
-            $input['category'] = json_encode($request->all()['category']);
-
-            Complaint_::find($id)->update([
-                'user_id'=> auth()->user()->id,
-                'created_at'=> Carbon::now(),
-                'updated_at'=> Carbon::now(),
-                'location'=> $request->location,
-                'level'=> $request->level,
-                'office'=> $input['office'],
-                'category'=> $input['category'],
-                'description'=> $request->description,
-                ]);
-        } else {
-            $input['category'] = json_encode($request->all()['category']);
-
-            Complaint_::insert([
-                'user_id'=> auth()->user()->id,
-                'created_at'=> Carbon::now(),
-                'updated_at'=> Carbon::now(),
-                'location'=> $request->location,
-                'level'=> $request->level,
-                'category'=> $input['category'],
-                'description'=> $request->description,
-                ]);
-        } 
+        Complaint_::find($id)->update([
+            'status'=> 'Complete'
+            ]);
 
         return redirect('/complaint')->with('message', 'Complaint Updated Successfully');
     }
 
     public function render()
     {
-        $complaint = Complaint_::all();
+        $complaint = Complaint_::orderBy('id', 'desc')->get();
         return view('livewire.complaint.all', compact('complaint'));
     }
 }
