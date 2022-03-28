@@ -28,7 +28,7 @@ use App\Http\Livewire\UserManagement\ViewProfile;
 use App\Http\Livewire\UserManagement\EditProfile;
 use App\Http\Livewire\UserManagement\UserManagement;
 use App\Http\Livewire\UserManagement\UserManagementAdmin;
-use App\Http\Controllers\HRKPI;
+use App\Http\Controllers\FindOwnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -145,6 +145,7 @@ Route::post('/pro/update/complaint/{id}', [Complaint::class, 'update']);
 //ANNOUNCEMENT FOR HOME PAGE
 Route::post('/hr/announcementuphr/{id_announcement}', [Homepage::class, 'announcementuphr']);
 
+Route::get("/test", [FindOwnerController::class, "index"]);
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard-hr', DashboardHR::class)->name('dashboard-hr');

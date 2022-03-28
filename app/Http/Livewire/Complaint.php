@@ -32,19 +32,34 @@ class Complaint extends Component
 
     public function create(Request $request)
     {
-        $input['office'] = json_encode($request->all()['office']);
-        $input['category'] = json_encode($request->all()['category']);
+        if ($request->all()['office'] != NULL) 
+        {
+            $input['office'] = json_encode($request->all()['office']);
+            $input['category'] = json_encode($request->all()['category']);
 
-        Complaint_::insert([
-            'user_id'=> auth()->user()->id,
-            'created_at'=> Carbon::now(),
-            'updated_at'=> Carbon::now(),
-            'location'=> $request->location,
-            'level'=> $request->level,
-            'office'=> $input['office'],
-            'category'=> $input['category'],
-            'description'=> $request->description,
-            ]);
+            Complaint_::insert([
+                'user_id'=> auth()->user()->id,
+                'created_at'=> Carbon::now(),
+                'updated_at'=> Carbon::now(),
+                'location'=> $request->location,
+                'level'=> $request->level,
+                'office'=> $input['office'],
+                'category'=> $input['category'],
+                'description'=> $request->description,
+                ]);
+        } else {
+            $input['category'] = json_encode($request->all()['category']);
+
+            Complaint_::insert([
+                'user_id'=> auth()->user()->id,
+                'created_at'=> Carbon::now(),
+                'updated_at'=> Carbon::now(),
+                'location'=> $request->location,
+                'level'=> $request->level,
+                'category'=> $input['category'],
+                'description'=> $request->description,
+                ]);
+        } 
 
         return redirect()->back()->with('message', 'Complaint has been successfully inserted');
     }
@@ -59,19 +74,34 @@ class Complaint extends Component
 
     public function update(Request $request, $id) 
     {
-        $input['office'] = json_encode($request->all()['office']);
-        $input['category'] = json_encode($request->all()['category']);
+        if ($request->all()['office'] != NULL) 
+        {
+            $input['office'] = json_encode($request->all()['office']);
+            $input['category'] = json_encode($request->all()['category']);
 
-        Complaint_::find($id)->update([
-            'user_id'=> auth()->user()->id,
-            'created_at'=> Carbon::now(),
-            'updated_at'=> Carbon::now(),
-            'location'=> $request->location,
-            'level'=> $request->level,
-            'office'=> $input['office'],
-            'category'=> $input['category'],
-            'description'=> $request->description,
-            ]);
+            Complaint_::find($id)->update([
+                'user_id'=> auth()->user()->id,
+                'created_at'=> Carbon::now(),
+                'updated_at'=> Carbon::now(),
+                'location'=> $request->location,
+                'level'=> $request->level,
+                'office'=> $input['office'],
+                'category'=> $input['category'],
+                'description'=> $request->description,
+                ]);
+        } else {
+            $input['category'] = json_encode($request->all()['category']);
+
+            Complaint_::insert([
+                'user_id'=> auth()->user()->id,
+                'created_at'=> Carbon::now(),
+                'updated_at'=> Carbon::now(),
+                'location'=> $request->location,
+                'level'=> $request->level,
+                'category'=> $input['category'],
+                'description'=> $request->description,
+                ]);
+        } 
 
         return redirect('/complaint')->with('message', 'Complaint Updated Successfully');
     }
