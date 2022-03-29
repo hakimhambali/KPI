@@ -116,7 +116,7 @@ class SOP extends Component
             'sop_path' => ''.URL::to('').$path.'',
             ]);
         } else {
-            SOP_::find($id)->update([
+            $update = SOP_::find($id)->update([
                 'user_id'=> auth()->user()->id,
                 'created_at'=> Carbon::now(),
                 'updated_at'=> Carbon::now(),

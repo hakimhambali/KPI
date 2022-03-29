@@ -82,7 +82,7 @@
                                         </div>
                                         <div class="col-md-6">
                                           <label class="font-weight-bold" >Description (Optional)</label>
-                                          <textarea class="form-control card card-body border card-plain border-radius-lg d-flex align-items-center flex-row" name="description" id="description" cols="60" rows="10" placeholder="Type your description here..."></textarea>
+                                          <textarea class="form-control card card-body border card-plain border-radius-lg d-flex align-items-center flex-row" name="description" id="description" cols="60" rows="10" placeholder="Type your description here...">{{ $sops->description }}</textarea>
                                         </div>
                                         <div class="col-md-6 mb-md-0">
                                           <label class="font-weight-bold">View by Department</label>
@@ -106,8 +106,7 @@
                                           <div class="row">
                                             <label class="font-weight-bold">Link SOP (Optional)</label>
                                             <div class="card card-plain border-radius-lg align-items-center">
-                                              <input type="text" class="form-control" id="link" name="link" value="{{ $sops->link }}" >
-                                              @error('link') <div class="text-danger">{{ $message }}</div> @enderror                        
+                                            <input class="form-control form-control-lg" type="text" name="link" value="{{ $sops->link }}" >                   
                                             </div>
                                           </div>  
                                         </div>
