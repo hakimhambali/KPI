@@ -6,7 +6,7 @@
       {{--------------------------------------------------- VISION --------------------------------------------------}}
       <div class="card-group">
         <div class="col-md-6 px-1">
-          <div class="card text-center mb-3 overflow-hidden position-relative border-radius-md shadow" style="background-color: #F3CECE;">
+          <div class="card text-center mb-3 overflow-hidden position-relative border-radius-md shadow" style="background-color: #fe7a7a;">
           <span class="mask"></span>
             <div class="card-body text-dark">
               <h6 class="card-title fw-bolder">__VISION__<i class="bi bi-pen-fill text-dark text-end"></i></h6>
@@ -17,7 +17,7 @@
         </div>
         {{--------------------------------------------------- MISSION --------------------------------------------------}}
         <div class="col-md-6 px-1">
-          <div class="card text-center mb-3 overflow-hidden position-relative border-radius-md shadow" style="background-color: #F3CECE;">
+          <div class="card text-center mb-3 overflow-hidden position-relative border-radius-md shadow" style="background-color: #fe7a7a;">
             <div class="card-body text-dark">
               <h6 class="card-title fw-bolder">__MISSION__<i class="bi bi-pen-fill"></i></h6>
               <hr>
@@ -64,40 +64,30 @@
             <div class="card-header pb-0">
               <div class="row">
                 <div class="col-lg-6 col-7">
-                  <h6>Latest Memo</h6>
+                  <h6><i class="bi bi-calendar-check"></i> Latest Memo</h6>
                   <p class="text-sm mb-0">
                   </p>
                 </div>
               </div>
             </div>
-            <div class="card-body px-0 pb-2">
+            <div class="card-body pb-2">
               <div class="table-responsive">
                 <table class="table align-items-center mb-0">
-                  <thead>
+                  <thead class="text-center text-uppercase text-secondary text-sm font-weight-bolder">
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Memo</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Description</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">View</th>
+                      <th>Memo</th>
+                      <th>Description</th>
+                      <th>View</th>
                     </tr>
                   </thead>
                   <tbody>
                     @foreach ($memo as $memos)
                     <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                            <div>
-                                <img src="../assets/img/memo.jpg" class="avatar avatar-sm me-3">
-                              </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <p class="text-xs font-weight-bold mb-0" value="{{ $memos->title }}">{{ $memos->title }}</p>
-                          </div>
-                        </div>
+                      <td class="text-xs font-weight-bold mb-0">{{ $memos->title }}</td>
+                      <td class="text-xs font-weight-bold mb-0">{{  $memos->description }}</pre>
                       </td>
-                      <td>
-                        <pre class="text-xs font-weight-bold mb-0" value="{{ $memos->description }}">{{  $memos->description }}</pre>
-                      </td>
-                      <td class="align-middle text-center">
-                        <a href=" {{ $memos->memo_path }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">View</a>
+                      <td class="fs-4 text-center">
+                        <a href="{{ $memos->memo_path }}" style="color:red;" data-bs-toggle="tooltip" data-bs-original-title="View Memo" target="_blank"><i class="bi bi-file-earmark-pdf-fill"></i></a>
                       </td>
                     </tr>
                     @endforeach

@@ -18,6 +18,7 @@ class SOP_ extends Model
         'sop_path',
         'description',
         'user_id',
+        'link'
     ];
 
     public function user(){

@@ -119,7 +119,7 @@ Route::post('/hr/messageup/kpi/{date_id}', [ManagerKPI::class, 'messageuphr']);
 
 //Memo Route
 Route::post('/hr/create/memo', [Memo::class, 'create']);
-Route::get('/hr/edit/memo/{id}', [Memo::class, 'edit']);
+Route::get('/hr/edit/memo/{id}', [Memo::class, 'edit'])->name('memo_edit');
 Route::post('/hr/update/memo/{id}', [Memo::class, 'update']);
 // Route::get('/markAsRead', [Memo::class, 'readNotification']);
 Route::get('markAsRead', function(){
@@ -129,12 +129,12 @@ Route::get('markAsRead', function(){
 
 //SOP Route
 Route::post('/dc/create/sop', [SOP::class, 'create']);
-Route::get('/dc/edit/sop/{id}', [SOP::class, 'edit']);
+Route::get('/dc/edit/sop/{id}', [SOP::class, 'edit'])->name('sop_edit');
 Route::post('/dc/update/sop/{id}', [SOP::class, 'update']);
 
 //Policy Route
 Route::post('/hr/create/policy', [Policy::class, 'create']);
-Route::get('/hr/edit/policy/{id}', [Policy::class, 'edit']);
+Route::get('/hr/edit/policy/{id}', [Policy::class, 'edit'])->name('policy_edit');
 Route::post('/hr/update/policy/{id}', [Policy::class, 'update']);
 
 //Complaint Route

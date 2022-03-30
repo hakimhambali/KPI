@@ -58,7 +58,7 @@
 
             @if (Auth::user()->role != "moderator")
                 <li class="nav-item">
-                    <a class="nav-link {{ Route::currentRouteName() == 'add-date' ? 'active' : '' }}" href="{{ route('add-date') }}">
+                    <a class="nav-link {{ Route::currentRouteName() == 'add-date' ? 'active' : '' || Route::currentRouteName() == 'Kpi' ? 'active' : '' || Route::currentRouteName() == 'kpi_edit' ? 'active' : '' || Route::currentRouteName() == 'Kecekapan' ? 'active' : '' || Route::currentRouteName() == 'kecekapan_edit' ? 'active' : '' || Route::currentRouteName() == 'Nilai' ? 'active' : '' || Route::currentRouteName() == 'nilai_edit' ? 'active' : '' || Route::currentRouteName() == 'Display-KPI' ? 'active' : '' || Route::currentRouteName() == 'Edit' ? 'active' : ''  }}" href="{{ route('add-date') }}">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
@@ -71,7 +71,7 @@
 
             @if (Auth::user()->role != "moderator")
                 <li class="nav-item">
-                    <a class="nav-link {{ Route::currentRouteName() == 'memo' ? 'active' : '' }}" href="{{ route('memo') }}">
+                    <a class="nav-link {{ Route::currentRouteName() == 'memo' ? 'active' : '' || Route::currentRouteName() == 'memo_edit' ? 'active' : '' }}" href="{{ route('memo') }}">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z"/>
@@ -101,7 +101,7 @@
 
             @if (Auth::user()->role != "moderator")
                 <li class="nav-item ">
-                    <a data-bs-toggle="collapse" href="#info" class="nav-link collapsed" aria-controls="info" role="button" aria-expanded="false">
+                    <a data-bs-toggle="collapse" href="#info" class="nav-link collapsed {{ Route::currentRouteName() == 'sop' ? 'active' : '' || Route::currentRouteName() == 'sop_edit' ? 'active' : '' || Route::currentRouteName() == 'policy' ? 'active' : '' || Route::currentRouteName() == 'policy_edit' ? 'active' : '' }}" aria-controls="info" role="button" aria-expanded="false">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-lg" viewBox="0 0 16 16">
                                 <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
@@ -113,7 +113,7 @@
                     <div class="collapse" id="info" style="">
                         <ul class="nav ms-4 ps-3">
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() == 'sop' ? 'active' : '' }}" href="{{ route('sop') }}">
+                                <a class="nav-link {{ Route::currentRouteName() == 'sop' ? 'active' : '' || Route::currentRouteName() == 'sop_edit' ? 'active' : '' }}" href="{{ route('sop') }}">
                                 <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16">
                                     <path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z"/>
@@ -123,7 +123,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Route::currentRouteName() == 'policy' ? 'active' : '' }}" href="{{ route('policy') }}">
+                                <a class="nav-link {{ Route::currentRouteName() == 'policy' ? 'active' : '' || Route::currentRouteName() == 'policy_edit' ? 'active' : '' }}" href="{{ route('policy') }}">
                                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
                                             <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
@@ -140,7 +140,7 @@
 
             @if (Auth::user()->role != "moderator")
                 <li class="nav-item ">
-                    <a data-bs-toggle="collapse" href="#about" class="nav-link collapsed" aria-controls="about" role="button" aria-expanded="true">
+                    <a data-bs-toggle="collapse" href="#about" class="nav-link collapsed {{ Route::currentRouteName() == 'core-value' ? 'active' : '' || Route::currentRouteName() == 'organizational-chart' ? 'active' : '' }}" aria-controls="about" role="button" aria-expanded="true">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-question-fill" viewBox="0 0 16 16">
                                 <path d="M5.933.87a2.89 2.89 0 0 1 4.134 0l.622.638.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636zM7.002 11a1 1 0 1 0 2 0 1 1 0 0 0-2 0zm1.602-2.027c.04-.534.198-.815.846-1.26.674-.475 1.05-1.09 1.05-1.986 0-1.325-.92-2.227-2.262-2.227-1.02 0-1.792.492-2.1 1.29A1.71 1.71 0 0 0 6 5.48c0 .393.203.64.545.64.272 0 .455-.147.564-.51.158-.592.525-.915 1.074-.915.61 0 1.03.446 1.03 1.084 0 .563-.208.885-.822 1.325-.619.433-.926.914-.926 1.64v.111c0 .428.208.745.585.745.336 0 .504-.24.554-.627z"/>
