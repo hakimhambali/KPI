@@ -22,9 +22,9 @@
                     
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label class="control-labell" style="font-weight:500">Email</label>
-                                <input wire:model="email" type="email" id="email" name="email" class="form-control" >
-                                @error('email') <span class="error">{{ $message }}</span> @enderror
+                                <label class="control-labell" style="font-weight:500">IC Number</label>
+                                <input wire:model="ic" type="ic" id="ic" name="ic" class="form-control" >
+                                @error('ic') <span class="error">{{ $message }}</span> @enderror
                             </div>
                         </div>
                     

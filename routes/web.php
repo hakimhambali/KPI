@@ -144,7 +144,7 @@ Route::post('/pro/update/complaint/{id}', [Complaint::class, 'update'])->name('c
 //ANNOUNCEMENT FOR HOME PAGE
 Route::post('/hr/announcementuphr/{id_announcement}', [Homepage::class, 'announcementuphr']);
 
-Route::get("/test", [FindOwnerController::class, "index"]);
+Route::get("/findowner", [FindOwnerController::class, "index"]);
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard-hr', DashboardHR::class)->name('dashboard-hr');
@@ -156,6 +156,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/sop', SOP::class)->name('sop');
     Route::get('/policy', Policy::class)->name('policy');
     Route::get('/complaint', Complaint::class)->name('complaint');
+    // Route::get('/findowner', FindOwnerController::class)->name('findowner');
     Route::get('/core-value', CoreValue::class)->name('core-value');
     Route::get('/organizational-chart', OrganizationalChart::class)->name('organizational-chart');
     Route::get('/view-date/{user_id}', [Date::class, 'view_date']);

@@ -302,8 +302,8 @@ class KPI extends Component
         $skor_kpi = 0;
         $skor_sebenar = 0;
         if ($total_score < 30 ) {
-            $skor_kpi = 0;
-            $skor_sebenar = 0;
+            $skor_kpi = $total_score;
+            $skor_sebenar = (($percent_master/100)*$skor_kpi);
         }
         elseif ($total_score >= 30 && $total_score < 65) {
             $value1 = $total_score - 30;
@@ -324,13 +324,21 @@ class KPI extends Component
             $skor_sebenar = (($request->percent_master/100)*$skor_kpi);
         }
 
+        $update = KPIMaster_::find($id)->update([
+            'objektif'=> $request->objektif,
+            'link'=> $request->link,
+            'percent_master'=> $request->percent_master,
+            'pencapaian'=> $total_score,
+            'skor_KPI'=> $skor_kpi,
+            'skor_sebenar'=> $skor_sebenar,
+            'updated_at'=> Carbon::now(),
+        ]);
+
         if (KPIAll_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->count() == 1) {
             $kpiall = KPIAll_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->get();
             $kpiall_id = count($kpiall) > 0 ? $kpiall->sortByDesc('created_at')->first()->id : '0';
 
-            $total_score_master_past = KPIMaster_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->sum('skor_sebenar');
-            $total_score_master_present = $skor_sebenar;
-            $total_score_master = $total_score_master_past + $total_score_master_present;
+            $total_score_master = KPIMaster_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->sum('skor_sebenar');
 
             $grade = '';
             if ($total_score_master >= 80 ) {
@@ -415,16 +423,6 @@ class KPI extends Component
                 'created_at'=> Carbon::now(),
             ]);
         }
-
-        $update = KPIMaster_::find($id)->update([
-            'objektif'=> $request->objektif,
-            'link'=> $request->link,
-            'percent_master'=> $request->percent_master,
-            'pencapaian'=> $total_score,
-            'skor_KPI'=> $skor_kpi,
-            'skor_sebenar'=> $skor_sebenar,
-            'updated_at'=> Carbon::now(),
-        ]);
 
         return redirect('employee/kpi/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month)->with('message', 'KPI Master Updated Successfully');
     }

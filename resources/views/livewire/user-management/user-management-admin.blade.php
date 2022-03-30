@@ -23,7 +23,7 @@
                                             Name
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Email
+                                            IC Number
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             role
@@ -46,7 +46,7 @@
                                             <p class="text-xs font-weight-bold mb-0" value="{{$user->id}}">{{$user->name}}</p>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-xs font-weight-bold mb-0" value="{{$user->id}}">{{$user->email}}</p>
+                                            <p class="text-xs font-weight-bold mb-0" value="{{$user->id}}">{{$user->ic}}</p>
                                         </td>
                                         <td class="text-center">
                                             <p class="text-xs font-weight-bold mb-0" value="{{$user->id}}">{{$user->role}}</p>
@@ -98,7 +98,7 @@
                                             Name
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Email
+                                            IC Number
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             role
@@ -121,7 +121,7 @@
                                             <p class="text-xs font-weight-bold mb-0" value="{{$employee->id}}">{{$employee->name}}</p>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-xs font-weight-bold mb-0" value="{{$employee->id}}">{{$employee->email}}</p>
+                                            <p class="text-xs font-weight-bold mb-0" value="{{$employee->id}}">{{$employee->ic}}</p>
                                         </td>
                                         <td class="text-center">
                                             <p class="text-xs font-weight-bold mb-0" value="{{$employee->id}}">{{$employee->role}}</p>

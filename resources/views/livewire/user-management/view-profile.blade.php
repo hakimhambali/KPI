@@ -57,7 +57,7 @@
               <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Position:</strong> {{ Auth::user()->position }}</li>
               <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Department:</strong> {{ Auth::user()->department }}</li>
               <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Unit:</strong> {{ Auth::user()->unit }}</li>
-              <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> {{ Auth::user()->email}}</li>
+              <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">IC Number:</strong> {{ Auth::user()->ic}}</li>
             </ul>
           </div>
         </div>

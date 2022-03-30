@@ -30,29 +30,28 @@
                 <div class="card-body p-3">
                   <div class="row">
                     <div class="col-md-6 mb-md-0">
-                      <p>KPI Master Percentage</p>  
+                      <p>Objektif KPI</p>  
                       <div class="card card-plain border-radius-lg align-items-center">
-                        <input type="text" class="form-control" id="percent_master" name="percent_master" value="{{ $kpimasters->percent_master }}" >
-                        @error('percent_master') <div class="text-danger">{{ $message }}</div> @enderror
+                          <textarea class="form-control card card-body border card-plain border-radius-lg d-flex align-items-center flex-row" name="objektif" id="objektif" cols="60" rows="10">{{ $kpimasters->objektif }}</textarea>
+                          @error('objektif') <div class="text-danger">{{ $message }}</div> @enderror
                       </div>
                     </div>
                     <div class="col-md-6 mb-md-0">
-                      <div class="row">
                         <p>Evidence Link (Leave blank if does not have any evidence)</p> 
                         <div class="card card-plain border-radius-lg align-items-center">
-                          <input type="text" class="form-control" id="link" name="link" value="{{ $kpimasters->link }}" >
-                          @error('link') <div class="text-danger">{{ $message }}</div> @enderror                        
-                        </div>
+                          <textarea class="form-control card card-body border card-plain border-radius-lg d-flex align-items-center flex-row" name="link" id="link" cols="60" rows="10">{{ $kpimasters->link }}</textarea>
+                          @error('link') <div class="text-danger">{{ $message }}</div> @enderror                      
                       </div>  
                     </div>
                   </div>
                 </div>
                 <div class="card-body p-3">
                   <div class="row">
-                    <div class="col-md-12 mb-md-0">
-                      <p>Objektif KPI</p>  
+                    <div class="col-md-6 mb-md-0">
+                      <p>KPI Master Percentage (Enter any number from 1 to 100 only) :</p>  
                       <div class="card card-plain border-radius-lg align-items-center">
-                          <input id="objektif" name="objektif" class="form-control" type="text" value="{{ $kpimasters->objektif }}">
+                        <input type="text" pattern="[0-9]+" maxlength="3"  class="form-control" id="percent_master" name="percent_master" value="{{ $kpimasters->percent_master }}" required>
+                        @error('percent_master') <div class="text-danger">{{ $message }}</div> @enderror
                       </div>
                     </div>
                   </div>

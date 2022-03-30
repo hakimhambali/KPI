@@ -16,7 +16,7 @@ class EditProfile extends Component
     
     protected $rules = [
         'user.name' => 'max:40|min:3',
-        'user.email' => 'email:rfc,dns',
+        'user.ic' => 'required|min:12|unique:users',
         'user.phone' => 'max:10',
         'user.about' => 'max:200',
         'user.location' => 'min:3'
@@ -39,7 +39,7 @@ class EditProfile extends Component
     public function profile_update(Request $request, $id) { 
         $profile = User::find($id)->update([
             'name' => $request->name,
-            'email' => $request->email,
+            'ic' => $request->ic,
             'nostaff' => $request->nostaff,
             'position' => $request->position,
             'department' => $request->department,

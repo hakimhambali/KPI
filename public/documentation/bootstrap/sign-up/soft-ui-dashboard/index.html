@@ -429,7 +429,7 @@
                     $this->validate();
                     $user = User::create([
                         'name' => $this->name,
-                        'email' => $this->email,
+                        'ic' => $this->ic,
                         'password' => Hash::make($this->password)
                     ]);
                     auth()->login($user);
@@ -445,7 +445,7 @@
             <pre>
             protected $rules = [
                 'name' => 'required|min:3',
-                'email' => 'required|email|unique:users',
+                'ic' => 'required|ic|unique:users',
                 'password' => 'required|min:6'
             ];
             </pre>

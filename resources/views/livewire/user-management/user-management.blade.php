@@ -24,7 +24,7 @@
                                             Name
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-3">
-                                            Email
+                                            IC Number
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-2">
                                             Creation Date
@@ -43,7 +43,7 @@
                                             <p class="text-xs font-weight-bold mb-0" value="{{$moderators->id}}">{{$moderators->name}}</p>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-xs font-weight-bold mb-0" value="{{$moderators->id}}">{{$moderators->email}}</p>
+                                            <p class="text-xs font-weight-bold mb-0" value="{{$moderators->id}}">{{$moderators->ic}}</p>
                                         </td>
                                         <td class="text-center">
                                             <p class="text-xs font-weight-bold mb-0" value="{{$moderators->id}}">{{$moderators->created_at}}</p>
@@ -99,7 +99,7 @@
                                             Name
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-3">
-                                            Email
+                                            IC Number
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-2">
                                             Creation Date
@@ -118,7 +118,7 @@
                                          <p class="text-xs font-weight-bold mb-0" value="{{$hrs->id}}">{{$hrs->name}}</p>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-xs font-weight-bold mb-0" value="{{$hrs->id}}">{{$hrs->email}}</p>
+                                            <p class="text-xs font-weight-bold mb-0" value="{{$hrs->id}}">{{$hrs->ic}}</p>
                                         </td>
                                         <td class="text-center">
                                             <p class="text-xs font-weight-bold mb-0" value="{{$hrs->id}}">{{$hrs->created_at}}</p>
@@ -174,7 +174,7 @@
                                             Name
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-3">
-                                            Email
+                                            IC Number
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-2">
                                             Creation Date
@@ -193,7 +193,7 @@
                                          <p class="text-xs font-weight-bold mb-0" value="{{$managers->id}}">{{$managers->name}}</p>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-xs font-weight-bold mb-0" value="{{$managers->id}}">{{$managers->email}}</p>
+                                            <p class="text-xs font-weight-bold mb-0" value="{{$managers->id}}">{{$managers->ic}}</p>
                                         </td>
                                         <td class="text-center">
                                             <p class="text-xs font-weight-bold mb-0" value="{{$managers->id}}">{{$managers->created_at}}</p>
@@ -249,7 +249,7 @@
                                             Name
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-3">
-                                            Email
+                                            IC Number
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-2">
                                             Creation Date
@@ -268,7 +268,7 @@
                                             <p class="text-xs font-weight-bold mb-0" value="{{$employees->id}}">{{$employees->name}}</p>
                                         </td>
                                         <td class="text-center">
-                                            <p class="text-xs font-weight-bold mb-0" value="{{$employees->id}}">{{$employees->email}}</p>
+                                            <p class="text-xs font-weight-bold mb-0" value="{{$employees->id}}">{{$employees->ic}}</p>
                                         </td>
                                         <td class="text-center">
                                             <p class="text-xs font-weight-bold mb-0" value="{{$employees->id}}">{{$employees->created_at}}</p>

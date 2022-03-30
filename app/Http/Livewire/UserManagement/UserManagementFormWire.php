@@ -10,7 +10,7 @@ class UserManagementFormWire extends Component
 {
     public $id_user;
     public $name;
-    public $email;
+    public $ic;
     public $role;
     public $password;
     public $model_id;
@@ -23,7 +23,7 @@ class UserManagementFormWire extends Component
         $user = User::find($model_id);
         $this->model_id = $user->id;
         $this->name = $user->name;
-        $this->email = $user->email;
+        $this->ic = $user->ic;
         $this->password = $user->password;
         $this->role = $user->role;
     }
@@ -34,12 +34,12 @@ class UserManagementFormWire extends Component
         {
             $this->validate([
                 'name' => 'required|string|max:255',
-                'email' => 'required|string|email|max:255',
+                'ic' => 'required|min:12|unique:users',
                 'role' => 'required',
             ]);
             $update = User::find($this->model_id);
             $update->name = $this->name;
-            $update->email = $this->email;
+            $update->ic = $this->ic;
             if(($this->password != null) || ($this->password != ''))
             {
                 $this->validate([
@@ -57,13 +57,13 @@ class UserManagementFormWire extends Component
         {
             $this->validate([
                 'name' => 'required|string|max:255',
-                'email' => 'required|string|email|max:255|unique:users',
+                'ic' => 'required|min:12|unique:users',
                 'password' => 'required|string|min:6',
                 'role' => 'required',
             ]);
             $add = New User;
             $add->name = $this->name;
-            $add->email = $this->email;
+            $add->ic = $this->ic;
             $add->password = Hash::make($this->password);
             $add->role = $this->role;
             $add->save();
