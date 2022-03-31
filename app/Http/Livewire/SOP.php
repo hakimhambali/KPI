@@ -134,7 +134,7 @@ class SOP extends Component
 
     public function render()
     {
-        $sop = SOP_::all();
+        $sop = SOP_::all() ;
         $sop1 = SOP_::where('part', '=', '01 FORM')->get();
         $sop2 = SOP_::where('part', '=', '02 PROCEDURE')->get();
         $sop3 = SOP_::where('part', '=', '03 WORK INSTRUCTION')->get();

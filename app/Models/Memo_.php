@@ -13,8 +13,8 @@ class Memo_ extends Model
     protected $fillable = [
         'title',
         'memo_path',
-        'user_id',
-        'description'
+        'description',
+        'user_id'
     ];
 
     public function user(){

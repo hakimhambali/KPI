@@ -119,7 +119,10 @@
                             @foreach ($complaint as $key => $complaints)
                               <tr>
                                 <td class="text-sm text-center">{{$key + 1}}</td>
-                                <td class="text-xs fw-bold">{{ $complaints->user->name }}</td>
+                                <td class="text-xs">
+                                  <b>{{ $complaints->user->name }}</b><br>
+                                  {{ $complaints->user->position }}
+                                </td>
                                 <td class="text-xs fw-bold">{{ $complaints->user->department }}</td>
                                 <td class="text-xs fw-bold">{{ date('d/m/Y', strtotime($complaints->updated_at)) }}</td>
                                 <td class="text-xs fw-bold">
@@ -154,8 +157,8 @@
                                     @if($complaints->status == "Incomplete")
                                       <button type="submit" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Update Status"><i class="bi bi-pencil-square"></i></button>
                                     @endif
-                                  <button type="button" wire:click="selectItem({{$complaints->id}})" class="btn btn-danger btn-sm btn-icon data-delete" data-form="{{$complaints->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
-          </form>
+                                    <button type="button" wire:click="selectItem({{$complaints->id}})" class="btn btn-danger btn-sm btn-icon data-delete" data-form="{{$complaints->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
+                                  </form>
                                 </td>
                                 
                               </tr>

@@ -5137,7 +5137,7 @@ fieldset:disabled .btn {
 }
 
 .accordion-button:not(.collapsed) {
-  color: #252f40;
+  color: #000;
   background-color: transparent;
   box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.125);
 }
@@ -5145,6 +5145,7 @@ fieldset:disabled .btn {
 .accordion-button:not(.collapsed)::after {
   background-image: none;
   transform: rotate(180deg);
+  color: #000;
 }
 
 .accordion-button::after {
@@ -5157,6 +5158,7 @@ fieldset:disabled .btn {
   background-repeat: no-repeat;
   background-size: 1rem;
   transition: transform 0.2s ease-in-out;
+  color: #000;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -5167,6 +5169,7 @@ fieldset:disabled .btn {
 
 .accordion-button:hover {
   z-index: 2;
+  background-color: #fcf2f2;
 }
 
 .accordion-button:focus {
@@ -5182,7 +5185,7 @@ fieldset:disabled .btn {
 
 .accordion-item {
   background-color: transparent;
-  border: 0 solid rgba(0, 0, 0, 0.125);
+  border: 5 solid black;
 }
 
 .accordion-item:first-of-type {
@@ -5207,6 +5210,7 @@ fieldset:disabled .btn {
 .accordion-item:last-of-type .accordion-button.collapsed {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
+  
 }
 
 .accordion-item:last-of-type .accordion-collapse {

@@ -88,15 +88,16 @@
 
                   <div class="table-responsive">
                     <table class="table table-hover table-sm align-middle">
-                      <thead>
+                      <thead class="text-center text-xxs fw-bolder">
                         <tr>
-                          <th class="text-center text-uppercase text-secondary text-xxs fw-bolder opacity-7">No</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs fw-bolder opacity-7">Title</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs fw-bolder opacity-7">Description</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Posted</th>
-                          <th class="text-center text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Memo</th>
+                          <th>NO</th>
+                          <th>TITLE</th>
+                          <th>DESCRIPTION</th>
+                          <th>POSTED</th>
                           @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin'|| auth()->user()->department == 'Operation')
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+                            <th class="col-2">ACTION</th>
+                          @else
+                            <th>ACTION</th>
                           @endif
                         </tr>
                       </thead>
@@ -112,15 +113,13 @@
                               <b>{{ date('j F Y', strtotime($memos->updated_at)) }} </b> <br>
                                 by {{ $memos->user->name }}
                             </td>
-                            <td class="text-center fs-4">
-                              <a href="{{ $memos->memo_path }}" style="color: red;" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View Memo"><i class="bi bi-file-earmark-pdf-fill"></i></a>
-                            </td>
-                            @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin'|| auth()->user()->department == 'Operation')
-                              <td class="text-center">
+                            <td class="text-center mx-auto">
+                              <a href="{{ $memos->memo_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View Memo"><i class="bi bi-file-earmark-pdf-fill"></i></a>
+                              @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin'|| auth()->user()->department == 'Operation')
                                 <a href="{{ url('hr/edit/memo/'.$memos->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
                                 <button type="button" wire:click="selectItem({{$memos->id}})" class="btn btn-danger btn-sm btn-icon data-delete" data-form="{{$memos->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
-                              </td>
-                            @endif
+                              @endif
+                            </td>
                           </tr>
                         @endforeach
                       </tbody>

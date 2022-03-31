@@ -11,14 +11,14 @@ class Nilai_ extends Model
     protected $table = 'nilai';
     protected $fillable = [
         'nilai_teras',
-        'peratus',
-        'ukuran',
-        'skor_pekerja',
-        'skor_penyelia',
-        'skor_sebenar',
-        'weightage',
         'user_id',
         'year',
         'month',
+        'skor_penyelia',
+        'weightage',
+        'skor_sebenar',
+        'skor_pekerja',
+        'ukuran',
+        'peratus', 
     ];
 }

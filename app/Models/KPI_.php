@@ -20,11 +20,11 @@ class KPI_ extends Model
         'pencapaian',
         'skor_KPI', 
         'skor_sebenar',
-        'kpimaster_id',
-        'user_id',
+        'bukti_path',
         'year',
         'month',
-        'bukti_path',
+        'user_id',
+        'kpimaster_id',
     ];
 
     public function kpimasters() {

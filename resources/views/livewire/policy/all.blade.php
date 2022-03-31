@@ -19,144 +19,126 @@
         </style>  
         <body>
         @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin')
-        <div class="container-fluid py-4">
+          <div class="container-fluid pb-4">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-md-12 mb-lg-0 mb-4">
-                            @if (session('message'))
-                                <div class="alert alert-success alert-dismissible fade show" role="alert"><strong>{{ session('message') }}</strong></div>	
-                            @endif
-                            @if (session('fail'))
-                                <div class="alert alert-warning alert-dismissible fade show" role="alert"><strong>{{ session('fail') }}</strong></div>
-                            @endif
-                            <div class="card mt-4">
-                                <div class="card-header pb-0 p-3">
-                                    <div class="row">
-                                        <div class="col-6 d-flex align-items-center"><h6>Policy</h6></div>
-                                    </div>
+              <div class="col-lg-12">
+
+                <div class="row">
+                  <div class="col-md-12 mb-lg-0 mb-4">
+                    @if (session('message'))
+                      <div class="alert alert-success alert-dismissible fade show" role="alert"><strong>{{ session('message') }}</strong></div>	
+                    @endif
+                    @if (session('fail'))
+                      <div class="alert alert-warning alert-dismissible fade show" role="alert"><strong>{{ session('fail') }}</strong></div>
+                    @endif
+                              
+                    <div class="card">
+                      <form action="{{ url('/hr/create/policy') }}" method="post" enctype="multipart/form-data">
+                      @csrf  
+                        <div class="card-body">
+                          <h6>CREATE POLICY</h6><hr>
+
+                          <div class="col-md-12 mb-3 mt-2">
+                            <label class="form-label">Title<span class="text-danger">*</span></label>
+                            <input class="form-control" type="text" name="title" value="{{ old('title') }}" placeholder="Please Insert Title of Policy" required>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-4 mb-3" id="policyupload">
+                              <div class="form-group">
+                                <label class="form-label">Policy Upload<span class="text-danger">*</span></label>
+                                <div
+                                    x-data="{ isUploading: false, progress: 0 }"
+                                    x-on:livewire-upload-start="isUploading = true"
+                                    x-on:livewire-upload-finish="isUploading = false"
+                                    x-on:livewire-upload-error="isUploading = false"
+                                    x-on:livewire-upload-progress="progress = $event.detail.progress">
+                                  <div wire:loading wire:target="policy_path"><i class="mdi mdi-loading mdi-spin mdi-24px"></i></div>
+                                  <input type="file" wire:model="policy_path" id="policy_path" name="policy_path" class="form-control bg-white border-white" required />
+                                    @error('policy_path') <span class="error" style="color:red"><b>{{ $message }}</b></span> @enderror
+                                  <div x-show="isUploading"><progress max="100" x-bind:value="progress"></progress></div>
                                 </div>
-                                <form action="{{ url('/hr/create/policy') }}" method="post" enctype="multipart/form-data">
-                                @csrf  
-                                <div class="card-body p-3">
-                                  <div class="row">
-                                    <label class="font-weight-bold">Title</label>
-                                    <div class="card card-plain border-radius-lg align-items-center">
-                                        <input class="form-control form-control-lg" type="text" name="title" value="" required>
-                                    </div>
-                                    <div class="col-md-4 mt-2" id="policyupload">
-                                        <div class="form-group">
-                                            <label class="font-weight-bold">Policy Upload</label>
-                                            <div
-                                                x-data="{ isUploading: false, progress: 0 }"
-                                                x-on:livewire-upload-start="isUploading = true"
-                                                x-on:livewire-upload-finish="isUploading = false"
-                                                x-on:livewire-upload-error="isUploading = false"
-                                                x-on:livewire-upload-progress="progress = $event.detail.progress">
-                                            <div wire:loading wire:target="policy_path"><i class="mdi mdi-loading mdi-spin mdi-24px"></i></div>
-                                                <input type="file" wire:model="policy_path" id="policy_path" name="policy_path" class="dropify" required />
-                                                @error('policy_path') <span class="error" style="color:red"><b>{{ $message }}</b></span> @enderror
-                                                <div x-show="isUploading">
-                                                    <progress max="100" x-bind:value="progress"></progress>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="font-weight-bold" >Description</label>
-                                        <textarea class="form-control card card-body border card-plain border-radius-lg d-flex align-items-center flex-row" name="description" id="description" cols="60" rows="10" placeholder="Type your description here..."  required></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="mt-2" style="text-align: right">
-                                        <div class="col-12 text-end">
-                                          <button class="btn bg-gradient-dark mb-0" type="submit" href="javascript:;"><i class="fas fa-plus"></i>&nbsp;&nbsp;SAVE</button>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </form>     
+                              </div>
                             </div>
+
+                            <div class="col-md-8 mb-3">
+                              <label class="form-label">Description<span class="text-danger">*</span></label>
+                              <textarea class="form-control" name="description" id="description" rows="11" placeholder="Please insert the policy description here..."></textarea>
+                            </div>
+                          </div>
+
+                          <div class="col-12 text-end">
+                            <button class="btn bg-gradient-dark btn-sm px-4" type="submit" href="javascript:;">SAVE</button>
+                          </div>
+
                         </div>
+                      </form>     
                     </div>
-                </div>
-            </div>
-            @endif
-        </div>
-    
-        <div class="container-fluid py-4">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card ">
-                  <div class="card-header pb-0">
-                    <h6>All Policy</h6>
+
                   </div>
-                  <div class="card-body px-0 pt-0 pb-2">
-                    <div class="p-0">
-                      <table class="table align-items-center mb-0">
-                        <thead>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        @endif
+
+        <div class="container-fluid py-4">
+          <div class="row">
+            <div class="col-md-12">
+              
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="mb-3">ALL POLICY</h6>
+
+                  <div class="table-responsive">
+                    <table class="table table-hover table-sm align-middle">
+                      <thead class="text-center text-xxs fw-bold">
+                        <tr>
+                          <th>NO</th>
+                          <th>TITLE</th>
+                          <th>DESRIPTION</th>
+                          <th>TEAM</th>
+                          <th>DATE</th>
+                          @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin')
+                            <th class="col-2">ACTION</th>
+                          @else
+                            <th>ACTION</th>
+                          @endif
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        @php($i = 1)
+                        @foreach ($policy as $key => $policys)
                           <tr>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Title</th>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Team</th>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Position</th>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date</th>
-                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Policy</th>
-                            @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin')
-                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
-                            @endif
-                          </tr>
-                        </thead>
-                        <tbody>
-                          @php($i = 1)
-                          @foreach ($policy as $key => $policys)
-                            <tr>
-                              <td>    
-                                <div class="d-flex px-2 py-1">
-                                  <div class="d-flex flex-column justify-content-center">
-                                    <p class="mb-0 text-sm" value="{{$key + 1}}">{{$key + 1}}</p>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>
-                                <p class="text-xs font-weight-bold mb-0" value="{{ $policys->title }}">{{ $policys->title }}</p>
-                              </td>
-                              <td>
-                                <p class="text-xs font-weight-bold mb-0" value="{{ $policys->user->name }}">{{  $policys->user->name }}</p>
-                              </td>
-                              <td>
-                                <p class="text-xs font-weight-bold mb-0" value="{{ $policys->user->position }}">{{  $policys->user->position }}</p>
-                              </td>
-                              <td class="text-xs font-weight-bold mb-0">{{date('j F Y', strtotime($policys->updated_at))}} </td>
-                              <td class="align-middle text-center">
-                                <a href=" {{ $policys->policy_path }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">View</a>
-                              </td>
+                            <td class="text-xs text-center">{{ $key + 1 }}</td>
+                            <td class="text-xs fw-bold">{{ $policys->title }}</td>
+                            <td class="text-xs">{{ $policys->description }}</td>
+                            <td class="text-xs">
+                              <b>{{  $policys->user->name }}</b> <br>
+                              {{ $policys->user->position }}
+                            </td>
+                            <td class="text-xs fw-bold text-center">{{date('j F Y', strtotime($policys->updated_at))}}</td>
+                            <td class="text-center">
+                              <a href="{{ $policys->policy_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i></a>
                               @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin')
-                              <td class="align-middle">
-                                <div class="col-lg-6 col-5 my-auto text-middle">
-                                  <div class="dropdown float-lg-start pe-4">
-                                    <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
-                                      <i class="fa fa-ellipsis-v text-secondary"></i>
-                                    </a>
-                                    <ul class="dropdown-menu px-2 py-3 ms-n4 ms-n5" aria-labelledby="dropdownTable">
-                                      <li><a href="{{ url('hr/edit/policy/'.$policys->id) }}" class="dropdown-item border-radius-md" role="button">Edit</a></li>
-                                      <li><button type="button" wire:click="selectItem({{$policys->id}})" class="dropdown-item border-radius-md data-delete" style="color: red;" data-form="{{$policys->id}}">Delete</button></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </td>
+                                <a href="{{ url('hr/edit/policy/'.$policys->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                <button type="button" wire:click="selectItem({{$policys->id}})" class="btn btn-danger btn-sm btn-icon data-delete" data-form="{{$policys->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
                               @endif
-                            </tr>
-                          @endforeach
-                        </tbody>
-                      </table>
-                    </div>
+                            </td>
+                          </tr>
+                        @endforeach
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
             </div>
-          </div> 
+          </div>
+        </div> 
     
-          @push('scripts')
+        @push('scripts')
           <script>
             document.addEventListener('livewire:load', function () {
               $(document).on("click", ".data-delete", function (e) 
