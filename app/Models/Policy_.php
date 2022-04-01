@@ -14,6 +14,7 @@ class Policy_ extends Model
         'title',
         'policy_path',
         'user_id',
+        'description',
     ];
 
     public function user(){

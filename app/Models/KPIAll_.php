@@ -15,13 +15,13 @@ class KPIAll_ extends Model
         'total_score_master',
         'grade_all',
         'total_score_all',
+        'user_id',
+        'year',
+        'month',
         'weightage_kecekapan',
         'total_score_kecekapan',
         'weightage_nilai',
         'total_score_nilai',
-        'year',
-        'month',
-        'user_id',
     ];
 
     public function kpimasters() {
