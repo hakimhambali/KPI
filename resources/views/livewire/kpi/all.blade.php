@@ -2117,6 +2117,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($pelangganIImasters->link != '')
                     @php $links = json_decode($pelangganIImasters->link); @endphp
                     
+                    @if ($links == NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -2130,7 +2131,7 @@ input[type=file]::file-selector-button:hover {
                         <?php $num_of_link=4 ?>
                         @elseif ($links[4] != NULL)
                         <?php $num_of_link=5 ?>
-                        @endif
+                      @endif
 
                         @for($i=0 ; $i<$num_of_link; $i++)
                         <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
@@ -2142,6 +2143,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
