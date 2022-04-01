@@ -316,6 +316,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kadskormasters->link != '')
                     @php $links = json_decode($kadskormasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -341,6 +342,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -467,6 +473,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kewanganmasters->link != '')
                     @php $links = json_decode($kewanganmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -492,6 +499,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -617,6 +629,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kewanganmasters->link != '')
                     @php $links = json_decode($kewanganmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -642,6 +655,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -767,6 +785,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kewanganmasters->link != '')
                     @php $links = json_decode($kewanganmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -792,6 +811,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -917,6 +941,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kewanganmasters->link != '')
                     @php $links = json_decode($kewanganmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -942,6 +967,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -1067,6 +1097,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kewanganmasters->link != '')
                     @php $links = json_decode($kewanganmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -1092,6 +1123,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -1217,6 +1253,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kewanganmasters->link != '')
                     @php $links = json_decode($kewanganmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -1242,6 +1279,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -1367,6 +1409,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kewanganmasters->link != '')
                     @php $links = json_decode($kewanganmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -1392,6 +1435,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -1517,6 +1565,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kewanganmasters->link != '')
                     @php $links = json_decode($kewanganmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -1542,6 +1591,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -1667,6 +1721,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kewanganmasters->link != '')
                     @php $links = json_decode($kewanganmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -1692,6 +1747,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -1817,6 +1877,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kewanganmasters->link != '')
                     @php $links = json_decode($kewanganmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -1842,6 +1903,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -1967,6 +2033,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($pelangganImasters->link != '')
                     @php $links = json_decode($pelangganImasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -1992,6 +2059,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -2273,6 +2345,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kecemerlanganmasters->link != '')
                     @php $links = json_decode($kecemerlanganmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -2298,6 +2371,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -2423,6 +2501,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kecemerlanganmasters->link != '')
                     @php $links = json_decode($kecemerlanganmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -2448,6 +2527,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -2573,6 +2657,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kecemerlanganmasters->link != '')
                     @php $links = json_decode($kecemerlanganmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -2598,6 +2683,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -2723,6 +2813,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kecemerlanganmasters->link != '')
                     @php $links = json_decode($kecemerlanganmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -2748,6 +2839,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -2873,6 +2969,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kecemerlanganmasters->link != '')
                     @php $links = json_decode($kecemerlanganmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -2898,6 +2995,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -3022,6 +3124,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($trainingmasters->link != '')
                     @php $links = json_decode($trainingmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -3047,6 +3150,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -3171,6 +3279,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($ncrmasters->link != '')
                     @php $links = json_decode($ncrmasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -3196,6 +3305,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
@@ -3320,6 +3434,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($kolaborasimasters->link != '')
                     @php $links = json_decode($kolaborasimasters->link); @endphp
                     
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
@@ -3345,6 +3460,11 @@ input[type=file]::file-selector-button:hover {
                         <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                         </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                      </span></span>
+                    @endif
                     @else
                     <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
                       <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
