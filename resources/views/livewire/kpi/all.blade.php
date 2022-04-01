@@ -2117,7 +2117,7 @@ input[type=file]::file-selector-button:hover {
                     @if ($pelangganIImasters->link != '')
                     @php $links = json_decode($pelangganIImasters->link); @endphp
                     
-                    @if ($links == NULL)
+                    @if ($links != NULL)
                       @if ($links[0] != NULL)
                         @if ($links[0] == NULL)
                         <?php $num_of_link=0 ?>
