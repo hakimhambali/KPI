@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Displaykpi_;
 use App\Models\KPI_;
 use App\Models\KPIAll_;
 use App\Models\KPIMaster_;
@@ -85,7 +84,6 @@ class Displaykpi extends Component
         $hrs = User::Where('department' , 'Human Resource (HR) & Administration')->orWhere('role' , 'admin')->get();
         $user = User::where('id', '=', auth()->user()->id)->get();
         $kecekapan = Kecekapan_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->get();
-        $displaykpi = Displaykpi_::latest()->where('year', '=', $year)->where('month', '=', $month)->get();
         $nilai = Nilai_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->get();
         $kpiall = KPIAll_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->get();
         $weightage_master = KpiAll_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('weightage_master');
