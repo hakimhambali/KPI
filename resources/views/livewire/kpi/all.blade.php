@@ -309,16 +309,47 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kadskormasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kadskormasters->link == '')
-                      <a href=" {{ $kadskormasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kadskormasters->link != '')
+                    @php $links = json_decode($kadskormasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kadskormasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kadskormasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kadskormasters -> objektif }}</span></span>
                   </div>
+
                   <div class="ms-auto text-end">
                     <a href="{{ url('employee/edit/kpimaster1/'.$kadskormasters->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
                   </div>
@@ -429,14 +460,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kewanganmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kewanganmasters->link == '')
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kewanganmasters->link != '')
+                    @php $links = json_decode($kewanganmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kewanganmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kewanganmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -549,14 +610,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kewanganmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kewanganmasters->link == '')
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kewanganmasters->link != '')
+                    @php $links = json_decode($kewanganmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kewanganmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kewanganmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -669,14 +760,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kewanganmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kewanganmasters->link == '')
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kewanganmasters->link != '')
+                    @php $links = json_decode($kewanganmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kewanganmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kewanganmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -789,14 +910,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kewanganmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kewanganmasters->link == '')
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kewanganmasters->link != '')
+                    @php $links = json_decode($kewanganmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kewanganmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kewanganmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -909,14 +1060,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kewanganmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kewanganmasters->link == '')
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kewanganmasters->link != '')
+                    @php $links = json_decode($kewanganmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kewanganmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kewanganmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -1029,14 +1210,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kewanganmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kewanganmasters->link == '')
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kewanganmasters->link != '')
+                    @php $links = json_decode($kewanganmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kewanganmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kewanganmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -1149,14 +1360,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kewanganmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kewanganmasters->link == '')
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kewanganmasters->link != '')
+                    @php $links = json_decode($kewanganmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kewanganmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kewanganmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -1269,14 +1510,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kewanganmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kewanganmasters->link == '')
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kewanganmasters->link != '')
+                    @php $links = json_decode($kewanganmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kewanganmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kewanganmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -1389,14 +1660,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kewanganmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kewanganmasters->link == '')
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kewanganmasters->link != '')
+                    @php $links = json_decode($kewanganmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kewanganmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kewanganmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -1509,14 +1810,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kewanganmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kewanganmasters->link == '')
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kewanganmasters->link != '')
+                    @php $links = json_decode($kewanganmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kewanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kewanganmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kewanganmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -1629,14 +1960,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $pelangganImasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($pelangganImasters->link == '')
-                      <a href=" {{ $pelangganImasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($pelangganImasters->link != '')
+                    @php $links = json_decode($pelangganImasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $pelangganImasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $pelangganImasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $pelangganImasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -1749,14 +2110,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $pelangganIImasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($pelangganIImasters->link == '')
-                      <a href=" {{ $pelangganIImasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($pelangganIImasters->link != '')
+                    @php $links = json_decode($pelangganIImasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $pelangganIImasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $pelangganIImasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $pelangganIImasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -1869,14 +2260,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kecemerlanganmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kecemerlanganmasters->link == '')
-                      <a href=" {{ $kecemerlanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kecemerlanganmasters->link != '')
+                    @php $links = json_decode($kecemerlanganmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kecemerlanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kecemerlanganmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kecemerlanganmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -1989,14 +2410,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kecemerlanganmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kecemerlanganmasters->link == '')
-                      <a href=" {{ $kecemerlanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kecemerlanganmasters->link != '')
+                    @php $links = json_decode($kecemerlanganmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kecemerlanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kecemerlanganmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kecemerlanganmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -2109,14 +2560,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kecemerlanganmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kecemerlanganmasters->link == '')
-                      <a href=" {{ $kecemerlanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kecemerlanganmasters->link != '')
+                    @php $links = json_decode($kecemerlanganmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kecemerlanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kecemerlanganmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kecemerlanganmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -2229,14 +2710,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kecemerlanganmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kecemerlanganmasters->link == '')
-                      <a href=" {{ $kecemerlanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kecemerlanganmasters->link != '')
+                    @php $links = json_decode($kecemerlanganmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kecemerlanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kecemerlanganmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kecemerlanganmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -2349,14 +2860,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kecemerlanganmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kecemerlanganmasters->link == '')
-                      <a href=" {{ $kecemerlanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kecemerlanganmasters->link != '')
+                    @php $links = json_decode($kecemerlanganmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kecemerlanganmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kecemerlanganmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kecemerlanganmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -2468,14 +3009,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $trainingmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($trainingmasters->link == '')
-                      <a href=" {{ $trainingmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($trainingmasters->link != '')
+                    @php $links = json_decode($trainingmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $trainingmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $trainingmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $trainingmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -2587,14 +3158,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $ncrmasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($ncrmasters->link == '')
-                      <a href=" {{ $ncrmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($ncrmasters->link != '')
+                    @php $links = json_decode($ncrmasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $ncrmasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $ncrmasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $ncrmasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">
@@ -2706,14 +3307,44 @@ input[type=file]::file-selector-button:hover {
               <ul class="list-group">
                 <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                   <div class="d-flex flex-column">
+                    <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is required, please insert your KPI Master information</span>
+                    <br>
                     <span class="mb-2 text-xs">KPI Master Percentage :<span class="text-dark font-weight-bold ms-sm-1">{{ $kolaborasimasters -> percent_master }}</span></span>
-                    <span class="mb-2 text-xs">Evidence Link :<span class="text-dark ms-sm-1 font-weight-bold">
-                      @if ($kolaborasimasters->link == '')
-                      <a href=" {{ $kolaborasimasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+
+                    @if ($kolaborasimasters->link != '')
+                    @php $links = json_decode($kolaborasimasters->link); @endphp
+                    
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                        <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                        <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                        <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                        <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                        <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                        <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                        <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $links[$i] }}</a>
+                          </span></span>
+                        @endfor
                       @else
-                      <a href=" {{ $kolaborasimasters -> link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">{{ $kolaborasimasters -> link }}</a>
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        </span></span>
                       @endif
+                    @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
                       </span></span>
+                    @endif
+
                     <span class="text-xs">KPI Objective :<span class="text-dark ms-sm-1 font-weight-bold">{{ $kolaborasimasters -> objektif }}</span></span>
                   </div>
                   <div class="ms-auto text-end">

@@ -292,6 +292,8 @@ class KPI extends Component
             'updated_at'=> Carbon::now(),
         ]);
 
+        $input['link'] = json_encode($request->all()['link']);
+
         Date_::find($date_id)->update([
             'status'=> 'Not Submitted',
         ]);
@@ -326,7 +328,7 @@ class KPI extends Component
 
         $update = KPIMaster_::find($id)->update([
             'objektif'=> $request->objektif,
-            'link'=> $request->link,
+            'link'=> $input['link'],
             'percent_master'=> $request->percent_master,
             'pencapaian'=> $total_score,
             'skor_KPI'=> $skor_kpi,

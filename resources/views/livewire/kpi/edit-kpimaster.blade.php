@@ -35,25 +35,58 @@
                           <textarea class="form-control card card-body border card-plain border-radius-lg d-flex align-items-center flex-row" name="objektif" id="objektif" cols="60" rows="10">{{ $kpimasters->objektif }}</textarea>
                           @error('objektif') <div class="text-danger">{{ $message }}</div> @enderror
                       </div>
+                      <br>
+                        <p>KPI Master Percentage (Enter any number from 1 to 100 only) :</p>  
+                        <div class="card card-plain border-radius-lg align-items-center">
+                          <input type="text" pattern="[0-9]+" maxlength="3"  class="form-control" id="percent_master" name="percent_master" value="{{ $kpimasters->percent_master }}" required>
+                          @error('percent_master') <div class="text-danger">{{ $message }}</div> @enderror
+                        </div>
                     </div>
+                    @if ($kpimasters->link != '')
+                    @php $links = json_decode($kpimasters->link); @endphp
                     <div class="col-md-6 mb-md-0">
                         <p>Evidence Link (Leave blank if does not have any evidence)</p> 
-                        <div class="card card-plain border-radius-lg align-items-center">
-                          <textarea class="form-control card card-body border card-plain border-radius-lg d-flex align-items-center flex-row" name="link" id="link" cols="60" rows="10">{{ $kpimasters->link }}</textarea>
-                          @error('link') <div class="text-danger">{{ $message }}</div> @enderror                      
-                      </div>  
+                        <p>Evidence Link 1 (Please insert in order, do not skip numbering)</p>
+                        <input type="text" class="form-control" id="link" name="link[]" value="@if($links != NULL) {{($links[0])}} @endif">
+                        @error('link') <div class="text-danger">{{ $message }}</div> @enderror
+                        <p>Evidence Link 2</p>
+                        <input type="text" class="form-control" id="link" name="link[]" value="@if($links != NULL) {{($links[1])}} @endif">
+                        @error('link') <div class="text-danger">{{ $message }}</div> @enderror
+                        <p>Evidence Link 3</p>
+                        <input type="text" class="form-control" id="link" name="link[]" value="@if($links != NULL) {{($links[2])}} @endif">
+                        @error('link') <div class="text-danger">{{ $message }}</div> @enderror
+                        <p>Evidence Link 4</p>
+                        <input type="text" class="form-control" id="link" name="link[]" value="@if($links != NULL) {{($links[3])}} @endif">
+                        @error('link') <div class="text-danger">{{ $message }}</div> @enderror
+                        <p>Evidence Link 5</p> 
+                        <input type="text" class="form-control" id="link" name="link[]" value="@if($links != NULL) {{($links[4])}} @endif">
+                        @error('link') <div class="text-danger">{{ $message }}</div> @enderror 
                     </div>
+                    @else
+                    <div class="col-md-6 mb-md-0">
+                      <p>Evidence Link (Leave blank if does not have any evidence)</p> 
+                      <p>Evidence Link 1</p>
+                      <input type="text" class="form-control" id="link" name="link[]">
+                      @error('link') <div class="text-danger">{{ $message }}</div> @enderror
+                      <p>Evidence Link 2</p>
+                      <input type="text" class="form-control" id="link" name="link[]">
+                      @error('link') <div class="text-danger">{{ $message }}</div> @enderror
+                      <p>Evidence Link 3</p>
+                      <input type="text" class="form-control" id="link" name="link[]">
+                      @error('link') <div class="text-danger">{{ $message }}</div> @enderror
+                      <p>Evidence Link 4</p>
+                      <input type="text" class="form-control" id="link" name="link[]">
+                      @error('link') <div class="text-danger">{{ $message }}</div> @enderror
+                      <p>Evidence Link 5</p> 
+                      <input type="text" class="form-control" id="link" name="link[]">
+                      @error('link') <div class="text-danger">{{ $message }}</div> @enderror 
+                  </div>
+                    @endif
                   </div>
                 </div>
                 <div class="card-body p-3">
                   <div class="row">
-                    <div class="col-md-6 mb-md-0">
-                      <p>KPI Master Percentage (Enter any number from 1 to 100 only) :</p>  
-                      <div class="card card-plain border-radius-lg align-items-center">
-                        <input type="text" pattern="[0-9]+" maxlength="3"  class="form-control" id="percent_master" name="percent_master" value="{{ $kpimasters->percent_master }}" required>
-                        @error('percent_master') <div class="text-danger">{{ $message }}</div> @enderror
-                      </div>
-                    </div>
+
                   </div>
                 </div>
                 <div class="col-12 text-end p-3">

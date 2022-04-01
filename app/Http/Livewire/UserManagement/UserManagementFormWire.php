@@ -34,7 +34,7 @@ class UserManagementFormWire extends Component
         {
             $this->validate([
                 'name' => 'required|string|max:255',
-                'ic' => 'required|min:12|unique:users',
+                'ic' => 'required|min:12',
                 'role' => 'required',
             ]);
             $update = User::find($this->model_id);
