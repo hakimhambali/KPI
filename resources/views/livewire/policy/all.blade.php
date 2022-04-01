@@ -91,47 +91,52 @@
                 <div class="card-body">
                   <h6 class="mb-3">ALL POLICY</h6>
 
-                  <div class="table-responsive">
-                    <table class="table table-hover table-sm align-middle">
-                      <thead class="text-center text-xxs fw-bold">
-                        <tr>
-                          <th>NO</th>
-                          <th>TITLE</th>
-                          <th>DESRIPTION</th>
-                          <th>TEAM</th>
-                          <th>DATE</th>
-                          @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin')
-                            <th class="col-2">ACTION</th>
-                          @else
-                            <th>ACTION</th>
-                          @endif
-                        </tr>
-                      </thead>
-
-                      <tbody>
-                        @php($i = 1)
-                        @foreach ($policy as $key => $policys)
+                  @if(!empty($policy) && $policy->count())
+                    <div class="table-responsive">
+                      <table class="table table-hover table-sm align-middle">
+                        <thead class="text-center text-xxs fw-bold">
                           <tr>
-                            <td class="text-xs text-center">{{ $key + 1 }}</td>
-                            <td class="text-xs fw-bold">{{ $policys->title }}</td>
-                            <td class="text-xs">{{ $policys->description }}</td>
-                            <td class="text-xs">
-                              <b>{{  $policys->user->name }}</b> <br>
-                              {{ $policys->user->position }}
-                            </td>
-                            <td class="text-xs fw-bold text-center">{{date('j F Y', strtotime($policys->updated_at))}}</td>
-                            <td class="text-center">
-                              <a href="{{ $policys->policy_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i></a>
-                              @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin')
-                                <a href="{{ url('hr/edit/policy/'.$policys->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
-                                <button type="button" wire:click="selectItem({{$policys->id}})" class="btn btn-danger btn-sm btn-icon data-delete" data-form="{{$policys->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
-                              @endif
-                            </td>
+                            <th>NO</th>
+                            <th>TITLE</th>
+                            <th>DESRIPTION</th>
+                            <th>TEAM</th>
+                            <th>DATE</th>
+                            @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin')
+                              <th class="col-2">ACTION</th>
+                            @else
+                              <th>ACTION</th>
+                            @endif
                           </tr>
-                        @endforeach
-                      </tbody>
-                    </table>
-                  </div>
+                        </thead>
+
+                        <tbody>
+                          @php($i = 1)
+                          @foreach ($policy as $key => $policys)
+                            <tr>
+                              <td class="text-xs text-center">{{ $key + 1 }}</td>
+                              <td class="text-xs fw-bold">{{ $policys->title }}</td>
+                              <td class="text-xs">{{ $policys->description }}</td>
+                              <td class="text-xs">
+                                <b>{{  $policys->user->name }}</b> <br>
+                                {{ $policys->user->position }}
+                              </td>
+                              <td class="text-xs fw-bold text-center">{{date('j F Y', strtotime($policys->updated_at))}}</td>
+                              <td class="text-center">
+                                <a href="{{ $policys->policy_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i></a>
+                                @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin')
+                                  <a href="{{ url('hr/edit/policy/'.$policys->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                  <button type="button" wire:click="selectItem({{$policys->id}})" class="btn btn-danger btn-sm btn-icon data-delete" data-form="{{$policys->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
+                                @endif
+                              </td>
+                            </tr>
+                          @endforeach
+                        </tbody>
+                      </table>
+                    </div>
+
+                    @else
+                      <p class="text-center">There's No Policy Has Been Added.</p>
+                    @endif
                 </div>
               </div>
             </div>

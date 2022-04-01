@@ -86,45 +86,50 @@
                 <div class="card-body">
                   <h6 class="mb-3">ALL MEMO</h6>
 
-                  <div class="table-responsive">
-                    <table class="table table-hover table-sm align-middle">
-                      <thead class="text-center text-xxs fw-bolder">
-                        <tr>
-                          <th>NO</th>
-                          <th>TITLE</th>
-                          <th>DESCRIPTION</th>
-                          <th>POSTED</th>
-                          @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin'|| auth()->user()->department == 'Operation')
-                            <th class="col-2">ACTION</th>
-                          @else
-                            <th>ACTION</th>
-                          @endif
-                        </tr>
-                      </thead>
-
-                      <tbody>
-                        @php($i = 1)
-                        @foreach ($memo as $key => $memos)
+                  @if(!empty($memo) && $memo->count())
+                    <div class="table-responsive">
+                      <table class="table table-hover table-sm align-middle">
+                        <thead class="text-center text-xxs fw-bolder">
                           <tr>
-                            <td class="text-sm text-center">{{ $key + 1 }}</td>
-                            <td class="text-xs fw-bold">{{ $memos->title }}</td>
-                            <td class="text-xs">{{ $memos->description }}</td>
-                            <td class="text-xs">
-                              <b>{{ date('j F Y', strtotime($memos->updated_at)) }} </b> <br>
-                                by {{ $memos->user->name }}
-                            </td>
-                            <td class="text-center mx-auto">
-                              <a href="{{ $memos->memo_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View Memo"><i class="bi bi-file-earmark-pdf-fill"></i></a>
-                              @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin'|| auth()->user()->department == 'Operation')
-                                <a href="{{ url('hr/edit/memo/'.$memos->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
-                                <button type="button" wire:click="selectItem({{$memos->id}})" class="btn btn-danger btn-sm btn-icon data-delete" data-form="{{$memos->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
-                              @endif
-                            </td>
+                            <th>NO</th>
+                            <th>TITLE</th>
+                            <th>DESCRIPTION</th>
+                            <th>POSTED</th>
+                            @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin'|| auth()->user()->department == 'Operation')
+                              <th class="col-2">ACTION</th>
+                            @else
+                              <th>ACTION</th>
+                            @endif
                           </tr>
-                        @endforeach
-                      </tbody>
-                    </table>
-                  </div>
+                        </thead>
+
+                        <tbody>
+                          @php($i = 1)
+                          @foreach ($memo as $key => $memos)
+                            <tr>
+                              <td class="text-sm text-center">{{ $key + 1 }}</td>
+                              <td class="text-xs fw-bold">{{ $memos->title }}</td>
+                              <td class="text-xs">{{ $memos->description }}</td>
+                              <td class="text-xs">
+                                <b>{{ date('j F Y', strtotime($memos->updated_at)) }} </b> <br>
+                                  by {{ $memos->user->name }}
+                              </td>
+                              <td class="text-center mx-auto">
+                                <a href="{{ $memos->memo_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View Memo"><i class="bi bi-file-earmark-pdf-fill"></i></a>
+                                @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin'|| auth()->user()->department == 'Operation')
+                                  <a href="{{ url('hr/edit/memo/'.$memos->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                  <button type="button" wire:click="selectItem({{$memos->id}})" class="btn btn-danger btn-sm btn-icon data-delete" data-form="{{$memos->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
+                                @endif
+                              </td>
+                            </tr>
+                          @endforeach
+                        </tbody>
+                      </table>
+                    </div>
+
+                    @else
+                      <p class="text-center">There's No Memo Has Been Added.</p>
+                    @endif
                 </div>
               </div>
             </div>

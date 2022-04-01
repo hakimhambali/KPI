@@ -180,12 +180,12 @@
 
                                   <tbody>
                                     @php($i = 1)
-                                    @foreach ($sop1 as $key => $sops)
+                                    @foreach ($sop1 as  $key => $sops)
                                       <?php $departmentviews = json_decode($sops->departmentview); ?>
                                       @foreach ($departmentviews as $departmentviewss) 
                                         @if($departmentviewss == $departments->name) 
                                           <tr>
-                                            <td class="text-sm text-center">{{$key + 1}}</td>
+                                            <td class="text-sm text-center">{{ $i++ }}</td>
                                             <td class="text-xs fw-bold">{{ $sops->title }}</td>
                                             <td class="text-xs fw-bold">{{ $sops->description }}</td>
                                             <td class="text-xs fw-bold text-center">{{date('j F Y', strtotime($sops->updated_at))}} </td>
@@ -244,7 +244,7 @@
                                       @foreach ($departmentviews as $departmentviewss) 
                                         @if($departmentviewss == $departments->name)  
                                           <tr>
-                                            <td class="text-sm text-center">{{$key + 1}}</td>
+                                            <td class="text-sm text-center">{{ $i++ }}</td>
                                             <td class="text-xs fw-bold">{{ $sops->title }}</td>
                                             <td class="text-xs fw-bold">{{ $sops->description }}</td>
                                             <td class="text-xs fw-bold text-center">{{date('j F Y', strtotime($sops->updated_at))}} </td>
@@ -303,7 +303,7 @@
                                       @foreach ($departmentviews as $departmentviewss)
                                         @if($departmentviewss == $departments->name)  
                                           <tr>
-                                            <td class="text-sm text-center">{{$key + 1}}</td>
+                                            <td class="text-sm text-center">{{ $i++ }}</td>
                                             <td class="text-xs fw-bold">{{ $sops->title }}</td>
                                             <td class="text-xs fw-bold">{{ $sops->description }}</td>
                                             <td class="text-xs fw-bold text-center">{{date('j F Y', strtotime($sops->updated_at))}} </td>
@@ -362,7 +362,7 @@
                                       @foreach ($departmentviews as $departmentviewss)
                                         @if($departmentviewss == $departments->name)  
                                           <tr>
-                                            <td class="text-sm text-center">{{$key + 1}}</td>
+                                            <td class="text-sm text-center">{{ $i++ }}</td>
                                             <td class="text-xs fw-bold">{{ $sops->title }}</td>
                                             <td class="text-xs fw-bold">{{ $sops->description }}</td>
                                             <td class="text-xs fw-bold text-center">{{date('j F Y', strtotime($sops->updated_at))}} </td>
@@ -415,13 +415,12 @@
                                   </thead>
 
                                   <tbody>
-                                    @php($i = 1)
                                     @foreach ($sop4 as $key => $sops)
                                       <?php $departmentviews = json_decode($sops->departmentview); ?>
                                       @foreach ($departmentviews as $departmentviewss)
                                         @if($departmentviewss == $departments->name)  
                                           <tr>
-                                            <td class="text-sm text-center">{{$key + 1}}</td>
+                                            <td class="text-sm text-center">{{ $i++ }}</td>
                                             <td class="text-xs fw-bold">{{ $sops->title }}</td>
                                             <td class="text-xs fw-bold">{{ $sops->description }}</td>
                                             <td class="text-xs fw-bold text-center">{{date('j F Y', strtotime($sops->updated_at))}} </td>
