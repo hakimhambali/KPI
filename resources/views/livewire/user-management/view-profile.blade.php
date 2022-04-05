@@ -15,10 +15,10 @@
             </div>
             <div class="col-auto my-auto">
               <div class="h-100">
-                <h5 class="mb-1">
+                <h5 class="mb-1 text-capitalize">
                     {{ Auth::user()->name }}
                 </h5>
-                <p class="mb-0 font-weight-bold text-sm">
+                <p class="mb-0 font-weight-bold text-sm text-capitalize">
                     {{ Auth::user()->role }}
                 </p>
               </div>
@@ -31,7 +31,7 @@
 
 <div class="container-fluid py-4">
     <div class="row">
-      <div class="col-6">
+      <div class="col-md-6">
         <div class="card h-200">
           <div class="card-header pb-0 p-3">
             <div class="row">
@@ -52,7 +52,7 @@
             </p>
             <hr>
             <ul class="list-group">
-              <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Full Name:</strong> {{ Auth::user()->name }}</li>
+              <li class="list-group-item border-0 ps-0 pt-0 text-sm text-capitalize"><strong class="text-dark">Full Name:</strong> {{ Auth::user()->name }}</li>
               <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">ID No:</strong> {{ Auth::user()->nostaff }}</li>
               <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Position:</strong> {{ Auth::user()->position }}</li>
               <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Department:</strong> {{ Auth::user()->department }}</li>

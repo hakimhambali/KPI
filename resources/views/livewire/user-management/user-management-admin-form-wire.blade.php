@@ -28,7 +28,7 @@
 
                                         <div class="col-md-3 mb-3">
                                             <label class="form-label">IC Number</label>
-                                            <input wire:model="ic" type="ic" id="ic" name="ic" class="form-control text-xs" placeholder="IC Number(without space)">
+                                            <input wire:model="ic" type="ic" id="ic" name="ic" class="form-control text-xs" placeholder="IC Number (without space)">
                                             @error('ic') <span class="error">{{ $message }}</span> @enderror
                                         </div>
 
@@ -40,7 +40,7 @@
 
                                         <div class="col-md-3 mb-3">
                                             <label class="form-label">Role</label>
-                                            <select wire:model="role" name="role" id="role" class="form-control custom-select text-xs" data-placeholder="Choose a Role" tabindex="1">
+                                            <select wire:model="role" name="role" id="role" class="form-control bg-white text-xs" data-placeholder="Choose a Role" tabindex="1">
                                             <option value="">-- Choose a Role --</option>
                                             <option value="admin">Admin</option>
                                             <option value="moderator">Moderator</option>
@@ -52,10 +52,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-12 text-end">
-                                        @if (session()->has('message'))
-                                            {{ session('message') }}
-                                        @endif
+                                    <div class="col-md-12 text-end">
                                         <button class="btn bg-gradient-success btn-sm px-4" type="submit">SAVE</button>
                                     </div>
 

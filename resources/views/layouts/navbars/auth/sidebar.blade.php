@@ -100,14 +100,14 @@
             @endif
 
             @if (Auth::user()->role != "moderator")
-                <li class="nav-item ">
-                    <a data-bs-toggle="collapse" href="#info" class="nav-link collapsed {{ Route::currentRouteName() == 'sop' ? 'active' : '' || Route::currentRouteName() == 'sop_edit' ? 'active' : '' || Route::currentRouteName() == 'policy' ? 'active' : '' || Route::currentRouteName() == 'policy_edit' ? 'active' : '' }}" aria-controls="info" role="button" aria-expanded="false">
+                <li class="nav-item dropdown">
+                    <a data-bs-toggle="collapse" href="#info" class="nav-link collapsed dropdown-toggle {{ Route::currentRouteName() == 'sop' ? 'active' : '' || Route::currentRouteName() == 'sop_edit' ? 'active' : '' || Route::currentRouteName() == 'policy' ? 'active' : '' || Route::currentRouteName() == 'policy_edit' ? 'active' : '' }}" aria-controls="info" role="button" aria-expanded="false">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-lg" viewBox="0 0 16 16">
                                 <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
                             </svg>
                         </div>
-                        <span class="nav-link-text ms-1">Informations</span><i class="bi bi-chevron-down text-end"></i>
+                        <span class="nav-link-text ms-1">Informations</span><i></i>
                     </a>
 
                     <div class="collapse" id="info" style="">
@@ -139,14 +139,14 @@
             @endif
 
             @if (Auth::user()->role != "moderator")
-                <li class="nav-item ">
-                    <a data-bs-toggle="collapse" href="#about" class="nav-link collapsed {{ Route::currentRouteName() == 'core-value' ? 'active' : '' || Route::currentRouteName() == 'organizational-chart' ? 'active' : '' }}" aria-controls="about" role="button" aria-expanded="true">
+                <li class="nav-item dropdown">
+                    <a data-bs-toggle="collapse" href="#about" class="nav-link collapsed dropdown-toggle {{ Route::currentRouteName() == 'core-value' ? 'active' : '' || Route::currentRouteName() == 'organizational-chart' ? 'active' : '' }}" aria-controls="about" role="button" aria-expanded="true">
                         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-question-fill" viewBox="0 0 16 16">
                                 <path d="M5.933.87a2.89 2.89 0 0 1 4.134 0l.622.638.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636zM7.002 11a1 1 0 1 0 2 0 1 1 0 0 0-2 0zm1.602-2.027c.04-.534.198-.815.846-1.26.674-.475 1.05-1.09 1.05-1.986 0-1.325-.92-2.227-2.262-2.227-1.02 0-1.792.492-2.1 1.29A1.71 1.71 0 0 0 6 5.48c0 .393.203.64.545.64.272 0 .455-.147.564-.51.158-.592.525-.915 1.074-.915.61 0 1.03.446 1.03 1.084 0 .563-.208.885-.822 1.325-.619.433-.926.914-.926 1.64v.111c0 .428.208.745.585.745.336 0 .504-.24.554-.627z"/>
                             </svg>
                         </div>
-                        <span class="nav-link-text ms-1">About Us</span><i class="bi bi-chevron-down text-end"></i>
+                        <span class="nav-link-text ms-1">About Us</span><i></i>
                     </a>
 
                     <div class="collapse" id="about" style="">

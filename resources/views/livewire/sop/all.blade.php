@@ -136,7 +136,7 @@
 <!----------------------------------------------LIST ALL SOP-------------------------------------------------------------------------------->
       @foreach ($department as $departments)
         @if (auth()->user()->role == 'admin' || auth()->user()->role == 'dc' || (auth()->user()->role == 'employee' && auth()->user()->department == $departments->name) || (auth()->user()->role == 'manager' && auth()->user()->department == $departments->name) || (auth()->user()->role == 'hr' && auth()->user()->department == $departments->name) || (auth()->user()->role == 'pro' && auth()->user()->department == $departments->name))
-          <div class="container-fluid py-4">
+          <div class="container-fluid pb-4">
             <div class="row">
               <div class="col-md-12">
                 

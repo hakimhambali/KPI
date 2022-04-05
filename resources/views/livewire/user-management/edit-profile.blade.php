@@ -71,15 +71,15 @@
                     <div class="row">
                       <div class="col-md-2 mb-3">
                         <label>ID Number<span class="text-danger">*</span></label>
-                        <input class="form-control form-control" type="text" name="nostaff" value="{{ Auth::user()->nostaff }}" required>
+                        <input class="form form-control" type="text" name="nostaff" value="{{ Auth::user()->nostaff }}" required>
                       </div>
                       <div class="col-md-4 mb-3">
                         <label>IC Number<span class="text-danger">*</span></label>
-                        <input class="form-control form-control" type="text" name="ic" value="{{ Auth::user()->ic }}" readonly>
+                        <input class="form form-control bg-white" type="text" name="ic" value="{{ Auth::user()->ic }}" readonly>
                       </div>
                       <div class="col-md-6 mb-3">
                         <label>Email<span class="text-danger">*</span></label>
-                        <input class="form-control form-control" type="text" name="email" value="{{ Auth::user()->email }}">
+                        <input class="form form-control" type="text" name="email" value="{{ Auth::user()->email }}">
                       </div>
                     </div>
 
@@ -139,7 +139,7 @@
                         <select class="form-select form-select" id="unit" name="unit">
                           <option selected class="bg-secondary text-white" value="{{ Auth::user()->unit }}" >{{ Auth::user()->unit }}</option>
                 
-                          <option class="text-center" value="">-- Others --</option>
+                          <option class="text-center bg-dark text-white" value="">-- Others --</option>
                           @if (Auth::user()->unit != "Head Department")
                           <option value="Head Department">Head Department</option>
                           @endif
@@ -147,7 +147,7 @@
                           <option value="Senior Leadership Team (SLT)">Senior Leadership Team (SLT)</option>
                           @endif
 
-                          <option class="text-center" value="">-- CEO Office --</option>
+                          <option class="text-center bg-dark text-white" value="">-- CEO Office --</option>
                           @if (Auth::user()->unit != "Personal Assistant")
                           <option value="Personal Assistant">Personal Assistant</option>
                           @endif
@@ -158,7 +158,7 @@
                           <option value="Driver & Logistic">Driver & Logistic</option>
                           @endif
 
-                          <option class="text-center" value="">-- Human Resource (HR) & Administration --</option>
+                          <option class="text-center bg-dark text-white" value="">-- Human Resource (HR) & Administration --</option>
                           @if (Auth::user()->unit != "Payroll and C&B")
                           <option value="Payroll and C&B">Payroll and C&B</option>
                           @endif
@@ -172,7 +172,7 @@
                           <option value="Recruitment">Recruitment</option>
                           @endif
 
-                          <option class="text-center" value="">-- Account & Finance (A&F) --</option>
+                          <option class="text-center bg-dark text-white" value="">-- Account & Finance (A&F) --</option>
                           @if (Auth::user()->unit != "Account Receivable")
                           <option value="Account Receivable">Account Receivable</option>
                           @endif
@@ -180,7 +180,7 @@
                           <option value="Account Payable">Account Payable</option>
                           @endif
 
-                          <option class="text-center" value="">-- Sales --</option>
+                          <option class="text-center bg-dark text-white" value="">-- Sales --</option>
                           @if (Auth::user()->unit != "Customer Support & Closing")
                           <option value="Customer Support & Closing">Customer Support & Closing</option>
                           @endif
@@ -188,7 +188,7 @@
                           <option value="Program">Program</option>
                           @endif
 
-                          <option class="text-center" value="">-- Marketing --</option>
+                          <option class="text-center bg-dark text-white" value="">-- Marketing --</option>
                           @if (Auth::user()->unit != "Creative Director")
                           <option value="Creative Director">Creative Director</option>
                           @endif
@@ -202,7 +202,7 @@
                           <option value="Digital Marketer">Digital Marketer</option>
                           @endif
 
-                          <option class="text-center" value="">-- Operation --</option>
+                          <option class="text-center bg-dark text-white" value="">-- Operation --</option>
                           @if (Auth::user()->unit != "Admin & Procurement")
                           <option value="Admin & Procurement">Admin & Procurement</option>
                           @endif
@@ -216,7 +216,7 @@
                           <option value="General Worker">General Worker</option>
                           @endif
 
-                          <option class="text-center" value="">-- High Network Client (HNC) --</option>
+                          <option class="text-center bg-dark text-white" value="">-- High Network Client (HNC) --</option>
                           @if (Auth::user()->unit != "Platinum")
                           <option value="Platinum">Platinum</option>
                           @endif
@@ -227,7 +227,7 @@
                           <option value="Graphic">Graphic</option>
                           @endif
 
-                          <option class="text-center" value="">-- Research & Development (R&D) --</option>
+                          <option class="text-center bg-dark text-white" value="">-- Research & Development (R&D) --</option>
                           @if (Auth::user()->unit != "Web Designer")
                           <option value="Web Designer">Web Designer</option>
                           @endif
