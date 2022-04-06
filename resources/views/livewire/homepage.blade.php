@@ -35,10 +35,13 @@
       <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner align-center">
           <div class="carousel-item active" data-bs-interval="10000">
-            <img src="assets/img/rpmcomebackposter.jpg" height="500px" width="128px" class="d-block w-100" alt="...">
+            <img src="assets/img/rpmcomebackposter.jpg" height="700px" width="128px" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item" data-bs-interval="2000">
-            <img src="../assets/img/poster-arb.jpg" height="500px" width="128px" class="d-block w-100" alt="...">
+            <img src="../assets/img/poster-arb.jpg" height="700px" width="128px" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="../assets/img/road.jpg" height="700px" width="128px" class="d-block w-100" alt="...">
           </div>
           {{-- <div class="carousel-item">
             <img src="../assets/img/rpmcomebackposter.jpg" height="500px" width="128px" class="d-block w-100" alt="...">
