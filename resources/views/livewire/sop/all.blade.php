@@ -249,7 +249,7 @@
                                             <td class="text-xs fw-bold">{{ $sops->description }}</td>
                                             <td class="text-xs fw-bold text-center">{{date('j F Y', strtotime($sops->updated_at))}} </td>
                                             <td class="text-center">
-                                              <a href="{{ $sops->sop_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="Go To Link"><i class="bi bi-box-arrow-right"></i></a>
+                                              <a href="{{ $sops->link }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="Go To Link"><i class="bi bi-box-arrow-right"></i></a>
                                               @if (auth()->user()->role == 'admin'|| auth()->user()->role == 'dc')
                                                 <a href="{{ url('dc/edit/sop/'.$sops->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
                                                 <button type="button" wire:click="selectItem({{$sops->id}})" class="btn btn-danger btn-sm btn-icon data-delete" data-form="{{$sops->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
@@ -308,7 +308,7 @@
                                             <td class="text-xs fw-bold">{{ $sops->description }}</td>
                                             <td class="text-xs fw-bold text-center">{{date('j F Y', strtotime($sops->updated_at))}} </td>
                                             <td class="text-center">
-                                              <a href="{{ $sops->sop_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="Go To Link"><i class="bi bi-box-arrow-right"></i></a>
+                                              <a href="{{ $sops->link }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="Go To Link"><i class="bi bi-box-arrow-right"></i></a>
                                               @if (auth()->user()->role == 'admin'|| auth()->user()->role == 'dc')
                                                 <a href="{{ url('dc/edit/sop/'.$sops->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
                                                 <button type="button" wire:click="selectItem({{$sops->id}})" class="btn btn-danger btn-sm btn-icon data-delete" data-form="{{$sops->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
@@ -367,7 +367,7 @@
                                             <td class="text-xs fw-bold">{{ $sops->description }}</td>
                                             <td class="text-xs fw-bold text-center">{{date('j F Y', strtotime($sops->updated_at))}} </td>
                                             <td class="text-center">
-                                              <a href="{{ $sops->sop_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="Go To Link"><i class="bi bi-box-arrow-right"></i></a>
+                                              <a href="{{ $sops->link }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="Go To Link"><i class="bi bi-box-arrow-right"></i></a>
                                               @if (auth()->user()->role == 'admin'|| auth()->user()->role == 'dc')
                                                 <a href="{{ url('dc/edit/sop/'.$sops->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
                                                 <button type="button" wire:click="selectItem({{$sops->id}})" class="btn btn-danger btn-sm btn-icon data-delete" data-form="{{$sops->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
@@ -425,7 +425,7 @@
                                             <td class="text-xs fw-bold">{{ $sops->description }}</td>
                                             <td class="text-xs fw-bold text-center">{{date('j F Y', strtotime($sops->updated_at))}} </td>
                                             <td class="text-center">
-                                              <a href="{{ $sops->sop_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="Go To Link"><i class="bi bi-box-arrow-right"></i></a>
+                                              <a href="{{ $sops->link }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="Go To Link"><i class="bi bi-box-arrow-right"></i></a>
                                               @if (auth()->user()->role == 'admin'|| auth()->user()->role == 'dc')
                                                 <a href="{{ url('dc/edit/sop/'.$sops->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
                                                 <button type="button" wire:click="selectItem({{$sops->id}})" class="btn btn-danger btn-sm btn-icon data-delete" data-form="{{$sops->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
