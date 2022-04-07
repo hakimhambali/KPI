@@ -88,12 +88,22 @@ class KPI extends Component
     }
 
     public function kpi_master_edit2($id, $date_id, $user_id, $year, $month) {
-        $kewangan1mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan1')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
-        $fungsi = 'Kewangan1';
-        $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
-        if ($kewangan1mastercount == 1) {
-            $kpimasters = KPIMaster_::find($id);
-            return view('livewire.kpi.edit-kpimaster' , compact('kpimasters', 'fungsi', 'date_id', 'user_id', 'year', 'month', 'status'));
+        if(auth()->user()) {
+            $this->date_id = $date_id;
+            $this->user_id = $user_id;
+            $this->year = $year;
+            $this->month = $month;
+            $this->id = $id;
+
+            $kewangan1mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan1')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+            $fungsi = 'Kewangan1';
+            $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
+            if ($kewangan1mastercount == 1) {
+                $kpimasters = KPIMaster_::find($id);
+                return view('livewire.kpi.edit-kpimaster' , compact('kpimasters', 'fungsi', 'date_id', 'user_id', 'year', 'month', 'status'));
+            }
+        } else {
+            return redirect()->to('/');
         }
     }
     
