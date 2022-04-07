@@ -2,101 +2,108 @@
 @section('content')
 @extends('layouts.app')
 
-<div class="container-fluid py-4">
+<div class="container-fluid pb-4">
   <div class="row">
-    <form action="{{ url('employee/update/kpimaster/'.$kpimasters->id.'/'.$fungsi.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" method="post"> 
-      @csrf 
-      <div class="col-12">
-          @if (session('message'))
-          <div class="alert alert-success alert-dismissible">
-              <strong>{{ session('message') }}</strong>
-          </div>	
-          @endif 
-          <div class="col-md-12 mb-lg-0 mb-4">
+    <div class="col-lg-12">
+
+      <!----------------------------------------------------------------------------------------------------->
+        <div class="row">
+          <div class="col-md-12 mb-lg-0">
+            @if (session('message'))
+              <div class="alert alert-success alert-dismissible">
+                  <strong>{{ session('message') }}</strong>
+              </div>	
+            @endif 
             @if ($status == 'Submitted' || $status == 'Signed By Manager' || $status == 'Completed') 
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-              <strong>Warning ! If you want to add, edit or delete any KPI, status of this KPI will set to default (Not Submitted)</strong>
-            </div>
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Warning ! If you want to add, edit or delete any KPI, status of this KPI will set to default (Not Submitted)</strong>
+              </div>
             @else
             @endif
-              <div class="card mt-4">
-                <div class="card-header pb-0 p-3">
+
+            <div class="card mb-4">
+              <form action="{{ url('employee/update/kpimaster/'.$kpimasters->id.'/'.$fungsi.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" method="post"> 
+              @csrf  
+                <div class="card-body">
+                  <h6 class="text-uppercase">UPDATE KPI MASTER - {{ $fungsi }}</h6><hr>
+
                   <div class="row">
-                    <div class="col-6 d-flex align-items-center">
-                      <h6 class="mb-0">KPI Master</h6>
+                    <div class="col-md-6">
+                      <label class="form-label">Objective KPI<span class="text-danger">*</span></label>
+                      <textarea class="form-control mb-3" name="objektif" id="objektif" rows="10" placeholder="Enter your objective KPI...">{!! $kpimasters->objektif !!}</textarea>
+                      @error('objektif') <div class="text-danger">{{ $message }}</div> @enderror
+
+                      <label class="form-label">KPI Master Percentage (%)<span class="text-danger">*</span></label>
+                      <input type="text" pattern="[0-9]+" maxlength="3"  class="form-control mb-3" id="percent_master" name="percent_master" value="{{ $kpimasters->percent_master }}" placeholder="Enter any number from 1 to 100 only" required>
+                      @error('percent_master') <div class="text-danger">{{ $message }}</div> @enderror
                     </div>
-                  </div>
-                </div>
-                <div class="card-body p-3">
-                  <div class="row">
-                    <div class="col-md-6 mb-md-0">
-                      <p>Objektif KPI</p>  
-                      <div class="card card-plain border-radius-lg align-items-center">
-                          <textarea class="form-control card card-body border card-plain border-radius-lg d-flex align-items-center flex-row" name="objektif" id="objektif" cols="60" rows="10">{{ $kpimasters->objektif }}</textarea>
-                          @error('objektif') <div class="text-danger">{{ $message }}</div> @enderror
-                      </div>
-                      <br>
-                        <p>KPI Master Percentage (Enter any number from 1 to 100 only) :</p>  
-                        <div class="card card-plain border-radius-lg align-items-center">
-                          <input type="text" pattern="[0-9]+" maxlength="3"  class="form-control" id="percent_master" name="percent_master" value="{{ $kpimasters->percent_master }}" required>
-                          @error('percent_master') <div class="text-danger">{{ $message }}</div> @enderror
-                        </div>
-                    </div>
+                
                     @if ($kpimasters->link != '')
-                    @php $links = json_decode($kpimasters->link); @endphp
-                    <div class="col-md-6 mb-md-0">
-                        <p>Evidence Link (Leave blank if does not have any evidence)</p> 
-                        <p>Evidence Link 1 (Please insert in order, do not skip numbering)</p>
-                        <input type="text" class="form-control" id="link" name="link[]" value="@if($links != NULL) {{($links[0])}} @endif">
+                      <div class="col-md-6">
+                        @php $links = json_decode($kpimasters->link); @endphp
+                        <label class="form-label">Evidence Link (Leave blank if does not have any evidence)</label>
+                        <label class="form-label"><span class="text-danger">*</span>Please insert in order, do not skip numbering</label><br>
+                      
+                        <label class="form-label">Evidence Link 1</label>
+                        <input type="text" class="form-control mb-1" id="link" name="link[]" value="@if($links != NULL) {{($links[0])}} @endif">
                         @error('link') <div class="text-danger">{{ $message }}</div> @enderror
-                        <p>Evidence Link 2</p>
-                        <input type="text" class="form-control" id="link" name="link[]" value="@if($links != NULL) {{($links[1])}} @endif">
+
+                        <label class="form-label">Evidence Link 2</label>
+                        <input type="text" class="form-control mb-1" id="link" name="link[]" value="@if($links != NULL) {{($links[1])}} @endif">
                         @error('link') <div class="text-danger">{{ $message }}</div> @enderror
-                        <p>Evidence Link 3</p>
-                        <input type="text" class="form-control" id="link" name="link[]" value="@if($links != NULL) {{($links[2])}} @endif">
+                        
+                        <label class="form-label">Evidence Link 3</label>
+                        <input type="text" class="form-control mb-1" id="link" name="link[]" value="@if($links != NULL) {{($links[2])}} @endif">
                         @error('link') <div class="text-danger">{{ $message }}</div> @enderror
-                        <p>Evidence Link 4</p>
-                        <input type="text" class="form-control" id="link" name="link[]" value="@if($links != NULL) {{($links[3])}} @endif">
+                        
+                        <label class="form-label">Evidence Link 4</label>
+                        <input type="text" class="form-control mb-1" id="link" name="link[]" value="@if($links != NULL) {{($links[3])}} @endif">
                         @error('link') <div class="text-danger">{{ $message }}</div> @enderror
-                        <p>Evidence Link 5</p> 
-                        <input type="text" class="form-control" id="link" name="link[]" value="@if($links != NULL) {{($links[4])}} @endif">
+                        
+                        <label class="form-label">Evidence Link 5</label>
+                        <input type="text" class="form-control mb-3" id="link" name="link[]" value="@if($links != NULL) {{($links[4])}} @endif">
                         @error('link') <div class="text-danger">{{ $message }}</div> @enderror 
-                    </div>
+                      </div>
                     @else
-                    <div class="col-md-6 mb-md-0">
-                      <p>Evidence Link (Leave blank if does not have any evidence)</p> 
-                      <p>Evidence Link 1</p>
-                      <input type="text" class="form-control" id="link" name="link[]">
-                      @error('link') <div class="text-danger">{{ $message }}</div> @enderror
-                      <p>Evidence Link 2</p>
-                      <input type="text" class="form-control" id="link" name="link[]">
-                      @error('link') <div class="text-danger">{{ $message }}</div> @enderror
-                      <p>Evidence Link 3</p>
-                      <input type="text" class="form-control" id="link" name="link[]">
-                      @error('link') <div class="text-danger">{{ $message }}</div> @enderror
-                      <p>Evidence Link 4</p>
-                      <input type="text" class="form-control" id="link" name="link[]">
-                      @error('link') <div class="text-danger">{{ $message }}</div> @enderror
-                      <p>Evidence Link 5</p> 
-                      <input type="text" class="form-control" id="link" name="link[]">
-                      @error('link') <div class="text-danger">{{ $message }}</div> @enderror 
-                  </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Evidence Link (Leave blank if does not have any evidence)</label><br>
+
+                        <label class="form-label">Evidence Link 1</label>
+                        <input type="text" class="form-control mb-1" id="link" name="link[]">
+                        @error('link') <div class="text-danger">{{ $message }}</div> @enderror
+                        
+                        <label class="form-label">Evidence Link 2</label>
+                        <input type="text" class="form-control mb-1" id="link" name="link[]">
+                        @error('link') <div class="text-danger">{{ $message }}</div> @enderror
+                        
+                        <label class="form-label">Evidence Link 3</label>
+                        <input type="text" class="form-control mb-1" id="link" name="link[]">
+                        @error('link') <div class="text-danger">{{ $message }}</div> @enderror
+                        
+                        <label class="form-label">Evidence Link 4</label>
+                        <input type="text" class="form-control mb-1" id="link" name="link[]">
+                        @error('link') <div class="text-danger">{{ $message }}</div> @enderror
+                        
+                        <label class="form-label">Evidence Link 5</label>
+                        <input type="text" class="form-control mb-3" id="link" name="link[]">
+                        @error('link') <div class="text-danger">{{ $message }}</div> @enderror 
+                      </div>
                     @endif
                   </div>
-                </div>
-                <div class="card-body p-3">
-                  <div class="row">
 
+                  <div class="col-12 text-end">
+                    <button class="btn bg-gradient-dark btn-sm px-4" type="submit" href="javascript:;">SAVE</button>
                   </div>
+
                 </div>
-                <div class="col-12 text-end p-3">
-                  <button class="btn bg-gradient-dark mb-0" type="submit" href="javascript:;"><i class="fas fa-plus"></i>&nbsp;&nbsp;Save</button>
-                </div>
-              </div>
+              </form>
             </div>
+
           </div>
-        </form>  
+        </div>
+
+      </div>
+    </div>
   </div>
-</div>
 
 @endsection
