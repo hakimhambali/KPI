@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Date_;
-use App\Models\KpiAll_;
+use App\Models\KPIAll_;
 use App\Models\KPIMaster_;
 use App\Models\KPI_;
 use App\Models\Kecekapan_;

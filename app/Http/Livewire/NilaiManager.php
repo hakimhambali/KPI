@@ -7,7 +7,7 @@ use App\Models\KPI_;
 use App\Models\KPIMaster_;
 use App\Models\Kecekapan_;
 use App\Models\Nilai_;
-use App\Models\KpiAll_;
+use App\Models\KPIAll_;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
