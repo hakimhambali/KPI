@@ -68,27 +68,11 @@ input[type=file]::file-selector-button:hover {
                       <div class="mb-0" class="@error('fungsi') @enderror">
                         <select class="form-select" id="fungsi" name="fungsi" required>
                           <option value="">-- Choose Function --</option>
-                          @if (Auth::user()->position == 'Junior Non-Executive (NE1)' || Auth::user()->position == 'Senior Non-Executive (NE2)')
-                          @else
-                            <option value="Kad Skor Korporat" >Kad Skor Korporat</option>
-                          @endif
-                          <option value="Kewangan1" >Kewangan (1)</option>
-                          <option value="Kewangan2" >Kewangan (2)</option>
-                          <option value="Kewangan3" >Kewangan (3)</option>
-                          <option value="Kewangan4" >Kewangan (4)</option>
-                          <option value="Kewangan5" >Kewangan (5)</option>
-                          @if (Auth::user()->department == 'Human Resource (HR) & Administration' || Auth::user()->department == 'Operation')
-                            <option value="Pelanggan (Internal)" >Pelanggan (Internal)</option>
-                          @endif
-                          <option value="Pelanggan (External)" >Pelanggan (External)</option>
-                          <option value="Kecemerlangan Operasi1" >Kecemerlangan Operasi (1)</option> 
-                          <option value="Kecemerlangan Operasi2" >Kecemerlangan Operasi (2)</option> 
-                          <option value="Kecemerlangan Operasi3" >Kecemerlangan Operasi (3)</option> 
-                          <option value="Kecemerlangan Operasi4" >Kecemerlangan Operasi (4)</option> 
-                          <option value="Kecemerlangan Operasi5" >Kecemerlangan Operasi (5)</option>
-                          <option value="Manusia & Proses (Training)" >Manusia & Proses (Training)</option> 
-                          <option value="Manusia & Proses (NCROFI)" >Manusia & Proses (NCROFI)</option> 
-                          <option value="Kolaborasi" >Kolaborasi</option>
+
+                          @foreach ($function as $functions)
+                            <option value="{{$functions->name}}">{{$functions->name}}</option>
+                          @endforeach 
+
                         </select>
                         @error('fungsi') <div class="text-danger text-sm pt-2">{{ $message }}</div> @enderror
                       </div>
@@ -210,9 +194,9 @@ input[type=file]::file-selector-button:hover {
         <div class="card mb-4">
           <div class="card-body">
             @if ($weightage_kadskor == 0 || $weightage_kadskor == NULL)
-              <h6 class="mb-3">KAD SKOR KORPORAT <span style="color:red;">(Current weightage = 0)</span></h6>
+              <h6 class="mb-3">KAD SKOR KORPORAT1 <span style="color:red;">(Current weightage = 0)</span></h6>
             @else
-              <h6 class="mb-3">KAD SKOR KORPORAT <span style="color:red;">(Current weightage = {{$weightage_kadskor}})</span></h6>
+              <h6 class="mb-3">KAD SKOR KORPORAT1 <span style="color:red;">(Current weightage = {{$weightage_kadskor}})</span></h6>
             @endif
             
             <div class="table-responsive">
@@ -1161,17 +1145,17 @@ input[type=file]::file-selector-button:hover {
   @endif
 
   {{--------------------------------------------------- PELANGGAN INTERNAL FUNGSI --------------------------------------------------}}
-  @if ($pelangganIcount == 0)
+  @if ($pelangganIn1count == 0)
   @else
     <div class="row">
       <div class="col-md-12">
         
         <div class="card mb-4">
           <div class="card-body">
-            @if ($weightage_pelangganI == 0 || $weightage_pelangganI == NULL)
-              <h6 class="mb-3">PELANGGAN (INTERNAL) <span style="color:red;">(Current weightage = 0)</span></h6>
+            @if ($weightage_pelangganIn1 == 0 || $weightage_pelangganIn1 == NULL)
+              <h6 class="mb-3">PELANGGAN1 (INTERNAL) <span style="color:red;">(Current weightage = 0)</span></h6>
             @else
-              <h6 class="mb-3">PELANGGAN (INTERNAL) <span style="color:red;">(Current weightage = {{$weightage_pelangganI}})</span></h6>
+              <h6 class="mb-3">PELANGGAN1 (INTERNAL) <span style="color:red;">(Current weightage = {{$weightage_pelangganIn1}})</span></h6>
             @endif
             
             <div class="table-responsive">
@@ -1191,33 +1175,33 @@ input[type=file]::file-selector-button:hover {
                 </thead>
 
                 <tbody>
-                  @foreach ($pelangganI as $key => $pelangganIs)
+                  @foreach ($pelangganIn1 as $key => $pelangganIn1s)
                     <tr>
                       <td class="text-sm text-center">{{$key + 1}}</td>
-                      <td class="text-xs">{!! nl2br($pelangganIs -> bukti) !!}</td>
+                      <td class="text-xs">{!! nl2br($pelangganIn1s -> bukti) !!}</td>
                       <td class="text-sm text-center">
-                        @if ($pelangganIs->bukti_path == '')
+                        @if ($pelangganIn1s->bukti_path == '')
                         @else
-                        <a href="{{ $pelangganIs->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{ $pelangganIn1s->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
-                      <td class="text-sm text-center">{{ $pelangganIs -> peratus }}</td>
-                      <td class="text-sm text-center">{{ $pelangganIs -> ukuran }}</td>
+                      <td class="text-sm text-center">{{ $pelangganIn1s -> peratus }}</td>
+                      <td class="text-sm text-center">{{ $pelangganIn1s -> ukuran }}</td>
                       <td class="mx-auto">
-                        <span class="me-2 text-xs fw-bolder" value="{{ $pelangganIs -> pencapaian }}">{{ number_format( (integer)($pelangganIs->skor_KPI)) }}%</span>
+                        <span class="me-2 text-xs fw-bolder" value="{{ $pelangganIn1s -> pencapaian }}">{{ number_format( (integer)($pelangganIn1s->skor_KPI)) }}%</span>
                         <div class="progress">
-                          <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ $pelangganIs->skor_KPI }}%;"></div>
+                          <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ $pelangganIn1s->skor_KPI }}%;"></div>
                         </div>
                       </td>
-                      <td class="text-sm text-center">{{ $pelangganIs -> skor_KPI }}</td>
-                      <td class="text-sm text-center">{{ round($pelangganIs -> skor_sebenar,2) }} %</td>
+                      <td class="text-sm text-center">{{ $pelangganIn1s -> skor_KPI }}</td>
+                      <td class="text-sm text-center">{{ round($pelangganIn1s -> skor_sebenar,2) }} %</td>
                       <td class="text-center">
                         <a type="button" id="dropdownMenuButton" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false">
                           <i class="fa fa-ellipsis-v"></i>
                         </a>
                         <div class="dropdown-menu">
-                          <a href="{{ url('employee/edit/kpi/'.$pelangganIs->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="dropdown-item">EDIT</a>
-                          <button type="button" wire:click="selectItem({{$pelangganIs->kpimasters->kpiall->id}} , {{$pelangganIs->kpimasters->id}} , {{$pelangganIs->id}})" class="dropdown-item text-danger data-delete" data-form="{{$pelangganIs->id}}">DELETE</a>
+                          <a href="{{ url('employee/edit/kpi/'.$pelangganIn1s->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="dropdown-item">EDIT</a>
+                          <button type="button" wire:click="selectItem({{$pelangganIn1s->kpimasters->kpiall->id}} , {{$pelangganIn1s->kpimasters->id}} , {{$pelangganIn1s->id}})" class="dropdown-item text-danger data-delete" data-form="{{$pelangganIn1s->id}}">DELETE</a>
                         </div>
                       </td>
                     </tr>
@@ -1226,7 +1210,7 @@ input[type=file]::file-selector-button:hover {
               </table>
             </div>
 
-            @foreach ($pelangganImaster as $pelangganImasters)
+            @foreach ($pelangganIn1master as $pelangganIn1masters)
             <div class="card-body bg-gray-100 border-radius-lg py-4 my-4">
               <div class="row">
                 <div class="col-9 lh-1">
@@ -1235,16 +1219,16 @@ input[type=file]::file-selector-button:hover {
                 </div>
 
                 <div class="col-3 text-end">
-                  <a href="{{ url('employee/edit/kpimaster3/'.$pelangganImasters->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="btn bg-gradient-info btn-sm px-4" href="javascript:;"><i class="bi bi-pencil me-2" aria-hidden="true"></i>Edit</a>
+                  <a href="{{ url('employee/edit/kpimaster3/'.$pelangganIn1masters->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="btn bg-gradient-info btn-sm px-4" href="javascript:;"><i class="bi bi-pencil me-2" aria-hidden="true"></i>Edit</a>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-12">
-                  <span class="mb-2 text-xs">KPI Master Percentage (%) : <b>{{ $pelangganImasters -> percent_master }}</b></span><br>
+                  <span class="mb-2 text-xs">KPI Master Percentage (%) : <b>{{ $pelangganIn1masters -> percent_master }}</b></span><br>
                   
-                  @if ($pelangganImasters->link != '')
-                    @php $links = json_decode($pelangganImasters->link); @endphp
+                  @if ($pelangganIn1masters->link != '')
+                    @php $links = json_decode($pelangganIn1masters->link); @endphp
                     
                     @if ($links != NULL)
                       @if ($links[0] != NULL)
@@ -1284,7 +1268,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $pelangganImasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $pelangganIn1masters -> objektif }}</b></span>
                 </div>
               </div>
             </div>
@@ -1298,17 +1282,17 @@ input[type=file]::file-selector-button:hover {
   @endif
 
   {{--------------------------------------------------- PELANGGAN EXTERNAL FUNGSI --------------------------------------------------}}
-  @if ($pelangganIIcount == 0)
+  @if ($pelangganEx1count == 0)
   @else
     <div class="row">
       <div class="col-md-12">
         
         <div class="card mb-4">
           <div class="card-body">
-            @if ($weightage_pelangganII == 0 || $weightage_pelangganII == NULL)
-              <h6 class="mb-3">PELANGGAN (EXTERNAL) <span style="color:red;">(Current weightage = 0)</span></h6>
+            @if ($weightage_pelangganEx1 == 0 || $weightage_pelangganEx1 == NULL)
+              <h6 class="mb-3">PELANGGAN1 (EXTERNAL) <span style="color:red;">(Current weightage = 0)</span></h6>
             @else
-              <h6 class="mb-3">PELANGGAN (EXTERNAL) <span style="color:red;">(Current weightage = {{$weightage_pelangganII}})</span></h6>
+              <h6 class="mb-3">PELANGGAN1 (EXTERNAL) <span style="color:red;">(Current weightage = {{$weightage_pelangganEx1}})</span></h6>
             @endif
             
             <div class="table-responsive">
@@ -1328,33 +1312,33 @@ input[type=file]::file-selector-button:hover {
                 </thead>
 
                 <tbody>
-                  @foreach ($pelangganII as $key => $pelangganIIs)
+                  @foreach ($pelangganEx1 as $key => $pelangganEx1s)
                     <tr>
                       <td class="text-sm text-center">{{$key + 1}}</td>
-                      <td class="text-xs">{!! nl2br($pelangganIIs -> bukti) !!}</td>
+                      <td class="text-xs">{!! nl2br($pelangganEx1s -> bukti) !!}</td>
                       <td class="text-sm text-center">
-                        @if ($pelangganIIs->bukti_path == '')
+                        @if ($pelangganEx1s->bukti_path == '')
                         @else
-                        <a href="{{ $pelangganIIs->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{ $pelangganEx1s->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
-                      <td class="text-sm text-center">{{ $pelangganIIs -> peratus }}</td>
-                      <td class="text-sm text-center">{{ $pelangganIIs -> ukuran }}</td>
+                      <td class="text-sm text-center">{{ $pelangganEx1s -> peratus }}</td>
+                      <td class="text-sm text-center">{{ $pelangganEx1s -> ukuran }}</td>
                       <td class="mx-auto">
-                        <span class="me-2 text-xs fw-bolder" value="{{ $pelangganIIs -> pencapaian }}">{{ number_format( (integer)($pelangganIIs->skor_KPI)) }}%</span>
+                        <span class="me-2 text-xs fw-bolder" value="{{ $pelangganEx1s -> pencapaian }}">{{ number_format( (integer)($pelangganEx1s->skor_KPI)) }}%</span>
                         <div class="progress">
-                          <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ $pelangganIIs->skor_KPI }}%;"></div>
+                          <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ $pelangganEx1s->skor_KPI }}%;"></div>
                         </div>
                       </td>
-                      <td class="text-sm text-center">{{ $pelangganIIs -> skor_KPI }}</td>
-                      <td class="text-sm text-center">{{ round($pelangganIIs -> skor_sebenar,2) }} %</td>
+                      <td class="text-sm text-center">{{ $pelangganEx1s -> skor_KPI }}</td>
+                      <td class="text-sm text-center">{{ round($pelangganEx1s -> skor_sebenar,2) }} %</td>
                       <td class="text-center">
                         <a type="button" id="dropdownMenuButton" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false">
                           <i class="fa fa-ellipsis-v"></i>
                         </a>
                         <div class="dropdown-menu">
-                          <a href="{{ url('employee/edit/kpi/'.$pelangganIIs->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="dropdown-item">EDIT</a>
-                          <button type="button" wire:click="selectItem({{$pelangganIIs->kpimasters->kpiall->id}} , {{$pelangganIIs->kpimasters->id}} , {{$pelangganIIs->id}})" class="dropdown-item text-danger data-delete" data-form="{{$pelangganIIs->id}}">DELETE</a>
+                          <a href="{{ url('employee/edit/kpi/'.$pelangganEx1s->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="dropdown-item">EDIT</a>
+                          <button type="button" wire:click="selectItem({{$pelangganEx1s->kpimasters->kpiall->id}} , {{$pelangganEx1s->kpimasters->id}} , {{$pelangganEx1s->id}})" class="dropdown-item text-danger data-delete" data-form="{{$pelangganEx1s->id}}">DELETE</a>
                         </div>
                       </td>
                     </tr>
@@ -1363,7 +1347,7 @@ input[type=file]::file-selector-button:hover {
               </table>
             </div>
 
-            @foreach ($pelangganIImaster as $pelangganIImasters)
+            @foreach ($pelangganEx1master as $pelangganEx1masters)
             <div class="card-body bg-gray-100 border-radius-lg py-4 my-4">
               <div class="row">
                 <div class="col-9 lh-1">
@@ -1372,16 +1356,16 @@ input[type=file]::file-selector-button:hover {
                 </div>
 
                 <div class="col-3 text-end">
-                  <a href="{{ url('employee/edit/kpimaster4/'.$pelangganIImasters->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="btn bg-gradient-info btn-sm px-4" href="javascript:;"><i class="bi bi-pencil me-2" aria-hidden="true"></i>Edit</a>
+                  <a href="{{ url('employee/edit/kpimaster4/'.$pelangganEx1masters->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="btn bg-gradient-info btn-sm px-4" href="javascript:;"><i class="bi bi-pencil me-2" aria-hidden="true"></i>Edit</a>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-12">
-                  <span class="mb-2 text-xs">KPI Master Percentage (%) : <b>{{ $pelangganIImasters -> percent_master }}</b></span><br>
+                  <span class="mb-2 text-xs">KPI Master Percentage (%) : <b>{{ $pelangganEx1masters -> percent_master }}</b></span><br>
                   
-                  @if ($pelangganIImasters->link != '')
-                    @php $links = json_decode($pelangganIImasters->link); @endphp
+                  @if ($pelangganEx1masters->link != '')
+                    @php $links = json_decode($pelangganEx1masters->link); @endphp
                     
                     @if ($links != NULL)
                       @if ($links[0] != NULL)
@@ -1421,7 +1405,143 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $pelangganIImasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $pelangganEx1masters -> objektif }}</b></span>
+                </div>
+              </div>
+            </div>
+            @endforeach
+              
+          </div>
+        </div>
+
+      </div>
+    </div>
+  @endif
+
+  @if ($pelangganEx2count == 0)
+  @else
+    <div class="row">
+      <div class="col-md-12">
+        
+        <div class="card mb-4">
+          <div class="card-body">
+            @if ($weightage_pelangganEx2 == 0 || $weightage_pelangganEx2 == NULL)
+              <h6 class="mb-3">PELANGGAN2 (EXTERNAL) <span style="color:red;">(Current weightage = 0)</span></h6>
+            @else
+              <h6 class="mb-3">PELANGGAN2 (EXTERNAL) <span style="color:red;">(Current weightage = {{$weightage_pelangganEx2}})</span></h6>
+            @endif
+            
+            <div class="table-responsive">
+              <table class="table table-hover table-sm align-middle">
+                <thead class="text-center text-xxs fw-bold">
+                  <tr>
+                    <th>NO</th>
+                    <th>EVIDENCE</th>
+                    <th>EVIDENCE FILE</th>
+                    <th>%</th>
+                    <th>MEASUREMENT</th>
+                    <th>KPI TARGET</th>
+                    <th>KPI SCORE</th>
+                    <th>ACTUAL SCORE</th>
+                    <th></th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  @foreach ($pelangganEx2 as $key => $pelangganEx2s)
+                    <tr>
+                      <td class="text-sm text-center">{{$key + 1}}</td>
+                      <td class="text-xs">{!! nl2br($pelangganEx2s -> bukti) !!}</td>
+                      <td class="text-sm text-center">
+                        @if ($pelangganEx2s->bukti_path == '')
+                        @else
+                        <a href="{{ $pelangganEx2s->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        @endif
+                      </td>
+                      <td class="text-sm text-center">{{ $pelangganEx2s -> peratus }}</td>
+                      <td class="text-sm text-center">{{ $pelangganEx2s -> ukuran }}</td>
+                      <td class="mx-auto">
+                        <span class="me-2 text-xs fw-bolder" value="{{ $pelangganEx2s -> pencapaian }}">{{ number_format( (integer)($pelangganEx2s->skor_KPI)) }}%</span>
+                        <div class="progress">
+                          <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ $pelangganEx2s->skor_KPI }}%;"></div>
+                        </div>
+                      </td>
+                      <td class="text-sm text-center">{{ $pelangganEx2s -> skor_KPI }}</td>
+                      <td class="text-sm text-center">{{ round($pelangganEx2s -> skor_sebenar,2) }} %</td>
+                      <td class="text-center">
+                        <a type="button" id="dropdownMenuButton" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false">
+                          <i class="fa fa-ellipsis-v"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                          <a href="{{ url('employee/edit/kpi/'.$pelangganEx2s->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="dropdown-item">EDIT</a>
+                          <button type="button" wire:click="selectItem({{$pelangganEx2s->kpimasters->kpiall->id}} , {{$pelangganEx2s->kpimasters->id}} , {{$pelangganEx2s->id}})" class="dropdown-item text-danger data-delete" data-form="{{$pelangganEx2s->id}}">DELETE</a>
+                        </div>
+                      </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+              </table>
+            </div>
+
+            @foreach ($pelangganEx2master as $pelangganEx2masters)
+            <div class="card-body bg-gray-100 border-radius-lg py-4 my-4">
+              <div class="row">
+                <div class="col-9 lh-1">
+                  <span class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Additional information is <span class="text-danger">required</span>, please insert your <span class="text-danger">KPI Master information</span>
+                  <hr>
+                </div>
+
+                <div class="col-3 text-end">
+                  <a href="{{ url('employee/edit/kpimaster4/'.$pelangganEx2masters->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="btn bg-gradient-info btn-sm px-4" href="javascript:;"><i class="bi bi-pencil me-2" aria-hidden="true"></i>Edit</a>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <span class="mb-2 text-xs">KPI Master Percentage (%) : <b>{{ $pelangganEx2masters -> percent_master }}</b></span><br>
+                  
+                  @if ($pelangganEx2masters->link != '')
+                    @php $links = json_decode($pelangganEx2masters->link); @endphp
+                    
+                    @if ($links != NULL)
+                      @if ($links[0] != NULL)
+                        @if ($links[0] == NULL)
+                          <?php $num_of_link=0 ?>
+                        @elseif ($links[1] == NULL)
+                          <?php $num_of_link=1 ?>
+                        @elseif ($links[2] == NULL)
+                          <?php $num_of_link=2 ?>
+                        @elseif ($links[3] == NULL)
+                          <?php $num_of_link=3 ?>
+                        @elseif ($links[4] == NULL)
+                          <?php $num_of_link=4 ?>
+                        @elseif ($links[4] != NULL)
+                          <?php $num_of_link=5 ?>
+                        @endif
+
+                        @for($i=0 ; $i<$num_of_link; $i++)
+                          <span class="mb-2 text-xs">Evidence Link {{$i+1}}:<span class="text-dark ms-sm-1 font-weight-bold">
+                          <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;" target="_blank">{{ $links[$i] }}</a>
+                          </span></span><br>
+                        @endfor
+                      @else
+                        <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                        <a style="color:blue;text-decoration:underline;font-size:13.5px" target="_blank"></a>
+                        </span></span><br>
+                      @endif
+                    @else
+                      <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                      <a style="color:blue;text-decoration:underline;font-size:13.5px" target="_blank"></a>
+                      </span></span><br>
+                    @endif
+                    
+                  @else
+                    <span class="mb-2 text-xs">Evidence Link 1:<span class="text-dark ms-sm-1 font-weight-bold">
+                    <a style="color:blue;text-decoration:underline;font-size:13.5px" target="_blank"></a>
+                    </span></span><br>
+                  @endif
+
+                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $pelangganEx2masters -> objektif }}</b></span>
                 </div>
               </div>
             </div>
@@ -2016,7 +2136,7 @@ input[type=file]::file-selector-button:hover {
                   @foreach ($kecemerlangan5 as $key => $kecemerlangans)
                     <tr>
                       <td class="text-sm text-center">{{$key + 1}}</td>
-                      <td class="text-xs">{!! nl2br($kecemerlangans -> bukti) !!}}</td>
+                      <td class="text-xs">{!! nl2br($kecemerlangans -> bukti) !!}</td>
                       <td class="text-sm text-center">
                         @if ($kecemerlangans->bukti_path == '')
                         @else
@@ -2402,9 +2522,9 @@ input[type=file]::file-selector-button:hover {
         <div class="card mb-4">
           <div class="card-body">
             @if ($weightage_kolaborasi == 0 || $weightage_kolaborasi == NULL)
-              <h6>KOLABORASI <span style="color:red;">(Current weightage = 0)</span></h6>
+              <h6>KOLABORASI1 <span style="color:red;">(Current weightage = 0)</span></h6>
             @else
-              <h6>KOLABORASI <span style="color:red;">(Current weightage = {{$weightage_kolaborasi}})</span></h6>
+              <h6>KOLABORASI1 <span style="color:red;">(Current weightage = {{$weightage_kolaborasi}})</span></h6>
             @endif
             
             <div class="table-responsive">

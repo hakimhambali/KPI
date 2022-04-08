@@ -837,13 +837,13 @@
       @endif
     </tr>
   @endforeach
-                  @foreach ($pelangganI as $key => $kpis)
+                  @foreach ($pelangganIn1 as $key => $kpis)
                     <tr>
                       @if ($key == 0)
-                        <td rowspan="{{ $pelangganIcount }}">
+                        <td rowspan="{{ $pelangganIn1count }}">
                           <p class="text-xs font-weight-bold mb-0 px-3" value="{{ $kpis -> fungsi }}">{{ $kpis -> fungsi }}</p>
                         </td>
-                        <td rowspan="{{ $pelangganIcount }}" class="text-xs font-weight-bold mb-0">
+                        <td rowspan="{{ $pelangganIn1count }}" class="text-xs font-weight-bold mb-0">
                           <span class="text-secondary text-xs font-weight-bold" value="{{ $kpis->kpimasters -> objektif }}">{{ $kpis->kpimasters -> objektif }}</span>
                         </td>
                       @else
@@ -872,20 +872,20 @@
                         </td>
                       @endif
                       @if ($key == 0)
-                        <td rowspan="{{ $pelangganIcount }}" class="align-middle text-center">
+                        <td rowspan="{{ $pelangganIn1count }}" class="align-middle text-center">
                           @if ($kpis->kpimasters->link == '')
                           -
                           @else
                           <a href=" {{ $kpis->kpimasters->link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">View</a>
                           @endif
                         </td>
-                        <td rowspan="{{ $pelangganIcount }}" class="align-middle text-center">
+                        <td rowspan="{{ $pelangganIn1count }}" class="align-middle text-center">
                           <span class="text-secondary text-xs font-weight-bold" value="{{ $kpis->kpimasters -> percent_master }}">{{ $kpis->kpimasters -> percent_master }}</span>
                         </td>
-                        <td rowspan="{{ $pelangganIcount }}" class="align-middle text-center">
+                        <td rowspan="{{ $pelangganIn1count }}" class="align-middle text-center">
                           <span class="text-secondary text-xs font-weight-bold" value="">Percentage (%)</span>
                         </td>
-                        <td rowspan="{{ $pelangganIcount }}" class="align-middle text-center">
+                        <td rowspan="{{ $pelangganIn1count }}" class="align-middle text-center">
                           <div class="d-flex align-items-center justify-content-center">
                             <span class="me-2 text-xs font-weight-bold" value="{{ $kpis->kpimasters -> pencapaian }}">{{ number_format( (integer)($kpis->kpimasters->skor_KPI)) }}%</span>
                             <div>
@@ -895,23 +895,23 @@
                             </div>
                           </div>
                         </td>
-                        <td rowspan="{{ $pelangganIcount }}" class="align-middle text-center">
+                        <td rowspan="{{ $pelangganIn1count }}" class="align-middle text-center">
                           <span class="text-secondary text-xs font-weight-bold" value="{{ $kpis->kpimasters -> skor_KPI }}">{{ $kpis->kpimasters -> skor_KPI }}</span>
                         </td>
-                        <td rowspan="{{ $pelangganIcount }}" class="align-middle text-center">
+                        <td rowspan="{{ $pelangganIn1count }}" class="align-middle text-center">
                           <span class="text-secondary text-xs font-weight-bold" value="{{ round($kpis->kpimasters -> skor_sebenar,2) }}">{{ round($kpis->kpimasters -> skor_sebenar,2) }} %</span>
                         </td>
                       @else
                       @endif
                     </tr>
                   @endforeach
-                  @foreach ($pelangganII as $key => $kpis)
+                  @foreach ($pelangganEx1 as $key => $kpis)
                     <tr>
                       @if ($key == 0)
-                        <td rowspan="{{ $pelangganIIcount }}">
+                        <td rowspan="{{ $pelangganEx1count }}">
                           <p class="text-xs font-weight-bold mb-0 px-3" value="{{ $kpis -> fungsi }}">{{ $kpis -> fungsi }}</p>
                         </td>
-                        <td rowspan="{{ $pelangganIIcount }}" class="text-xs font-weight-bold mb-0">
+                        <td rowspan="{{ $pelangganEx1count }}" class="text-xs font-weight-bold mb-0">
                           <span class="text-secondary text-xs font-weight-bold" value="{{ $kpis->kpimasters -> objektif }}">{{ $kpis->kpimasters -> objektif }}</span>
                         </td>
                       @else
@@ -940,20 +940,20 @@
                         </td>
                       @endif
                       @if ($key == 0)
-                        <td rowspan="{{ $pelangganIIcount }}" class="align-middle text-center">
+                        <td rowspan="{{ $pelangganEx1count }}" class="align-middle text-center">
                           @if ($kpis->kpimasters->link == '')
                           -
                           @else
                           <a href=" {{ $kpis->kpimasters->link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">View</a>
                           @endif
                         </td>
-                        <td rowspan="{{ $pelangganIIcount }}" class="align-middle text-center">
+                        <td rowspan="{{ $pelangganEx1count }}" class="align-middle text-center">
                           <span class="text-secondary text-xs font-weight-bold" value="{{ $kpis->kpimasters -> percent_master }}">{{ $kpis->kpimasters -> percent_master }}</span>
                         </td>
-                        <td rowspan="{{ $pelangganIIcount }}" class="align-middle text-center">
+                        <td rowspan="{{ $pelangganEx1count }}" class="align-middle text-center">
                           <span class="text-secondary text-xs font-weight-bold" value="">Percentage (%)</span>
                         </td>
-                        <td rowspan="{{ $pelangganIIcount }}" class="align-middle text-center">
+                        <td rowspan="{{ $pelangganEx1count }}" class="align-middle text-center">
                           <div class="d-flex align-items-center justify-content-center">
                             <span class="me-2 text-xs font-weight-bold" value="{{ $kpis->kpimasters -> pencapaian }}">{{ number_format( (integer)($kpis->kpimasters->skor_KPI)) }}%</span>
                             <div>
@@ -963,16 +963,84 @@
                             </div>
                           </div>
                         </td>
-                        <td rowspan="{{ $pelangganIIcount }}" class="align-middle text-center">
+                        <td rowspan="{{ $pelangganEx1count }}" class="align-middle text-center">
                           <span class="text-secondary text-xs font-weight-bold" value="{{ $kpis->kpimasters -> skor_KPI }}">{{ $kpis->kpimasters -> skor_KPI }}</span>
                         </td>
-                        <td rowspan="{{ $pelangganIIcount }}" class="align-middle text-center">
+                        <td rowspan="{{ $pelangganEx1count }}" class="align-middle text-center">
                           <span class="text-secondary text-xs font-weight-bold" value="{{ round($kpis->kpimasters -> skor_sebenar,2) }}">{{ round($kpis->kpimasters -> skor_sebenar,2) }} %</span>
                         </td>
                       @else
                       @endif
                     </tr>
                   @endforeach
+                  @foreach ($pelangganEx2 as $key => $kpis)
+                  <tr>
+                    @if ($key == 0)
+                      <td rowspan="{{ $pelangganEx2count }}">
+                        <p class="text-xs font-weight-bold mb-0 px-3" value="{{ $kpis -> fungsi }}">{{ $kpis -> fungsi }}</p>
+                      </td>
+                      <td rowspan="{{ $pelangganEx2count }}" class="text-xs font-weight-bold mb-0">
+                        <span class="text-secondary text-xs font-weight-bold" value="{{ $kpis->kpimasters -> objektif }}">{{ $kpis->kpimasters -> objektif }}</span>
+                      </td>
+                    @else
+                    @endif
+                    @if ($loop->last)
+                      <td class="text-xs font-weight-bold">
+                        <span class="text-secondary text-xs font-weight-bold" value="{{ $kpis -> bukti }}">{{ $kpis -> bukti }}</span>
+                      </td>
+                      <td class="text-xs font-weight-bold">
+                        @if ($kpis->bukti_path == '')
+                        <a href=" {{ $kpis->bukti_path }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        @else
+                        <a href=" {{ $kpis->bukti_path }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">View</a>
+                        @endif
+                      </td>
+                    @else
+                      <td class="text-xs font-weight-bold good">
+                        <span class="text-secondary text-xs font-weight-bold" value="{{ $kpis -> bukti }}">{{ $kpis -> bukti }}</span>
+                      </td>
+                      <td class="text-xs font-weight-bold good">
+                        @if ($kpis->bukti_path == '')
+                        <a href=" {{ $kpis->bukti_path }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank"></a>
+                        @else
+                        <a href=" {{ $kpis->bukti_path }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">View</a>
+                        @endif
+                      </td>
+                    @endif
+                    @if ($key == 0)
+                      <td rowspan="{{ $pelangganEx2count }}" class="align-middle text-center">
+                        @if ($kpis->kpimasters->link == '')
+                        -
+                        @else
+                        <a href=" {{ $kpis->kpimasters->link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">View</a>
+                        @endif
+                      </td>
+                      <td rowspan="{{ $pelangganEx2count }}" class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold" value="{{ $kpis->kpimasters -> percent_master }}">{{ $kpis->kpimasters -> percent_master }}</span>
+                      </td>
+                      <td rowspan="{{ $pelangganEx2count }}" class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold" value="">Percentage (%)</span>
+                      </td>
+                      <td rowspan="{{ $pelangganEx2count }}" class="align-middle text-center">
+                        <div class="d-flex align-items-center justify-content-center">
+                          <span class="me-2 text-xs font-weight-bold" value="{{ $kpis->kpimasters -> pencapaian }}">{{ number_format( (integer)($kpis->kpimasters->skor_KPI)) }}%</span>
+                          <div>
+                              <div class="progress">
+                                <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ $kpis->kpimasters->skor_KPI }}%;"></div>
+                              </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td rowspan="{{ $pelangganEx2count }}" class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold" value="{{ $kpis->kpimasters -> skor_KPI }}">{{ $kpis->kpimasters -> skor_KPI }}</span>
+                      </td>
+                      <td rowspan="{{ $pelangganEx2count }}" class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold" value="{{ round($kpis->kpimasters -> skor_sebenar,2) }}">{{ round($kpis->kpimasters -> skor_sebenar,2) }} %</span>
+                      </td>
+                    @else
+                    @endif
+                  </tr>
+                @endforeach
                   @foreach ($kecemerlangan1 as $key => $kpis)
                     <tr>
                       @if ($key == 0)
