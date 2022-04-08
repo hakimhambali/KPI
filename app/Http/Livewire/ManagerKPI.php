@@ -173,7 +173,7 @@ class ManagerKPI extends Component
         $nilai = Nilai_::where('user_id', '=', $user_id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->get();
         $kpiall = KPIAll_::where('user_id', '=', $user_id)->where('year', '=', $year)->where('month', '=', $month)->get();
         $date = Date_::where('user_id', '=', $user_id)->where('year', '=', $year)->where('month', '=', $month)->get();
-        $weightage_master = KpiAll_::where('user_id', '=', $user_id)->where('year', '=', $year)->where('month', '=', $month)->value('weightage_master');
+        $weightage_master = KPIAll_::where('user_id', '=', $user_id)->where('year', '=', $year)->where('month', '=', $month)->value('weightage_master');
         $kecekapanscount2 = Kecekapan_::where('user_id', '=', $user_id)->where('year', '=', $year)->where('month', '=', $month)->count();
         $nilaiscount2 = Nilai_::where('user_id', '=', $user_id)->where('year', '=', $year)->where('month', '=', $month)->count();
         $kecekapan_master = $kecekapanscount2 * 20;
