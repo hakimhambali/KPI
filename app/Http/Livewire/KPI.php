@@ -78,7 +78,7 @@ class KPI extends Component
     }
 
     public function kpi_master_edit1($id, $date_id, $user_id, $year, $month) {
-        $kadskormastercount = KPIMaster_::where('fungsi', '=', 'Kad Skor Korporat')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+        $kadskormastercount = KPIMaster_::where('fungsi', '=', 'Kad Skor Korporat')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
         $fungsi = 'Kad Skor Korporat';
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
         if ($kadskormastercount == 1) {
@@ -95,7 +95,7 @@ class KPI extends Component
             $this->month = $month;
             $this->id = $id;
 
-            $kewangan1mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan1')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+            $kewangan1mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan1')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
             $fungsi = 'Kewangan1';
             $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
             if ($kewangan1mastercount == 1) {
@@ -108,7 +108,7 @@ class KPI extends Component
     }
     
     public function kpi_master_edit13($id, $date_id, $user_id, $year, $month) {
-        $kewangan2mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan2')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+        $kewangan2mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan2')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
         $fungsi = 'Kewangan2';
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
         if ($kewangan2mastercount == 1) {
@@ -118,7 +118,7 @@ class KPI extends Component
     }
 
     public function kpi_master_edit14($id, $date_id, $user_id, $year, $month) {
-        $kewangan3mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan3')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+        $kewangan3mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan3')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
         $fungsi = 'Kewangan3';
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
         if ($kewangan3mastercount == 1) {
@@ -128,7 +128,7 @@ class KPI extends Component
     }
 
     public function kpi_master_edit15($id, $date_id, $user_id, $year, $month) {
-        $kewangan4mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan4')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+        $kewangan4mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan4')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
         $fungsi = 'Kewangan4';
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
         if ($kewangan4mastercount == 1) {
@@ -138,7 +138,7 @@ class KPI extends Component
     }
 
     public function kpi_master_edit16($id, $date_id, $user_id, $year, $month) {
-        $kewangan5mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan5')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+        $kewangan5mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan5')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
         $fungsi = 'Kewangan5';
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
         if ($kewangan5mastercount == 1) {
@@ -148,7 +148,7 @@ class KPI extends Component
     }
 
     public function kpi_master_edit17($id, $date_id, $user_id, $year, $month) {
-        $kewangan6mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan6')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+        $kewangan6mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan6')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
         $fungsi = 'Kewangan6';
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
         if ($kewangan6mastercount == 1) {
@@ -158,7 +158,7 @@ class KPI extends Component
     }
 
     public function kpi_master_edit18($id, $date_id, $user_id, $year, $month) {
-        $kewangan7mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan7')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+        $kewangan7mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan7')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
         $fungsi = 'Kewangan7';
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
         if ($kewangan7mastercount == 1) {
@@ -168,7 +168,7 @@ class KPI extends Component
     }
 
     public function kpi_master_edit19($id, $date_id, $user_id, $year, $month) {
-        $kewangan8mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan8')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+        $kewangan8mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan8')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
         $fungsi = 'Kewangan8';
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
         if ($kewangan8mastercount == 1) {
@@ -178,7 +178,7 @@ class KPI extends Component
     }
 
     public function kpi_master_edit20($id, $date_id, $user_id, $year, $month) {
-        $kewangan9mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan9')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+        $kewangan9mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan9')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
         $fungsi = 'Kewangan9';
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
         if ($kewangan9mastercount == 1) {
@@ -188,7 +188,7 @@ class KPI extends Component
     }
 
     public function kpi_master_edit21($id, $date_id, $user_id, $year, $month) {
-        $kewangan10mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan10')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+        $kewangan10mastercount = KPIMaster_::where('fungsi', '=', 'Kewangan10')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
         $fungsi = 'Kewangan10';
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
         if ($kewangan10mastercount == 1) {
@@ -198,7 +198,7 @@ class KPI extends Component
     }
 
     public function kpi_master_edit3($id, $date_id, $user_id, $year, $month) {
-        $pelangganImastercount = KPIMaster_::where('fungsi', '=', 'Pelanggan (Internal)')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+        $pelangganImastercount = KPIMaster_::where('fungsi', '=', 'Pelanggan (Internal)')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
         $fungsi = 'Pelanggan (Internal)';
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
         if ($pelangganImastercount == 1) {
@@ -208,7 +208,7 @@ class KPI extends Component
     }
 
     public function kpi_master_edit4($id, $date_id, $user_id, $year, $month) {
-        $pelangganIImastercount = KPIMaster_::where('fungsi', '=', 'Pelanggan (External)')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+        $pelangganIImastercount = KPIMaster_::where('fungsi', '=', 'Pelanggan (External)')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
         $fungsi = 'Pelanggan (External)';
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
         if ($pelangganIImastercount == 1) {
@@ -218,7 +218,7 @@ class KPI extends Component
     }
 
     public function kpi_master_edit5($id, $date_id, $user_id, $year, $month) {
-        $kecemerlangan1mastercount = KPIMaster_::where('fungsi', '=', 'Kecemerlangan Operasi1')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+        $kecemerlangan1mastercount = KPIMaster_::where('fungsi', '=', 'Kecemerlangan Operasi1')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
         $fungsi = 'Kecemerlangan Operasi1';
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
         if ($kecemerlangan1mastercount == 1) {
@@ -227,7 +227,7 @@ class KPI extends Component
         }
     }
     public function kpi_master_edit9($id, $date_id, $user_id, $year, $month) {
-        $kecemerlangan2mastercount = KPIMaster_::where('fungsi', '=', 'Kecemerlangan Operasi2')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+        $kecemerlangan2mastercount = KPIMaster_::where('fungsi', '=', 'Kecemerlangan Operasi2')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
         $fungsi = 'Kecemerlangan Operasi2';
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
         if ($kecemerlangan2mastercount == 1) {
@@ -236,7 +236,7 @@ class KPI extends Component
         }
     }
     public function kpi_master_edit10($id, $date_id, $user_id, $year, $month) {
-        $kecemerlangan3mastercount = KPIMaster_::where('fungsi', '=', 'Kecemerlangan Operasi3')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+        $kecemerlangan3mastercount = KPIMaster_::where('fungsi', '=', 'Kecemerlangan Operasi3')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
         $fungsi = 'Kecemerlangan Operasi3';
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
         if ($kecemerlangan3mastercount == 1) {
@@ -245,7 +245,7 @@ class KPI extends Component
         }
     }
     public function kpi_master_edit11($id, $date_id, $user_id, $year, $month) {
-        $kecemerlangan4mastercount = KPIMaster_::where('fungsi', '=', 'Kecemerlangan Operasi4')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->count();
+        $kecemerlangan4mastercount = KPIMaster_::where('fungsi', '=', 'Kecemerlangan Operasi4')->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','asc')->count();
         $fungsi = 'Kecemerlangan Operasi4';
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
         if ($kecemerlangan4mastercount == 1) {
