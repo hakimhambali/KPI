@@ -223,7 +223,7 @@ input[type=file]::file-selector-button:hover {
                       <td class="text-sm text-center">
                         @if ($kadskors->bukti_path == '')
                         @else
-                        <a href="{{  $kadskors->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{  $kadskors->bukti_path }}" class="btn btn-info btn-sm btn-icon my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
                       <td class="text-sm text-center">{{ $kadskors -> peratus }}</td>
@@ -360,7 +360,7 @@ input[type=file]::file-selector-button:hover {
                       <td class="text-sm text-center">
                         @if ($kewangans->bukti_path == '')
                         @else
-                        <a href="{{ $kewangans->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{ $kewangans->bukti_path }}" class="btn btn-info btn-sm btn-icon my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
                       <td class="text-sm text-center">{{ $kewangans -> peratus }}</td>
@@ -497,7 +497,7 @@ input[type=file]::file-selector-button:hover {
                       <td class="text-sm text-center">
                         @if ($kewangans->bukti_path == '')
                         @else
-                        <a href="{{ $kewangans->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{ $kewangans->bukti_path }}" class="btn btn-info btn-sm btn-icon my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
                       <td class="text-sm text-center">{{ $kewangans -> peratus }}</td>
@@ -634,7 +634,7 @@ input[type=file]::file-selector-button:hover {
                       <td class="text-sm text-center">
                         @if ($kewangans->bukti_path == '')
                         @else
-                        <a href="{{ $kewangans->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{ $kewangans->bukti_path }}" class="btn btn-info btn-sm btn-icon my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
                       <td class="text-sm text-center">{{ $kewangans -> peratus }}</td>
@@ -771,7 +771,7 @@ input[type=file]::file-selector-button:hover {
                       <td class="text-sm text-center">
                         @if ($kewangans->bukti_path == '')
                         @else
-                        <a href="{{ $kewangans->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{ $kewangans->bukti_path }}" class="btn btn-info btn-sm btn-icon my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
                       <td class="text-sm text-center">{{ $kewangans -> peratus }}</td>
@@ -908,7 +908,7 @@ input[type=file]::file-selector-button:hover {
                       <td class="text-sm text-center">
                         @if ($kewangans->bukti_path == '')
                         @else
-                        <a href="{{ $kewangans->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{ $kewangans->bukti_path }}" class="btn btn-info btn-sm btn-icon my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
                       <td class="text-sm text-center">{{ $kewangans -> peratus }}</td>
@@ -1045,7 +1045,7 @@ input[type=file]::file-selector-button:hover {
                       <td class="text-sm text-center">
                         @if ($kewangans->bukti_path == '')
                         @else
-                        <a href="{{ $kewangans->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{ $kewangans->bukti_path }}" class="btn btn-info btn-sm btn-icon my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
                       <td class="text-sm text-center">{{ $kewangans -> peratus }}</td>
@@ -1592,7 +1592,7 @@ input[type=file]::file-selector-button:hover {
                       <td class="text-sm text-center">
                         @if ($kecemerlangans->bukti_path == '')
                         @else
-                        <a href="{{ $kecemerlangans->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{ $kecemerlangans->bukti_path }}" class="btn btn-info btn-sm btn-icon my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
                       <td class="text-sm text-center">{{ $kecemerlangans -> peratus }}</td>
@@ -1729,7 +1729,7 @@ input[type=file]::file-selector-button:hover {
                       <td class="text-sm text-center">
                         @if ($kecemerlangans->bukti_path == '')
                         @else
-                        <a href="{{ $kecemerlangans->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{ $kecemerlangans->bukti_path }}" class="btn btn-info btn-sm btn-icon my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
                       <td class="text-sm text-center">{{ $kecemerlangans -> peratus }}</td>
@@ -1866,7 +1866,7 @@ input[type=file]::file-selector-button:hover {
                       <td class="text-sm text-center">
                         @if ($kecemerlangans->bukti_path == '')
                         @else
-                        <a href="{{ $kecemerlangans->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{ $kecemerlangans->bukti_path }}" class="btn btn-info btn-sm btn-icon my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
                       <td class="text-sm text-center">{{ $kecemerlangans -> peratus }}</td>
@@ -2003,7 +2003,7 @@ input[type=file]::file-selector-button:hover {
                       <td class="text-sm text-center">
                         @if ($kecemerlangans->bukti_path == '')
                         @else
-                        <a href="{{ $kecemerlangans->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{ $kecemerlangans->bukti_path }}" class="btn btn-info btn-sm btn-icon my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
                       <td class="text-sm text-center">{{ $kecemerlangans -> peratus }}</td>
@@ -2140,7 +2140,7 @@ input[type=file]::file-selector-button:hover {
                       <td class="text-sm text-center">
                         @if ($kecemerlangans->bukti_path == '')
                         @else
-                        <a href="{{ $kecemerlangans->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{ $kecemerlangans->bukti_path }}" class="btn btn-info btn-sm btn-icon my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
                       <td class="text-sm text-center">{{ $kecemerlangans -> peratus }}</td>
@@ -2277,7 +2277,7 @@ input[type=file]::file-selector-button:hover {
                       <td class="text-sm text-center">
                         @if ($trainings->bukti_path == '')
                         @else
-                        <a href="{{ $trainings->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{ $trainings->bukti_path }}" class="btn btn-info btn-sm btn-icon my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
                       <td class="text-sm text-center">{{ $trainings -> peratus }}</td>
@@ -2414,7 +2414,7 @@ input[type=file]::file-selector-button:hover {
                       <td class="text-sm text-center">
                         @if ($ncrs->bukti_path == '')
                         @else
-                        <a href="{{ $ncrs->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{ $ncrs->bukti_path }}" class="btn btn-info btn-sm btn-icon my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
                       <td class="text-sm text-center">{{ $ncrs -> peratus }}</td>
@@ -2551,7 +2551,7 @@ input[type=file]::file-selector-button:hover {
                       <td class="text-sm text-center">
                         @if ($kolaborasis->bukti_path == '')
                         @else
-                        <a href="{{ $kolaborasis->bukti_path }}" class="btn btn-info btn-sm btn-icon" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
+                        <a href="{{ $kolaborasis->bukti_path }}" class="btn btn-info btn-sm btn-icon my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i>
                         @endif
                       </td>
                       <td class="text-sm text-center">{{ $kolaborasis -> peratus }}</td>

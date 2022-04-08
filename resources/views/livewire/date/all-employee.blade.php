@@ -100,8 +100,8 @@
                       <tr>
                         <td class="text-sm fw-bold text-center"><i class="bi bi-calendar-week-fill"></i> {{ $dates -> year }}</td>
                         <td class="text-sm fw-bold text-center">{{ $dates -> month }}</td>
-                        <td class="text-center">
-                          <button class="btn bg-gradient-primary dropdown-toggle btn-sm px-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false">
+                        <td class="text-center ">
+                          <button class="btn bg-gradient-primary dropdown-toggle btn-sm px-3 my-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false">
                               <span><i class="fa fa-edit"></i> Add</span>
                             </button>
                             <div class="dropdown-menu">
@@ -111,7 +111,7 @@
                             </div>
                         </td>
                         <td class="text-xs fw-bold text-center">
-                          <a href="{{ url('employee/displaykpi/'.$dates->id.'/'.$dates->user_id.'/'.$dates->year.'/'.$dates->month) }}" type="button" class="btn bg-gradient-success btn-sm">KPI Master</a>
+                          <a href="{{ url('employee/displaykpi/'.$dates->id.'/'.$dates->user_id.'/'.$dates->year.'/'.$dates->month) }}" type="button" class="btn bg-gradient-success btn-sm my-auto">KPI Master</a>
                         </td>
                         <td class="text-xs fw-bold text-center">
                           @if ($dates->status == "Not Submitted")
@@ -125,8 +125,8 @@
                           @endif
                         </td>
                         <td class="text-center">
-                          <a href="{{ url('employee/edit/date/'.$dates->id.'/'.$dates->user_id.'/'.$dates->year.'/'.$dates->month) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit Date"><i class="bi bi-pencil-square"></i></a>
-                          <button type="button" wire:click="selectItem({{$dates->id}}, 'delete' )" class="btn btn-danger btn-sm btn-icon data-delete" data-form="{{$dates->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete KPI"><i class="bi bi-trash3-fill"></i></button>
+                          <a href="{{ url('employee/edit/date/'.$dates->id.'/'.$dates->user_id.'/'.$dates->year.'/'.$dates->month) }}" class="btn btn-dark btn-sm btn-icon my-auto" data-bs-toggle="tooltip" data-bs-original-title="Edit Date"><i class="bi bi-pencil-square"></i></a>
+                          <button type="button" wire:click="selectItem({{$dates->id}}, 'delete' )" class="btn btn-danger btn-sm btn-icon my-auto data-delete" data-form="{{$dates->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete KPI"><i class="bi bi-trash3-fill"></i></button>
                         </td>
                       </tr>
                     @endforeach
