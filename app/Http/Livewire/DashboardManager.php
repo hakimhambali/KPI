@@ -11,7 +11,7 @@ class DashboardManager extends Component
     public function render()
     {
         $userdepartment = auth()->user()->department;
-        $users = User::where([['department', '=', $userdepartment] , ['role', '=', 'employee']])->orderBy('created_at','desc')->get();
+        $users = User::where([['department', '=', $userdepartment] , ['role', '!=', 'admin']])->Where([['department', '=', $userdepartment] , ['role', '!=', 'moderator']])->orderBy('created_at','desc')->get();
         $userscount = $users->count();
         return view('livewire.dashboard.all-manager')->with(compact('users', 'userscount', 'userdepartment'));
     }
