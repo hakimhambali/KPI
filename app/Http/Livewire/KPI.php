@@ -40,6 +40,7 @@ class KPI extends Component
 
     public function delete()
     {
+        dd($this->id_kpi);
         $date_id = $this->date_id;
         $user_id = $this->user_id;
         $year = $this->year;
