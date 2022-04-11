@@ -36,9 +36,11 @@ class UserManagement extends Component
         $manager = User::where('role', 'manager')->get();
         $hr = User::where('role', 'hr')->get();
         $moderator = User::where('role', 'moderator')->get();
+        $dc = User::where('role', 'dc')->get();
+        $pro = User::where('role', 'pro')->get();
         $alluser = User::all();
         $allusercount = $alluser->count();
 
-        return view('livewire.user-management.user-management')->with(compact('employee', 'manager', 'hr', 'moderator','alluser', 'allusercount'));
+        return view('livewire.user-management.user-management')->with(compact('employee', 'manager', 'hr', 'moderator','alluser', 'allusercount', 'dc', 'pro'));
     }
 }

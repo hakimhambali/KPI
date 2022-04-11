@@ -24,7 +24,6 @@ class UserManagementFormWire extends Component
         $this->model_id = $user->id;
         $this->name = $user->name;
         $this->ic = $user->ic;
-        $this->password = $user->password;
         $this->role = $user->role;
     }
 
