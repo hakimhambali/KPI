@@ -121,7 +121,22 @@ class Date extends Component
     
         public function render()
     {
-        $date = Date_::where('user_id', '=', auth()->user()->id)->orderBy('year','desc')->orderBy('month','desc')->get();
+        $queryOrder = "CASE WHEN month = 'January' THEN 1 ";
+        $queryOrder .= "WHEN month = 'February' THEN 2 ";
+        $queryOrder .= "WHEN month = 'March' THEN 3 ";
+        $queryOrder .= "WHEN month = 'April' THEN 4 ";
+        $queryOrder .= "WHEN month = 'May' THEN 5 ";
+        $queryOrder .= "WHEN month = 'June' THEN 6 ";
+        $queryOrder .= "WHEN month = 'July' THEN 7 ";
+        $queryOrder .= "WHEN month = 'August' THEN 8 ";
+        $queryOrder .= "WHEN month = 'September' THEN 9 ";
+        $queryOrder .= "WHEN month = 'October' THEN 10 ";
+        $queryOrder .= "WHEN month = 'November' THEN 11 ";
+        $queryOrder .= "WHEN month = 'December' THEN 12 ";
+        $queryOrder .= "ELSE 13 END";
+
+        // $date = Date_::where('user_id', '=', auth()->user()->id)->orderBy('year','desc')->orderByRaw('January')->orderByRaw('February')->orderByRaw('March')->orderByRaw('April')->orderByRaw('May')->orderByRaw('June')->orderByRaw('July')->orderByRaw('August')->orderByRaw('September')->orderByRaw('October')->orderByRaw('November')->orderByRaw('December')->get();
+        $date = Date_::where('user_id', '=', auth()->user()->id)->orderBy('year','desc')->orderByRaw($queryOrder)->get();
         $kpi = KPI_::where('user_id', '=', auth()->user()->id)->get();
         
         return view('livewire.date.all-employee', compact('date', 'kpi'));
