@@ -40,15 +40,12 @@ class KPI extends Component
 
     public function delete()
     {
-        // dd($this->id_kpi);
         $date_id = $this->date_id;
         $user_id = $this->user_id;
         $year = $this->year;
         $month = $this->month;
         $kpi = KPI_::find($this->id_kpi);
-        dd($kpi->value('fungsi'));
-        $fungsi = KPI_::find($this->id_kpi)->value('fungsi');
-        dd($fungsi);
+        $fungsi = $kpi->fungsi;
         $kpi->delete();
 
         Date_::find($date_id)->update([
