@@ -46,7 +46,7 @@ class KPI extends Component
         $year = $this->year;
         $month = $this->month;
         $kpi = KPI_::find($this->id_kpi);
-        dd($kpi);
+        dd($kpi->value('fungsi'));
         $fungsi = KPI_::find($this->id_kpi)->value('fungsi');
         dd($fungsi);
         $kpi->delete();
