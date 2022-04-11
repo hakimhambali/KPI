@@ -71,6 +71,7 @@ Route::get('/employee/edit/kpimaster18/{id}/{date_id}/{user_id}/{year}/{month}',
 Route::get('/employee/edit/kpimaster19/{id}/{date_id}/{user_id}/{year}/{month}', [KPI::class, 'kpi_master_edit19']);
 Route::get('/employee/edit/kpimaster20/{id}/{date_id}/{user_id}/{year}/{month}', [KPI::class, 'kpi_master_edit20']);
 Route::get('/employee/edit/kpimaster21/{id}/{date_id}/{user_id}/{year}/{month}', [KPI::class, 'kpi_master_edit21']);
+Route::get('/employee/edit/kpimaster22/{id}/{date_id}/{user_id}/{year}/{month}', [KPI::class, 'kpi_master_edit22']);
 Route::post('/employee/update/kpimaster/{id}/{fungsi}/{date_id}/{user_id}/{year}/{month}', [KPI::class, 'kpi_master_update']);
 // Route::post('/employee/save/kecekapan/{year}/{month}',[Kecekapan::class, 'kecekapan_save']);
 Route::post('/employee/save/kecekapan/{date_id}/{user_id}/{year}/{month}',[Kecekapan::class, 'kecekapan_save']);

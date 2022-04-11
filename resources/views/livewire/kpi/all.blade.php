@@ -1492,7 +1492,7 @@ input[type=file]::file-selector-button:hover {
                 </div>
 
                 <div class="col-3 text-end">
-                  <a href="{{ url('employee/edit/kpimaster4/'.$pelangganEx2masters->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="btn bg-gradient-info btn-sm px-4" href="javascript:;"><i class="bi bi-pencil me-2" aria-hidden="true"></i>Edit</a>
+                  <a href="{{ url('employee/edit/kpimaster22/'.$pelangganEx2masters->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="btn bg-gradient-info btn-sm px-4" href="javascript:;"><i class="bi bi-pencil me-2" aria-hidden="true"></i>Edit</a>
                 </div>
               </div>
 
