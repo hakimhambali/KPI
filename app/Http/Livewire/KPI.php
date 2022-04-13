@@ -734,11 +734,13 @@ class KPI extends Component
        
     public function kpi_edit($id, $date_id, $user_id, $year, $month) {
         $kpi = KPI_::find($id);
+        $function = Function_::all();
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
-        return view('livewire.kpi.edit' , compact('kpi', 'date_id', 'user_id', 'year', 'month', 'status'));
+        $fungsikpi = $kpi->fungsi;
+        return view('livewire.kpi.edit' , compact('kpi', 'date_id', 'user_id', 'year', 'month', 'status', 'function', 'fungsikpi'));
     }
 
-    public function kpi_update(Request $request, $id, $date_id, $user_id, $year, $month) {
+    public function kpi_update(Request $request, $id, $date_id, $user_id, $year, $month, $fungsikpi) {
         $validatedData = $request->validate([
             'fungsi' => ['required'],
             'bukti' => ['required'],
@@ -889,7 +891,6 @@ class KPI extends Component
             $percent_master = DB::table('kpi_master')->where('id', '=', $kpimasters_id)->where('year', '=', $year)->where('month', '=', $month)->value('percent_master');
             $skor_kpi = 0;
             $skor_sebenar = 0;
- 
             if ($total_score < 30 ) {
                 $skor_kpi = $total_score;
                 $skor_sebenar = (($percent_master/100)*$skor_kpi);
@@ -913,6 +914,44 @@ class KPI extends Component
 
             KPIMaster_::find($kpimasters_id)->update([
                 'pencapaian'=>  $total_score,
+                'skor_KPI'=>  $skor_kpi,
+                'skor_sebenar'=>  $skor_sebenar,
+                'kpiall_id'=>  count($kpiall) > 0 ? $kpiall->sortByDesc('created_at')->first()->id : '0',
+                'updated_at'=> Carbon::now(),
+            ]);
+        }
+        elseif (KPIMaster_::where('fungsi', '=', $fungsikpi)->where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->count() == 1) {
+            $kpimasters = KPIMaster_::where('fungsi', '=', $fungsikpi)->where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->get();
+            $kpimasters_id = count($kpimasters) > 0 ? $kpimasters->sortByDesc('created_at')->first()->id : '0';
+            $total_score = KPI_::where('fungsi', $fungsikpi)->where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->sum('skor_sebenar');
+            $kpiall = KPIAll_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->get();
+            $percent_master = DB::table('kpi_master')->where('id', '=', $kpimasters_id)->where('year', '=', $year)->where('month', '=', $month)->value('percent_master');
+            $skor_kpi = 0;
+            $skor_sebenar = 0;
+            if ($total_score < 30 ) {
+                $skor_kpi = $total_score;
+                $skor_sebenar = (($percent_master/100)*$skor_kpi);
+            }
+            elseif ($total_score >= 30 && $total_score < 65) {
+                $value1 = $total_score - 30;
+                $value2 = 65 - 30;
+                $skor_kpi = ((($value1/$value2)*35)+30);
+                $skor_sebenar = (($percent_master/100)*$skor_kpi);
+            }
+            elseif ($total_score >= 65 && $total_score < 100) {
+                $value1 = $total_score - 65;
+                $value2 = 100 - 65;
+                $skor_kpi = ((($value1/$value2)*35)+65);
+                $skor_sebenar = (($percent_master/100)*$skor_kpi);
+            }
+            elseif ($total_score >= 100) {
+                $skor_kpi = 100;
+                $skor_sebenar = (($percent_master/100)*$skor_kpi);
+            }
+
+            KPIMaster_::find($kpimasters_id)->update([
+                'pencapaian'=>  $total_score,
+                'fungsi'=> $request->fungsi,
                 'skor_KPI'=>  $skor_kpi,
                 'skor_sebenar'=>  $skor_sebenar,
                 'kpiall_id'=>  count($kpiall) > 0 ? $kpiall->sortByDesc('created_at')->first()->id : '0',

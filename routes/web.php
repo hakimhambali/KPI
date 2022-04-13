@@ -29,6 +29,7 @@ use App\Http\Livewire\UserManagement\EditProfile;
 use App\Http\Livewire\UserManagement\UserManagement;
 use App\Http\Livewire\UserManagement\UserManagementAdmin;
 use App\Http\Controllers\FindOwnerController;
+// use App\Http\Livewire\Training;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,7 +79,7 @@ Route::post('/employee/save/kecekapan/{date_id}/{user_id}/{year}/{month}',[Kecek
 // Route::post('/employee/save/nilai/{year}/{month}',[Nilai::class, 'nilai_save']);
 Route::post('/employee/save/nilai/{date_id}/{user_id}/{year}/{month}',[Nilai::class, 'nilai_save']);
 Route::get('/employee/edit/kpi/{id}/{date_id}/{user_id}/{year}/{month}', [KPI::class, 'kpi_edit']);
-Route::post('/employee/update/kpi/{id}/{date_id}/{user_id}/{year}/{month}', [KPI::class, 'kpi_update']);
+Route::post('/employee/update/kpi/{id}/{date_id}/{user_id}/{year}/{month}/{fungsikpi}', [KPI::class, 'kpi_update']);
 Route::get('/employee/edit/kecekapan/{id}/{date_id}/{user_id}/{year}/{month}', [Kecekapan::class, 'kecekapan_edit']);
 Route::post('/employee/update/kecekapan/{id}/{date_id}/{user_id}/{year}/{month}', [Kecekapan::class, 'kecekapan_update']);
 Route::get('/employee/edit/nilai/{id}/{date_id}/{user_id}/{year}/{month}', [Nilai::class, 'nilai_edit']);
@@ -166,7 +167,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/edit', EditProfile::class)->name('edit-profile');
     Route::get('/user-management', UserManagement::class)->name('user-management');
     Route::get('/user-management-admin', UserManagementAdmin::class)->name('user-management-admin');
-
+    // Route::get('/training', Training::class)->name('training');
 });
 
 // Route::post('/hr/create/sop', [SOP::class, 'create'] ,function ( Request $request ) {

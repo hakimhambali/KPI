@@ -67,7 +67,7 @@
             @endif
             <!---------------------- Create Function ---------------------------------------------------------->          
             <div class="card mb-4">
-              <form action="{{ url('employee/update/kpi/'.$kpi->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" method="post" enctype="multipart/form-data">
+              <form action="{{ url('employee/update/kpi/'.$kpi->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month.'/'.$fungsikpi) }}" method="post" enctype="multipart/form-data">
               @csrf  
                 <div class="card-body">
                   <h6>UPDATE FUNCTION</h6><hr>
@@ -75,8 +75,17 @@
                   <div class="row">
                     <div class="col-md-6 mb-3">
                       <label class="form-label">Function<span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" id="fungsi" name="fungsi" value="{{ $kpi->fungsi }}" readonly>
-                      @error('fungsi') <div class="text-danger text-sm pt-2">{{ $message }}</div> @enderror
+                      <div class="mb-0" class="@error('fungsi') @enderror">
+                        <select class="form-select" id="fungsi" name="fungsi" required>
+                          <option selected class="bg-secondary text-white" value="{{  $kpi->fungsi  }}" >{{  $kpi->fungsi  }}</option>
+
+                          @foreach ($function as $functions)
+                            <option value="{{$functions->name}}">{{$functions->name}}</option>
+                          @endforeach 
+
+                        </select>
+                        @error('fungsi') <div class="text-danger text-sm pt-2">{{ $message }}</div> @enderror
+                      </div>
                     </div>
 
                     <div class="col-md-6" id="buktiupload">
@@ -126,7 +135,7 @@
                         <tbody>
                           <tr>
                             <td>
-                              <input type="text" class="form-control input_ukuran" pattern="[0-9]+" maxlength="3" id="peratus" name="peratus" onkeyup="masterClac();" value="{{ $kpi->threshold }}" min="0"  >
+                              <input type="text" class="form-control input_ukuran" pattern="[0-9]+" maxlength="3" id="peratus" name="peratus" onkeyup="masterClac();" value="{{ $kpi->peratus }}" min="0"  >
                               @error('peratus') <div class="text-danger text-xs pt-2">{{ $message }}</div> @enderror
                             </td>
                             <td style="word-break: break-all;" class="border-dark">
