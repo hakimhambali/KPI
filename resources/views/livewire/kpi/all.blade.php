@@ -309,7 +309,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $kadskormasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($kadskormasters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
@@ -446,7 +446,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $kewanganmasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($kewanganmasters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
@@ -583,7 +583,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $kewanganmasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($kewanganmasters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
@@ -720,7 +720,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $kewanganmasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($kewanganmasters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
@@ -857,7 +857,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $kewanganmasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($kewanganmasters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
@@ -994,7 +994,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $kewanganmasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($kewanganmasters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
@@ -1131,7 +1131,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $kewanganmasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($kewanganmasters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
@@ -1268,7 +1268,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $pelangganIn1masters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($pelangganIn1masters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
@@ -1541,7 +1541,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $pelangganEx2masters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($pelangganEx2masters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
@@ -1678,7 +1678,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $kecemerlanganmasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($kecemerlanganmasters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
@@ -1815,7 +1815,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $kecemerlanganmasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($kecemerlanganmasters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
@@ -1952,7 +1952,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $kecemerlanganmasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($kecemerlanganmasters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
@@ -2089,7 +2089,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $kecemerlanganmasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($kecemerlanganmasters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
@@ -2226,7 +2226,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $kecemerlanganmasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($kecemerlanganmasters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
@@ -2363,7 +2363,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $trainingmasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($trainingmasters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
@@ -2500,7 +2500,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $ncrmasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($ncrmasters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
@@ -2637,7 +2637,7 @@ input[type=file]::file-selector-button:hover {
                     </span></span><br>
                   @endif
 
-                  <span class="mb-2 text-xs">KPI Objective : <b>{{ $kolaborasimasters -> objektif }}</b></span>
+                  <span class="mb-2 text-xs">KPI Objective : <b>{!! nl2br($kolaborasimasters -> objektif) !!}</b></span>
                 </div>
               </div>
             </div>
