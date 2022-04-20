@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\SOP_;
 use App\Models\User;
-use App\Models\Department_;
+use App\Models\Department;
 use Illuminate\Support\Carbon;
 use Livewire\WithFileUploads;
 use Illuminate\Http\Request;
