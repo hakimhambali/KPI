@@ -4,37 +4,24 @@
         <div class="container-fluid py-1 px-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                    @if (Route::currentRouteName() == 'view-profile' || Route::currentRouteName() == 'edit-profile')
-                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="javascript:;">Profile</a>
+                    @if (Route::currentRouteName() == 'edit-profile')
+                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/profile/view">View Profile</a>
                         </li>
-
-                    @else
                     @endif
 
-                    @if (Route::currentRouteName() == 'display-kpi')
-                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="javascript:;">Master KPI</a>
+                    @if (Route::currentRouteName() == 'Kpi' || Route::currentRouteName() == 'Kecekapan' || Route::currentRouteName() == 'Nilai' || Route::currentRouteName() == 'Display-KPI')
+                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/add-date">Add Date</a>
                         </li>
-                    @else
                     @endif
 
-                    @if (Route::currentRouteName() == 'add-date' || Route::currentRouteName() == 'add-kecekapan' || Route::currentRouteName() == 'add-nilai')
-                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="javascript:;">KPI</a>
+                    @if (Route::currentRouteName() == 'sop' || Route::currentRouteName() == 'policy')
+                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/add-date">Add Date</a>
                         </li>
-                    @else
-                    @endif
-
-                    @if (Route::currentRouteName() == 'Kpi' || Route::currentRouteName() == 'Kecekapan' || Route::currentRouteName() == 'Nilai' || Route::currentRouteName() == 'Display-KPI' || Route::currentRouteName() == 'Edit')
-                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="javascript:;">KPI</a>
-                        </li>
-                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="javascript:;">Add Date</a>
-                        </li>
-                    @else
                     @endif
 
                     @if (Route::currentRouteName() == 'user-management')
                         <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="javascript:;">User Management</a>
                         </li>
-                    @else
                     @endif
 
                     <li class="breadcrumb-item text-sm text-dark active text-capitalize" aria-current="page">
