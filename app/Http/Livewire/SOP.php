@@ -140,7 +140,7 @@ class SOP extends Component
         $sop3 = SOP_::where('part', '=', '03 WORK INSTRUCTION')->orderBy('title')->get();
         $sop4 = SOP_::where('part', '=', '04 GUIDELINE')->orderBy('title')->get();
         $sop5 = SOP_::where('part', '=', '05 QUALITY MANUAL')->orderBy('title')->get();
-        $department = Department_::all();
+        $department = Department::all();
         $userdepartment = auth()->user()->department;
         $users = User::where('department', '=', $userdepartment)->get();
         return view('livewire.sop.all', compact('sop', 'department', 'sop1', 'sop2', 'sop3', 'sop4', 'sop5', 'userdepartment', 'users'));
