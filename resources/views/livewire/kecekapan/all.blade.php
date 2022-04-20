@@ -1,148 +1,101 @@
 {{------------------------------------- KECEKAPAN (ALL USER) ----------------------------------------}}
-<div>
-<div class="container-fluid py-4">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card ">
-        <div class="card-header pb-0">
-          <h6>List Kecekapan Teras (For Reference Only)</h6>
-        </div>
-        <div class="card-body px-0 pt-0 pb-2">
-          <div class="p-0">
-            <table class="table align-items-center mb-0">
-              <thead>
-                <tr>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Kecekapan Teras</th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Expected Result</th>
-                </tr>
-              </thead>
-              <tbody>
-                @php($i = 1)
+<div class="container-fluid pb-4">
+    <div class="row">
+      <div class="col-lg-12">
 
-                  <tr>
-                    <td>    
-                      <div class="d-flex px-2 py-1">
-                        <div class="d-flex flex-column justify-content-center">
-                          <p class="mb-0 text-sm" value="">1</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-xs font-weight-bold mb-0" value="Kepimpinan Organisasi">Kepimpinan Organisasi</p>
-                    </td>
-                    <td class="text-xs font-weight-bold mb-0">
-                      <span class="text-secondary text-xs font-weight-bold" value="">Pekerja yang sedar dan menyesuaikan diri dengan strategi organisasi
-                        <br>
-                        Pemimpin yang bertindak selaras dengan strategi organisasi
-                        <br>
-                        Pengurus yang dapat mengembangkan dan memperkasakan pekerja bawahannya
-                        <br>
-                        Budaya organisasi yang mencerminkan nilainya
-                        <br>
-                        Pemimpin yang bertindak selaras dengan strategi organisasi</span>
-                    </td>
-                  </tr>
+        <!----------------------------------------------------------------------------------------------------->
+        <div class="row">
+          <div class="col-md-12 mb-lg-0">
+            
+            <!---------------------- Create Function ---------------------------------------------------------->          
+            <div class="card mb-4 bg-gradient-light">  
+              <div class="card-body">
+                <h6>List Kecekapan Teras (For Reference Only)</h6><hr>
 
-                  <tr>
-                    <td>    
-                      <div class="d-flex px-2 py-1">
-                        <div class="d-flex flex-column justify-content-center">
-                          <p class="mb-0 text-sm" value="">2</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-xs font-weight-bold mb-0" value="Keupayaan Inovatif">Keupayaan Inovatif</p>
-                    </td>
-                    <td class="text-xs font-weight-bold mb-0">
-                      <span class="text-secondary text-xs font-weight-bold" value="">Pekerja yang berupaya memberi idea dan memberi penyelesaian untuk menyelesaikan masalah
-                        <br>
-                        Amalan kerja yang dikemas kini lebih sesuai dengan jangkaan masa kini
-                        <br>
-                        Penerimaan untuk organisasi, dan semua bahagiannya, perlu berubah dan terus meningkat
-                        <br>
-                        Pemimpin yang bertindak selaras dengan strategi organisasi</span>
-                    </td>
-                  </tr>
+                <div class="row">
+                  <div class="table-responsive">
+                    <table class="table table-sm align-middle fw-bold">
+                      <thead class="text-center text-xxs fw-bolder">
+                        <tr>
+                          <th>NO</th>
+                          <th>KECEKAPAN TERAS</th>
+                          <th class="col-8">EXPECTED RESULT</th>
+                      </thead>
 
-                <tr>
-                  <td> 
-                    <div class="d-flex px-2 py-1">
-                      <div class="d-flex flex-column justify-content-center">
-                        <p class="mb-0 text-sm" value="">3</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <p class="text-xs font-weight-bold mb-0" value="Pengurusan Pelanggan">Pengurusan Pelanggan</p>
-                  </td>
-                    <td class="text-xs font-weight-bold mb-0">
-                      <span class="text-secondary text-xs font-weight-bold" value="">Amalan organisasi yang lebih sesuai dengan keperluan pelanggan moden
-                        <br>
-                        Pekerja yang memahami dan bertindak mengikut kehendak pelanggan tepat pada masanya
-                        <br>
-                        Penciptaan produk dan perkhidmatan masa depan yang lebih mencerminkan keperluan pelanggan
-                        <br>
-                        Pemimpin yang bertindak selaras dengan strategi organisasi</span>
-                    </td>
-                  </tr>
+                      <tbody>
+                        <tr>
+                          <td class="text-xs text-center">1</td>
+                          <td class="text-xs text-center">Kepimpinan Organisasi</td>
+                          <td class="text-xs">
+                            <i class="bi bi-layers-fill"></i> Pekerja yang sedar dan menyesuaikan diri dengan strategi organisasi.<br>
+                            <i class="bi bi-layers-fill"></i> Pemimpin yang bertindak selaras dengan strategi organisasi.<br>
+                            <i class="bi bi-layers-fill"></i> Pengurus yang dapat mengembangkan dan memperkasakan pekerja bawahannya.<br>
+                            <i class="bi bi-layers-fill"></i> Budaya organisasi yang mencerminkan nilainya.<br>
+                            <i class="bi bi-layers-fill"></i> Pemimpin yang bertindak selaras dengan strategi organisasi.
+                          </td>
+                        </tr>
 
-                  <tr>
-                    <td> 
-                      <div class="d-flex px-2 py-1">
-                        <div class="d-flex flex-column justify-content-center">
-                          <p class="mb-0 text-sm" value="">4</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-xs font-weight-bold mb-0" value="Pengurusan Pemegang Berkepentingan">Pengurusan Pemegang Berkepentingan</p>
-                    </td>
-                    <td class="text-xs font-weight-bold mb-0">
-                      <span class="text-secondary text-xs font-weight-bold" value="">Pekerja yang lebih empati dengan pihak berkepentingan mereka
-                        <br>
-                        Pembinaan hubungan positif dengan pihak berkepentingan
-                        <br>
-                        Pembentukan perkongsian strategik yang membantu mencapai objektif organisasi
-                        <br>
-                        Pengurus yang mendorong pekerja bawahan mereka membina rangkaian profesional mereka sendiri
-                        <br>
-                        Pemimpin yang bertindak selaras dengan strategi organisasi</span>
-                    </td>
-                  </tr>
+                        <tr>
+                          <td class="text-xs text-center">2</td>
+                          <td class="text-xs text-center">Keupayaan Inovatif</td>
+                          <td class="text-xs">
+                            <i class="bi bi-layers-fill"></i> Pekerja yang berupaya memberi idea dan memberi penyelesaian untuk menyelesaikan masalah.<br>
+                            <i class="bi bi-layers-fill"></i> Amalan kerja yang dikemas kini lebih sesuai dengan jangkaan masa kini.<br>
+                            <i class="bi bi-layers-fill"></i> Penerimaan untuk organisasi, dan semua bahagiannya, perlu berubah dan terus meningkat.<br>
+                            <i class="bi bi-layers-fill"></i> Pemimpin yang bertindak selaras dengan strategi organisasi.
+                          </td>
+                        </tr>
 
-                  <tr>
-                    <td> 
-                      <div class="d-flex px-2 py-1">
-                        <div class="d-flex flex-column justify-content-center">
-                          <p class="mb-0 text-sm" value="">5</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <p class="text-xs font-weight-bold mb-0" value="Ketangkasan Dalam Organisasi">Ketangkasan Dalam Organisasi</p>
-                    </td>
-                    <td class="text-xs font-weight-bold mb-0">
-                      <span class="text-secondary text-xs font-weight-bold" value="">Pekerja yang berpengetahuan dan serba boleh
-                        <br>
-                        Penghargaan dan penerapan budaya bimbingan dalam organisasi
-                        <br>
-                        Amalan organisasi yang boleh menyesuaikan diri dengan masalah di pasaran
-                        <br>
-                        Organisasi yang menekankan dan mendorong pembelajaran dan perkembangan berterusan
-                        <br>
-                        Pemimpin yang bertindak selaras dengan strategi organisasi</span>
-                    </td>
-                  </tr>
-              </tbody>
-            </table>
+                      <tr>
+                        <td class="text-xs text-center">3</td>
+                        <td class="text-xs text-center">Pengurusan Pelanggan</td>
+                        <td class="text-xs">
+                          <i class="bi bi-layers-fill"></i> Amalan organisasi yang lebih sesuai dengan keperluan pelanggan moden.<br>
+                          <i class="bi bi-layers-fill"></i> Pekerja yang memahami dan bertindak mengikut kehendak pelanggan tepat pada masanya.<br>
+                          <i class="bi bi-layers-fill"></i> Penciptaan produk dan perkhidmatan masa depan yang lebih mencerminkan keperluan pelanggan.<br>
+                          <i class="bi bi-layers-fill"></i> Pemimpin yang bertindak selaras dengan strategi organisasi.
+                        </td>
+                      </tr>
+
+                        <tr>
+                          <td class="text-xs text-center">4</td>
+                          <td class="text-xs text-center">Pengurusan Pemegang Berkepentingan</td>
+                          <td class="text-xs">
+                            <i class="bi bi-layers-fill"></i> Pekerja yang lebih empati dengan pihak berkepentingan mereka.<br>
+                            <i class="bi bi-layers-fill"></i> Pembinaan hubungan positif dengan pihak berkepentingan.<br>
+                            <i class="bi bi-layers-fill"></i> Pembentukan perkongsian strategik yang membantu mencapai objektif organisasi.<br>
+                            <i class="bi bi-layers-fill"></i> Pengurus yang mendorong pekerja bawahan mereka membina rangkaian profesional mereka sendiri.<br>
+                            <i class="bi bi-layers-fill"></i> Pemimpin yang bertindak selaras dengan strategi organisasi.
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="text-xs text-center">5</td>
+                          <td class="text-xs text-center">Ketangkasan Dalam Organisasi</td>
+                          <td class="text-xs">
+                            <i class="bi bi-layers-fill"></i> Pekerja yang berpengetahuan dan serba boleh.<br>
+                            <i class="bi bi-layers-fill"></i>  Penghargaan dan penerapan budaya bimbingan dalam organisasi.<br>
+                            <i class="bi bi-layers-fill"></i>  Amalan organisasi yang boleh menyesuaikan diri dengan masalah di pasaran.<br>
+                            <i class="bi bi-layers-fill"></i>  Organisasi yang menekankan dan mendorong pembelajaran dan perkembangan berterusan.<br>
+                            <i class="bi bi-layers-fill"></i>  Pemimpin yang bertindak selaras dengan strategi organisasi.
+                          </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           </div>
         </div>
+
       </div>
     </div>
   </div>
-</div>
+
+<!---------------------------------------------------------------------------------------------------------------------------->
 
 <div class="container-fluid py-4">
   <div class="row">
