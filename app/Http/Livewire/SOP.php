@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\SOP_;
 use App\Models\User;
-use App\Models\Department;
+use App\Models\Department_;
 use Illuminate\Support\Carbon;
 use Livewire\WithFileUploads;
 use Illuminate\Http\Request;
@@ -134,13 +134,13 @@ class SOP extends Component
 
     public function render()
     {
-        $sop = SOP_::all() ;
-        $sop1 = SOP_::where('part', '=', '01 FORM')->get();
-        $sop2 = SOP_::where('part', '=', '02 PROCEDURE')->get();
-        $sop3 = SOP_::where('part', '=', '03 WORK INSTRUCTION')->get();
-        $sop4 = SOP_::where('part', '=', '04 GUIDELINE')->get();
-        $sop5 = SOP_::where('part', '=', '05 QUALITY MANUAL')->get();
-        $department = Department::all();
+        $sop = SOP_::orderBy('title')->get();
+        $sop1 = SOP_::where('part', '=', '01 FORM')->orderBy('title')->get();
+        $sop2 = SOP_::where('part', '=', '02 PROCEDURE')->orderBy('title')->get();
+        $sop3 = SOP_::where('part', '=', '03 WORK INSTRUCTION')->orderBy('title')->get();
+        $sop4 = SOP_::where('part', '=', '04 GUIDELINE')->orderBy('title')->get();
+        $sop5 = SOP_::where('part', '=', '05 QUALITY MANUAL')->orderBy('title')->get();
+        $department = Department_::all();
         $userdepartment = auth()->user()->department;
         $users = User::where('department', '=', $userdepartment)->get();
         return view('livewire.sop.all', compact('sop', 'department', 'sop1', 'sop2', 'sop3', 'sop4', 'sop5', 'userdepartment', 'users'));
