@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\UserManagement;
 use App\Models\User;
+use App\Models\Role_;
 use Livewire\Component;
 
 class UserManagement extends Component
@@ -32,15 +33,14 @@ class UserManagement extends Component
 
     public function render()
     {
-        $employee = User::where('role', 'employee')->get();
-        $manager = User::where('role', 'manager')->get();
-        $hr = User::where('role', 'hr')->get();
-        $moderator = User::where('role', 'moderator')->get();
-        $dc = User::where('role', 'dc')->get();
-        $pro = User::where('role', 'pro')->get();
-        $alluser = User::all();
-        $allusercount = $alluser->count();
+        $role = Role_::where('status' , 1)->get();
 
-        return view('livewire.user-management.user-management')->with(compact('employee', 'manager', 'hr', 'moderator','alluser', 'allusercount', 'dc', 'pro'));
+        $roleArr[] = array();
+        foreach ($role as $key => $roles) {
+            $user = User::where('role', $roles->name)->get();
+            array_push($roleArr, $user);
+        }
+
+        return view('livewire.user-management.user-management')->with(compact('role', 'roleArr'));
     }
 }

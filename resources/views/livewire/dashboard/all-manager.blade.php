@@ -3,9 +3,9 @@
     <div class="col-12">
       <div class="card mb-4">
         <div class="card-header pb-0">
-{{--------------------------------------------------- EMPLOYEE DETAILS --------------------------------------------------}}
+{{--------------------------------------------------- EMPLOYEE DETAILS FOR MANAGER'S DEPARTMENT --------------------------------------------------}}
           <h6>Employee Details</h6>
-          <p><strong>{{$userscount}} employees</strong> in {{$userdepartment}} department</p>
+          <p><strong>{{$users->count()}} employees</strong> in {{$userdepartment}} department</p>
         </div>
         <div class="card-body px-0 pt-0 pb-2">
           <div class="p-0">

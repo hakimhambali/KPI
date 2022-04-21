@@ -47,16 +47,9 @@
                             <div class="col-md-6 mb-3">
                               <label class="form-label">For Department<span class="text-danger">*</span></label>
                               <select class="form-select" id="department" name="department" required>
-                                <option value="">Select Department...</option>
-                                <option value="Senior Leadership Team (SLT)">Senior Leadership Team (SLT)</option>
-                                <option value="CEO Office">CEO Office</option>
-                                <option value="Human Resource (HR) & Administration">Human Resource (HR) & Administration</option>
-                                <option value="Account & Finance (A&F)">Account & Finance (A&F)</option>
-                                <option value="Sales">Sales</option>
-                                <option value="Marketing">Marketing</option>
-                                <option value="Operation">Operation</option>
-                                <option value="High Network Client (HNC)">High Network Client (HNC)</option>
-                                <option value="Research & Development (R&D)">Research & Development (R&D)</option>
+                                @foreach ($department as $departments)
+                                  <option value="{{$departments->name}}">{{$departments->name}}</option>
+                                @endforeach
                               </select>
                             </div>
 
@@ -81,15 +74,9 @@
 
                             <div class="col-md-6 mb-3">
                               <label class="form-label">View by Department<span class="text-danger">*</span></label><br>
-                              <input type="checkbox" id="departmentview" name="departmentview[]" value="Senior Leadership Team (SLT)"><label for="departmentview">Senior Leadership Team (SLT)</label><br>
-                                <input type="checkbox" id="departmentview" name="departmentview[]" value="CEO Office"><label for="departmentview">CEO Office</label><br>
-                                <input type="checkbox" id="departmentview" name="departmentview[]" value="Human Resource (HR) & Administration"><label for="departmentview">Human Resource (HR) & Administration</label><br>
-                                <input type="checkbox" id="departmentview" name="departmentview[]" value="Account & Finance (A&F)"><label for="departmentview">Account & Finance (A&F)</label><br>
-                                <input type="checkbox" id="departmentview" name="departmentview[]" value="Sales"><label for="departmentview">Sales</label><br>
-                                <input type="checkbox" id="departmentview" name="departmentview[]" value="Marketing"><label for="departmentview">Marketing</label><br>
-                                <input type="checkbox" id="departmentview" name="departmentview[]" value="Operation"><label for="departmentview">Operation</label><br>
-                                <input type="checkbox" id="departmentview" name="departmentview[]" value="High Network Client (HNC)"><label for="departmentview">High Network Client (HNC)</label><br>
-                                <input type="checkbox" id="departmentview" name="departmentview[]" value="Research & Development (R&D)"><label for="departmentview">Research & Development (R&D)</label><br>
+                              @foreach ($department as $departments)
+                                <input type="checkbox" id="departmentview" name="departmentview[]" value="{{$departments->name}}"><label for="departmentview">{{$departments->name}}</label><br>
+                              @endforeach
                             </div>
                           </div>
 

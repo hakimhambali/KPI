@@ -48,15 +48,9 @@
                               <label class="form-label">For Department<span class="text-danger">*</span></label>
                               <select class="form-select" id="department" name="department" required>
                                 <option selected class="bg-secondary text-white" value="{{ $sops->department }}" >{{ $sops->department }}</option>
-                                <option value="Senior Leadership Team (SLT)">Senior Leadership Team (SLT)</option>
-                                <option value="CEO Office">CEO Office</option>
-                                <option value="Human Resource (HR) & Administration">Human Resource (HR) & Administration</option>
-                                <option value="Account & Finance (A&F)">Account & Finance (A&F)</option>
-                                <option value="Sales">Sales</option>
-                                <option value="Marketing">Marketing</option>
-                                <option value="Operation">Operation</option>
-                                <option value="High Network Client (HNC)">High Network Client (HNC)</option>
-                                <option value="Research & Development (R&D)">Research & Development (R&D)</option>
+                                @foreach ($department as $departments)
+                                <option value="{{$departments->name}}">{{$departments->name}}</option>
+                                @endforeach
                               </select>
                             </div>
 
@@ -79,6 +73,14 @@
                               <textarea class="form-control" name="description" id="description" rows="11" placeholder="Please insert the SOP description here...">{{ $sops->description }}</textarea>
                             </div>
 
+                            {{-- <div class="col-md-6 mb-3">
+                              <label class="form-label">View by Department<span class="text-danger">*</span></label><br>
+                              @php $departmentviews = json_decode($sops->departmentview); @endphp
+                              @foreach ($department as $departments)
+                                <input type="checkbox" id="departmentview" name="departmentview[]" value="{{$departments->name}}" @foreach ($departmentviews as $departmentviewss) @if($departmentviewss == '{{$departments->name}}') checked @endif @endforeach><label for="departmentview">{{$departments->name}}</label><br>
+                              @endforeach
+                            </div> --}}
+
                             <div class="col-md-6 mb-3">
                               <label class="form-label">View by Department<span class="text-danger">*</span></label><br>
                               @php $departmentviews = json_decode($sops->departmentview); @endphp
@@ -92,6 +94,7 @@
                                 <input type="checkbox" id="departmentview" name="departmentview[]" value="High Network Client (HNC)" @foreach ($departmentviews as $departmentviewss) @if($departmentviewss == 'High Network Client (HNC)') checked @endif @endforeach><label for="departmentview">High Network Client (HNC)</label><br>
                                 <input type="checkbox" id="departmentview" name="departmentview[]" value="Research & Development (R&D)" @foreach ($departmentviews as $departmentviewss) @if($departmentviewss == 'Research & Development (R&D)') checked @endif @endforeach><label for="departmentview">Research & Development (R&D)</label><br>
                             </div>
+                            
                           </div>
 
                           <div class="row">

@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
-use App\Models\Department;
+use App\Models\Department_;
 
 class DepartmentSeeder extends Seeder
 {
@@ -16,55 +16,55 @@ class DepartmentSeeder extends Seeder
      */
     public function run()
     {  
-        $department1 = Department::create([
+        $department1 = Department_::create([
             'id' => '1',
             'name' => 'Senior Leadership Team (SLT)',    
         ]);
         $department1->save();
         
-        $department2 = Department::create([
+        $department2 = Department_::create([
             'id' => '2',
             'name' => 'CEO Office',    
         ]);
         $department2->save();
 
-        $department3 = Department::create([
+        $department3 = Department_::create([
             'id' => '3',
             'name' => 'Human Resource (HR) & Administration', 
         ]);
         $department3->save();
 
-        $department4 = Department::create([
+        $department4 = Department_::create([
             'id' => '4',
             'name' => 'Account & Finance (A&F)',
         ]);
         $department4->save();
 
-        $department5 = Department::create([
+        $department5 = Department_::create([
             'id' => '5',
             'name' => 'Sales',
         ]);
         $department5->save();
 
-        $department6 = Department::create([
+        $department6 = Department_::create([
             'id' => '6',
             'name' => 'Marketing',
         ]);
         $department6->save();
 
-        $department7 = Department::create([
+        $department7 = Department_::create([
             'id' => '7',
             'name' => 'Operation',
         ]);
         $department7->save();
 
-        $department8 = Department::create([
+        $department8 = Department_::create([
             'id' => '8',
             'name' => 'High Network Client (HNC)',
         ]);
         $department8->save();
 
-        $department9 = Department::create([
+        $department9 = Department_::create([
             'id' => '9',
             'name' => 'Research & Development (R&D)',
         ]);

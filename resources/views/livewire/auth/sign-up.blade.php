@@ -1,3 +1,4 @@
+{{-- {{dd($position)}} --}}
 <section class="h-100-vh mb-8">
     <div class="page-header align-items-start section-height-50 pt-5 pb-11 m-3 border-radius-lg"
         style="background-image: url('../assets/img/curved-images/curved14.jpg');">
@@ -48,42 +49,24 @@
                                 </div>
                                 @error('nostaff') <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
+                            {{-- @if(!empty($position) && $position->count()) --}}
                             <div class="mb-3">
                                 <div class="@error('position') border border-danger rounded-3 @enderror">
                                         <select wire:model="position" name="position" id="position" class="form-control custom-select" data-placeholder="Choose Position" tabindex="1">
-                                            <option class="text-center" value="">-- Choose Position --</option>
-                                            <option value="CEO (TM2)">CEO (TM2)</option>
-                                            <option value="Director (TM1)">Director (TM1)</option>
-                                            {{-- <option value="COO (UM4)">COO (UM4)</option>
-                                            <option value="Senior General Manager (UM3)">Senior General Manager (UM3)</option>
-                                            <option value="General Manager (UM2)">General Manager (UM2)</option>
-                                            <option value="Deputy General Manager (UM1)">Deputy General Manager (UM1)</option> --}}
-                                            <option value="Senior Leadership Team (SLT) (UM1)">Senior Leadership Team (SLT) (UM1)</option>
-                                            <option value="Senior Manager (M3)">Senior Manager (M3)</option>
-                                            <option value="Manager (M2)">Manager (M2)</option>
-                                            <option value="Assistant Manager (M1)">Assistant Manager (M1)</option>
-                                            <option value="Senior Executive (E3)">Senior Executive (E3)</option>
-                                            <option value="Executive (E2)">Executive (E2)</option>
-                                            <option value="Junior Executive (E1)">Junior Executive (E1)</option>
-                                            <option value="Senior Non-Executive (NE2)">Senior Non-Executive (NE2)</option>
-                                            <option value="Junior Non-Executive (NE1)">Junior Non-Executive (NE1)</option>
+                                            @foreach ($position as $positions)
+                                                <option value="{{$positions->name}}">{{$positions->name}}</option>
+                                            @endforeach
                                         </select>
                                 </div>
                                 @error('position') <div class="text-danger">{{ $message }}</div> @enderror
                             </div>
+                            {{-- @endif --}}
                             <div class="mb-3">
                                 <div class="@error('department') border border-danger rounded-3 @enderror">
                                         <select wire:model="department" name="department" id="department" class="form-control custom-select" data-placeholder="Choose Department" tabindex="1">
-                                            <option class="text-center" value="">-- Choose Department --</option>
-                                            <option value="Senior Leadership Team (SLT)">Senior Leadership Team (SLT)</option>
-                                            <option value="CEO Office">CEO Office</option>
-                                            <option value="Human Resource (HR) & Administration">Human Resource (HR) & Administration</option>
-                                            <option value="Account & Finance (A&F)">Account & Finance (A&F)</option>
-                                            <option value="Sales">Sales</option>
-                                            <option value="Marketing">Marketing</option>
-                                            <option value="Operation">Operation</option>
-                                            <option value="High Network Client (HNC)">High Network Client (HNC)</option>
-                                            <option value="Research & Development (R&D)">Research & Development (R&D)</option>
+                                            @foreach ($department as $departments)
+                                                <option value="{{$departments->name}}">{{$departments->name}}</option>
+                                            @endforeach
                                         </select>
                                 </div>
                                 @error('department') <div class="text-danger">{{ $message }}</div> @enderror
@@ -92,54 +75,10 @@
                             <div class="mb-3">
                                 <div class="@error('unit') border border-danger rounded-3 @enderror">
                                     <select wire:model="unit" name="unit" id="unit" class="form-control custom-select" data-placeholder="Choose Unit" tabindex="1">
-                                        
-                                        {{-- Head Department --}}
-                                        <option class="text-center" value="">-- Others --</option>
-                                        <option value="Head Department">Head Department</option>
-                                        <option value="Senior Leadership Team (SLT)">Senior Leadership Team (SLT)</option>
-                                        {{-- CEO Office --}}
-                                        <option class="text-center" value="">-- CEO Office --</option>
-                                        <option value="Personal Assistant">Personal Assistant</option>
-                                        <option value="Document Controller">Document Controller</option>
-                                        <option value="Driver & Logistic">Driver & Logistic</option>
-                                        {{-- HR & Admin --}}
-                                        <option class="text-center" value="">-- Human Resource (HR) & Administration --</option>
-                                        <option value="Payroll & C&B">Payroll & C&B</option>
-                                        <option value="Training & Development">Training & Development</option>
-                                        <option value="Admin Procurement">Admin Procurement</option>
-                                        <option value="Recruitment">Recruitment</option>
-                                        {{-- A&F --}}
-                                        <option class="text-center" value="">-- Account & Finance (A&F) --</option>
-                                        <option value="Account Receivable">Account Receivable</option>
-                                        <option value="Account Payable">Account Payable</option>
-                                        {{-- Sales --}}
-                                        <option class="text-center" value="">-- Sales --</option>
-                                        <option value="Customer Support & Closing">Customer Support & Closing</option>
-                                        <option value="Program">Program</option>
-                                        {{-- Marketing --}}
-                                        <option class="text-center" value="">-- Marketing --</option>
-                                        <option value="Creative & Branding">Creative & Branding</option>
-                                        <option value="Content">Content</option>
-                                        <option value="Media">Media</option>
-                                        <option value="Social Media">Social Media</option>
-                                        <option value="Digital Marketer">Digital Marketer</option>
-                                        {{-- Operation --}}
-                                        <option class="text-center" value="">-- Operation --</option>
-                                        <option value="Admin & Procurement">Admin & Procurement</option>
-                                        <option value="Backstage">Backstage</option>
-                                        <option value="Inventory & Logistic">Inventory & Logistic</option>
-                                        <option value="General Worker">General Worker</option>
-                                        {{-- HNC --}}
-                                        <option class="text-center" value="">-- High Network Client (HNC) --</option>
-                                        <option value="Platinum">Platinum</option>
-                                        <option value="Ultimate">Ultimate</option>
-                                        <option value="Graphic">Graphic</option>
-                                        {{-- R&D --}}
-                                        <option class="text-center" value="">-- Research & Development (R&D) --</option>
-                                        <option value="Web Designer">Web Designer</option>
-                                        <option value="Web Developer">Web Developer</option>
-                                        <option value="Data Analytic">Data Analytic</option>
-                                        <option class="text-center" value="">-- Choose Unit --</option>
+
+                                        @foreach ($unit as $units)
+                                            <option value="{{$units->name}}">{{$units->name}}</option>
+                                        @endforeach
                                         
                                     </select>
                                 </div>

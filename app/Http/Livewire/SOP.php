@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\SOP_;
 use App\Models\User;
-use App\Models\Department;
+use App\Models\Department_;
 use Illuminate\Support\Carbon;
 use Livewire\WithFileUploads;
 use Illuminate\Http\Request;
@@ -81,8 +81,9 @@ class SOP extends Component
 
     public function edit($id)
     {
+        $department = Department_::all();
         $sop = SOP_::where('id', '=', $id)->get();
-        return view('livewire.sop.edit', compact('id', 'sop'));
+        return view('livewire.sop.edit', compact('id', 'sop', 'department'));
     }
 
     public function update(Request $request, $id) 
@@ -140,7 +141,7 @@ class SOP extends Component
         $sop3 = SOP_::where('part', '=', '03 WORK INSTRUCTION')->orderBy('title')->get();
         $sop4 = SOP_::where('part', '=', '04 GUIDELINE')->orderBy('title')->get();
         $sop5 = SOP_::where('part', '=', '05 QUALITY MANUAL')->orderBy('title')->get();
-        $department = Department::all();
+        $department = Department_::all();
         $userdepartment = auth()->user()->department;
         $users = User::where('department', '=', $userdepartment)->get();
         return view('livewire.sop.all', compact('sop', 'department', 'sop1', 'sop2', 'sop3', 'sop4', 'sop5', 'userdepartment', 'users'));

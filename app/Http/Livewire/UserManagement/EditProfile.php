@@ -1,11 +1,14 @@
 <?php
 
 namespace App\Http\Livewire\UserManagement;
-use App\Models\User;
-
-use Livewire\Component;
-use Illuminate\Http\Request;
 use Auth;
+
+use App\Models\User;
+use App\Models\Unit_;
+use Livewire\Component;
+use App\Models\Position_;
+use App\Models\Department_;
+use Illuminate\Http\Request;
 
 class EditProfile extends Component
 {
@@ -50,6 +53,9 @@ class EditProfile extends Component
 
     public function render()
     {
-        return view('livewire.user-management.edit-profile');
+        $position = Position_::all();
+        $department = Department_::all();
+        $unit = Unit_::all();
+        return view('livewire.user-management.edit-profile')->with(compact('position', 'department', 'unit'));
     }
 }

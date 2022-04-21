@@ -31,39 +31,9 @@
                         <label>Position<span class="text-danger">*</span></label>
                         <select class="form-select form-select" id="position" name="position" >
                           <option selected class="bg-secondary text-white" value="{{ Auth::user()->position }}" >{{ Auth::user()->position }}</option>
-                          @if (Auth::user()->position != "CEO (TM2)")
-                          <option value="CEO (TM2)">CEO (TM2)</option>
-                          @endif
-                          @if (Auth::user()->position != "Director (TM1)")
-                          <option value="Director (TM1)">Director (TM1)</option>
-                          @endif
-                          @if (Auth::user()->position != "Senior Leadership Team (SLT) (UM1)")
-                          <option value="Senior Leadership Team (SLT) (UM1)">Senior Leadership Team (SLT) (UM1)</option>
-                          @endif
-                          @if (Auth::user()->position != "Senior Manager (M3)")
-                          <option value="Senior Manager (M3)">Senior Manager (M3)</option>
-                          @endif
-                          @if (Auth::user()->position != "Manager (M2)")
-                          <option value="Manager (M2)">Manager (M2)</option>
-                          @endif
-                          @if (Auth::user()->position != "Assistant Manager (M1)")
-                          <option value="Assistant Manager (M1)">Assistant Manager (M1)</option>
-                          @endif
-                          @if (Auth::user()->position != "Senior Executive (E3)")
-                          <option value="Senior Executive (E3)">Senior Executive (E3)</option>
-                          @endif
-                          @if (Auth::user()->position != "Executive (E2)")
-                          <option value="Executive (E2)">Executive (E2)</option>
-                          @endif
-                          @if (Auth::user()->position != "Junior Executive (E1)")
-                          <option value="Junior Executive (E1)">Junior Executive (E1)</option>
-                          @endif
-                          @if (Auth::user()->position != "Senior Non-Executive (NE2)")
-                          <option value="Senior Non-Executive (NE2)">Senior Non-Executive (NE2)</option>
-                          @endif
-                          @if (Auth::user()->position != "Junior Non-Executive (NE1)")
-                          <option value="Junior Non-Executive (NE1)">Junior Non-Executive (NE1)</option>
-                          @endif
+                          @foreach ($position as $positions)
+                            <option value="{{$positions->name}}">{{$positions->name}}</option>
+                          @endforeach
                         </select>
                       </div>
                     </div>
@@ -88,49 +58,9 @@
                         <label>Department<span class="text-danger">*</span></label>
                         <select class="form-select form-select" id="department" name="department">
                           <option selected class="bg-secondary text-white" value="{{ Auth::user()->department }}" >{{ Auth::user()->department }}</option>
-                            
-                          @if (Auth::user()->department != "Senior Leadership Team (SLT)")
-                            <option value="Senior Leadership Team (SLT)">Senior Leadership Team (SLT)</option>
-                          @endif
-
-                          @if (Auth::user()->department != "CEO Office")
-                            <option value="CEO Office">CEO Office</option>
-                          @endif
-
-                          @if (Auth::user()->department != "Human Resource (HR) & Administration")
-                          <option value="Human Resource (HR) & Administration">Human Resource (HR) & Administration</option>
-                          @else
-                          @endif
-
-                          @if (Auth::user()->department != "Account & Finance (A&F)")
-                          <option value="Account & Finance (A&F)">Account & Finance (A&F)</option>
-                          @else
-                          @endif
-
-                          @if (Auth::user()->department != "Sales")
-                          <option value="Sales">Sales</option>
-                          @else
-                          @endif
-
-                          @if (Auth::user()->department != "Marketing")
-                          <option value="Marketing">Marketing</option>
-                          @else
-                          @endif
-                          
-                          @if (Auth::user()->department != "Operation")
-                          <option value="Operation">Operation</option>
-                          @else
-                          @endif
-
-                          @if (Auth::user()->department != "High Network Client (HNC)")
-                          <option value="High Network Client (HNC)">High Network Client (HNC)</option>
-                          @else
-                          @endif
-
-                          @if (Auth::user()->department != "Research & Development (R&D)")
-                          <option value="Research & Development (R&D)">Research & Development (R&D)</option>
-                          @else
-                          @endif
+                          @foreach ($department as $departments)
+                            <option value="{{$departments->name}}">{{$departments->name}}</option>
+                          @endforeach
                         </select>
                       </div>
 
@@ -139,7 +69,7 @@
                         <select class="form-select form-select" id="unit" name="unit">
                           <option selected class="bg-secondary text-white" value="{{ Auth::user()->unit }}" >{{ Auth::user()->unit }}</option>
                 
-                          <option class="text-center bg-dark text-white" value="">-- Others --</option>
+                          {{-- <option class="text-center bg-dark text-white" value="">-- Others --</option>
                           @if (Auth::user()->unit != "Head Department")
                           <option value="Head Department">Head Department</option>
                           @endif
@@ -236,7 +166,11 @@
                           @endif
                           @if (Auth::user()->unit != "Data Analytic")
                           <option value="Data Analytic">Data Analytic</option>
-                          @endif
+                          @endif --}}
+
+                          @foreach ($unit as $units)
+                            <option value="{{$units->name}}">{{$units->name}}</option>
+                          @endforeach
 
                         </select>
                       </div>

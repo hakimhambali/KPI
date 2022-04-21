@@ -2,8 +2,11 @@
 
 namespace App\Http\Livewire\Auth;
 
-use Livewire\Component;
 use App\Models\User;
+use App\Models\Unit_;
+use Livewire\Component;
+use App\Models\Position_;
+use App\Models\Department_;
 use Illuminate\Support\Facades\Hash;
 
 class SignUp extends Component
@@ -57,6 +60,11 @@ class SignUp extends Component
 
     public function render()
     {
-        return view('livewire.auth.sign-up');
+        // TAK FUNCTION PUN, TENGOK KAT FILE APPSERVICEPROVIDER.PHP, DECLARE VARIABLE KAT SITU
+        $position = Position_::all();
+        $department = Department_::all();
+        $unit = Unit_::all();
+        // return view('livewire.auth.sign-up')->with(compact('position', 'department', 'unit'));
+        return view('livewire.auth.sign-up')->with(compact('position', 'department', 'unit'));
     }
 }

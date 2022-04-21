@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Department extends Model
+class Unit_ extends Model
 {
     use HasFactory;
-    protected $table = 'department';
+    protected $table = 'unit';
     protected $fillable = [
         'name',
+        'status',
+        'department_id'
     ];
 }
