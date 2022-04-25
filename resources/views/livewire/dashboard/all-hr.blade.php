@@ -73,7 +73,8 @@
                           <i class="fa fa-ellipsis-v text-secondary"></i>
                         </a>
                         <ul class="dropdown-menu px-2 py-3 ms-n4 ms-n5" aria-labelledby="dropdownTable">
-                          <li><a href="{{ url('view-date/'.$departmentArrss->id) }}" class="dropdown-item border-radius-md" role="button">View</a></li>
+                          <li><a href="{{ url('view-date/'.$departmentArrss->id) }}" class="dropdown-item border-radius-md" role="button">View KPI</a></li>
+                          <li><a href="{{ url('/hr/view/training-coaching/'.$departmentArrss->id) }}" class="dropdown-item border-radius-md" role="button">View Training & Coaching</a></li>
                         </ul>
                       </div>
                     </div>

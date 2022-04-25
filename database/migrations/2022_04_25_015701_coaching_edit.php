@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class StatusFunction extends Migration
+class CoachingEdit extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class StatusFunction extends Migration
      */
     public function up()
     {
-        Schema::table('function', function (Blueprint $table) {
-            $table->string('status');
+        Schema::table('coaching', function (Blueprint $table) {
+            $table->string('trainer_id');
         });
     }
 
@@ -25,8 +25,8 @@ class StatusFunction extends Migration
      */
     public function down()
     {
-        Schema::table('function', function (Blueprint $table) {
-            $table->dropColumn('status');
+        Schema::table('coaching', function (Blueprint $table) {
+            $table->dropColumn('trainer_id');
         });
     }
 }

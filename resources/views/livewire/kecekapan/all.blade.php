@@ -221,7 +221,7 @@
             <div class="col-md-12">
               <div class="card ">
                 <div class="card-body px-0 pt-0 pb-2">
-                  <div class="p-0">
+                  <div class="p-0 table-responsive">
                     <table class="table align-items-center mb-0">
                       <thead>
                         <tr>

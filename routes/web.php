@@ -29,7 +29,8 @@ use App\Http\Livewire\UserManagement\EditProfile;
 use App\Http\Livewire\UserManagement\UserManagement;
 use App\Http\Livewire\UserManagement\UserManagementAdmin;
 use App\Http\Controllers\FindOwnerController;
-// use App\Http\Livewire\Training;
+use App\Http\Livewire\Training;
+use App\Http\Livewire\Coaching;
 
 /*
 |--------------------------------------------------------------------------
@@ -108,6 +109,18 @@ Route::get('markAsRead', function(){
     return redirect()->back();
 })->name('markRead');
 
+//Training Route
+Route::post('/hr/create/training', [Training::class, 'create']);
+Route::get('/hr/edit/training/{id}', [Training::class, 'edit'])->name('training_edit');
+Route::post('/hr/update/training/{id}', [Training::class, 'update']);
+
+Route::get('/hr/view/training-coaching/{id}', [Training::class, 'view']);
+
+//Coaching Route
+Route::post('/hr/create/coaching', [Coaching::class, 'create']);
+Route::get('/hr/edit/coaching/{id}', [Coaching::class, 'edit'])->name('coaching_edit');
+Route::post('/hr/update/coaching/{id}', [Coaching::class, 'update']);
+
 //SOP Route
 Route::post('/dc/create/sop', [SOP::class, 'create']);
 Route::get('/dc/edit/sop/{id}', [SOP::class, 'edit'])->name('sop_edit');
@@ -146,7 +159,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/edit', EditProfile::class)->name('edit-profile');
     Route::get('/user-management', UserManagement::class)->name('user-management');
     Route::get('/user-management-admin', UserManagementAdmin::class)->name('user-management-admin');
-    // Route::get('/training', Training::class)->name('training');
+    Route::get('/training', Training::class)->name('training');
+    Route::get('/coaching', Coaching::class)->name('coaching');
 });
 
 // Route::post('/hr/create/sop', [SOP::class, 'create'] ,function ( Request $request ) {
