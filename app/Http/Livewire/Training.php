@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 use App\Models\User;
 use Livewire\Component;
 use App\Models\Coaching_;
-// use App\Models\Training_;
+use App\Models\Training_;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
