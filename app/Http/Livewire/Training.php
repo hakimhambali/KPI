@@ -7,13 +7,6 @@ use App\Models\Coaching_;
 use App\Models\Training_;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use App\Models\KPIAll_;
-use App\Models\Date_;
-use App\Models\KPI_;
-use App\Models\KPIMaster_;
-use Auth;
-use Illuminate\Support\Facades\Hash;
-use DB;
 
 class Training extends Component
 {
