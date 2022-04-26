@@ -12,31 +12,36 @@ class Training extends Component
 {
     public $id_training;
     public $id_coaching;
+    public $model1;
+    public $model2;
 
     protected $listeners = [
-        'delete'
+        'delete1',
+        'delete2'
     ];
 
-    public function selectItem1($id_training)
+    public function selectItem1($model1)
     {
-        $this->id_training = $id_training;
+        $this->id_training = $model1;
     }
 
-    public function selectItem2($id_coaching)
+    public function selectItem2($model2)
     {
-        $this->id_training = $id_coaching;
+        $this->id_coaching = $model2;
     }
 
-    public function delete()
+    public function delete1()
     {
-        if ($this->id_training = '') {
-            $training = Training_::find($this->id_training);
-            $training->delete();
-        }
-        else {    
-            $coaching = Coaching_::find($this->id_coaching);
-            $coaching->delete();
-        }
+        $coaching = Coaching_::find($this->id_coaching);
+        $coaching->delete();
+
+        return redirect()->back()->with('message', 'Coaching deleted successfully');
+    }
+
+    public function delete2()
+    {
+        $training = Training_::find($this->id_training);
+        $training->delete();
 
         return redirect()->back()->with('message', 'Training deleted successfully');
     }
@@ -90,5 +95,9 @@ class Training extends Component
     {
         $user = User::all();
         return view('livewire.training.create', compact('user'));
+        // $student_id = '25';
+        // $training = Training_::where('student_id', $student_id)->get();
+        // $coaching = Coaching_::where('trainer_id', $student_id)->get();
+        // return view('livewire.training.all', compact('training', 'coaching'));
     }
 }

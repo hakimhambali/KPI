@@ -57,7 +57,7 @@
                           <td class="text-center mx-auto">
                             @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin'|| auth()->user()->department == 'Operation')
                               <a href="{{ url('hr/edit/coaching/'.$coachings->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
-                              {{-- <button type="button" wire:click="selectItem2({{$coachings->id}})" class="btn btn-danger btn-sm btn-icon data-delete" data-form="{{$coachings->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button> --}}
+                              {{-- <button type="button" wire:click="selectItem2({{$coachings->id}})" class="btn btn-danger btn-sm btn-icon data-delete1" data-form="{{$coachings->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button> --}}
                             @endif
                           </td>
                         </tr>
@@ -113,7 +113,7 @@
                             <td class="text-center mx-auto">
                               @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin'|| auth()->user()->department == 'Operation')
                                 <a href="{{ url('hr/edit/training/'.$trainings->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
-                                {{-- <button type="button" wire:click="selectItem1({{$trainings->id}})" class="btn btn-danger btn-sm btn-icon data-delete" data-form="{{$trainings->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button> --}}
+                                {{-- <button type="button" wire:click="selectItem1({{$trainings->id}})" class="btn btn-danger btn-sm btn-icon data-delete2" data-form="{{$trainings->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button> --}}
                               @endif
                             </td>
                           </tr>
@@ -134,7 +134,7 @@
         @push('scripts')
         <script>
           document.addEventListener('livewire:load', function () {
-            $(document).on("click", ".data-delete", function (e) 
+            $(document).on("click", ".data-delete1", function (e) 
                 {
                     e.preventDefault();
                     swal({
@@ -147,7 +147,27 @@
                     .then((willDelete) => {
                     if (willDelete) {
                         e.preventDefault();
-                        Livewire.emit('delete')
+                        Livewire.emit('delete1')
+                    } 
+                    });
+                });
+          })
+
+          document.addEventListener('livewire:load', function () {
+            $(document).on("click", ".data-delete2", function (e) 
+                {
+                    e.preventDefault();
+                    swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                    if (willDelete) {
+                        e.preventDefault();
+                        Livewire.emit('delete2')
                     } 
                     });
                 });
