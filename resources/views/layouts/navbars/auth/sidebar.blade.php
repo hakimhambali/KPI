@@ -208,11 +208,7 @@
                     <a class="nav-link {{ Route::currentRouteName() == 'findowner' ? 'active' : '' }}" href="http://findowner.x61tbrxchx-ewx3lmoq56zq.p.runcloud.link/login2?ic_user={{auth()->user()->ic}}">
                         {{-- <a class="nav-link {{ Route::currentRouteName() == 'findowner' ? 'active' : '' }}" href="http://findowner.test/login2?ic_user={{auth()->user()->ic}}"> --}}
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-x" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M6.146 7.146a.5.5 0 0 1 .708 0L8 8.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 9l1.147 1.146a.5.5 0 0 1-.708.708L8 9.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 9 6.146 7.854a.5.5 0 0 1 0-.708z"/>
-                            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
-                            <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
-                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 38" xml:space="preserve"><path fill="#354256" d="M57.9 22h-3.5c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5h2.9v1h-2.9c-.3 0-.5.2-.5.5s.2.5.5.5h3.5v1zM23.4 26.3h21v2h-21z"/><path fill="#354256" d="M55.3 28.3h-1.9v-2h1.9c1 0 1.8-.8 1.8-1.8v-2.2c0-2.3-1.8-4.1-4.1-4.1H29c-1.4 0-2.8.1-4.3.2l-16 1.8c-1.1.1-1.8 1-1.8 2.1 0 2.3 1.8 4.1 4.1 4.1h3.5v2H11c-3.4 0-6.1-2.7-6.1-6.1 0-2.1 1.6-3.8 3.6-4l16.1-1.8c1.5-.2 3-.2 4.5-.2h24.1c3.4 0 6.1 2.7 6.1 6.1v2.2c-.1 2-1.8 3.7-4 3.7z"/><path fill="#354256" d="M18.9 32.8c-3 0-5.5-2.5-5.5-5.5s2.5-5.5 5.5-5.5 5.5 2.5 5.5 5.5-2.5 5.5-5.5 5.5zm0-9c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5-1.6-3.5-3.5-3.5zM48.9 32.8c-3 0-5.5-2.5-5.5-5.5s2.5-5.5 5.5-5.5 5.5 2.5 5.5 5.5-2.5 5.5-5.5 5.5zm0-9c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5-1.6-3.5-3.5-3.5zM9 23H6v-1h3c1.7 0 3-1.3 3-3h1c0 2.2-1.8 4-4 4z"/><path fill="#354256" d="M32.4 25h-3c-1.7 0-3.3-.7-4.5-1.9l-5.2-5.3c-.2-.2-.2-.5 0-.7l4.5-4.5c2.2-2.3 5.4-3.6 8.5-3.6h13.4c4.4 0 8.5 2.6 10.4 6.5l2 4.2c.1.2 0 .5-.2.7-.2.1-.5 0-.7-.2l-2-4.2c-1.7-3.6-5.5-5.9-9.5-5.9h-2.4v.2L38 21.7c-1 2-3.2 3.3-5.6 3.3zm-11.5-7.5 4.8 4.9c1 1 2.4 1.6 3.8 1.6h3c2 0 3.8-1.1 4.7-2.9L42.7 10h-9.9c-2.9 0-5.8 1.2-7.8 3.3l-4.1 4.2z"/></svg>
                     </div>
                     <span class="nav-link-text ms-1">Findowner</span>
                 </a>
@@ -238,11 +234,7 @@
             <li class="nav-item dropdown">
                 <a data-bs-toggle="collapse" href="#training" class="nav-link collapsed dropdown-toggle {{ Route::currentRouteName() == 'training' ? 'active' : '' || Route::currentRouteName() == 'training_edit' ? 'active' : '' || Route::currentRouteName() == 'coaching' ? 'active' : '' || Route::currentRouteName() == 'coaching_edit' ? 'active' : '' }}" aria-controls="info" role="button" aria-expanded="false">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-x" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M6.146 7.146a.5.5 0 0 1 .708 0L8 8.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 9l1.147 1.146a.5.5 0 0 1-.708.708L8 9.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 9 6.146 7.854a.5.5 0 0 1 0-.708z"/>
-                            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
-                            <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
-                        </svg>
+                        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 13.5C6 12 9.083 10 12 10s6 2 6.5 3.5" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="6" r="3" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="m20 21 1-7H3l1 7" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="19" r="1" fill="#000"/></svg>
                     </div>
                     <span class="nav-link-text ms-1">Train & Coach</span><i></i>
                 </a>

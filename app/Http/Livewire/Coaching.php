@@ -39,8 +39,11 @@ class Coaching extends Component
             'date'=> $request->date,
             'hours'=> $request->hours,
             ]);
+        
+        $user = User::find($request->trainer_id);
+        $name = $user->name;
 
-        return redirect()->back()->with('message', 'Coaching inserted successfully for '.$request->trainer_id);
+        return redirect()->back()->with('message', 'Coaching inserted successfully for '.$name);
     }
 
     public function edit($id)

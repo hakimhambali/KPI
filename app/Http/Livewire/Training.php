@@ -14,11 +14,20 @@ class Training extends Component
     public $id_coaching;
     public $model1;
     public $model2;
+    // public $name;
 
     protected $listeners = [
         'delete1',
-        'delete2'
+        'delete2',
+        // 'refreshParent' => '$refresh',
+        // 'postSearch',
     ];
+
+    // public function postSearch($name)
+    // {
+    //     $this->name = $name;
+    //     $this->emit('refreshParent');
+    // }
 
     public function selectItem1($model1)
     {
@@ -58,8 +67,11 @@ class Training extends Component
             'hours'=> $request->hours,
             'student_id'=> $request->student_id,
             ]);
+        
+        $user = User::find($request->student_id);
+        $name = $user->name;
 
-        return redirect()->back()->with('message', 'Training inserted successfully for '.$request->student_id);
+        return redirect()->back()->with('message', 'Training inserted successfully for '.$name);
     }
 
     public function edit($id)
@@ -88,13 +100,19 @@ class Training extends Component
     {
         $training = Training_::where('student_id', $student_id)->get();
         $coaching = Coaching_::where('trainer_id', $student_id)->get();
+        // $user = User::find($student_id);
+        // $name = $user->name;
+        // $searchName = User::where('name' , 'like' , '%'.$name.'%')->orderBy('created_at','desc')->get();
         return view('livewire.training.all', compact('training', 'coaching'));
     }
 
     public function render()
     {
+        // $searchName = User::where('name' , 'like' , '%'.$this->name.'%')->orderBy('created_at','desc')->get();
+
         $user = User::all();
         return view('livewire.training.create', compact('user'));
+        // return view('livewire.training.create', compact('user', 'searchName'));
         // $student_id = '25';
         // $training = Training_::where('student_id', $student_id)->get();
         // $coaching = Coaching_::where('trainer_id', $student_id)->get();
