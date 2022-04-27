@@ -244,15 +244,21 @@
                         <li class="nav-item">
                             <a class="nav-link {{ Route::currentRouteName() == 'training' ? 'active' : '' || Route::currentRouteName() == 'training_edit' ? 'active' : '' }}" href="{{ route('training') }}">
                             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M26.69 11H14.31A2.32 2.32 0 0 0 12 13.31V15h-.5a5.5 5.5 0 1 1 5.35-6.77 1 1 0 0 0 1.21.77 1 1 0 0 0 .74-1.2 7.5 7.5 0 1 0-11.69 7.8A6.87 6.87 0 0 0 3 21.84v3.05A5.11 5.11 0 0 0 8.11 30H12a1 1 0 0 0 1-1v-2.18A2.83 2.83 0 0 0 10.18 24h-1a.22.22 0 0 1-.18-.22V22a1 1 0 0 0-2 0v1.78A2.21 2.21 0 0 0 9.22 26h1a.82.82 0 0 1 .82.82V28H8.11A3.11 3.11 0 0 1 5 24.89v-3.05A4.84 4.84 0 0 1 9.84 17H12v4.69A2.32 2.32 0 0 0 14.31 24h3l-.15 1h-.71A2.42 2.42 0 0 0 14 27.42V29a1 1 0 0 0 1 1h5a1 1 0 0 0 0-2h-4v-.58a.42.42 0 0 1 .42-.42H18a1 1 0 0 0 1-.86l.79-5.51a.73.73 0 0 1 1.44 0l.77 5.51a1 1 0 0 0 1 .86h1.58a.42.42 0 0 1 .42.42V28h-1a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1v-1.58A2.42 2.42 0 0 0 24.58 25h-.71l-.15-1h3A2.32 2.32 0 0 0 29 21.69v-8.38A2.32 2.32 0 0 0 26.69 11zM27 21.69a.31.31 0 0 1-.31.31h-3.25l-.24-1.66a2.73 2.73 0 0 0-5.4 0L17.56 22h-3.25a.31.31 0 0 1-.31-.31v-8.38a.31.31 0 0 1 .31-.31h12.38a.31.31 0 0 1 .31.31z" style="fill:#231f20" data-name="e learning"/></svg>
-                        </div>
-                        <span class="nav-link-text ms-1">Training</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
+                                    <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+                                    <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z"/>
+                                </svg>
+                            </div>
+                            <span class="nav-link-text ms-1">Training</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ Route::currentRouteName() == 'coaching' ? 'active' : '' || Route::currentRouteName() == 'coaching_edit' ? 'active' : '' }}" href="{{ route('coaching') }}">
                                 <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.cls-1{fill:#231f20}</style></defs><g id="lecture"><path class="cls-1" d="M18.62 17.92A.84.84 0 0 0 19 18a1 1 0 0 0 .71-.29l3.7-3.71h4.1A2.5 2.5 0 0 0 30 11.51v-7A2.5 2.5 0 0 0 27.51 2h-10A2.5 2.5 0 0 0 15 4.49V9H6.29A2.3 2.3 0 0 0 4 11.29V23H3a1 1 0 0 0-1 1v.93A3.07 3.07 0 0 0 5.07 28H8a1 1 0 0 0 0-2H5.07A1.07 1.07 0 0 1 4 25h24a1.07 1.07 0 0 1-1.07 1H12a1 1 0 0 0 0 2h14.93A3.06 3.06 0 0 0 30 24.93V24a1 1 0 0 0-1-1h-1v-6a1 1 0 0 0-2 0v6H15v-1.5a3.5 3.5 0 0 0-1.06-2.5 3.5 3.5 0 1 0-4.88 0A3.5 3.5 0 0 0 8 21.5V23H6V11.29a.29.29 0 0 1 .29-.29H15v.51A2.5 2.5 0 0 0 17.49 14H18v3a1 1 0 0 0 .62.92zM10 16.5a1.5 1.5 0 1 1 1.5 1.5 1.5 1.5 0 0 1-1.5-1.5zm0 5a1.5 1.5 0 0 1 3 0V23h-3zm7.49-9.5a.49.49 0 0 1-.49-.49v-7a.49.49 0 0 1 .49-.51h10a.49.49 0 0 1 .49.49v7a.49.49 0 0 1-.49.49H23a1 1 0 0 0-.71.29L20 14.59V13a1 1 0 0 0-1-1z"/><path class="cls-1" d="M20 7h5a1 1 0 0 0 0-2h-5a1 1 0 0 0 0 2zM20 11h5a1 1 0 0 0 0-2h-5a1 1 0 0 0 0 2z"/></g></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-video3" viewBox="0 0 16 16">
+                                        <path d="M14 9.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm-6 5.7c0 .8.8.8.8.8h6.4s.8 0 .8-.8-.8-3.2-4-3.2-4 2.4-4 3.2Z"/>
+                                        <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h5.243c.122-.326.295-.668.526-1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v7.81c.353.23.656.496.91.783.059-.187.09-.386.09-.593V4a2 2 0 0 0-2-2H2Z"/>
+                                    </svg>
                                 </div>
                                 <span class="sidenav-normal">Coaching</span>
                             </a>

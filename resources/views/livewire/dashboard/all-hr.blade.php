@@ -35,70 +35,62 @@
 
 @foreach ($department as $key1 => $departments)
 
-<div class="row">
-  <div class="col-12">
-    <div class="card mb-3">
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-3">
 
-      <div class="card-body">
-        <div class="table-responsive">
-          <table class="table table-hover align-middle">
-            <thead class="text-center text-sm fw-bold opacity-7">
-              <tr>
-                <th class="col-5">Name</th>
-                <th>Position</th>
-                <th>ID No</th>
-                <th>Unit</th>
-                <th></th>
-              </tr>
-            </thead>
-            
-            <tbody>
-            @foreach ($departmentArr as $key2 => $departmentArrs)
-              @foreach ($departmentArrs as $key3 => $departmentArrss)
-              @if($departments->name == $departmentArrss->department)
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead class="text-center text-sm fw-bold">
+                <tr>
+                  <th class="col-5">NAME</th>
+                  <th>POSITION</th>
+                  <th>ID NO</th>
+                  <th>UNIT</th>
+                  <th>VIEW</th>
+                </tr>
+              </thead>
+              
+              <tbody>
+                @foreach ($departmentArr as $key2 => $departmentArrs)
+                  @foreach ($departmentArrs as $key3 => $departmentArrss)
+                    @if($departments->name == $departmentArrss->department)
 
-              @if ($loop->last)
-                <div class="fs-5 fw-bolder text-dark mb-3">{{$departments->name}} Department <span class="float-end badge bg-success fs-6 text-dark py-2">{{$key3+1}} employees</span></div>
-              @endif
+                      @if ($loop->last)
+                        <div class="fs-5 fw-bolder text-dark mb-3">{{$departments->name}} Department <span class="float-end badge bg-success fs-6 text-dark py-2">{{$key3+1}} employees</span></div>
+                      @endif
 
-              <tr>
-                <td class="text-xs fw-bolder text-uppercase">
-                      <img src="../assets/img/profileavatar.png" class="avatar avatar-sm me-3" alt="user1">
+                      <tr>
+                        <td class="text-xs fw-bolder text-uppercase">
+                              <img src="../assets/img/profileavatar.png" class="avatar avatar-sm me-3" alt="user1">
 
-                  {{$departmentArrss->name}}
-                </td>
-                {{-- <div class="d-flex flex-column justify-content-center">
-                </div>
-                <div class="d-flex flex-column justify-content-center">
-                  <td class="align-middle">
-                    <div class="col-lg-6 col-5 my-auto text-middle">
-                      <div class="dropdown float-lg-start pe-4">
-                        <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
-                          <i class="fa fa-ellipsis-v text-secondary"></i>
-                        </a>
-                        <ul class="dropdown-menu px-2 py-3 ms-n4 ms-n5" aria-labelledby="dropdownTable">
-                          <li><a href="{{ url('view-date/'.$departmentArrss->id) }}" class="dropdown-item border-radius-md" role="button">View KPI</a></li>
-                          <li><a href="{{ url('/hr/view/training-coaching/'.$departmentArrss->id) }}" class="dropdown-item border-radius-md" role="button">View Training & Coaching</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </td>
-                </div> --}}
-                <td class="text-xs fw-bold text-center">{{$departmentArrss->position}}</td>
-                <td class="text-xs fw-bold text-center">{{$departmentArrss->nostaff}}</td>
-                <td class="text-xs fw-bold text-center">{{$departmentArrss->unit}}</td>
-                <td class="text-xs fw-bold"><a href="{{ url('view-date/'.$departmentArrss->id) }}" class="btn btn-info btn-sm btn-icon my-auto" data-bs-toggle="tooltip" data-bs-original-title="View KPI"><i class="bi bi-list-columns-reverse"></i></a></td>
-              </tr>
-                @endif
+                          {{$departmentArrss->name}}
+                        </td>
+                        <td class="text-xs fw-bold text-center">{{$departmentArrss->position}}</td>
+                        <td class="text-xs fw-bold text-center">{{$departmentArrss->nostaff}}</td>
+                        <td class="text-xs fw-bold text-center">{{$departmentArrss->unit}}</td>
+                        <td class="text-center">
+                          <a type="button" id="dropdownMenuButton" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-ellipsis-v"></i>
+                          </a>
+                          <div class="dropdown-menu">
+                            <a href="{{ url('view-date/'.$departmentArrss->id) }}" class="dropdown-item text-dark fw-bold">KPI</a>
+                            <a href="{{ url('/hr/view/training-coaching/'.$departmentArrss->id) }}" class="dropdown-item text-dark fw-bold">Training & Coaching</a>
+                          </div>
+                        </td>
+                      </tr>
+                    @endif
+                  @endforeach
                 @endforeach
-              @endforeach
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div>
         </div>
+        
       </div>
     </div>
   </div>
-</div>
 @endforeach
 
 </div>

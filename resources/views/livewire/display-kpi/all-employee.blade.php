@@ -415,60 +415,60 @@
               <div class="row">
                 <div class="col-md-6 mb-4">
                   @if (!$kpiall->isEmpty())
-                  <div class="table-responsive">
-                    <table class="table-sm text-xs align-middle mx-auto">
-                      <tr>
-                        <td>KPI</td>
-                        <td>
-                          @foreach ($kpiall as $key => $kpialls)
-                            <span class="fw-bolder">: {{ $kpialls -> total_score_master }} %</span></span>
-                          @endforeach
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Final Score</td>
-                        <td>
-                          @foreach ($kpiall as $key => $kpialls)
-                            <span class="fw-bolder">: {{ round($kpialls -> total_score_all,2) }} %</span></span>
-                          @endforeach
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Kecekapan Teras</td>
-                        <td>
-                          @foreach ($kpiall as $key => $kpialls)
-                            <span class="fw-bolder">: {{ $kpialls -> total_score_kecekapan }} %</span></span>
-                          @endforeach
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Nilai Teras</td>
-                        <td>
-                          @foreach ($kpiall as $key => $kpialls)
-                            <span class="fw-bolder">: {{ $kpialls -> total_score_nilai }} %</span></span>
-                          @endforeach
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Grade</td>
-                        <td>
-                          @foreach ($kpiall as $key => $kpialls)
-                            <span class="fw-bolder">: {{ $kpialls -> grade_all }}</span></span>
-                          @endforeach
-                        </td>
-                      </tr>
-                    </table>
-                  </div> 
-                @else
-                  <div class="table-responsive">
-                    <table class="table-sm text-xs align-middle mx-auto">
-                      <tr><td>KPI</td><td class="fw-bolder">:</td></tr>
-                      <tr><td>Final Score</td><td class="fw-bolder">:</td></tr>
-                      <tr><td>Kecekapan Teras</td><td class="fw-bolder">:</td></tr>
-                      <tr><td>Nilai Teras</td><td class="fw-bolder">:</td></tr>
-                      <tr><td>Grade</td><td class="fw-bolder">:</td></tr>
-                    </table>
-                  </div>
+                    <div class="table-responsive">
+                      <table class="table-sm text-xs align-middle mx-auto">
+                        <tr>
+                          <td>KPI</td>
+                          <td>
+                            @foreach ($kpiall as $key => $kpialls)
+                              <span class="fw-bolder">: {{ $kpialls -> total_score_master }} %</span></span>
+                            @endforeach
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Final Score</td>
+                          <td>
+                            @foreach ($kpiall as $key => $kpialls)
+                              <span class="fw-bolder">: {{ round($kpialls -> total_score_all,2) }} %</span></span>
+                            @endforeach
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Kecekapan Teras</td>
+                          <td>
+                            @foreach ($kpiall as $key => $kpialls)
+                              <span class="fw-bolder">: {{ $kpialls -> total_score_kecekapan }} %</span></span>
+                            @endforeach
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Nilai Teras</td>
+                          <td>
+                            @foreach ($kpiall as $key => $kpialls)
+                              <span class="fw-bolder">: {{ $kpialls -> total_score_nilai }} %</span></span>
+                            @endforeach
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Grade</td>
+                          <td>
+                            @foreach ($kpiall as $key => $kpialls)
+                              <span class="fw-bolder">: {{ $kpialls -> grade_all }}</span></span>
+                            @endforeach
+                          </td>
+                        </tr>
+                      </table>
+                    </div> 
+                  @else
+                    <div class="table-responsive">
+                      <table class="table-sm text-xs align-middle mx-auto">
+                        <tr><td>KPI</td><td class="fw-bolder">:</td></tr>
+                        <tr><td>Final Score</td><td class="fw-bolder">:</td></tr>
+                        <tr><td>Kecekapan Teras</td><td class="fw-bolder">:</td></tr>
+                        <tr><td>Nilai Teras</td><td class="fw-bolder">:</td></tr>
+                        <tr><td>Grade</td><td class="fw-bolder">:</td></tr>
+                      </table>
+                    </div>
                 @endif
               </div>
 

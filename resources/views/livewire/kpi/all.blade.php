@@ -271,8 +271,8 @@ input[type=file]::file-selector-button:hover {
                         <i class="fa fa-ellipsis-v"></i>
                       </a>
                       <div class="dropdown-menu">
-                        <a href="{{ url('employee/edit/kpi/'.$kpiArrss->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="dropdown-item">EDIT</a>
-                        <button type="button" wire:click="selectItem({{$kpiArrss->kpimasters->kpiall->id}} , {{$kpiArrss->kpimasters->id}} , {{$kpiArrss->id}})" class="dropdown-item text-danger data-delete" data-form="{{$kpiArrss->id}}">DELETE</a>
+                        <a href="{{ url('employee/edit/kpi/'.$kpiArrss->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="dropdown-item fw-bold text-dark">EDIT</a>
+                        <button type="button" wire:click="selectItem({{$kpiArrss->kpimasters->kpiall->id}} , {{$kpiArrss->kpimasters->id}} , {{$kpiArrss->id}})" class="dropdown-item text-danger fw-bold data-delete" data-form="{{$kpiArrss->id}}">DELETE</a>
                       </div>
                     </td>
                   </tr>

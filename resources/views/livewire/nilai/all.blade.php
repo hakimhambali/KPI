@@ -102,40 +102,7 @@
       </div>
     </div>
   </div>
-    
-        {{-- <div class="container-fluid py-4">
-          <div class="row">
-            <div class="col-12">
-              <div class="card mb-4">
-                <div class="card-body px-0 pt-0 pb-2">
-                  <div class="p-0 table-responsive">
-                    <table class="table align-items-center mb-0">
-                      <thead>
-                        <tr>
-                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nilai Teras</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">%</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Measurement</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employee Score</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Manager Score</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Actual Score</th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @php($i = 1)
-                        @foreach ($nilai as $key => $nilais)
-                          <tr>
-                            <td>    
-                              <div class="d-flex px-2 py-1">
-                                <div class="d-flex flex-column justify-content-center">
-                                  <p class="mb-0 text-sm" value="{{$key + 1}}">{{$key + 1}}</p>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              <p class="text-xs font-weight-bold mb-0" value="{{ $nilais -> nilai_teras }}">{{ $nilais -> nilai_teras }}</p>
-                            </td> --}}
+
   
   <!---------------------------------- NILAI FORM ------------------------------------------------------------------------------------------>
 
