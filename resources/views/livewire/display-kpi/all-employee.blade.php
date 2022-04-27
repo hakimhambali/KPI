@@ -129,9 +129,8 @@
                                             @endif
                       
                                             @for($i=0 ; $i<$num_of_link; $i++)
-                                              <span class="mb-2 text-xs"><span class="text-dark ms-sm-1 font-weight-bold">
-                                              <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;" target="_blank">View</a>
-                                              </span></span><br>
+                                            <a href=" {{ $links[$i] }}" class="btn btn-sm btn-info my-auto mb-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
+                                            <br>
                                             @endfor
                                           @endif
                                         @endif
