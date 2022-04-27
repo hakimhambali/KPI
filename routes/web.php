@@ -115,7 +115,7 @@ Route::get('/hr/edit/training/{id}', [Training::class, 'edit'])->name('training_
 Route::post('/hr/update/training/{id}', [Training::class, 'update']);
 
 // Route::get('/hr/view/training-coaching/{id}', Training::class);
-Route::get('/hr/view/training-coaching/{id}', [Training::class, 'view']);
+Route::get('/hr-manager/view/training-coaching/{id}', [Training::class, 'view']);
 
 //Coaching Route
 Route::post('/hr/create/coaching', [Coaching::class, 'create']);
