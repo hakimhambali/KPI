@@ -24,13 +24,13 @@
       
           <div class="table-responsive">
             <table class="table table-hover align-middle">
-              <thead class="text-center text-sm fw-bold opacity-7">
+              <thead class="text-center text-sm fw-bold text-dark">
                 <tr>
-                  <th class="col-5">Name</th>
-                  <th>Position</th>
-                  <th>ID No</th>
-                  <th>Unit</th>
-                  <th></th>
+                  <th class="col-5">NAME</th>
+                  <th>POSITION</th>
+                  <th>ID NO</th>
+                  <th>UNIT</th>
+                  <th>VIEW</th>
                 </tr>
               </thead>
               
@@ -44,7 +44,15 @@
                     <td class="text-xs fw-bold text-center">{{$users->position}}</td>
                     <td class="text-xs fw-bold text-center">{{$users->nostaff}}</td>
                     <td class="text-xs fw-bold text-center">{{$users->unit}}</td>
-                    <td class="text-xs fw-bold"><a href="{{ url('view-date/'.$users->id) }}" class="btn btn-info btn-sm btn-icon my-auto" data-bs-toggle="tooltip" data-bs-original-title="View KPI"><i class="bi bi-list-columns-reverse"></i></a></td>
+                    <td class="text-center">
+                      <a type="button" id="dropdownMenuButton" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-ellipsis-v"></i>
+                      </a>
+                      <div class="dropdown-menu">
+                        <a href="{{ url('view-date/'.$users->id) }}" class="dropdown-item text-dark fw-bold">KPI</a>
+                        {{-- <a href="" class="dropdown-item text-dark fw-bold">Training & Coaching</a> --}}
+                      </div>
+                    </td>
                   </tr>
                 @endforeach
               </tbody>

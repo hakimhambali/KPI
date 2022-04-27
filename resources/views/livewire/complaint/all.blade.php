@@ -47,7 +47,7 @@
 
                               <label class="form-label">*If located at Kluang, please select office building</label><br>
                               <input type="checkbox" id="office" name="office[]" value="Office 1"><label for="office">Office 1</label><br>
-                              <input type="checkbox" id="office" name="office[]" value="Office 3"><label for="office">Office 3</label><br>
+                              <input type="checkbox" id="office" name="office[]" value="Office 2"><label for="office">Office 3</label><br>
                             </div>
 
                             <div class="col-md-6 mb-3 mt-2">
