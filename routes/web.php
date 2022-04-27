@@ -31,6 +31,7 @@ use App\Http\Livewire\UserManagement\UserManagementAdmin;
 use App\Http\Controllers\FindOwnerController;
 use App\Http\Livewire\Training;
 use App\Http\Livewire\Coaching;
+use App\Http\Livewire\Moderator;
 
 /*
 |--------------------------------------------------------------------------
@@ -140,7 +141,11 @@ Route::post('/pro/update/complaint/{id}', [Complaint::class, 'update'])->name('c
 //ANNOUNCEMENT FOR HOME PAGE
 Route::post('/hr/announcementuphr/{id_announcement}', [Homepage::class, 'announcementuphr']);
 
+//INTEGRATION TO FINDOWNER
 Route::get("/findowner", [FindOwnerController::class, "index"]);
+
+//ADD FUNCTION
+Route::get('/add-function', Moderator::class)->name('add-function');
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard-hr', DashboardHR::class)->name('dashboard-hr');

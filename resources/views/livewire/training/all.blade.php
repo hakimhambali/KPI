@@ -61,7 +61,9 @@
                         <th>TITLE</th>
                         <th>DATE</th>
                         <th>HOURS</th>
+                        @if (auth()->user()->role == 'admin' || auth()->user()->role == 'hr')
                         <th class="col-2">ACTION</th>
+                        @endif
                       </tr>
                     </thead>
   
@@ -73,12 +75,14 @@
                           <td class="text-xs fw-bold text-center">{{ $coachings->title }}</td>
                           <td class="text-xs text-center">{{ date('j F Y', strtotime($coachings->updated_at)) }}</td>
                           <td class="text-xs text-center">{{ $coachings->hours }}</td>
+                          @if (auth()->user()->role == 'admin' || auth()->user()->role == 'hr')
                           <td class="text-center mx-auto">
                             @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin'|| auth()->user()->department == 'Operation')
                               <a href="{{ url('hr/edit/coaching/'.$coachings->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
                               {{-- <button type="button" wire:click="selectItem2({{$coachings->id}})" class="btn btn-danger btn-sm btn-icon data-delete1" data-form="{{$coachings->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button> --}}
                             @endif
                           </td>
+                          @endif
                         </tr>
                       @endforeach
                     </tbody>
@@ -112,7 +116,9 @@
                           <th>DATE</th>
                           <th>HOURS</th>
                           <th>TRAINER</th>
-                            <th class="col-2">ACTION</th>
+                          @if (auth()->user()->role == 'admin' || auth()->user()->role == 'hr')
+                          <th class="col-2">ACTION</th>
+                          @endif
                         </tr>
                       </thead>
 
@@ -125,12 +131,14 @@
                             <td class="text-xs text-center">{{ date('j F Y', strtotime($trainings->updated_at)) }}</td>
                             <td class="text-xs text-center">{{ $trainings->hours }}</td>
                             <td class="text-xs text-center">{{ $trainings->trainer->name }}</td>
+                            @if (auth()->user()->role == 'admin' || auth()->user()->role == 'hr')
                             <td class="text-center mx-auto">
                               @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin'|| auth()->user()->department == 'Operation')
                                 <a href="{{ url('hr/edit/training/'.$trainings->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
                                 {{-- <button type="button" wire:click="selectItem1({{$trainings->id}})" class="btn btn-danger btn-sm btn-icon data-delete2" data-form="{{$trainings->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button> --}}
                               @endif
                             </td>
+                            @endif
                           </tr>
                         @endforeach
                       </tbody>
