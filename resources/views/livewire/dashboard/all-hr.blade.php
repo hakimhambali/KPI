@@ -76,7 +76,7 @@
                           </a>
                           <div class="dropdown-menu">
                             <a href="{{ url('view-date/'.$departmentArrss->id) }}" class="dropdown-item text-dark fw-bold">KPI</a>
-                            <a href="{{ url('/hr/view/training-coaching/'.$departmentArrss->id) }}" class="dropdown-item text-dark fw-bold">Training & Coaching</a>
+                            <a href="{{ url('/hr-manager/view/training-coaching/'.$departmentArrss->id) }}" class="dropdown-item text-dark fw-bold">Training & Coaching</a>
                           </div>
                         </td>
                       </tr>
