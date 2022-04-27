@@ -106,40 +106,87 @@
                                         </td>
                                       @endif
                                         
-                                      @if ($key4 == 0)
-                                        <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">
-                                          @if ($kpiArrss->kpimasters->link == '') -
-                                          @else
-                                          <a href="{{ $kpiArrss->kpimasters->link }}" class="btn btn-sm btn-info my-auto" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
+                                      {{-- {{dd($kpiArrss->kpimasters->link)}} --}}
+                                    @if ($key4 == 0)
+                                      <td rowspan="{{ $kpiArrs->count() }}" class="align-middle">
+              
+                                      {{-- Original --}}
+                                        {{-- @if ($kpiArrss->kpimasters->link == '')
+                                        -
+                                        @else
+                                        <a href="{{ $kpiArrss->kpimasters->link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">View</a>
+                                        @endif --}}
+              
+                                      {{-- Test --}}
+                                        {{-- @if ($kpiArrss->kpimasters->link == '')
+                                        -
+                                        @else
+                                        <a href="{{ $kpiArrss->kpimasters->link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">View</a>
+                                        @endif --}}
+              
+                                        @if ($kpiArrss->kpimasters->link != '')
+                                        <?php $links = json_decode($kpiArrss->kpimasters->link); ?>
+                                        
+                                        @if ($links != NULL)
+                                          @if ($links[0] != NULL)
+                                            @if ($links[0] == NULL)
+                                              <?php $num_of_link=0 ?>
+                                            @elseif ($links[1] == NULL)
+                                              <?php $num_of_link=1 ?>
+                                            @elseif ($links[2] == NULL)
+                                              <?php $num_of_link=2 ?>
+                                            @elseif ($links[3] == NULL)
+                                              <?php $num_of_link=3 ?>
+                                            @elseif ($links[4] == NULL)
+                                              <?php $num_of_link=4 ?>
+                                            @elseif ($links[4] != NULL)
+                                              <?php $num_of_link=5 ?>
+                                            @endif
+                      
+                                            @for($i=0 ; $i<$num_of_link; $i++)
+                                              <span class="mb-2 text-xs"><span class="text-dark ms-sm-1 font-weight-bold">
+                                              <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;" target="_blank">View</a>
+                                              </span></span><br>
+                                            @endfor
                                           @endif
-                                        </td>
-                                        <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">{{ $kpiArrss->kpimasters->percent_master }}</td>
-                                        <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">Percentage (%)</td>
-                                        <td rowspan="{{ $kpiArrs->count() }}" class="mx-auto">
-                                          <span class="me-2 text-xs fw-bolder" value="{{ $kpiArrss -> pencapaian }}">{{ number_format( (integer)($kpiArrss->kpimasters->skor_KPI)) }}%</span>
-                                          <div class="progress">
-                                            <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ $kpiArrss->kpimasters->skor_KPI }}%;"></div>
-                                          </div>
-                                        </td>
-                                        <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">{{ $kpiArrss->kpimasters->skor_KPI }}</td>
-                                        <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">{{ round($kpiArrss->kpimasters->skor_sebenar,2) }} %</td>
-                                      @else
+                                        @endif
                                       @endif
-                                    </tr>
-                                  @endif
-
+              
+                                      </td>
+                                      <td rowspan="{{ $kpiArrs->count() }}" class="align-middle text-center">
+                                        <span class="text-secondary text-xs font-weight-bold" value="{{ $kpiArrss->kpimasters->percent_master }}">{{ $kpiArrss->kpimasters->percent_master }}</span>
+                                      </td>
+                                      <td rowspan="{{ $kpiArrs->count() }}" class="align-middle text-center">
+                                        <span class="text-secondary text-xs font-weight-bold" value="">Percentage (%)</span>
+                                      </td>
+                                      <td rowspan="{{ $kpiArrs->count() }}" class="align-middle text-center">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                          <span class="me-2 text-xs font-weight-bold" value="{{ $kpiArrss->kpimasters->pencapaian }}">{{ number_format( (integer)($kpiArrss->kpimasters->skor_KPI)) }}%</span>
+                                          <div>
+                                              <div class="progress">
+                                                <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ $kpiArrss->kpimasters->skor_KPI }}%;"></div>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td rowspan="{{ $kpiArrs->count() }}" class="align-middle text-center">
+                                        <span class="text-secondary text-xs font-weight-bold" value="{{ $kpiArrss->kpimasters->skor_KPI }}">{{ $kpiArrss->kpimasters->skor_KPI }}</span>
+                                      </td>
+                                      <td rowspan="{{ $kpiArrs->count() }}" class="align-middle text-center">
+                                        <span class="text-secondary text-xs font-weight-bold" value="{{ round($kpiArrss->kpimasters->skor_sebenar,2) }}">{{ round($kpiArrss->kpimasters->skor_sebenar,2) }} %</span>
+                                      </td>
+                                    @else
+                                    @endif
+                                  </tr>
                                 @endif
+                                @endif
+                                  @endforeach
+                                @endforeach
                               @endforeach
-                            @endforeach
-                          @endforeach
-
-                        @endforeach
-                      @endforeach
-                    </tbody>  
-
-                  </table>
-                </div>
-              </div>
+                              @endforeach
+                              @endforeach
+                              </tbody>  
+                            </table>
 
             </div>
           </div>
@@ -399,87 +446,6 @@
                 @else
                 <p class="text-center">There's No Nilai Teras Has Been Added.</p>
               @endif
-                        {{-- {{dd($kpiArrss->kpimasters->link)}} --}}
-                      @if ($key4 == 0)
-                        <td rowspan="{{ $kpiArrs->count() }}" class="align-middle">
-
-                        {{-- Original --}}
-                          {{-- @if ($kpiArrss->kpimasters->link == '')
-                          -
-                          @else
-                          <a href="{{ $kpiArrss->kpimasters->link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">View</a>
-                          @endif --}}
-
-                        {{-- Test --}}
-                          {{-- @if ($kpiArrss->kpimasters->link == '')
-                          -
-                          @else
-                          <a href="{{ $kpiArrss->kpimasters->link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">View</a>
-                          @endif --}}
-
-                          @if ($kpiArrss->kpimasters->link != '')
-                          <?php $links = json_decode($kpiArrss->kpimasters->link); ?>
-                          
-                          @if ($links != NULL)
-                            @if ($links[0] != NULL)
-                              @if ($links[0] == NULL)
-                                <?php $num_of_link=0 ?>
-                              @elseif ($links[1] == NULL)
-                                <?php $num_of_link=1 ?>
-                              @elseif ($links[2] == NULL)
-                                <?php $num_of_link=2 ?>
-                              @elseif ($links[3] == NULL)
-                                <?php $num_of_link=3 ?>
-                              @elseif ($links[4] == NULL)
-                                <?php $num_of_link=4 ?>
-                              @elseif ($links[4] != NULL)
-                                <?php $num_of_link=5 ?>
-                              @endif
-        
-                              @for($i=0 ; $i<$num_of_link; $i++)
-                                <span class="mb-2 text-xs"><span class="text-dark ms-sm-1 font-weight-bold">
-                                <a href=" {{ $links[$i] }}" style="color:blue;text-decoration:underline;" target="_blank">View</a>
-                                </span></span><br>
-                              @endfor
-                            @endif
-                          @endif
-                        @endif
-
-                        </td>
-                        <td rowspan="{{ $kpiArrs->count() }}" class="align-middle text-center">
-                          <span class="text-secondary text-xs font-weight-bold" value="{{ $kpiArrss->kpimasters->percent_master }}">{{ $kpiArrss->kpimasters->percent_master }}</span>
-                        </td>
-                        <td rowspan="{{ $kpiArrs->count() }}" class="align-middle text-center">
-                          <span class="text-secondary text-xs font-weight-bold" value="">Percentage (%)</span>
-                        </td>
-                        <td rowspan="{{ $kpiArrs->count() }}" class="align-middle text-center">
-                          <div class="d-flex align-items-center justify-content-center">
-                            <span class="me-2 text-xs font-weight-bold" value="{{ $kpiArrss->kpimasters->pencapaian }}">{{ number_format( (integer)($kpiArrss->kpimasters->skor_KPI)) }}%</span>
-                            <div>
-                                <div class="progress">
-                                  <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ $kpiArrss->kpimasters->skor_KPI }}%;"></div>
-                                </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td rowspan="{{ $kpiArrs->count() }}" class="align-middle text-center">
-                          <span class="text-secondary text-xs font-weight-bold" value="{{ $kpiArrss->kpimasters->skor_KPI }}">{{ $kpiArrss->kpimasters->skor_KPI }}</span>
-                        </td>
-                        <td rowspan="{{ $kpiArrs->count() }}" class="align-middle text-center">
-                          <span class="text-secondary text-xs font-weight-bold" value="{{ round($kpiArrss->kpimasters->skor_sebenar,2) }}">{{ round($kpiArrss->kpimasters->skor_sebenar,2) }} %</span>
-                        </td>
-                      @else
-                      @endif
-                    </tr>
-                  @endif
-                  @endif
-                    @endforeach
-                  @endforeach
-                @endforeach
-                @endforeach
-                @endforeach
-                </tbody>  
-              </table>
             </div>
         </div>
 
