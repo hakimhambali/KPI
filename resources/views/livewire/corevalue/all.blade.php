@@ -1,212 +1,232 @@
-<h1 class="text-black mb-2 mt-5" style="text-align:center">OUR CORE VALUES </h1>
-<div class="container-fluid py-4" style="background-color:red">
-    <div class="row">
-        <div class="col-12 col-xl-6">
-            <div class="card h-100">
-                <div class="card-header pb-0 p-3">
-                    <h6 class="mb-0" style="font-size:40px;">LEADERSHIP<img src="assets/img/leadership.png" height="200px" width="180px" alt="..."></h6>
-                </div>
-                <div class="card-body p-3">
-                    <ul class="list-group">
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Are Responsible Leaders
-                            </div>
-                        </li>
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Lead By Example
-                            </div>
-                        </li>
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Walk The Talk, We Walk The Walk
-                            </div>
-                        </li>
-                    </ul>
-                <ul class="list-group">
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Inspire Others For A Better Tomorrow
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-xl-6">
-            <div class="card h-100">
-                <div class="card-header pb-0 p-3">
-                    <h6 class="mb-0" style="font-size:40px;">GROWTH<img src="assets/img/growth.png" height="200px" width="180px" alt="..."></h6>
-                </div>
-                <div class="card-body p-3">
-                    <ul class="list-group">
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Care Of Our Own Growth
-                            </div>
-                        </li>
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Grow Our Knowledge Everyday
-                            </div>
-                        </li>
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Nurture Our Winning Attitude
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="list-group">
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Consistently Upgrade Ourselves
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+
+<div class="container-fluid py-4">
+    <div class="row px-2">
+        <div class="card bg-gradient-danger">
+            <p class="text-white text-center my-2 fst-italic fs-2 fw-bolder">OUR CORE VALUES</p>
         </div>
     </div>
-</div>
-<div class="container-fluid py-4" style="background-color:red">
-    <div class="row">
-        <div class="col-12 col-xl-6">
-            <div class="card h-100">
-                <div class="card-header pb-0 p-3">
-                    <h6 class="mb-0" style="font-size:40px;">RESULT ORIENTED<img src="assets/img/result-oriented.png" height="200px" width="180px" alt="..."></h6>
+
+    <div class="my-2 p-4 bg-dark">
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <div class="card bg-light">
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-7 my-auto">
+                                <h2 class="text-danger fw-bolder text-center">LEADERSHIP</h2>
+                            </div>
+                            
+                            <div class="col-md-5 text-center my-auto">
+                                
+                                {{-- <div class="embed-responsive embed-responsive-21by9">
+                                    <iframe class="embed-responsive-item" src="assets/img/core-values/leadership2.png"></iframe>
+                                  </div> --}}
+                                <img src="assets/img/core-values/leadership2.png" width="100%">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Are Responsible Leaders
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Lead By Example
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Walk The Talk, We Walk The Walk
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Inspire Others For A Better Tomorrow
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="card-body p-3">
-                    <ul class="list-group">
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Help Others Discover Their Own Potential
+            </div>
+
+            <div class="col-md-6 mb-2">
+                <div class="card bg-light">
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-7 my-auto">
+                                <h2 class="text-danger fw-bolder text-center">GROWTH</h2>
                             </div>
-                        </li>
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Ensure Our Clients Achieve Outstanding Result
+                            
+                            <div class="col-md-5 text-center my-auto">
+                                <img src="assets/img/core-values/growth.png" width="60%">
                             </div>
-                        </li>
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Are Passionate To See Result In Everything That We Do
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="list-group">
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Thrive To Give The Best Out Of Ourselves
-                            </div>
-                        </li>
-                    </ul>
+                        </div>
+
+                        <div class="row">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Care Of Our Own Growth
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Grow Our Knowledge Everyday
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Nurture Our Winning Attitude
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Consistently Upgrade Ourselves
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-12 col-xl-6">
-            <div class="card h-100">
-                <div class="card-header pb-0 p-3">
-                    <h6 class="mb-0" style="font-size:40px;">CONTRIBUTION<img src="assets/img/contribution.png" height="200px" width="180px" alt="..."></h6>
+
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <div class="card bg-light">
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-7 my-auto">
+                                <h3 class="text-danger fw-bolder text-center">RESULT ORIENTED</h3>
+                            </div>
+                            
+                            <div class="col-md-5 text-center my-auto">
+                                <img src="assets/img/core-values/result-oriented.png" width="80%">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Help Others Discover Their Own Potential
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Ensure Our Clients Achieve Outstanding Result
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Are Passionate To See Result In Everything That We Do
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Thrive To Give The Best Out Of Ourselves
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="card-body p-3">
-                    <ul class="list-group">
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Contribute With Passion & Dignity
+            </div>
+
+            <div class="col-md-6 mb-2">
+                <div class="card bg-light">
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-7 my-auto">
+                                <h3 class="text-danger fw-bolder text-center">CONTRIBUTION</h3>
                             </div>
-                        </li>
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Help Others Overcome Weakness & Growth Their Strength
+                            
+                            <div class="col-md-5 text-center my-auto">
+                                <img src="assets/img/core-values/contribution.png" width="80%">
                             </div>
-                        </li>
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Passionately Influence Others To Spread Goodness
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="list-group">
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Contribute To Create Positive Circle & Environment
-                            </div>
-                        </li>
-                    </ul>
+                        </div>
+
+                        <div class="row">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Contribute With Passion & Dignity
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Help Others Overcome Weakness & Growth Their Strength
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Passionately Influence Others To Spread Goodness
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Contribute To Create Positive Circle & Environment
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="container-fluid py-4" style="background-color:red">
-    <div class="row">
-        <div class="col-12 col-xl-6">
-            <div class="card h-100">
-                <div class="card-header pb-0 p-3">
-                    <h6 class="mb-0" style="font-size:40px;">SPIRITUAL<img src="assets/img/spiritual.png" height="200px" width="180px" alt="..."></h6>
+
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <div class="card bg-light">
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-7 my-auto">
+                                <h2 class="text-danger fw-bolder text-center">SPIRITUAL</h2>
+                            </div>
+                            
+                            <div class="col-md-5 text-center my-auto">
+                                <img src="assets/img/core-values/spiritual.png" width="80%">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Are Servants To Allah
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Serving Others For A Better Living
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Rise By Lifting Others
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Are Faithful To Our Believe
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="card-body p-3">
-                    <ul class="list-group">
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Are Servants To Allah
+            </div>
+
+            <div class="col-md-6 mb-2">
+                <div class="card bg-light">
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-7 my-auto">
+                                <h2 class="text-danger fw-bolder text-center">FAMILY</h2>
                             </div>
-                        </li>
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Serving Others For A Better Living
+                            
+                            <div class="col-md-5 text-center my-auto">
+                                <img src="assets/img/core-values/family.png" width="80%">
                             </div>
-                        </li>
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Rise By Lifting Others
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="list-group">
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Are Faithful To Our Believe
-                            </div>
-                        </li>
-                    </ul>
+                        </div>
+
+                        <div class="row">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Love Our Family Dearly
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Strive To Give The Best For Our Family
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Will Never Abandon Our Family
+                                </li>
+                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                    We Believe Our Family Happiness Is Our Happiness
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-12 col-xl-6">
-            <div class="card h-100">
-                <div class="card-header pb-0 p-3">
-                    <h6 class="mb-0" style="font-size:40px;">FAMILY<img src="assets/img/family.png" height="200px" width="180px" alt="..."></h6>
-                </div>
-                <div class="card-body p-3">
-                    <ul class="list-group">
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Love Our Family Dearly
-                            </div>
-                        </li>
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Strive To Give The Best For Our Family
-                            </div>
-                        </li>
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Will Never Abandon Our Family
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="list-group">
-                        <li class="list-group-item border-0 px-0">
-                            <div class="form-check form-switch ps-0">
-                                <span class="fa fa-star checked"></span> We Believe Our Family Happiness Is Our Happiness
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
 
