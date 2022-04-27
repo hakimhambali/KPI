@@ -106,6 +106,13 @@ class Training extends Component
         return view('livewire.training.all', compact('training', 'coaching'));
     }
 
+    public function employee_view() 
+    {
+        $training = Training_::where('student_id', auth()->user()->id)->get();
+        $coaching = Coaching_::where('trainer_id', auth()->user()->id)->get();
+        return view('livewire.training.all', compact('training', 'coaching'));
+    }
+
     public function render()
     {
         // $searchName = User::where('name' , 'like' , '%'.$this->name.'%')->orderBy('created_at','desc')->get();
