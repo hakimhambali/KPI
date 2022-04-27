@@ -1,6 +1,7 @@
 {{--------------------------------------------------- EMPLOYEE DETAILS --------------------------------------------------}}
-<div class="container-fluid py-4">
+<div class="container-fluid pb-4">
 {{--------------------------------------------------- EMPLOYEE DETAILS ACCORDING TO THEIR DEPARTMENT --------------------------------------------------}}
+<?php $numDep= $department->count() ?>
 @foreach ($department as $key => $departments)
   @foreach ($departmentArr as $key => $departmentArrs)
     @foreach ($departmentArrs as $key => $departmentArrss)
@@ -9,61 +10,64 @@
   @endforeach
 @endforeach
 
+<div class="row">
+  <div class="col-md-4 pb-3">
+    <div class="card bg-gradient-dark text-white text-center py-2">
+      <h2 class="text-white">{{$numDep}}</h2>
+      <p>Total Departments</p>
+    </div>
+  </div>
+
+  <div class="col-md-4 pb-3">
+    <div class="card bg-gradient-dark text-white text-center py-2">
+      <h2 class="text-white">{{ count($unit)}}</h2>
+      <p>Total Units</p>
+    </div>
+  </div>
+
+  <div class="col-md-4 pb-3">
+    <div class="card bg-gradient-danger text-white text-center py-2">
+      <h2 class="text-white">{{$numOfTeamAll}}</h2>
+      <p class="fs-6">Total Employees</p>
+    </div>
+  </div>
+</div>
+
 @foreach ($department as $key1 => $departments)
+
 <div class="row">
   <div class="col-12">
-    <div class="card mb-4">
-        @if ($loop->first)
-        <div class="card-header pb-0">
-          <p><strong>{{$numOfTeamAll}} employees</strong> in Momentum Internet Sdn Bhd</p>
-        </div>
-        @endif
+    <div class="card mb-3">
 
-      <div class="card-body px-0 pt-0 pb-2">
-        <div class="p-0">
-          <table class="table align-items-center mb-0">
-            <thead>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead class="text-center text-sm fw-bold opacity-7">
               <tr>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-6">Name</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 col-2">Position</th>
-                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-1">ID No</th>
-                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-2">Unit</th>
-                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-1"></th>
+                <th class="col-5">Name</th>
+                <th>Position</th>
+                <th>ID No</th>
+                <th>Unit</th>
+                <th></th>
               </tr>
             </thead>
+            
             <tbody>
             @foreach ($departmentArr as $key2 => $departmentArrs)
               @foreach ($departmentArrs as $key3 => $departmentArrss)
               @if($departments->name == $departmentArrss->department)
 
               @if ($loop->last)
-              <div class="card-header pb-0">
-                <p><strong>{{$key3+1}} employees</strong> in {{$departments->name}} department</p>
-              </div>
+                <div class="fs-5 fw-bolder text-dark mb-3">{{$departments->name}} Department <span class="float-end badge bg-success fs-6 text-dark py-2">{{$key3+1}} employees</span></div>
               @endif
 
               <tr>
-                <td>    
-                  <div class="d-flex px-2 py-1">
-                    <div>
+                <td class="text-xs fw-bolder text-uppercase">
                       <img src="../assets/img/profileavatar.png" class="avatar avatar-sm me-3" alt="user1">
-                    </div>
-                    
-                    <div class="d-flex flex-column justify-content-center">
-                      <h6 class="mb-0 text-sm" value="{{$departmentArrss->id}}">{{$departmentArrss->name}}</h6>
-                    </div>
-                  </div>
+
+                  {{$departmentArrss->name}}
                 </td>
-                <td>
-                  <p class="text-xs font-weight-bold mb-0" value="{{$departmentArrss->id}}">{{$departmentArrss->position}}</p>
-                </td>
-                <td class="align-middle text-center">
-                  <span class="text-secondary text-xs font-weight-bold" value="{{$departmentArrss->id}}">{{$departmentArrss->nostaff}}</span>
-                </td>
-                <td class="align-middle text-center">
-                  <span class="text-secondary text-xs font-weight-bold" value="{{$departmentArrss->id}}">{{$departmentArrss->unit}}</span>
-                </td>
-                <div class="d-flex flex-column justify-content-center">
+                {{-- <div class="d-flex flex-column justify-content-center">
                 </div>
                 <div class="d-flex flex-column justify-content-center">
                   <td class="align-middle">
@@ -79,7 +83,11 @@
                       </div>
                     </div>
                   </td>
-                </div>
+                </div> --}}
+                <td class="text-xs fw-bold text-center">{{$departmentArrss->position}}</td>
+                <td class="text-xs fw-bold text-center">{{$departmentArrss->nostaff}}</td>
+                <td class="text-xs fw-bold text-center">{{$departmentArrss->unit}}</td>
+                <td class="text-xs fw-bold"><a href="{{ url('view-date/'.$departmentArrss->id) }}" class="btn btn-info btn-sm btn-icon my-auto" data-bs-toggle="tooltip" data-bs-original-title="View KPI"><i class="bi bi-list-columns-reverse"></i></a></td>
               </tr>
                 @endif
                 @endforeach

@@ -1,13 +1,12 @@
+<div>
 {{------------------------------------- KECEKAPAN (ALL USER) ----------------------------------------}}
-<div class="container-fluid pb-4">
+  <div class="container-fluid pb-4">
     <div class="row">
       <div class="col-lg-12">
 
-        <!----------------------------------------------------------------------------------------------------->
         <div class="row">
           <div class="col-md-12 mb-lg-0">
-            
-            <!---------------------- Create Function ---------------------------------------------------------->          
+                  
             <div class="card mb-4 bg-gradient-light">  
               <div class="card-body">
                 <h6>List Kecekapan Teras (For Reference Only)</h6><hr>
@@ -17,62 +16,63 @@
                     <table class="table table-sm align-middle fw-bold">
                       <thead class="text-center text-xxs fw-bolder">
                         <tr>
-                          <th>NO</th>
+                          <th class="col-1">NO</th>
                           <th>KECEKAPAN TERAS</th>
                           <th class="col-8">EXPECTED RESULT</th>
+                        </tr>
                       </thead>
 
                       <tbody>
                         <tr>
                           <td class="text-xs text-center">1</td>
                           <td class="text-xs text-center">Kepimpinan Organisasi</td>
-                          <td class="text-xs">
+                          <td class="text-xs"><br>
                             <i class="bi bi-layers-fill"></i> Pekerja yang sedar dan menyesuaikan diri dengan strategi organisasi.<br>
                             <i class="bi bi-layers-fill"></i> Pemimpin yang bertindak selaras dengan strategi organisasi.<br>
                             <i class="bi bi-layers-fill"></i> Pengurus yang dapat mengembangkan dan memperkasakan pekerja bawahannya.<br>
                             <i class="bi bi-layers-fill"></i> Budaya organisasi yang mencerminkan nilainya.<br>
-                            <i class="bi bi-layers-fill"></i> Pemimpin yang bertindak selaras dengan strategi organisasi.
+                            <i class="bi bi-layers-fill"></i> Pemimpin yang bertindak selaras dengan strategi organisasi.<br><br>
                           </td>
                         </tr>
 
                         <tr>
                           <td class="text-xs text-center">2</td>
                           <td class="text-xs text-center">Keupayaan Inovatif</td>
-                          <td class="text-xs">
+                          <td class="text-xs"><br>
                             <i class="bi bi-layers-fill"></i> Pekerja yang berupaya memberi idea dan memberi penyelesaian untuk menyelesaikan masalah.<br>
                             <i class="bi bi-layers-fill"></i> Amalan kerja yang dikemas kini lebih sesuai dengan jangkaan masa kini.<br>
                             <i class="bi bi-layers-fill"></i> Penerimaan untuk organisasi, dan semua bahagiannya, perlu berubah dan terus meningkat.<br>
-                            <i class="bi bi-layers-fill"></i> Pemimpin yang bertindak selaras dengan strategi organisasi.
+                            <i class="bi bi-layers-fill"></i> Pemimpin yang bertindak selaras dengan strategi organisasi.<br><br>
                           </td>
                         </tr>
 
-                      <tr>
-                        <td class="text-xs text-center">3</td>
-                        <td class="text-xs text-center">Pengurusan Pelanggan</td>
-                        <td class="text-xs">
-                          <i class="bi bi-layers-fill"></i> Amalan organisasi yang lebih sesuai dengan keperluan pelanggan moden.<br>
-                          <i class="bi bi-layers-fill"></i> Pekerja yang memahami dan bertindak mengikut kehendak pelanggan tepat pada masanya.<br>
-                          <i class="bi bi-layers-fill"></i> Penciptaan produk dan perkhidmatan masa depan yang lebih mencerminkan keperluan pelanggan.<br>
-                          <i class="bi bi-layers-fill"></i> Pemimpin yang bertindak selaras dengan strategi organisasi.
-                        </td>
-                      </tr>
+                        <tr>
+                          <td class="text-xs text-center">3</td>
+                          <td class="text-xs text-center">Pengurusan Pelanggan</td>
+                          <td class="text-xs"><br>
+                            <i class="bi bi-layers-fill"></i> Amalan organisasi yang lebih sesuai dengan keperluan pelanggan moden.<br>
+                            <i class="bi bi-layers-fill"></i> Pekerja yang memahami dan bertindak mengikut kehendak pelanggan tepat pada masanya.<br>
+                            <i class="bi bi-layers-fill"></i> Penciptaan produk dan perkhidmatan masa depan yang lebih mencerminkan keperluan pelanggan.<br>
+                            <i class="bi bi-layers-fill"></i> Pemimpin yang bertindak selaras dengan strategi organisasi.<br><br>
+                          </td>
+                        </tr>
 
                         <tr>
                           <td class="text-xs text-center">4</td>
                           <td class="text-xs text-center">Pengurusan Pemegang Berkepentingan</td>
-                          <td class="text-xs">
+                          <td class="text-xs"><br>
                             <i class="bi bi-layers-fill"></i> Pekerja yang lebih empati dengan pihak berkepentingan mereka.<br>
                             <i class="bi bi-layers-fill"></i> Pembinaan hubungan positif dengan pihak berkepentingan.<br>
                             <i class="bi bi-layers-fill"></i> Pembentukan perkongsian strategik yang membantu mencapai objektif organisasi.<br>
                             <i class="bi bi-layers-fill"></i> Pengurus yang mendorong pekerja bawahan mereka membina rangkaian profesional mereka sendiri.<br>
-                            <i class="bi bi-layers-fill"></i> Pemimpin yang bertindak selaras dengan strategi organisasi.
+                            <i class="bi bi-layers-fill"></i> Pemimpin yang bertindak selaras dengan strategi organisasi.<br><br>
                           </td>
                         </tr>
 
                         <tr>
                           <td class="text-xs text-center">5</td>
                           <td class="text-xs text-center">Ketangkasan Dalam Organisasi</td>
-                          <td class="text-xs">
+                          <td class="text-xs"><br>
                             <i class="bi bi-layers-fill"></i> Pekerja yang berpengetahuan dan serba boleh.<br>
                             <i class="bi bi-layers-fill"></i>  Penghargaan dan penerapan budaya bimbingan dalam organisasi.<br>
                             <i class="bi bi-layers-fill"></i>  Amalan organisasi yang boleh menyesuaikan diri dengan masalah di pasaran.<br>
@@ -80,7 +80,7 @@
                             <i class="bi bi-layers-fill"></i>  Pemimpin yang bertindak selaras dengan strategi organisasi.
                           </td>
                         </tr>
-                    </tbody>
+                      </tbody>
                     </table>
                   </div>
                 </div>
@@ -95,108 +95,52 @@
     </div>
   </div>
 
-<!---------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------INSERT KECEKAPAN FORM------------------------------------------------------------------------------------------>
 
-<div class="container-fluid py-4">
-  <div class="row">
-    <div class="col-12">
-      @if (session('message'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong>{{ session('message') }}</strong>
-        </div>	
-      @endif
+  <div class="container-fluid pb-4">
+    <div class="row">
+      <div class="col-lg-12">
+        @if (session('message'))
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{ session('message') }}</strong>
+          </div>	
+        @endif
 
-      @if (session('fail'))
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <strong>{{ session('fail') }}</strong>
-        </div>	
-      @endif
+        @if (session('fail'))
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>{{ session('fail') }}</strong>
+          </div>	
+        @endif
 
-      @if ($status == 'Submitted' || $status == 'Signed By Manager' || $status == 'Completed') 
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Warning ! If you want to add, edit or delete any Kecekapan Teras, status of this KPI will set to default (Not Submitted)</strong>
-      </div>
-      @else
-      @endif
-
-      <div class="card mt-">
-        <div class="card-header pb-0 p-3">
-          <div class="row">
-            <div class="col-12 text-end">
-              <form action="{{ url('employee/save/kecekapan/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" method="post">
-            </div>
+        @if ($status == 'Submitted' || $status == 'Signed By Manager' || $status == 'Completed') 
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Warning ! If you want to add, edit or delete any Kecekapan Teras, status of this KPI will set to default (Not Submitted)</strong>
           </div>
-        </div>
-        <div class="card-body p-3">
-          <div class="row">
-            <div class="col-md-6 mb-md-0 mb-4">
-              @csrf 
-              <div class="col-md-12">
-                <div class="mb-4" class="@error('kecekapan_teras') border border-danger rounded-3 @enderror">
-                  <td style="word-break: break-all;" class="border-dark">
-                    <select class="form-select card card-body border card-plain border-radius-lg d-flex align-items-center flex-row" name="kecekapan_teras" id="kecekapan_teras">
-                      <label class="font-weight-bold" >Kecekapan Teras</label><br>
-                      <option selected value="">-- Please Choose --</option>
-                      <option value="Kepimpinan Organisasi" >Kepimpinan Organisasi</option>
-                      <option value="Keupayaan Inovatif" >Keupayaan Inovatif</option> 
-                      <option value="Pengurusan Pelanggan" >Pengurusan Pelanggan</option> 
-                      <option value="Pengurusan Pemegang Berkepentingan" >Pengurusan Pemegang Berkepentingan</option>
-                      <option value="Ketangkasan Dalam Organisasi" >Ketangkasan Dalam Organisasi</option>
-                    </select>
-                  </td>
-                </select>
+        @else
+        @endif
+
+        <div class="card">
+          <form action="{{ url('employee/save/kecekapan/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" method="post">
+          @csrf  
+            <div class="card-body">
+              <h6>INSERT KECEKAPAN TERAS</h6><hr>
+                
+              <div class="col-md-12 mb-3">
+                <select class="form-select" name="kecekapan_teras" id="kecekapan_teras" autofocus required>
+                  <option value="">-- Please Choose --</option>
+                  <option value="Kepimpinan Organisasi" >Kepimpinan Organisasi</option>
+                  <option value="Keupayaan Inovatif" >Keupayaan Inovatif</option> 
+                  <option value="Pengurusan Pelanggan" >Pengurusan Pelanggan</option> 
+                  <option value="Pengurusan Pemegang Berkepentingan" >Pengurusan Pemegang Berkepentingan</option>
+                  <option value="Ketangkasan Dalam Organisasi" >Ketangkasan Dalam Organisasi</option>
+                </select>  
                 @error('kecekapan_teras') <div class="text-danger">{{ $message }}</div> @enderror
-                </div> 
               </div>
-            </div>
-          </div>
-          
-          <div class="row m-auto">
-            <div>
-              <table class="text-center" style="width: 100%;">
-                <thead class="thead-dark">
-                  <tr>
-                    <th rowspan="2">(%)</th>
-                    <th rowspan="2">Measurement</th>
-                    {{-- @if ((Auth::user()->role == "employee") || (Auth::user()->role == "pro") || (Auth::user()->role == "dc") || (Auth::user()->role == "admin")) --}}
-                    <th rowspan="2">Employee Score (Enter score from 1 to 4 only)</th>
-                    {{-- @else
-                    @endif --}}
 
-                    {{-- @if ((Auth::user()->role == "manager") || (Auth::user()->role == "admin") || (Auth::user()->role == "hr"))
-                    <th rowspan="2">Manager Score (Enter score from 1 to 4 only)</th>
-                    @else
-                    @endif --}}
-                    <th rowspan="2">Actual Score</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="font-weight-bold border-dark">
-                      <input type="text"  class="form-control" id="peratus" name="peratus" value="20" onkeyup="masterClac();" min="0" selected readonly>
-                    </td>
+              <div class="row mb-3">
+                <div class="col-md-12 mx-auto">
 
-                    <td class="font-weight-bold border-dark">
-                      <input type="text"  class="form-control" id="ukuran" name="ukuran" value="Percentage" selected readonly>
-                    </td>
-
-                    {{-- @if ((Auth::user()->role == "employee") || (Auth::user()->role == "pro") || (Auth::user()->role == "dc") || (Auth::user()->role == "admin")) --}}
-                    <td style="word-break: break-all;" class="border-dark" class="@error('skor_pekerja') border border-danger rounded-3 @enderror">
-                      <input type="text" pattern="[1-4]+" maxlength="1"  class="form-control" id="skor_pekerja" name="skor_pekerja" onkeyup="masterClac();" min="0" >
-                      @error('skor_pekerja') <div class="text-danger">{{ $message }}</div> @enderror
-                    </td>
-                    {{-- @else
-                    @endif --}}
-
-                    {{-- @if ((Auth::user()->role == "manager") || (Auth::user()->role == "admin") || (Auth::user()->role == "hr"))
-                    <td style="word-break: break-all;" class="border-dark" class="@error('skor_penyelia') border border-danger rounded-3 @enderror">
-                      <input type="text" pattern="[1-4]+" maxlength="1"  class="form-control" id="skor_penyelia" name="skor_penyelia" onkeyup="masterClac();" min="0" >
-                      @error('skor_penyelia') <div class="text-danger">{{ $message }}</div> @enderror
-                    </td>
-                    @else
-                    @endif --}}
-
-                    <td class="font-weight-bold border-dark">
+                    {{-- <td class="font-weight-bold border-dark">
                       <input type="text"  class="form-control"  id="skor_sebenar" name="skor_sebenar" value="0" readonly>
                     </td>
 
@@ -215,157 +159,112 @@
 </div>  
 </div>
 
-    {{-- @if (Auth::user()->role == "employee" || Auth::user()->role == "dc" || Auth::user()->role == "pro") --}}
         <div class="container-fluid py-4">
           <div class="row">
             <div class="col-md-12">
               <div class="card ">
                 <div class="card-body px-0 pt-0 pb-2">
                   <div class="p-0 table-responsive">
-                    <table class="table align-items-center mb-0">
+                    <table class="table align-items-center mb-0"> --}}
+                  <div class="table-responsive">
+                    <table class="text-center text-sm" style="width: 100%">
                       <thead>
                         <tr>
-                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Kecekapan Teras</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">%</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Measurement</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employee Score</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Manager Score</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Actual Score</th>
-                          <th></th>
+                          <th>(%)</th>
+                          <th>Measurement</th>
+                          <th>Employee Score <span class="text-danger">*</span></th>
+                          <th>Actual Score</th>
                         </tr>
                       </thead>
-                      <tbody>
-                        @php($i = 1)
-                        @foreach ($kecekapan as $key => $kecekapans)
-                          <tr>
-                            <td>    
-                              <div class="d-flex px-2 py-1">
-                                <div class="d-flex flex-column justify-content-center">
-                                  <p class="mb-0 text-sm" value="{{$key + 1}}">{{$key + 1}}</p>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              <p class="text-xs font-weight-bold mb-0" value="{{ $kecekapans -> kecekapan_teras }}">{{ $kecekapans -> kecekapan_teras }}</p>
-                            </td>
 
-                            <td class="align-middle text-center">
-                              <span class="text-secondary text-xs font-weight-bold" value="{{ '20%' }}">{{ '20%' }}</span>
-                            </td>
-                            <td class="align-middle text-center">
-                              <span class="text-secondary text-xs font-weight-bold" value="{{ 'Percentage (%)' }}">{{ 'Percentage (%)' }}</span>
-                            </td>
-                            <td class="align-middle text-center">
-                              <span class="text-secondary text-xs font-weight-bold" value="{{ $kecekapans -> skor_pekerja }}">{{ $kecekapans -> skor_pekerja }}</span>
-                            </td>
-                            <td class="align-middle text-center">
-                              <span class="text-secondary text-xs font-weight-bold" value="{{ $kecekapans -> skor_penyelia }}">{{ $kecekapans -> skor_penyelia }}</span>
-                            </td>
-                            <td class="align-middle text-center">
-                              <span class="text-secondary text-xs font-weight-bold" value="{{ $kecekapans -> skor_sebenar }}">{{ $kecekapans -> skor_sebenar }}</span>
-                            </td>
-                            <td class="align-middle">
-                              <div class="col-lg-6 col-5 my-auto text-middle">
-                                <div class="dropdown float-lg-start pe-4">
-                                  <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-ellipsis-v text-secondary"></i>
-                                  </a>
-                                  <ul class="dropdown-menu px-2 py-3 ms-n4 ms-n5" aria-labelledby="dropdownTable">
-                                    <li><a href="{{ url('employee/edit/kecekapan/'.$kecekapans->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="dropdown-item border-radius-md" role="button">Edit</a></li>
-                                    <li><button type="button" wire:click="selectItem({{$kecekapans->id}})" class="dropdown-item border-radius-md data-delete" style="color: red;"  data-form="{{$kecekapans->id}}">Delete</button></li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                        @endforeach
+                      <tbody>
+                        <tr>
+                          <td><input type="text" class="form-control" id="peratus" name="peratus" value="20" onkeyup="masterClac();" readonly></td>
+                          <td><input type="text"  class="form-control" id="ukuran" name="ukuran" value="Percentage" readonly></td>
+                          <td>
+                            <input type="text" pattern="[1-4]+" maxlength="1"  class="form-control" id="skor_pekerja" name="skor_pekerja" placeholder="Enter score from 1 to 4 only" onkeyup="masterClac();" min="0" required>
+                            @error('skor_pekerja') <div class="text-danger">{{ $message }}</div> @enderror
+                          </td>
+                          <td><input type="text"  class="form-control"  id="skor_sebenar" name="skor_sebenar" value="0" readonly></td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>
+
                 </div>
               </div>
-            </div>
-          </div>
-        </div> 
-        {{-- @else
-        @endif  --}}
-
-        {{-- @if (Auth::user()->role == "manager" || (Auth::user()->role == "hr")) 
-        <div class="container-fluid py-4">
-          <div class="row">
-            <div class="col-12">
-              <div class="card ">
-                <div class="card-body px-0 pt-0 pb-2">
-                  <div class="p-0">
-                    <table class="table align-items-center mb-0">
-                      <thead>
-                        <tr>
-                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Kecekapan Teras</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">%</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Measurement</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employee Score</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Manager Score</th>
-                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Actual Score</th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @php($i = 1)
-                        @foreach ($users as $key => $userss)
-                          <tr>
-                            <td>    
-                              <div class="d-flex px-2 py-1">
-                                <div class="d-flex flex-column justify-content-center">
-                                  <p class="mb-0 text-sm" value="{{$key + 1}}">{{$key + 1}}</p>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              <p class="text-xs font-weight-bold mb-0" value="{{ $userss -> kecekapan_teras }}">{{ $userss -> kecekapan_teras }}</p>
-                            </td>
-
-                            <td class="align-middle text-center">
-                              <span class="text-secondary text-xs font-weight-bold" value="{{ '20%' }}">{{ '20%' }}</span>
-                            </td>
-                            <td class="align-middle text-center">
-                              <span class="text-secondary text-xs font-weight-bold" value="{{ 'Percentage (%)' }}">{{ 'Percentage (%)' }}</span>
-                            </td>
-                            <td class="align-middle text-center">
-                              <span class="text-secondary text-xs font-weight-bold" value="{{ $userss -> skor_pekerja }}}">{{ $userss -> skor_pekerja }}</span>
-                            </td>
-                            <td class="align-middle text-center">
-                              <span class="text-secondary text-xs font-weight-bold" value="{{ $userss -> skor_penyelia }}">{{ $userss -> skor_penyelia }}</span>
-                            </td>
-                            <td class="align-middle text-center">
-                              <span class="text-secondary text-xs font-weight-bold" value="{{ $userss -> skor_sebenar }}">{{ $userss -> skor_sebenar }}</span>
-                            </td>
-                            <td class="align-middle">
-                              <div class="col-lg-6 col-5 my-auto text-middle">
-                                <div class="dropdown float-lg-start pe-4">
-                                  <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-ellipsis-v text-secondary"></i>
-                                  </a>
-                                  <ul class="dropdown-menu px-2 py-3 ms-n4 ms-n5" aria-labelledby="dropdownTable">
-                                    <li><a href="{{ url('employee/edit/kecekapan/'.$userss->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="dropdown-item border-radius-md" role="button">Edit</a></li>
-                                    <li><button type="button" wire:click="selectItem({{$userss->id}})" class="dropdown-item border-radius-md data-delete" style="color: red;"  data-form="{{$userss->id}}">Delete</button></li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                        @endforeach
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+              
+              <div class="col-12 text-end">
+                <button class="btn bg-gradient-dark btn-sm px-4" type="submit" href="javascript:;">SAVE</button>
               </div>
+        
+            </div>
+          </form>  
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<!---------------------------------- INSERTED KECEKAPAN ------------------------------------------------------------------------------------------>
+  @if(!empty($kecekapan) && $kecekapan->count())
+    <div class="container-fluid pb-4">
+      <div class="row">
+        <div class="col-md-12">
+          
+          <div class="card">
+            <div class="card-body">
+
+              <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                  <thead class="text-center text-xxs fw-bold">
+                    <tr>
+                      <th>NO</th>
+                      <th>KECEKAPAN TERAS</th>
+                      <th>%</th>
+                      <th>MEASUREMENT</th>
+                      <th>EMPLOYEE SCORE</th>
+                      <th>MANAGER SCORE</th>
+                      <th>ACTUAL SCORE</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    @php($i = 1)
+                    @foreach ($kecekapan as $key => $kecekapans)
+                      <tr>
+                        <td class="text-sm fw-bold text-center">{{$key + 1}}</td>
+                        <td class="text-xs fw-bold">{{ $kecekapans -> kecekapan_teras }}</td>
+                        <td class="text-xs fw-bold text-center">20</td>
+                        <td class="text-xs fw-bold text-center">Percentage (%)</td>
+                        <td class="text-xs fw-bold text-center">{{ $kecekapans -> skor_pekerja }}</td>
+                        <td class="text-xs fw-bold text-center">{{ $kecekapans -> skor_penyelia }}</td>
+                        <td class="text-xs fw-bold text-center">{{ $kecekapans -> skor_sebenar }}</td>
+                        <td class="text-center">
+                          <a type="button" id="dropdownMenuButton" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-ellipsis-v"></i>
+                          </a>
+                          <div class="dropdown-menu">
+                            <a href="{{ url('employee/edit/kecekapan/'.$kecekapans->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="dropdown-item text-dark fw-bold">EDIT</a>
+                            <button type="button" wire:click="selectItem({{$kecekapans->id}})" class="dropdown-item text-danger  fw-bold data-delete" data-form="{{$kecekapans->id}}">DELETE</a>
+                          </div>
+                        </td>
+                      </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
+
             </div>
           </div>
-        </div> 
-        @else
-        @endif  --}}
+
+        </div>
+      </div>
+    </div>
+  @else
+  @endif
+
   </div>
 
   @push('scripts')
@@ -397,5 +296,4 @@
  <!-- Master Pencapaian JS -->
 <script src="{{asset('assets/js/kecekapan.js')}}"></script>
 
-</body>
 </div>

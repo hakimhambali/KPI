@@ -105,9 +105,9 @@
                               <span><i class="fa fa-edit"></i> Add</span>
                             </button>
                             <div class="dropdown-menu">
-                              <a href="{{ url('employee/kpi/'.$dates->id.'/'.$dates->user_id.'/'.$dates->year.'/'.$dates->month) }}" class="dropdown-item">EDIT KPI</a>
-                              <a href="{{ url('employee/kecekapan/'.$dates->id.'/'.$dates->user_id.'/'.$dates->year.'/'.$dates->month) }}" class="dropdown-item">EDIT KECEKAPAN</a>
-                              <a href="{{ url('employee/nilai/'.$dates->id.'/'.$dates->user_id.'/'.$dates->year.'/'.$dates->month) }}" class="dropdown-item">EDIT NILAI</a>
+                              <a href="{{ url('employee/kpi/'.$dates->id.'/'.$dates->user_id.'/'.$dates->year.'/'.$dates->month) }}" class="dropdown-item text-dark fw-bold">EDIT KPI</a>
+                              <a href="{{ url('employee/kecekapan/'.$dates->id.'/'.$dates->user_id.'/'.$dates->year.'/'.$dates->month) }}" class="dropdown-item text-dark fw-bold">EDIT KECEKAPAN</a>
+                              <a href="{{ url('employee/nilai/'.$dates->id.'/'.$dates->user_id.'/'.$dates->year.'/'.$dates->month) }}" class="dropdown-item text-dark fw-bold">EDIT NILAI</a>
                             </div>
                         </td>
                         <td class="text-xs fw-bold text-center">
@@ -134,7 +134,7 @@
                 </table>
               </div>
               @else
-                      <p class="text-center">There's No KPI Has Been Added.</p>
+                <p class="text-center">There's No KPI Has Been Added.</p>
               @endif
           </div>
         </div>

@@ -181,8 +181,8 @@
                     <div class="col-6">
                         <a class="btn bg-gradient-danger btn-sm" href="{{ route('view-profile') }}" title="Previous Page"><i class="bi bi-caret-left-fill"></i></a>
                     </div>
-                    <div class="col-6 text-end">
-                        <button class="btn bg-gradient-dark btn-sm px-4 text-end" type="submit" href="javascript:;">Save</button>
+                    <div class="col-6">
+                        <button class="btn bg-gradient-dark btn-sm px-4 float-end" type="submit" href="javascript:;">Save</button>
                     </div>
                   </div>
 
