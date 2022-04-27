@@ -106,23 +106,8 @@
                                         </td>
                                       @endif
                                         
-                                      {{-- {{dd($kpiArrss->kpimasters->link)}} --}}
                                     @if ($key4 == 0)
                                       <td rowspan="{{ $kpiArrs->count() }}" class="align-middle">
-              
-                                      {{-- Original --}}
-                                        {{-- @if ($kpiArrss->kpimasters->link == '')
-                                        -
-                                        @else
-                                        <a href="{{ $kpiArrss->kpimasters->link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">View</a>
-                                        @endif --}}
-              
-                                      {{-- Test --}}
-                                        {{-- @if ($kpiArrss->kpimasters->link == '')
-                                        -
-                                        @else
-                                        <a href="{{ $kpiArrss->kpimasters->link }}" style="color:blue;text-decoration:underline;font-size:13.5px"; target="_blank">View</a>
-                                        @endif --}}
               
                                         @if ($kpiArrss->kpimasters->link != '')
                                         <?php $links = json_decode($kpiArrss->kpimasters->link); ?>

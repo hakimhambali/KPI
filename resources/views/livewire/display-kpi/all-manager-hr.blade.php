@@ -121,10 +121,34 @@
                                         
                                       @if ($key4 == 0)
                                         <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">
-                                          @if ($kpiArrss->kpimasters->link == '') -
-                                          @else
-                                          <a href="{{ $kpiArrss->kpimasters->link }}" class="btn btn-sm btn-info my-auto" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
+
+                                          @if ($kpiArrss->kpimasters->link != '')
+                                          <?php $links = json_decode($kpiArrss->kpimasters->link); ?>
+                                          
+                                          @if ($links != NULL)
+                                            @if ($links[0] != NULL)
+                                              @if ($links[0] == NULL)
+                                                <?php $num_of_link=0 ?>
+                                              @elseif ($links[1] == NULL)
+                                                <?php $num_of_link=1 ?>
+                                              @elseif ($links[2] == NULL)
+                                                <?php $num_of_link=2 ?>
+                                              @elseif ($links[3] == NULL)
+                                                <?php $num_of_link=3 ?>
+                                              @elseif ($links[4] == NULL)
+                                                <?php $num_of_link=4 ?>
+                                              @elseif ($links[4] != NULL)
+                                                <?php $num_of_link=5 ?>
+                                              @endif
+                        
+                                              @for($i=0 ; $i<$num_of_link; $i++)
+                                                <a href=" {{ $links[$i] }}" class="btn btn-sm btn-info my-auto mb-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
+                                                <br>
+                                              @endfor
+                                            @endif
                                           @endif
+                                        @endif
+                                          
                                         </td>
                                         <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">{{ $kpiArrss->kpimasters->percent_master }}</td>
                                         <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">Percentage (%)</td>
