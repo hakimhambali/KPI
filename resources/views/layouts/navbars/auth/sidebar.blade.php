@@ -230,7 +230,7 @@
             </li>
             @endif --}}
 
-            @if (Auth::user()->role == "admin" || Auth::user()->role == "hr")
+            @if (Auth::user()->role != "moderator")
             <li class="nav-item dropdown">
                 <a data-bs-toggle="collapse" href="#training" class="nav-link collapsed dropdown-toggle {{ Route::currentRouteName() == 'training' ? 'active' : '' || Route::currentRouteName() == 'training_edit' ? 'active' : '' || Route::currentRouteName() == 'coaching' ? 'active' : '' || Route::currentRouteName() == 'coaching_edit' ? 'active' : '' }}" aria-controls="info" role="button" aria-expanded="false">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -241,7 +241,6 @@
 
                 <div class="collapse" id="training" style="">
                     <ul class="nav ms-4 ps-3">
-                        @if (Auth::user()->role != "moderator")
                         <li class="nav-item">
                             <a class="nav-link {{ Route::currentRouteName() == 'view-hours' ? 'active' : '' }}" href="{{ route('view-hours') }}">
                             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -253,7 +252,7 @@
                             <span class="nav-link-text ms-1">View Hours</span>
                             </a>
                         </li>
-                        @endif
+                        @if ((Auth::user()->role == "admin") ||  (Auth::user()->role == "hr"))
                         <li class="nav-item">
                             <a class="nav-link {{ Route::currentRouteName() == 'training' ? 'active' : '' || Route::currentRouteName() == 'training_edit' ? 'active' : '' }}" href="{{ route('training') }}">
                             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -276,6 +275,7 @@
                                 <span class="sidenav-normal">Coaching</span>
                             </a>
                         </li>
+                        @endif
                     </ul>
                 </div>
             </li>

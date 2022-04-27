@@ -1,3 +1,11 @@
+<?php $total_training = 0; ?>
+@foreach ($training as $key => $trainings)
+<?php $total_training += $trainings->hours ?>
+@endforeach
+<?php $total_coaching = 0; ?>
+@foreach ($coaching as $key => $coachings)
+<?php $total_coaching += $coachings->hours ?>
+@endforeach
 @section('content')
   @extends('layouts.app')
 <div>
@@ -22,15 +30,26 @@
         <body>
 
     <div class="container-fluid py-4">
+
+      <div class="row">
+        <div class="col-12">
+          <div class="card bg-gradient-dark text-white shadow-blur mb-4">
+            <div class="card-body">
+              @foreach ($user as $data)
+                <span class="fw-bolder text-uppercase">{{ $data->name }}</span><br>
+                <span class="fst-italic">{{ $data->department }}</span><br>
+                <span class="fst-italic" style="font-size:15px">{{ $data->unit }}</span>
+              @endforeach  
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-md-12">
           
           <div class="card">
             <div class="card-body">
-              <?php $total_coaching = 0; ?>
-              @foreach ($coaching as $key => $coachings)
-              <?php $total_coaching += $coachings->hours ?>
-              @endforeach
               <h6 class="mb-3">ALL COACHING <span style="color:red;">(Total hours = {{$total_coaching}})</span></h6>
   
               @if(!empty($coaching) && $coaching->count())
@@ -81,10 +100,6 @@
             
             <div class="card">
               <div class="card-body">
-                <?php $total_training = 0; ?>
-                @foreach ($training as $key => $trainings)
-                <?php $total_training += $trainings->hours ?>
-                @endforeach
                 <h6 class="mb-3">ALL TRAINING <span style="color:red;">(Total hours = {{$total_training}})</span></h6>
 
                 @if(!empty($training) && $training->count())

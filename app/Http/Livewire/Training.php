@@ -100,17 +100,19 @@ class Training extends Component
     {
         $training = Training_::where('student_id', $student_id)->get();
         $coaching = Coaching_::where('trainer_id', $student_id)->get();
+        $user = User::where('id', $student_id)->get();
         // $user = User::find($student_id);
         // $name = $user->name;
         // $searchName = User::where('name' , 'like' , '%'.$name.'%')->orderBy('created_at','desc')->get();
-        return view('livewire.training.all', compact('training', 'coaching'));
+        return view('livewire.training.all', compact('training', 'coaching', 'user'));
     }
 
     public function employee_view() 
     {
         $training = Training_::where('student_id', auth()->user()->id)->get();
         $coaching = Coaching_::where('trainer_id', auth()->user()->id)->get();
-        return view('livewire.training.all', compact('training', 'coaching'));
+        $user = User::where('id', auth()->user()->id)->get();
+        return view('livewire.training.all', compact('training', 'coaching', 'user'));
     }
 
     public function render()

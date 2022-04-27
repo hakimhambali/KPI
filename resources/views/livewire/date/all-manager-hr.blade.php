@@ -9,7 +9,8 @@
           <div class="card-body">
             @foreach ($user as $data)
               <span class="fw-bolder text-uppercase">{{ $data->name }}</span><br>
-              <span class="fst-italic">{{ $data->unit }}</span>
+              <span class="fst-italic">{{ $data->department }}</span><br>
+              <span class="fst-italic" style="font-size:15px">{{ $data->unit }}</span>
             @endforeach  
           </div>
         </div>
