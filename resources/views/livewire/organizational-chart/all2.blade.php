@@ -13,8 +13,8 @@
                         <div class="row mx-auto">
                             <img src="../assets/img/najib.png" alt="img-blur-shadow" class="float-center">
                         </div>
-                            <h2 class="fw-bolder text-center" style="font-size: 17px">Najib Assadok</h2>
-                            <h2 class="fw-bolder text-center" style="font-size: 13px">CEO</h2>
+                            <p class="fw-bolder text-center text-md mb-0">Najib Assadok</p>
+                            <p class="fw-bolder text-center text-xs">Chief Executive Officer (CEO)</p>
                     </div>
                 </div>
             </div>
@@ -26,52 +26,52 @@
                         <div class="row mx-auto">
                             <img src="../assets/img/iyzah.png" alt="img-blur-shadow" class="float-center">
                         </div>
-                            <h2 class="fw-bolder text-center" style="font-size: 17px">Iyzah Rahiman</h2>
-                            <h2 class="fw-bolder text-center" style="font-size: 13px">Director</h2>
+                            <p class="fw-bolder text-center text-md mb-0">Iyzah Rahiman</p>
+                            <p class="fw-bolder text-center text-xs">Board of Director (BOD)</p>
                     </div>
                     
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3 mb-2 mx-auto mb-4">
+        <div class="row justify-content-center">
+            <div class="col-md-3 mb-2 mb-4">
                 <div class="card bg-light">
                     <div class="card-body">
-                        <div class="row mx-auto">
+                        <div class="row ">
                             <img src="../assets/img/afida.png" alt="img-blur-shadow" class="float-center">
                         </div>
-                            <h2 class="fw-bolder text-center" style="font-size: 17px">Afida Azimi</h2>
-                            <h2 class="fw-bolder text-center" style="font-size: 13px">Chief Administrative Officer (CAO)</h2>
-                            <h2 class="fw-bolder text-center" style="font-size: 13px">afida@momentuminternet.com</h2>
-                            <h2 class="fw-bolder text-center" style="font-size: 13px">60107048894</h2>
+                            <p class="fw-bolder text-center text-md mb-0">Afida Azimi</p>
+                            <p class="fw-bolder text-center text-xs">Chief Administrative Officer (CAO)</p>
+                            <p class="text-center text-xs mb-1">afida@momentuminternet.com</p>
+                            <p class="text-center text-xs">60107048894</p>
                     </div>
                     
                 </div>
             </div>
-            <div class="col-md-3 mb-2 mx-auto mb-4">
+            <div class="col-md-3 mb-2 mb-4">
                 <div class="card bg-light">
                     <div class="card-body">
-                        <div class="row mx-auto">
+                        <div class="row">
                             <img src="../assets/img/redza.png" alt="img-blur-shadow" class="float-center">
                         </div>
-                            <h2 class="fw-bolder text-center" style="font-size: 17px">Redza Nazri</h2>
-                            <h2 class="fw-bolder text-center" style="font-size: 13px">Chief Operating Officer (COO)</h2>
-                            <h2 class="fw-bolder text-center" style="font-size: 13px">redza@momentuminternet.com</h2>
-                            <h2 class="fw-bolder text-center" style="font-size: 13px">60182139984</h2>
+                            <p class="fw-bolder text-center text-md mb-0">Redza Nazri</p>
+                            <p class="fw-bolder text-center text-xs">Chief Operating Officer (COO)</p>
+                            <p class="text-center text-xs mb-1">redza@momentuminternet.com</p>
+                            <p class="text-center text-xs">60182139984</p>
                     </div>
                     
                 </div>
             </div>
-            <div class="col-md-3 mb-2 mx-auto mb-4">
+            <div class="col-md-3 mb-2 mb-4">
                 <div class="card bg-light">
                     <div class="card-body">
-                        <div class="row mx-auto">
+                        <div class="row">
                             <img src="../assets/img/rashid.png" alt="img-blur-shadow" class="float-center">
                         </div>
-                            <h2 class="fw-bolder text-center" style="font-size: 17px">Rashid Mahmad</h2>
-                            <h2 class="fw-bolder text-center" style="font-size: 13px">Chief Marketing Officer (CMO)</h2>
-                            <h2 class="fw-bolder text-center" style="font-size: 13px">rashid@momentuminternet.com</h2>
-                            <h2 class="fw-bolder text-center" style="font-size: 13px">60177641246</h2>
+                            <p class="fw-bolder text-center text-md mb-0">Rashid Mahmad</p>
+                            <p class="fw-bolder text-center text-xs">Chief Marketing Officer (CMO)</p>
+                            <p class="text-center text-xs mb-1">rashid@momentuminternet.com</p>
+                            <p class="text-center text-xs">60177641246</p>
                     </div>
                     
                 </div>
@@ -84,8 +84,8 @@
                         <div class="row mx-auto">
                             <img src="../assets/img/syakirin.png" alt="img-blur-shadow" class="float-center">
                         </div>
-                            <h2 class="fw-bolder text-center" style="font-size: 17px">Syakirin Hashim</h2>
-                            <h2 class="fw-bolder text-center" style="font-size: 13px">Manager of Marketing</h2>
+                            <p class="fw-bolder text-center text-md mb-0">Syakirin Hashim</p>
+                            <p class="fw-bolder text-center text-xs">Manager of Marketing</p>
                     </div>
                     
                 </div>
@@ -98,8 +98,8 @@
                         <div class="row mx-auto">
                             <img src="../assets/img/firdaus.png" alt="img-blur-shadow" class="float-center">
                         </div>
-                            <h2 class="fw-bolder text-center" style="font-size: 17px">Firdaus Nurung</h2>
-                            <h2 class="fw-bolder text-center" style="font-size: 13px">Account & Finance</h2>
+                            <p class="fw-bolder text-center text-md mb-0">Firdaus Nurung</p>
+                            <p class="fw-bolder text-center text-xs">Account & Finance</p>
                     </div>
                     
                 </div>
@@ -110,8 +110,8 @@
                         <div class="row mx-auto">
                             <img src="../assets/img/mazian.png" alt="img-blur-shadow" class="float-center">
                         </div>
-                            <h2 class="fw-bolder text-center" style="font-size: 17px">Mazian Musa</h2>
-                            <h2 class="fw-bolder text-center" style="font-size: 13px">Sales</h2>
+                            <p class="fw-bolder text-center text-md mb-0">Mazian Musa</p>
+                            <p class="fw-bolder text-center text-xs">Sales</p>
                     </div>
                     
                 </div>
@@ -122,8 +122,8 @@
                         <div class="row mx-auto">
                             <img src="../assets/img/fikry.png" alt="img-blur-shadow" class="float-center">
                         </div>
-                            <h2 class="fw-bolder text-center" style="font-size: 17px">Fikry Fuzi</h2>
-                            <h2 class="fw-bolder text-center" style="font-size: 13px">High Networth Client</h2>
+                            <p class="fw-bolder text-center text-md mb-0">Fikry Fuzi</p>
+                            <p class="fw-bolder text-center text-xs">High Networth Client</p>
                     </div>
                     
                 </div>
@@ -134,8 +134,8 @@
                         <div class="row mx-auto">
                             <img src="../assets/img/danial.png" alt="img-blur-shadow" class="float-center">
                         </div>
-                            <h2 class="fw-bolder text-center" style="font-size: 17px">Danial Adzhar</h2>
-                            <h2 class="fw-bolder text-center" style="font-size: 13px">Research & Development</h2>
+                            <p class="fw-bolder text-center text-md mb-0">Danial Adzhar</p>
+                            <p class="fw-bolder text-center text-xs">Research & Development</p>
                     </div>               
                 </div>
             </div>

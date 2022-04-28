@@ -145,7 +145,11 @@ Route::post('/hr/announcementuphr/{id_announcement}', [Homepage::class, 'announc
 Route::get("/findowner", [FindOwnerController::class, "index"]);
 
 //ADD FUNCTION
-Route::get('/add-function', Moderator::class)->name('add-function');
+Route::get('/add-function', [Moderator::class, 'function'])->name('add-function');
+Route::get('/add-department', [Moderator::class, 'department'])->name('add-department');
+Route::get('/add-position', [Moderator::class, 'position'])->name('add-position');
+Route::get('/add-role', [Moderator::class, 'role'])->name('add-role');
+Route::get('/add-unit', [Moderator::class, 'unit'])->name('add-unit');
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard-hr', DashboardHR::class)->name('dashboard-hr');
