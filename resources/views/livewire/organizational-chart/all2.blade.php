@@ -1,4 +1,4 @@
-<div class="container-fluid py-10">
+<div class="container-fluid py-4">
     <div class="row px-2">
         <div class="card bg-gradient-danger">
             <p class="text-white text-center my-2 fst-italic fs-2 fw-bolder">ORGANIZATIONAL CHART</p>
