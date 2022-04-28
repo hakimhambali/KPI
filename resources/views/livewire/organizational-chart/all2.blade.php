@@ -6,8 +6,8 @@
     </div>
 
     <div class="my-2 p-4 bg-dark">
-        <div class="row mb-4">
-            <div class="col-md-3 mb-2 mx-auto">
+        <div class="row">
+            <div class="col-md-3 mb-2 mx-auto mb-4">
                 <div class="card bg-light">
                     <div class="card-body">
                         <div class="row mx-auto">
@@ -19,8 +19,8 @@
                 </div>
             </div>
         </div>
-        <div class="row mb-4">
-            <div class="col-md-3 mb-2 mx-auto">
+        <div class="row">
+            <div class="col-md-3 mb-2 mx-auto mb-4">
                 <div class="card bg-light">
                     <div class="card-body">
                         <div class="row mx-auto">
@@ -33,8 +33,8 @@
                 </div>
             </div>
         </div>
-        <div class="row mb-4">
-            <div class="col-md-3 mb-2 mx-auto">
+        <div class="row">
+            <div class="col-md-3 mb-2 mx-auto mb-4">
                 <div class="card bg-light">
                     <div class="card-body">
                         <div class="row mx-auto">
@@ -48,7 +48,7 @@
                     
                 </div>
             </div>
-            <div class="col-md-3 mb-2 mx-auto">
+            <div class="col-md-3 mb-2 mx-auto mb-4">
                 <div class="card bg-light">
                     <div class="card-body">
                         <div class="row mx-auto">
@@ -62,7 +62,7 @@
                     
                 </div>
             </div>
-            <div class="col-md-3 mb-2 mx-auto">
+            <div class="col-md-3 mb-2 mx-auto mb-4">
                 <div class="card bg-light">
                     <div class="card-body">
                         <div class="row mx-auto">
@@ -77,8 +77,8 @@
                 </div>
             </div>
         </div>
-        <div class="row mb-4">
-            <div class="col-md-3 mb-2 mx-auto">
+        <div class="row">
+            <div class="col-md-3 mb-2 mx-auto mb-4">
                 <div class="card bg-light">
                     <div class="card-body">
                         <div class="row mx-auto">
@@ -91,8 +91,8 @@
                 </div>
             </div>
         </div>
-        <div class="row mb-4">
-            <div class="col-md-3 mb-2 mx-auto">
+        <div class="row">
+            <div class="col-md-3 mb-2 mx-auto mb-4">
                 <div class="card bg-light">
                     <div class="card-body">
                         <div class="row mx-auto">
@@ -104,7 +104,7 @@
                     
                 </div>
             </div>
-            <div class="col-md-3 mb-2 mx-auto">
+            <div class="col-md-3 mb-2 mx-auto mb-4">
                 <div class="card bg-light">
                     <div class="card-body">
                         <div class="row mx-auto">
@@ -116,7 +116,7 @@
                     
                 </div>
             </div>
-            <div class="col-md-3 mb-2 mx-auto">
+            <div class="col-md-3 mb-2 mx-auto mb-4">
                 <div class="card bg-light">
                     <div class="card-body">
                         <div class="row mx-auto">
@@ -128,7 +128,7 @@
                     
                 </div>
             </div>
-            <div class="col-md-3 mb-2 mx-auto">
+            <div class="col-md-3 mb-2 mx-auto mb-4">
                 <div class="card bg-light">
                     <div class="card-body">
                         <div class="row mx-auto">
