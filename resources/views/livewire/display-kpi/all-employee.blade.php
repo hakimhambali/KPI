@@ -107,7 +107,7 @@
                                       @endif
                                         
                                     @if ($key4 == 0)
-                                      <td rowspan="{{ $kpiArrs->count() }}" class="align-middle">
+                                      <td rowspan="{{ $kpiArrs->count() }}" class="text-center">
               
                                         @if ($kpiArrss->kpimasters->link != '')
                                         <?php $links = json_decode($kpiArrss->kpimasters->link); ?>
@@ -129,7 +129,7 @@
                                             @endif
                       
                                             @for($i=0 ; $i<$num_of_link; $i++)
-                                            <a href=" {{ $links[$i] }}" class="btn btn-sm btn-info my-auto mb-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
+                                            <a href="{{ $links[$i] }}" class="btn btn-sm btn-info my-auto mb-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
                                             <br>
                                             @endfor
                                           @endif
