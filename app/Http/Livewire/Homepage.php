@@ -7,6 +7,10 @@ use App\Models\Memo_;
 use Livewire\Component;
 use Illuminate\Http\Request;
 use App\Models\Announcement_;
+use Illuminate\Support\Facades\Http;
+use Response;
+use GuzzleHttp\Client;
+use Carbon\Carbon;
 
 class Homepage extends Component
 {
@@ -29,6 +33,7 @@ class Homepage extends Component
         Announcement_::find($this->id_announcement)->update([
         'announcement'=> '',
         'user_id'=> '',
+        'created_at'=> NULL,
         ]);
         return redirect()->back()->with('message', 'Your message to this employee has been deleted!');
     }
@@ -38,16 +43,20 @@ class Homepage extends Component
         Announcement_::find($id_announcement)->update([
         'announcement'=> $request->announcement,
         'user_id'=> auth()->user()->id,
+        'created_at'=> Carbon::now('Asia/Kuala_Lumpur'),
         ]);
         return redirect()->back()->with('message', 'Your message has been submitted!');
     }
 
     public function render()
-    {
+    {        
+        $data = Http::get("http://miapp.admin.x61tbrxchx-ewx3lmoq56zq.p.runcloud.link/api/programs/latest");
+        $test= json_decode($data);
+
         $announcement = Announcement_::all();
-        $memo = Memo_::orderBy('created_at','desc')->take(3)->get();
+        $memo = Memo_::orderBy('created_at','desc')->take(4)->get();
         $users = User::orderBy('created_at','desc')->get();
         $userscount = $users->count();
-        return view('livewire.homepage')->with(compact('users', 'userscount', 'memo', 'announcement'));
+        return view('livewire.homepage')->with(compact('test', 'users', 'userscount', 'memo', 'announcement'));
     }
 }

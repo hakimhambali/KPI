@@ -9,7 +9,7 @@
     <div class="my-2 p-4 bg-dark">
         <div class="row">
             <div class="col-md-6 mb-2">
-                <div class="card bg-light">
+                <div class="card bg-gradient-light">
                     <div class="card-body">
 
                         <div class="row">
@@ -18,26 +18,22 @@
                             </div>
                             
                             <div class="col-md-5 text-center my-auto">
-                                
-                                {{-- <div class="embed-responsive embed-responsive-21by9">
-                                    <iframe class="embed-responsive-item" src="assets/img/core-values/leadership2.png"></iframe>
-                                  </div> --}}
                                 <img src="assets/img/core-values/leadership2.png" width="100%">
                             </div>
                         </div>
 
                         <div class="row">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                <li class="list-group-item bg-gradient-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
                                     We Are Responsible Leaders
                                 </li>
-                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                <li class="list-group-item bg-gradient-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
                                     We Lead By Example
                                 </li>
-                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                <li class="list-group-item bg-gradient-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
                                     We Walk The Talk, We Walk The Walk
                                 </li>
-                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                <li class="list-group-item bg-gradient-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
                                     We Inspire Others For A Better Tomorrow
                                 </li>
                             </ul>
@@ -48,7 +44,7 @@
             </div>
 
             <div class="col-md-6 mb-2">
-                <div class="card bg-light">
+                <div class="card bg-gradient-light">
                     <div class="card-body">
 
                         <div class="row">
@@ -63,16 +59,16 @@
 
                         <div class="row">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                <li class="list-group-item bg-gradient-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
                                     We Care Of Our Own Growth
                                 </li>
-                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                <li class="list-group-item bg-gradient-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
                                     We Grow Our Knowledge Everyday
                                 </li>
-                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                <li class="list-group-item bg-gradient-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
                                     We Nurture Our Winning Attitude
                                 </li>
-                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                <li class="list-group-item bg-gradient-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
                                     We Consistently Upgrade Ourselves
                                 </li>
                             </ul>
@@ -85,7 +81,7 @@
 
         <div class="row">
             <div class="col-md-6 mb-2">
-                <div class="card bg-light">
+                <div class="card bg-gray">
                     <div class="card-body">
 
                         <div class="row">
@@ -100,16 +96,16 @@
 
                         <div class="row">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                <li class="list-group-item bg-gray text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
                                     We Help Others Discover Their Own Potential
                                 </li>
-                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                <li class="list-group-item bg-gray text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
                                     We Ensure Our Clients Achieve Outstanding Result
                                 </li>
-                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                <li class="list-group-item bg-gray text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
                                     We Are Passionate To See Result In Everything That We Do
                                 </li>
-                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                <li class="list-group-item bg-gray text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
                                     We Thrive To Give The Best Out Of Ourselves
                                 </li>
                             </ul>
@@ -120,7 +116,7 @@
             </div>
 
             <div class="col-md-6 mb-2">
-                <div class="card bg-light">
+                <div class="card bg-gray">
                     <div class="card-body">
 
                         <div class="row">
@@ -135,16 +131,16 @@
 
                         <div class="row">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                <li class="list-group-item bg-gray text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
                                     We Contribute With Passion & Dignity
                                 </li>
-                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                <li class="list-group-item bg-gray text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
                                     We Help Others Overcome Weakness & Growth Their Strength
                                 </li>
-                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                <li class="list-group-item bg-gray text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
                                     We Passionately Influence Others To Spread Goodness
                                 </li>
-                                <li class="list-group-item bg-light text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
+                                <li class="list-group-item bg-gray text-xs fw-bold"><i class="bi bi-diamond-fill text-danger text-xxs"></i> 
                                     We Contribute To Create Positive Circle & Environment
                                 </li>
                             </ul>

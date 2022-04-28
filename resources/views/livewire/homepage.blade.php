@@ -1,153 +1,194 @@
+
 <?php $id_announcement=1 ?>
 <div>
+  <style>
+    ul.timeline {
+    list-style-type: none;
+    position: relative;
+    padding-left: 2rem;
+}
+
+ /* Timeline vertical line */
+ul.timeline:before {
+    content: ' ';
+    background: #fff;
+    display: inline-block;
+    position: absolute;
+    left: 7px;
+    width: 4px;
+    height: 100%;
+    z-index: 400;
+    border-radius: 1rem;
+}
+
+li.timeline-item {
+    margin: 20px 0;
+}
+
+/* Timeline item arrow */
+.timeline-arrow {
+    border-top: 0.5rem solid transparent;
+    border-right: 0.5rem solid #fff;
+    border-bottom: 0.5rem solid transparent;
+    display: block;
+    position: absolute;
+    left: 1.5rem;
+}
+
+/* Timeline item circle marker */
+li.timeline-item::before {
+    content: ' ';
+    background: #ddd;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    left: 1px;
+    width: 14px;
+    height: 14px;
+    z-index: 400;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+  </style>
 <main>  
     <div class="container-fluid py-4">
       <div class="row">
-      {{--------------------------------------------------- VISION --------------------------------------------------}}
-      <div class="card-group">
-        <div class="col-md-6 px-1">
-          <div class="card text-center mb-3 overflow-hidden position-relative border-radius-md shadow" style="background-color: #fe7a7a;">
-          <span class="mask"></span>
-            <div class="card-body text-dark">
-              <h6 class="card-title fw-bolder">__VISION__<i class="bi bi-pen-fill text-dark text-end"></i></h6>
-              <hr>
-              <p class="card-text py-3"><b>"</b>Blink <b>Your Business</b> To The <b>World"</b></p>
-            </div>
-          </div>
-        </div>
-        {{--------------------------------------------------- MISSION --------------------------------------------------}}
-        <div class="col-md-6 px-1">
-          <div class="card text-center mb-3 overflow-hidden position-relative border-radius-md shadow" style="background-color: #fe7a7a;">
-            <div class="card-body text-dark">
-              <h6 class="card-title fw-bolder">__MISSION__<i class="bi bi-pen-fill"></i></h6>
-              <hr>
-              <p class="card-text pt-1"><b>"Empowering</b> Entrepreneurs To Get More <b>Customer</b> Using The Latest <b>Technologies</b> To Fullfil Their <b>Dreams"</b></p>
-            </div>
-          </div>
-        </div>
-</div>
-      {{--------------------------------------------------------------------------------------------------------------}}
+        {{-- VISION ----------------------------------------------------------------------------------------------------------}}
+        <div class="card-group">
+          <div class="col-md-6 px-1">
+            <div class="card text-center mb-3 overflow-hidden position-relative border-radius-md shadow" style="background-color: #fe7a7a;">
+              <div class="card-body text-dark">
+                <h6 class="card-title fw-bolder">__VISION__<i class="bi bi-pen-fill text-dark text-end"></i></h6><hr>
 
-{{--------------------------------------------------- CAROUSEL --------------------------------------------------}}
+                <p class="card-text py-3"><b>"</b>Blink <b>Your Business</b> To The <b>World"</b></p>
+              </div>
+            </div>
+          </div>
+          {{-- MISSION -------------------------------------------------------------------------------------------------------}}
+          <div class="col-md-6 px-1">
+            <div class="card text-center mb-3 overflow-hidden position-relative border-radius-md shadow" style="background-color: #fe7a7a;">
+              <div class="card-body text-dark">
+                <h6 class="card-title fw-bolder">__MISSION__<i class="bi bi-pen-fill"></i></h6><hr>
+
+                <p class="card-text pt-1"><b>"Empowering</b> Entrepreneurs To Get More <b>Customer</b> Using The Latest <b>Technologies</b> To Fullfil Their <b>Dreams"</b></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {{-- CAROUSEL ---------------------------------------------------------------------------------------------------}}
+      <div class="row mx-auto px-1 mb-4">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            @foreach ($test->data as $item)
+              <div class="carousel-item active" data-bs-interval="2000">
+                <img src="{{ $item->img_path}}" class="d-block w-100" alt="{{ $item->program_name}}" sizes="width: 100%">
+              </div>
+            @endforeach
+            
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
       <div class="row">
-        <div class="col-lg-12 p-1">
-          <div class="h-100 p-1">
-      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner align-center">
-          <div class="carousel-item active" data-bs-interval="10000">
-            <img src="assets/img/rpmcomebackposter.jpg" height="700px" width="128px" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img src="../assets/img/poster-arb.jpg" height="700px" width="128px" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img src="../assets/img/road.jpg" height="700px" width="128px" class="d-block w-100" alt="...">
-          </div>
-          {{-- <div class="carousel-item">
-            <img src="../assets/img/rpmcomebackposter.jpg" height="500px" width="128px" class="d-block w-100" alt="...">
-          </div>
-        </div> --}}
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-      </div>
-    </div>
-    </div>
-{{--------------------------------------------------- LATEST MEMO --------------------------------------------------}}
-      <div class="col-lg-12 p-1">
-      <div class="row my-4">
-        <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
+        {{-- LATEST MEMO ------------------------------------------------------------------------------------------}}
+        <div class="col-md-8 mb-4">
           <div class="card">
-            <div class="card-header pb-0">
+            <div class="card-body">
               <div class="row">
-                <div class="col-lg-6 col-7">
-                  <h6><i class="bi bi-calendar-check"></i> Latest Memo</h6>
-                  <p class="text-sm mb-0">
-                  </p>
+                  <h6><i class="bi bi-chat-right-text"></i> Latest Memo</h6>
+              </div>
+              
+              <div class="row">
+                <div class="table-responsive">
+                  <table class="table align-middle table-sm">
+                    <thead class="text-center text-sm fw-bolder">
+                      <tr>
+                        <th>MEMO</th>
+                        <th>DESCRIPTION</th>
+                        <th>VIEW</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      @foreach ($memo as $memos)
+                        <tr>
+                          <td class="text-xs fw-bold">{{ $memos->title }}</td>
+                          <td class="text-xs fw-bold">{{  $memos->description }}</pre>
+                          </td>
+                          <td class="fs-4 text-center">
+                            <a href="{{ $memos->memo_path }}" data-bs-toggle="tooltip" data-bs-original-title="View Memo" target="_blank"><i class="bi bi-file-earmark-pdf-fill text-danger"></i></a>
+                          </td>
+                        </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
                 </div>
               </div>
-            </div>
-            <div class="card-body pb-2">
-              <div class="table-responsive">
-                <table class="table align-items-center mb-0">
-                  <thead class="text-center text-uppercase text-secondary text-sm font-weight-bolder">
-                    <tr>
-                      <th>Memo</th>
-                      <th>Description</th>
-                      <th>View</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @foreach ($memo as $memos)
-                    <tr>
-                      <td class="text-xs font-weight-bold mb-0">{{ $memos->title }}</td>
-                      <td class="text-xs font-weight-bold mb-0">{{  $memos->description }}</pre>
-                      </td>
-                      <td class="fs-4 text-center">
-                        <a href="{{ $memos->memo_path }}" style="color:red;" data-bs-toggle="tooltip" data-bs-original-title="View Memo" target="_blank"><i class="bi bi-file-earmark-pdf-fill"></i></a>
-                      </td>
-                    </tr>
-                    @endforeach
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-{{--------------------------------------------------- HR ANNOUNCEMENT --------------------------------------------------}}
-        <div class="col-lg-4 col-md-6">
-          <div class="card h-100">
-            <div class="card-header pb-0">
-              <h6>Announcement !</h6>
-            </div>
-            <div class="card-body p-3">
-              <div class="timeline timeline-one-side">
-                <div class="timeline-block mb-3">
-                  <span class="timeline-step">
-                    <i class="ni ni-bell-55 text-success text-gradient"></i>
-                  </span>
-                  <div class="timeline-content">
-                    @foreach ($announcement as $announcements)
-                    <pre class="text-dark text-sm font-weight-bold mb-0">{{ $announcements->announcement }}</pre>
-                    @endforeach
-                    @if (Auth::user()->role == "hr")
-                    <form action="{{ url('hr/announcementuphr/'. $id_announcement) }}" method="post">
-                      @csrf
-                      @foreach ($announcement as $announcements)
-                      @if ($announcements->announcement == '')
-                        <label>Write Your Announcement (Optional)</label>
-                        <textarea class="form-control card card-body border card-plain border-radius-lg d-flex align-items-center flex-row" name="announcement" id="announcement" cols="60" rows="3" placeholder="Type your announcement here..."></textarea>
-                      @else
-                        <label>This is your Announcement</label>
-                        <pre class="align-center" style="color: blue;" value="{{ $announcements->announcement }}">{{ $announcements->announcement }}</pre>
-                      @endif 
 
-                  <div class="ms-auto text-end">
-                    <div class="col-12 text-center ">
-                        @if ($announcements->announcement == '')
-                          <button class="btn bg-gradient-primary mt-2 mb-0" type="submit" href="javascript:;"><i class="fas fa-plus"></i>&nbsp;&nbsp;Submit Announcement</button>
-                        @else
-                        <a style="color: red;" wire:click="selectItem({{$id_announcement}}, 'delete' )" class="data-delete" data-form="{{$id_announcement}}">
-                          <i class="fa fa-trash text-secondary text-sm"  data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"></i>
-                        </a>
-                        @endif
-                      @endforeach
-                    </div>
-                  </div>
-                    </form> 
-                    @endif 
-                  </div>
-                </div> 
-              </div>
             </div>
           </div>
         </div>
+        {{--------------------------------------------------- HR ANNOUNCEMENT --------------------------------------------------}}
+        <div class="col-md-4">
+          <div class="card bg-gradient-secondary">
+            <div class="card-body" style="height: 340px;">
+              <div class="row">
+                <h6><i class="bi bi-bell-fill"></i> Announcement!</h6>
+              </div>
+              
+              <form action="{{ url('hr/announcementuphr/'. $id_announcement) }}" method="post">
+                @csrf
+                @foreach($announcement as $announcements)
+                  @if($announcements->created_at != NULL)
+                    <div class="row mx-auto">
+                      <ul class="timeline timeline-one-side">
+                        <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+                          <div class="timeline-arrow"></div>
+                          <p class="text-xs fw-bold">{{ $announcements->announcement }}</p>
+                          <div class="text-xxs text-end">{{ date('d/m/Y', strtotime($announcements->created_at)) }}</div>
+                          @if(Auth::user()->role == "hr")
+                            <a wire:click="selectItem({{$id_announcement}}, 'delete' )" class="data-delete" data-form="{{$id_announcement}}" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
+                              <i class="fa fa-trash text-sm text-danger"></i>
+                            </a>
+                          @endif
+                        </li>
+                      </ul>
+                    </div>
+
+                  @else
+                    <div class="row align-middle">
+                      <div class="col-10 bg-light mx-auto my-2">
+                        <p class="text-center fw-bold text-xs mt-3">There's No Announcement by HR.</p>
+                      </div>
+                    </div>
+                  @endif
+
+                  @if(Auth::user()->role == "hr")
+                    @if($announcements->announcement == '')
+                      <div class="row mx-auto text-center">
+                        <p class="text-xs fw-bolder mt-3">Write Your Announcement (Optional)</p>
+                        <textarea class="form-control" name="announcement" id="announcement" rows="3" placeholder="Type your announcement here..."></textarea>
+
+                        <button class="btn bg-gradient-primary mt-2 btn-sm" type="submit" href="javascript:;"><i class="fas fa-plus"></i>&nbsp;&nbsp;Submit</button>
+                      </div>
+                    @endif
+                  @endif
+                @endforeach
+              </form>
+            </div>
+          </div>
+        </div>
+
+        
       </div>   
     </div>
   </div>
@@ -159,7 +200,10 @@
 
 @push('scripts')
 <script>
+  
   document.addEventListener('livewire:load', function () {
+
+    
 
 
     $(document).on("click", ".data-delete", function (e) 

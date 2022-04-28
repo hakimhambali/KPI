@@ -13,6 +13,7 @@ class Announcement_ extends Model
     protected $fillable = [
         'announcement',
         'user_id',
+        'created_at',
     ];
 
     public function user(){
