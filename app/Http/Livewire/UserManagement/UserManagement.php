@@ -33,7 +33,7 @@ class UserManagement extends Component
 
     public function render()
     {
-        $role = Role_::where('status' , 1)->get();
+        $role = Role_::where('status' , 'active')->get();
 
         $roleArr[] = array();
         foreach ($role as $key => $roles) {

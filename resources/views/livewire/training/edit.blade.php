@@ -44,7 +44,7 @@
                             <label class="form-label">Student Name<span class="text-danger">*</span></label>
                             <select class="form-select" id="student_id" name="student_id" required>
                             <option value="">-- Choose Team --</option>
-                            <option selected class="bg-secondary text-white" value="{{ $trainings->student_id }}" >{{ $trainings->student_id }}</option>
+                            <option selected class="bg-secondary text-white" value="{{ $trainings->student->name }}" >{{ $trainings->student->name }}</option>
                             @foreach ($user as $users)
                                 <option value="{{$users->id}}">{{$users->name}}</option>
                             @endforeach 
@@ -59,7 +59,7 @@
                         <div class="col-md-12 mb-3 mt-2">
                             <label class="form-label">Trainer Name<span class="text-danger">*</span></label>
                             <select class="form-select" id="trainer_id" name="trainer_id" required>
-                            <option selected class="bg-secondary text-white" value="{{ $trainings->trainer_id }}" >{{ $trainings->trainer_id }}</option>
+                            <option selected class="bg-secondary text-white" value="{{ $trainings->trainer->name }}" >{{ $trainings->trainer->name }}</option>
                             <option value="">-- Choose Trainer --</option>
                             @foreach ($user as $users)
                                 <option value="{{$users->id}}">{{$users->name}}</option>

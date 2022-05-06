@@ -681,7 +681,7 @@ class KPI extends Component
                 'weightage_master'=>  $weightage,
                 'total_score_all'=>  $total_score_all,
                 'grade_all'=>  $grade_all,
-                'updated_at'=> Carbon::now(),
+                'updated_at'=> Carbon::now(),  
             ]);
         }
         else {
@@ -860,7 +860,7 @@ class KPI extends Component
         $year = $this->year;
         $month = $this->month;
 
-        $function = Function_::where('status' , 1)->get();
+        $function = Function_::where('status' , 'active')->get();
 
         $kpiArr[] = array();
         foreach ($function as $key => $functions) {
@@ -874,34 +874,8 @@ class KPI extends Component
             array_push($kpiMasterArr, $kpimaster);
         }
 
-        // $kadskorcount = $kadskor->count();
-        // $kewangan1count = $kewangan1->count();
-        // $kewangan2count = $kewangan2->count();
-        // $kewangan3count = $kewangan3->count();
-        // $kewangan4count = $kewangan4->count();
-        // $kewangan5count = $kewangan5->count();
-        // $kewangan6count = $kewangan6->count();
-        // $kewangan7count = $kewangan7->count();
-        // $kewangan8count = $kewangan8->count();
-        // $kewangan9count = $kewangan9->count();
-        // $kewangan10count = $kewangan10->count();
-        // $pelangganIn1count = $pelangganIn1->count();
-        // $pelangganEx1count = $pelangganEx1->count();
-        // $pelangganEx2count = $pelangganEx2->count();
-        // $kecemerlangan1count = $kecemerlangan1->count();
-        // $kecemerlangan2count = $kecemerlangan2->count();
-        // $kecemerlangan3count = $kecemerlangan3->count();
-        // $kecemerlangan4count = $kecemerlangan4->count();
-        // $kecemerlangan5count = $kecemerlangan5->count();
-        // $trainingcount = $training->count();
-        // $ncrcount = $ncr->count();
-        // $kolaborasicount = $kolaborasi->count();
-
         $weightage_master = KPIAll_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('weightage_master');
         $status = Date_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('status');
-
-        // return view('livewire.kpi.all', compact('kadskorcount', 'kewangan1count', 'kewangan2count', 'kewangan3count', 'kewangan4count', 'kewangan5count', 'kewangan6count', 'kewangan7count', 'kewangan8count', 'kewangan9count', 'kewangan10count', 'pelangganIn1count', 'pelangganEx1count', 'pelangganEx2count', 'kecemerlangan1count', 'kecemerlangan2count', 'kecemerlangan3count', 'kecemerlangan4count', 'kecemerlangan5count', 
-        // 'trainingcount', 'ncrcount', 'kolaborasicount', 'year', 'month', 'date_id', 'user_id', 'status', 'function', 'kpiArr', 'kpiMasterArr'));
 
         return view('livewire.kpi.all', compact('year', 'month', 'date_id', 'user_id', 'status', 'function', 'kpiArr', 'kpiMasterArr', 'weightage_master'));
     }

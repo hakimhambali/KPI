@@ -27,7 +27,7 @@ class DashboardHR extends Component
         $unitOrder .= "ELSE 12 END";
 
         $department = Department_::all();
-        $unit = Unit_::where('status', 1)->get();
+        $unit = Unit_::where('status', 'active')->get();
 
         $departmentArr[] = array();
         foreach ($department as $key => $departments) {

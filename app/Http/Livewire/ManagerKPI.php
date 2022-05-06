@@ -123,7 +123,7 @@ class ManagerKPI extends Component
         $year = $this->year;
         $month = $this->month;
 
-        $function = Function_::where('status' , 1)->get();
+        $function = Function_::where('status' , 'active')->get();
 
         $kpiArr[] = array();
         foreach ($function as $key => $functions) {

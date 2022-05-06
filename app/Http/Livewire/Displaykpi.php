@@ -37,7 +37,7 @@ class Displaykpi extends Component
 
     public function view_all($id, $user_id, $year, $month) 
     {
-        $function = Function_::where('status' , 1)->get();
+        $function = Function_::where('status' , 'active')->get();
 
         $kpiArr[] = array();
         foreach ($function as $key => $functions) {

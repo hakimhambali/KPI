@@ -45,12 +45,36 @@
         </div>
       </div>
 
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Month<span class="text-danger">*</span></label>
+          <div class="mb-0" class="@error('month') @enderror">
+            <select class="form-select" wire:model="month" name="month" id="month" tabindex="1" required>
+              <option value="">-- Choose Months --</option>
+              <option value="January" >January</option>
+              <option value="February" >February</option> 
+              <option value="March" >March</option> 
+              <option value="April" >April</option>
+              <option value="May" >May</option>
+              <option value="June" >June</option>
+              <option value="July" >July</option>
+              <option value="August" >August</option>
+              <option value="September" >September</option>
+              <option value="October" >October</option>
+              <option value="November" >November</option>
+              <option value="December" >December</option>
+            </select>
+            @error('month') <div class="text-danger">{{ $message }}</div> @enderror
+          </div>
+        </div>
+
+
       <div class="row">
         <div class="col-md-12">
           
           <div class="card">
             <div class="card-body">
-              <h6 class="mb-3">ALL COACHING <span style="color:red;">(Total hours = {{$total_coaching}})</span></h6>
+              <h6 class="mb-3">ALL COACHING 2022 <span style="color:red;">(Total hours = {{$total_coaching}})</span></h6>
   
               @if(!empty($coaching) && $coaching->count())
                 <div class="table-responsive">
@@ -104,7 +128,7 @@
             
             <div class="card">
               <div class="card-body">
-                <h6 class="mb-3">ALL TRAINING <span style="color:red;">(Total hours = {{$total_training}})</span></h6>
+                <h6 class="mb-3">ALL TRAINING 2022 <span style="color:red;">(Total hours = {{$total_training}})</span></h6>
 
                 @if(!empty($training) && $training->count())
                   <div class="table-responsive">

@@ -43,7 +43,7 @@
                             <label class="form-label">Trainer Name<span class="text-danger">*</span></label>
                             <select class="form-select" id="trainer_id" name="trainer_id" required>
                             <option value="">-- Choose Team --</option>
-                            <option selected class="bg-secondary text-white" value="{{ $coachings->trainer_id }}" >{{ $coachings->trainer_id }}</option>
+                            <option selected class="bg-secondary text-white" value="{{ $coachings->trainer->name }}" >{{ $coachings->trainer->name }}</option>
                             @foreach ($user as $users)
                                 <option value="{{$users->id}}">{{$users->name}}</option>
                             @endforeach 

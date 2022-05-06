@@ -18,7 +18,7 @@ class Coaching_ extends Model
         'user_id',
     ];
 
-    public function student(){
-        return $this->belongsTo('App\Models\User','student_id','id');
+    public function trainer(){
+        return $this->belongsTo('App\Models\User','trainer_id','id');
     }
 }

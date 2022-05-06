@@ -67,7 +67,7 @@ class Training extends Component
             'hours'=> $request->hours,
             'student_id'=> $request->student_id,
             ]);
-        
+
         $user = User::find($request->student_id);
         $name = $user->name;
 
