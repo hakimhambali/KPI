@@ -1,4 +1,8 @@
 <x-layouts.base>
+     <!--JQuery -->
+    {{-- <script src="{{ url('assets/plugins/jquery/jquery.min.js') }}"></script> --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     {{-- If the user is authenticated --}}
     @auth()
         {{-- If the user is authenticated on the static sign up or the sign up page --}}
@@ -62,8 +66,7 @@
     @endguest
 
     {{-- @livewireScripts --}}
-    <!--JQuery -->
-    <script src="{{ url('assets/plugins/jquery/jquery.min.js') }}"></script>
+   
     <!-- Bootstrap popper Core JavaScript -->
     <script src="{{ url('assets/plugins/bootstrap/js/popper.min.js') }}"></script>
     <script src="{{ url('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>

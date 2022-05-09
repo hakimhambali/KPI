@@ -7,7 +7,7 @@ use App\Http\Livewire\Auth\ForgotPassword;
 use App\Http\Livewire\Auth\ResetPassword;
 use App\Http\Livewire\Auth\SignUp;
 use App\Http\Livewire\Auth\Login;
-use App\Http\Livewire\DashboardHR;
+use App\Http\Controllers\DashboardHR;
 use App\Http\Livewire\DashboardManager;
 use App\Http\Livewire\Homepage;
 use App\Http\Livewire\KPI;
@@ -98,13 +98,14 @@ Route::get('/manager-hr/view/kpi/{id}/{date_id}/{user_id}/{year}/{month}', Manag
 Route::get('/hr/changeup/kpi/{date_id}', [ManagerKPI::class, 'changeuphr']);
 Route::get('/hr/changedown/kpi/{date_id}', [ManagerKPI::class, 'changedownhr']);
 Route::post('/hr/messageup/kpi/{date_id}', [ManagerKPI::class, 'messageuphr']);
+Route::get('/dashboard-hr',  [\App\Http\Controllers\DashboardHR::class, 'searchDashboard'])->name('dashboard-hr');
+// Route::get('/dashboard-hr', DashboardHR::class)->name('dashboard-hr');
 // Route::get('/hr/messagedown/kpi/{date_id}', [\App\Http\Controllers\ManagerKPI::class, 'messagedownhr']);
 
 //Memo Route
 Route::post('/hr/create/memo', [Memo::class, 'create']);
 Route::get('/hr/edit/memo/{id}', [Memo::class, 'edit'])->name('memo_edit');
 Route::post('/hr/update/memo/{id}', [Memo::class, 'update']);
-// Route::get('/markAsRead', [Memo::class, 'readNotification']);
 Route::get('markAsRead', function(){
     auth()->user()->unreadNotifications->markAsRead();
     return redirect()->back();
@@ -114,10 +115,11 @@ Route::get('markAsRead', function(){
 Route::post('/hr/create/training', [Training::class, 'create']);
 Route::get('/hr/edit/training/{id}', [Training::class, 'edit'])->name('training_edit');
 Route::post('/hr/update/training/{id}', [Training::class, 'update']);
-
 // Route::get('/hr/view/training-coaching/{id}', Training::class);
 Route::get('/hr-manager/view/training-coaching/{id}', [Training::class, 'view']);
 Route::get('/view-hours', [Training::class, 'employee_view'])->name('view-hours');
+//get team name
+Route::get('autocomplete', [Training::class, 'autocomplete'])->name('autocomplete');
 
 //Coaching Route
 Route::post('/hr/create/coaching', [Coaching::class, 'create']);
@@ -175,7 +177,7 @@ Route::get('/moderator/up/unit/{id}', [Moderator::class, 'up_unit']);
 Route::get('/moderator/down/unit/{id}', [Moderator::class, 'down_unit']);
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard-hr', DashboardHR::class)->name('dashboard-hr');
+    // Route::get('/dashboard-hr', DashboardHR::class)->name('dashboard-hr');
     Route::get('/dashboard-manager', DashboardManager::class)->name('dashboard-manager');
     Route::get('/homepage', Homepage::class)->name('homepage');
     Route::post('/employee/profile/update/{id}',[EditProfile::class, 'profile_update']);

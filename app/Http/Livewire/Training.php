@@ -57,49 +57,87 @@ class Training extends Component
 
     public function create(Request $request)
     {
-        $newTraining = Training_::create([
-            'user_id'=> auth()->user()->id,
-            'created_at'=> Carbon::now(),
-            'updated_at'=> Carbon::now(),
-            'title'=> $request->title,
-            'trainer_id'=> $request->trainer_id,
-            'date'=> $request->date,
-            'hours'=> $request->hours,
-            'student_id'=> $request->student_id,
-            ]);
+        
+        $studId = User::where('name',$request->student)->first();
+        if($studId == null ) {
+            return redirect()->back()->with('fail', 'Team not exists.');
+        }
 
-        $user = User::find($request->student_id);
-        $name = $user->name;
+        $title = Training_::where('title', $request->title)->where('student_id', $studId->id)->whereDate('date', date($request->date))->first();
 
-        return redirect()->back()->with('message', 'Training inserted successfully for '.$name);
+        if($title == null) {
+            $trainId = User::where('name',$request->trainer)->first();
+            if($trainId == null) {
+                $training = $request->trainer;
+            } else {
+                $training = $trainId->id;
+            }
+            
+            $newTraining = Training_::create([
+                'user_id'=> auth()->user()->id,
+                'created_at'=> Carbon::now(),
+                'updated_at'=> Carbon::now(),
+                'title'=> $request->title,
+                'trainer_id'=> $training,
+                'date'=> $request->date,
+                'hours'=> $request->hours,
+                'student_id'=> $studId->id,
+                ]);
+
+            return redirect()->back()->with('message', 'Training inserted successfully for '.$studId->name);
+        } else {
+            return redirect()->back()->with('fail', 'Training already exists for this student.');
+        }
     }
 
     public function edit($id)
     {
         $user = User::all();
         $training = Training_::where('id', $id)->get();
-        return view('livewire.training.edit', compact('id', 'training', 'user'));
+        foreach($user as $numering => $num) {
+            $names[] = ucwords(strtolower($num->name));
+        }
+
+        return view('livewire.training.edit', compact('id', 'training', 'user', 'names'));
     }
 
     public function update(Request $request, $id) 
     {
-        Training_::find($id)->update([
-            'user_id'=> auth()->user()->id,
-            'updated_at'=> Carbon::now(),
-            'title'=> $request->title,
-            'trainer_id'=> $request->trainer_id,
-            'date'=> $request->date,
-            'hours'=> $request->hours,
-            'student_id'=> $request->student_id
-            ]);
+        $studId = User::where('name',$request->student)->first();
+        if($studId == null ) {
+            return redirect()->back()->with('fail', 'Team not exists.');
+        }
+        
+        $title = Training_::where('title', $request->title)->where('student_id', $studId->id)->whereDate('date', date($request->date))->first();
 
-        return redirect('/training')->with('message', 'Training updated successfully');
+        if($title == null) {
+            $trainId = User::where('name',$request->trainer)->first();
+            if($trainId == null) {
+                $training = $request->trainer;
+            } else {
+                $training = $trainId->id;
+            }
+            
+            Training_::find($id)->update([
+                'user_id'=> auth()->user()->id,
+                'updated_at'=> Carbon::now(),
+                'title'=> $request->title,
+                'trainer_id'=> $training,
+                'date'=> $request->date,
+                'hours'=> $request->hours,
+                'student_id'=> $studId->id
+                ]);
+
+            return redirect('/hr-manager/view/training-coaching/'.$studId->id)->with('message', 'Training updated successfully');
+        } else {
+            return redirect()->back()->with('fail', 'Training already exists for this student.');
+        }
     }
 
     public function view($student_id) 
     {
-        $training = Training_::where('student_id', $student_id)->get();
-        $coaching = Coaching_::where('trainer_id', $student_id)->get();
+        $training = Training_::where('student_id', $student_id)->orderBy('updated_at', 'DESC')->get();
+        $coaching = Coaching_::where('trainer_id', $student_id)->orderBy('updated_at', 'DESC')->get();
         $user = User::where('id', $student_id)->get();
         // $user = User::find($student_id);
         // $name = $user->name;
@@ -117,14 +155,12 @@ class Training extends Component
 
     public function render()
     {
-        // $searchName = User::where('name' , 'like' , '%'.$this->name.'%')->orderBy('created_at','desc')->get();
-
         $user = User::all();
-        return view('livewire.training.create', compact('user'));
-        // return view('livewire.training.create', compact('user', 'searchName'));
-        // $student_id = '25';
-        // $training = Training_::where('student_id', $student_id)->get();
-        // $coaching = Coaching_::where('trainer_id', $student_id)->get();
-        // return view('livewire.training.all', compact('training', 'coaching'));
+        $names = [];
+        foreach($user as $numering => $num) {
+            $names[] = ucwords(strtolower($num->name));
+        }
+
+        return view('livewire.training.create', compact('user', 'names'));
     }
 }

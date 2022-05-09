@@ -68,6 +68,6 @@ class Displaykpi extends Component
     
         public function render()
     {
-        return view('livewire.display-kpi..all-employee');
+        return view('livewire.display-kpi.all-employee');
     }
 }

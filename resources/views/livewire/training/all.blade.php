@@ -151,10 +151,16 @@
                         @foreach ($training as $key => $trainings)
                           <tr>
                             <td class="text-sm text-center">{{ $key + 1 }}</td>
-                            <td class="text-xs fw-bold text-center">{{ $trainings->title }}</td>
+                            <td class="text-xs fw-bold text-center">{{ ucwords(strtolower($trainings->title)) }}</td>
                             <td class="text-xs text-center">{{ date('j F Y', strtotime($trainings->updated_at)) }}</td>
                             <td class="text-xs text-center">{{ $trainings->hours }}</td>
-                            <td class="text-xs text-center">{{ $trainings->trainer->name }}</td>
+                            <td class="text-xs text-center">
+                              @if (is_numeric($trainings->trainer_id))
+                                {{ ucwords(strtolower($trainings->trainer->name)) }}
+                              @else
+                                {{ ucwords(strtolower($trainings->trainer_id))}}
+                              @endif
+                            </td>
                             @if (auth()->user()->role == 'admin' || auth()->user()->role == 'hr')
                             <td class="text-center mx-auto">
                               @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin'|| auth()->user()->department == 'Operation')
