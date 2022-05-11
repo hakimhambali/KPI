@@ -126,7 +126,9 @@
                         </td>
                         <td class="text-center">
                           <a href="{{ url('employee/edit/date/'.$dates->id.'/'.$dates->user_id.'/'.$dates->year.'/'.$dates->month) }}" class="btn btn-dark btn-sm btn-icon my-auto" data-bs-toggle="tooltip" data-bs-original-title="Edit Date"><i class="bi bi-pencil-square"></i></a>
-                          <button type="button" class="btn btn-secondary btn-sm btn-icon my-auto" data-bs-toggle="modal" data-bs-target="#duplicateModal{{ $dates->id }}" data-bs-original-title="Duplicate KPI"><i class="bi bi-files"></i></button>
+                          <span data-bs-toggle="modal" data-bs-target="#duplicateModal{{ $dates->id }}">
+                            <button type="button" class="btn btn-secondary btn-sm btn-icon my-auto" data-bs-toggle="tooltip" data-bs-original-title="Duplicate KPI"><i class="bi bi-files"></i></button>
+                          </span>
                           <button type="button" wire:click="selectItem({{$dates->id}}, 'delete' )" class="btn btn-danger btn-sm btn-icon my-auto data-delete" data-form="{{$dates->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete KPI"><i class="bi bi-trash3-fill"></i></button>
                         </td>
                       </tr>
