@@ -10,46 +10,18 @@ use Illuminate\Support\Carbon;
 
 class Training extends Component
 {
-    public $id_training;
-    public $id_coaching;
-    public $model1;
-    public $model2;
-    // public $name;
 
-    protected $listeners = [
-        'delete1',
-        'delete2',
-        // 'refreshParent' => '$refresh',
-        // 'postSearch',
-    ];
-
-    // public function postSearch($name)
-    // {
-    //     $this->name = $name;
-    //     $this->emit('refreshParent');
-    // }
-
-    public function selectItem1($model1)
+    public function delete1($id)
     {
-        $this->id_training = $model1;
-    }
-
-    public function selectItem2($model2)
-    {
-        $this->id_coaching = $model2;
-    }
-
-    public function delete1()
-    {
-        $coaching = Coaching_::find($this->id_coaching);
+        $coaching = Coaching_::find($id);
         $coaching->delete();
 
         return redirect()->back()->with('message', 'Coaching deleted successfully');
     }
 
-    public function delete2()
+    public function delete2($id)
     {
-        $training = Training_::find($this->id_training);
+        $training = Training_::find($id);
         $training->delete();
 
         return redirect()->back()->with('message', 'Training deleted successfully');
@@ -134,15 +106,15 @@ class Training extends Component
         }
     }
 
-    public function view($student_id) 
+    public function view($user_id) 
     {
-        $training = Training_::where('student_id', $student_id)->orderBy('updated_at', 'DESC')->get();
-        $coaching = Coaching_::where('trainer_id', $student_id)->orderBy('updated_at', 'DESC')->get();
-        $user = User::where('id', $student_id)->get();
+        $training = Training_::where('student_id', $user_id)->orderBy('updated_at', 'DESC')->get();
+        $coaching = Coaching_::where('trainer_id', $user_id)->orderBy('updated_at', 'DESC')->get();
+        $user = User::where('id', $user_id)->get();
         // $user = User::find($student_id);
         // $name = $user->name;
         // $searchName = User::where('name' , 'like' , '%'.$name.'%')->orderBy('created_at','desc')->get();
-        return view('livewire.training.all', compact('training', 'coaching', 'user'));
+        return view('livewire.training.all', compact('training', 'coaching', 'user', 'user_id'));
     }
 
     public function employee_view() 
@@ -152,6 +124,16 @@ class Training extends Component
         $user = User::where('id', auth()->user()->id)->get();
         return view('livewire.training.all', compact('training', 'coaching', 'user'));
     }
+
+    // public function employee_month_save(Request $request, $user_id) 
+    // {
+    //     dd('john');
+    //     User::find($user_id)->update([
+    //         'starting_month'=> $request->month,
+    //         ]);
+
+    //     return redirect()->back()->with('message', 'User training updated successfully');
+    // }
 
     public function render()
     {

@@ -31,6 +31,33 @@
 
     <div class="container-fluid py-4">
 
+    {{-- @if ((Auth::user()->role == "admin") ||  (Auth::user()->role == "hr") || ($user_id != NULL))
+      <form action="{{ url('employee_month_save/'.$user_id) }}" method="post">
+        @csrf  
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Start Working (Month)<span class="text-danger">*</span></label>
+          <div class="mb-0" class="@error('month') @enderror">
+            <select class="form-select" wire:model="month" name="month" id="month" tabindex="1" required>
+              <option value="">-- Choose Months --</option>
+              <option value="1" >1 (January)</option>
+              <option value="2" >2 (February)</option> 
+              <option value="3" >3 (March)</option> 
+              <option value="4" >4 (April)</option>
+              <option value="5" >5 (May)</option>
+              <option value="6" >6 (June)</option>
+              <option value="7" >7 (July)</option>
+              <option value="8" >8 (August)</option>
+              <option value="9" >9 (September)</option>
+              <option value="10" >10 (October)</option>
+              <option value="11" >11 (November)</option>
+              <option value="12" >12 (December)</option>
+            </select>
+            @error('month') <div class="text-danger">{{ $message }}</div> @enderror
+          </div>
+        </div>
+      </form>
+      @endif --}}
+
       <div class="row">
         <div class="col-12">
           <div class="card bg-gradient-dark text-white shadow-blur mb-4">
@@ -45,32 +72,19 @@
         </div>
       </div>
 
-
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Month<span class="text-danger">*</span></label>
-          <div class="mb-0" class="@error('month') @enderror">
-            <select class="form-select" wire:model="month" name="month" id="month" tabindex="1" required>
-              <option value="">-- Choose Months --</option>
-              <option value="January" >January</option>
-              <option value="February" >February</option> 
-              <option value="March" >March</option> 
-              <option value="April" >April</option>
-              <option value="May" >May</option>
-              <option value="June" >June</option>
-              <option value="July" >July</option>
-              <option value="August" >August</option>
-              <option value="September" >September</option>
-              <option value="October" >October</option>
-              <option value="November" >November</option>
-              <option value="December" >December</option>
-            </select>
-            @error('month') <div class="text-danger">{{ $message }}</div> @enderror
-          </div>
-        </div>
-
-
       <div class="row">
         <div class="col-md-12">
+          @if (session('message'))
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{ session('message') }}</strong>
+          </div>	
+        @endif
+
+        @if (session('fail'))
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>{{ session('fail') }}</strong>
+        </div>	
+        @endif
           
           <div class="card">
             <div class="card-body">
@@ -99,14 +113,16 @@
                           <td class="text-xs fw-bold text-center">{{ $coachings->title }}</td>
                           <td class="text-xs text-center">{{ date('j F Y', strtotime($coachings->updated_at)) }}</td>
                           <td class="text-xs text-center">{{ $coachings->hours }}</td>
+
                           @if (auth()->user()->role == 'admin' || auth()->user()->role == 'hr')
                           <td class="text-center mx-auto">
-                            @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin'|| auth()->user()->department == 'Operation')
                               <a href="{{ url('hr/edit/coaching/'.$coachings->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
                               {{-- <button type="button" wire:click="selectItem2({{$coachings->id}})" class="btn btn-danger btn-sm btn-icon data-delete1" data-form="{{$coachings->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button> --}}
-                            @endif
+                              <button type="button" datax="{{$coachings->id}}" class="btn btn-danger btn-sm btn-icon data-delete1" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
+                              {{-- {{dd(data-form)}} --}}
                           </td>
                           @endif
+                          
                         </tr>
                       @endforeach
                     </tbody>
@@ -163,12 +179,12 @@
                             </td>
                             @if (auth()->user()->role == 'admin' || auth()->user()->role == 'hr')
                             <td class="text-center mx-auto">
-                              @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin'|| auth()->user()->department == 'Operation')
                                 <a href="{{ url('hr/edit/training/'.$trainings->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
-                                {{-- <button type="button" wire:click="selectItem1({{$trainings->id}})" class="btn btn-danger btn-sm btn-icon data-delete2" data-form="{{$trainings->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button> --}}
-                              @endif
+                                {{-- <button type="button" wire:click="selectItem1({{$trainings->id}})" data-id="{{$trainings->id}}" class="btn btn-danger btn-sm btn-icon data-delete2" data-form="{{$trainings->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button> --}}
+                                <button type="button" datax="{{$trainings->id}}" class="btn btn-danger btn-sm btn-icon data-delete2" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
                             </td>
                             @endif
+
                           </tr>
                         @endforeach
                       </tbody>
@@ -189,6 +205,11 @@
           document.addEventListener('livewire:load', function () {
             $(document).on("click", ".data-delete1", function (e) 
                 {
+                    //IF NOT LOOPING CAN DO THIS BECAUSE IT WILL GET THE SAME ID
+                    // var id = $('#id_deleted').attr('datax');
+
+                    //IF LOOPING DO THIS INSTEAD BECAUSE IT WILL NOT GET THE SAME ID
+                    var id = $(this).attr('datax');
                     e.preventDefault();
                     swal({
                     title: "Are you sure?",
@@ -200,15 +221,15 @@
                     .then((willDelete) => {
                     if (willDelete) {
                         e.preventDefault();
-                        Livewire.emit('delete1')
+                        location.href = "{{ url('/training-delete1') }}" + '/' + id;
                     } 
                     });
                 });
           })
-
           document.addEventListener('livewire:load', function () {
             $(document).on("click", ".data-delete2", function (e) 
                 {
+                    var id = $(this).attr('datax');
                     e.preventDefault();
                     swal({
                     title: "Are you sure?",
@@ -220,7 +241,7 @@
                     .then((willDelete) => {
                     if (willDelete) {
                         e.preventDefault();
-                        Livewire.emit('delete2')
+                        location.href = "{{ url('/training-delete2') }}" + '/' + id;
                     } 
                     });
                 });

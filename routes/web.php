@@ -121,6 +121,10 @@ Route::get('/view-hours', [Training::class, 'employee_view'])->name('view-hours'
 //get team name
 Route::get('autocomplete', [Training::class, 'autocomplete'])->name('autocomplete');
 
+//Training Delete Test
+Route::get('/training-delete1/{id}', [Training::class, 'delete1']);
+Route::get('/training-delete2/{id}', [Training::class, 'delete2']);
+
 //Coaching Route
 Route::post('/hr/create/coaching', [Coaching::class, 'create']);
 Route::get('/hr/edit/coaching/{id}', [Coaching::class, 'edit'])->name('coaching_edit');
@@ -191,6 +195,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/organizational-chart', OrganizationalChart::class)->name('organizational-chart');
     Route::get('/view-date/{user_id}', [Date::class, 'view_date']);
     Route::post('/date/save',[Date::class, 'date_save'])->name('date_save');
+
+    //SAVE EMPLOYEE STARTING MONTH
+    // Route::post('/employee/month/save/{id}', [Training::class, 'employee_month_save']);
+
     Route::get('/profile/view', ViewProfile::class)->name('view-profile');
     Route::get('/profile/edit', EditProfile::class)->name('edit-profile');
     Route::get('/user-management', UserManagement::class)->name('user-management');
