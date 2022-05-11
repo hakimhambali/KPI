@@ -126,9 +126,73 @@
                         </td>
                         <td class="text-center">
                           <a href="{{ url('employee/edit/date/'.$dates->id.'/'.$dates->user_id.'/'.$dates->year.'/'.$dates->month) }}" class="btn btn-dark btn-sm btn-icon my-auto" data-bs-toggle="tooltip" data-bs-original-title="Edit Date"><i class="bi bi-pencil-square"></i></a>
+                          <button type="button" class="btn btn-secondary btn-sm btn-icon my-auto" data-bs-toggle="modal" data-bs-target="#duplicateModal{{ $dates->id }}" data-bs-original-title="Duplicate KPI"><i class="bi bi-files"></i></button>
                           <button type="button" wire:click="selectItem({{$dates->id}}, 'delete' )" class="btn btn-danger btn-sm btn-icon my-auto data-delete" data-form="{{$dates->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete KPI"><i class="bi bi-trash3-fill"></i></button>
                         </td>
                       </tr>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="duplicateModal{{ $dates->id }}" tabindex="-1" aria-labelledby="duplicateModalLabel" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
+                        <div class="modal-dialog">
+                          
+                          <form action="{{ url('employee/duplicate/date/'.$dates->id.'/'.$dates->user_id.'/'.$dates->year.'/'.$dates->month) }}" method="post"> 
+                            @csrf
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="duplicateModalLabel">Duplicate KPI</h5>
+                              </div>
+
+                              <div class="modal-body">
+                                <h6 class="text-center">Update Month & Year</h6>
+                                <div class="col-md-12 mb-3">
+                                  <label class="form-label">Year<span class="text-danger">*</span></label>
+                                  <div class="mb-0" class="@error('year') @enderror">
+                                    <select class="form-select" name="year" id="year" tabindex="1" required>
+                                      <option selected value="{{$dates->year}}">{{ $dates->year }}</option>
+                                      <?php $yearArray = range(2021, 2050); ?>
+                                      <?php
+                                          foreach ($yearArray as $year) {
+                                            echo '<option value="'.$year.'">'.$year.'</option>';
+                                          }
+                                      ?>
+                                    </select>
+                                    @error('year') <div class="text-danger">{{ $message }}</div> @enderror
+                                  </div>
+                                </div>
+
+                                <div class="col-md-12 mb-3">
+                                  <label class="form-label">Month<span class="text-danger">*</span></label>
+                                  <div class="mb-0" class="@error('month') @enderror">
+                                    <select class="form-select" name="month" id="month" required>
+                                      <option selected value="{{$dates->month}}">{{ $dates->month }}</option>
+                                      <option value="January" >January</option>
+                                      <option value="February" >February</option> 
+                                      <option value="March" >March</option> 
+                                      <option value="April" >April</option>
+                                      <option value="May" >May</option>
+                                      <option value="June" >June</option>
+                                      <option value="July" >July</option>
+                                      <option value="August" >August</option>
+                                      <option value="September" >September</option>
+                                      <option value="October" >October</option>
+                                      <option value="November" >November</option>
+                                      <option value="December" >December</option>
+                                    </select>
+                                    @error('month') <div class="text-danger">{{ $message }}</div> @enderror
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-secondary btn-sm">Create KPI</button>
+                              </div>
+                            </div>
+                          </form>
+
+                        </div>
+                      </div>
+                      {{-- End Modal --}}
                     @endforeach
                   </tbody>
                 </table>
@@ -144,29 +208,29 @@
   </div>
   
   @push('scripts')
-  <script>
-    document.addEventListener('livewire:load', function () {
-  
-  
-      $(document).on("click", ".data-delete", function (e) 
-          {
-              e.preventDefault();
-              swal({
-              title: "Are you sure?",
-              text: "Once deleted, you will not be able to recover!",
-              icon: "warning",
-              buttons: true,
-              dangerMode: true,
-              })
-              .then((willDelete) => {
-              if (willDelete) {
-                  e.preventDefault();
-                  Livewire.emit('delete')
-              } 
-              });
-          });
-    })
-  </script>
+    <script>
+      document.addEventListener('livewire:load', function () {
+    
+    
+        $(document).on("click", ".data-delete", function (e) 
+            {
+                e.preventDefault();
+                swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                })
+                .then((willDelete) => {
+                if (willDelete) {
+                    e.preventDefault();
+                    Livewire.emit('delete')
+                } 
+                });
+            });
+      })
+    </script>
   @endpush
 </body>
 </div>

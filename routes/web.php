@@ -98,9 +98,6 @@ Route::get('/manager-hr/view/kpi/{id}/{date_id}/{user_id}/{year}/{month}', Manag
 Route::get('/hr/changeup/kpi/{date_id}', [ManagerKPI::class, 'changeuphr']);
 Route::get('/hr/changedown/kpi/{date_id}', [ManagerKPI::class, 'changedownhr']);
 Route::post('/hr/messageup/kpi/{date_id}', [ManagerKPI::class, 'messageuphr']);
-Route::get('/dashboard-hr',  [\App\Http\Controllers\DashboardHR::class, 'searchDashboard'])->name('dashboard-hr');
-// Route::get('/dashboard-hr', DashboardHR::class)->name('dashboard-hr');
-// Route::get('/hr/messagedown/kpi/{date_id}', [\App\Http\Controllers\ManagerKPI::class, 'messagedownhr']);
 
 //Memo Route
 Route::post('/hr/create/memo', [Memo::class, 'create']);
@@ -185,11 +182,12 @@ Route::get('/moderator/up/unit/{id}', [Moderator::class, 'up_unit']);
 Route::get('/moderator/down/unit/{id}', [Moderator::class, 'down_unit']);
 
 Route::middleware('auth')->group(function () {
-    // Route::get('/dashboard-hr', DashboardHR::class)->name('dashboard-hr');
+    Route::get('/dashboard-hr',  [\App\Http\Controllers\DashboardHR::class, 'searchDashboard'])->name('dashboard-hr');
     Route::get('/dashboard-manager', DashboardManager::class)->name('dashboard-manager');
     Route::get('/homepage', Homepage::class)->name('homepage');
     Route::post('/employee/profile/update/{id}',[EditProfile::class, 'profile_update']);
     Route::get('/add-date', Date::class)->name('add-date');
+    Route::post('employee/duplicate/date/{date_id}/{user_id}/{year}/{month}',[Date::class, 'duplicate_all']);
     Route::get('/memo', Memo::class)->name('memo');
     Route::get('/sop', SOP::class)->name('sop');
     Route::get('/policy', Policy::class)->name('policy');
