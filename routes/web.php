@@ -125,6 +125,10 @@ Route::get('autocomplete', [Training::class, 'autocomplete'])->name('autocomplet
 Route::get('/training-delete1/{id}', [Training::class, 'delete1']);
 Route::get('/training-delete2/{id}', [Training::class, 'delete2']);
 
+//Training Delete Test
+Route::get('/training-delete1/{id}', [Training::class, 'delete1']);
+Route::get('/training-delete2/{id}', [Training::class, 'delete2']);
+
 //Coaching Route
 Route::post('/hr/create/coaching', [Coaching::class, 'create']);
 Route::get('/hr/edit/coaching/{id}', [Coaching::class, 'edit'])->name('coaching_edit');
