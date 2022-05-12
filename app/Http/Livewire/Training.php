@@ -125,15 +125,14 @@ class Training extends Component
         return view('livewire.training.all', compact('training', 'coaching', 'user'));
     }
 
-    // public function employee_month_save(Request $request, $user_id) 
-    // {
-    //     dd('john');
-    //     User::find($user_id)->update([
-    //         'starting_month'=> $request->month,
-    //         ]);
+    public function employee_month_save(Request $request, $user_id) 
+    {
+        User::find($user_id)->update([
+            'starting_month'=> $request->month,
+            ]);
 
-    //     return redirect()->back()->with('message', 'User training updated successfully');
-    // }
+        return redirect()->back()->with('messagemonth', 'User training updated successfully');
+    }
 
     public function render()
     {

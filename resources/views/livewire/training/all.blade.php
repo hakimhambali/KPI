@@ -6,6 +6,20 @@
 @foreach ($coaching as $key => $coachings)
 <?php $total_coaching += $coachings->hours ?>
 @endforeach
+@foreach ($user as $users)
+  @if ($users->starting_month != NULL)
+    <?php $trainingprorate = number_format( (80/12*(13-$users->starting_month)), 2); ?>
+  @else
+    <?php $trainingprorate = NULL ?>
+  @endif
+@endforeach  
+@foreach ($user as $users)
+  @if ($users->starting_month != NULL)  
+  <?php $coachingprorate = number_format( (15/12*(13-$users->starting_month)), 2); ?>
+  @else
+    <?php $coachingprorate = NULL ?>
+  @endif
+@endforeach 
 @section('content')
   @extends('layouts.app')
 <div>
@@ -30,33 +44,66 @@
         <body>
 
     <div class="container-fluid py-4">
+      @if (session('messagemonth'))
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{ session('messagemonth') }}</strong>
+      </div>	
+      @endif
 
-    {{-- @if ((Auth::user()->role == "admin") ||  (Auth::user()->role == "hr") || ($user_id != NULL))
-      <form action="{{ url('employee_month_save/'.$user_id) }}" method="post">
-        @csrf  
-        <div class="col-md-6 mb-3">
-          <label class="form-label">Start Working (Month)<span class="text-danger">*</span></label>
-          <div class="mb-0" class="@error('month') @enderror">
-            <select class="form-select" wire:model="month" name="month" id="month" tabindex="1" required>
-              <option value="">-- Choose Months --</option>
-              <option value="1" >1 (January)</option>
-              <option value="2" >2 (February)</option> 
-              <option value="3" >3 (March)</option> 
-              <option value="4" >4 (April)</option>
-              <option value="5" >5 (May)</option>
-              <option value="6" >6 (June)</option>
-              <option value="7" >7 (July)</option>
-              <option value="8" >8 (August)</option>
-              <option value="9" >9 (September)</option>
-              <option value="10" >10 (October)</option>
-              <option value="11" >11 (November)</option>
-              <option value="12" >12 (December)</option>
-            </select>
-            @error('month') <div class="text-danger">{{ $message }}</div> @enderror
+    @if ((Auth::user()->role == "admin") ||  (Auth::user()->role == "hr") || ($user_id != NULL))
+      <div class="row">
+        <div class="col-md-12 mb-3">      
+          <div class="card">
+            <div class="card-body">
+            <form action="{{ url('employee/month/save/'.$user_id) }}" method="post">
+              @csrf  
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Start Working (Month)<span class="text-danger">*</span></label>
+                <div class="mb-0" class="@error('month') @enderror">
+                  <select class="form-select" wire:model="month" name="month" id="month" tabindex="1" required>
+                    @foreach ($user as $users)
+                    <option selected class="bg-secondary text-white" value="{{ $users->starting_month }}" >
+                      @if ($users->starting_month == '1') 1 (January) 
+                      @elseif ($users->starting_month == '2') 2 (February) 
+                      @elseif ($users->starting_month == '3') 3 (March)
+                      @elseif ($users->starting_month == '4') 4 (April)
+                      @elseif ($users->starting_month == '5') 5 (May)
+                      @elseif ($users->starting_month == '6') 6 (June)
+                      @elseif ($users->starting_month == '7') 7 (July)
+                      @elseif ($users->starting_month == '8') 8 (August)
+                      @elseif ($users->starting_month == '9') 9 (September)
+                      @elseif ($users->starting_month == '10') 10 (October)
+                      @elseif ($users->starting_month == '11') 11 (November)
+                      @elseif ($users->starting_month == '12') 12 (December)
+                      @endif
+                    </option>
+                    @endforeach  
+                    <option value="">-- Choose Months --</option>
+                    <option value="1" >1 (January)</option>
+                    <option value="2" >2 (February)</option> 
+                    <option value="3" >3 (March)</option> 
+                    <option value="4" >4 (April)</option>
+                    <option value="5" >5 (May)</option>
+                    <option value="6" >6 (June)</option>
+                    <option value="7" >7 (July)</option>
+                    <option value="8" >8 (August)</option>
+                    <option value="9" >9 (September)</option>
+                    <option value="10" >10 (October)</option>
+                    <option value="11" >11 (November)</option>
+                    <option value="12" >12 (December)</option>
+                  </select>
+                  @error('month') <div class="text-danger">{{ $message }}</div> @enderror
+                </div>
+              </div>
+              <div class="col-12 text-end">
+                <button class="btn bg-gradient-dark btn-sm px-4" type="submit" href="javascript:;">SAVE</button>
+              </div>
+            </form>
+            </div>
           </div>
         </div>
-      </form>
-      @endif --}}
+      </div>
+      @endif
 
       <div class="row">
         <div class="col-12">
@@ -78,7 +125,7 @@
           <div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>{{ session('message') }}</strong>
           </div>	
-        @endif
+          @endif
 
         @if (session('fail'))
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -88,7 +135,14 @@
           
           <div class="card">
             <div class="card-body">
-              <h6 class="mb-3">ALL COACHING 2022 <span style="color:red;">(Total hours = {{$total_coaching}})</span></h6>
+            @if ($coachingprorate != NULL)
+            <h6 class="mb-3">COACHING PRO RATE <span style="color:black;">(Total hours = {{$coachingprorate}})</span></h6>
+            @endif
+            @if ($total_coaching >= $coachingprorate)
+            <h6 class="mb-3">ALL COACHING HOURS <span style="color:green;">(Total hours = {{$total_coaching}}) </span><i class="bi bi-check2-circle"></i></h6>
+            @else
+            <h6 class="mb-3">ALL COACHING HOURS <span style="color:red;">(Total hours = {{$total_coaching}}) </span><i class="bi bi-x-circle"></i></h6>
+            @endif
   
               @if(!empty($coaching) && $coaching->count())
                 <div class="table-responsive">
@@ -143,8 +197,15 @@
           <div class="col-md-12">
             
             <div class="card">
-              <div class="card-body">
-                <h6 class="mb-3">ALL TRAINING 2022 <span style="color:red;">(Total hours = {{$total_training}})</span></h6>
+                <div class="card-body">
+                  @if ($trainingprorate != NULL)
+                  <h6 class="mb-3">TRAINING PRO RATE <span style="color:black;">(Total hours = {{$trainingprorate}})</span></h6>
+                  @endif
+                  @if ($total_training >= $trainingprorate)
+                  <h6 class="mb-3">ALL TRAINING HOURS <span style="color:green;">(Total hours = {{$total_training}}) </span><i class="bi bi-check2-circle"></i></h6>
+                  @else
+                  <h6 class="mb-3">ALL TRAINING HOURS <span style="color:red;">(Total hours = {{$total_training}}) </span><i class="bi bi-x-circle"></i></h6>
+                  @endif
 
                 @if(!empty($training) && $training->count())
                   <div class="table-responsive">

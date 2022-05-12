@@ -194,7 +194,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/date/save',[Date::class, 'date_save'])->name('date_save');
 
     //SAVE EMPLOYEE STARTING MONTH
-    // Route::post('/employee/month/save/{id}', [Training::class, 'employee_month_save']);
+    Route::post('/employee/month/save/{id}', [Training::class, 'employee_month_save']);
 
     Route::get('/profile/view', ViewProfile::class)->name('view-profile');
     Route::get('/profile/edit', EditProfile::class)->name('edit-profile');
