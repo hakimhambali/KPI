@@ -86,11 +86,7 @@
                                 <td class="text-xs fw-bold">{{ $functions->name }}</td>
                                 <td class="text-xs fw-bold text-center">{{ $functions->status }}</td>
                                 <td class="text-center mx-auto">
-                                  @if ($functions->status == 'inactive')
-                                    <a href="{{ url('moderator/up/function/'.$functions->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Change Status"><i class="bi bi-pencil-square"></i></a>
-                                  @else
-                                    <a href="{{ url('moderator/down/function/'.$functions->id) }}" class="btn btn-dark btn-sm btn-icon" data-bs-toggle="tooltip" data-bs-original-title="Change Status"><i class="bi bi-pencil-square"></i></a>
-                                  @endif
+                                  <button type="button" datax="{{$functions->id}}" class="btn btn-danger btn-sm btn-icon data-delete" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
                                 </td>
                               </tr>
                               @endforeach
@@ -108,6 +104,7 @@
             document.addEventListener('livewire:load', function () {
               $(document).on("click", ".data-delete", function (e) 
                   {
+                      var id = $(this).attr('datax');
                       e.preventDefault();
                       swal({
                       title: "Are you sure?",
@@ -119,7 +116,7 @@
                       .then((willDelete) => {
                       if (willDelete) {
                           e.preventDefault();
-                          Livewire.emit('delete')
+                          location.href = "{{ url('/moderator/delete/function') }}" + '/' + id;
                       } 
                       });
                   });

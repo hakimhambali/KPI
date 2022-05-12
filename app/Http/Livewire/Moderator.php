@@ -31,22 +31,12 @@ class Moderator extends Component
         return redirect('/add-function')->with('message', 'Function has been added successfully');
     }
 
-    public function up_function($id)
+    public function delete_function($id)
     {
-        Function_::find($id)->update([
-            'status'=> 'active',
-        ]);
+        $function = Function_::find($id);
+        $function->delete();
 
-        return redirect('/add-function')->with('message', 'Function status changed from inactive to active successfully');
-    }
-
-    public function down_function($id)
-    {
-        Function_::find($id)->update([
-            'status'=> 'inactive',
-        ]);
-
-        return redirect('/add-function')->with('message', 'Function status changed from active to inactive successfully');
+        return redirect()->back()->with('message', 'Function deleted successfully');
     }
 
     public function department()
@@ -67,22 +57,12 @@ class Moderator extends Component
         return redirect('/add-department')->with('message', 'Department has been added successfully');
     }
 
-    public function up_department($id)
+    public function delete_department($id)
     {
-        Department_::find($id)->update([
-            'status'=> 'active',
-        ]);
+        $department = Department_::find($id);
+        $department->delete();
 
-        return redirect('/add-department')->with('message', 'Department status changed from inactive to active successfully');
-    }
-
-    public function down_department($id)
-    {
-        Department_::find($id)->update([
-            'status'=> 'inactive',
-        ]);
-
-        return redirect('/add-department')->with('message', 'Department status changed from active to inactive successfully');
+        return redirect()->back()->with('message', 'Department deleted successfully');
     }
 
     public function position()
@@ -103,22 +83,12 @@ class Moderator extends Component
         return redirect('/add-position')->with('message', 'Position has been added successfully');
     }
 
-    public function up_position($id)
+    public function delete_position($id)
     {
-        Position_::find($id)->update([
-            'status'=> 'active',
-        ]);
+        $position = Position_::find($id);
+        $position->delete();
 
-        return redirect('/add-position')->with('message', 'Position status changed from inactive to active successfully');
-    }
-
-    public function down_position($id)
-    {
-        Position_::find($id)->update([
-            'status'=> 'inactive',
-        ]);
-
-        return redirect('/add-position')->with('message', 'Position status changed from active to inactive successfully');
+        return redirect()->back()->with('message', 'Position deleted successfully');
     }
 
     public function role()
@@ -139,22 +109,12 @@ class Moderator extends Component
         return redirect('/add-role')->with('message', 'Role has been added successfully');
     }
 
-    public function up_role($id)
+    public function delete_role($id)
     {
-        Role_::find($id)->update([
-            'status'=> 'active',
-        ]);
+        $role = Role_::find($id);
+        $role->delete();
 
-        return redirect('/add-role')->with('message', 'Role status changed from inactive to active successfully');
-    }
-
-    public function down_role($id)
-    {
-        Role_::find($id)->update([
-            'status'=> 'inactive',
-        ]);
-
-        return redirect('/add-role')->with('message', 'Role status changed from active to inactive successfully');
+        return redirect()->back()->with('message', 'Role deleted successfully');
     }
 
     public function unit()
@@ -175,22 +135,12 @@ class Moderator extends Component
         return redirect('/add-unit')->with('message', 'Unit has been added successfully');
     }
 
-    public function up_unit($id)
+    public function delete_unit($id)
     {
-        Unit_::find($id)->update([
-            'status'=> 'active',
-        ]);
+        $unit = Unit_::find($id);
+        $unit->delete();
 
-        return redirect('/add-unit')->with('message', 'Unit status changed from inactive to active successfully');
-    }
-
-    public function down_unit($id)
-    {
-        Unit_::find($id)->update([
-            'status'=> 'inactive',
-        ]);
-
-        return redirect('/add-unit')->with('message', 'Unit status changed from active to inactive successfully');
+        return redirect()->back()->with('message', 'Unit deleted successfully');
     }
 
     public function render()

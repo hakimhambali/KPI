@@ -11,7 +11,7 @@
           @endforeach
         @endforeach
       @endforeach
-
+      @if(!empty($numOfTeamAll) && $numOfTeamAll->count())
       <div class="row">
         <div class="col-md-4 pb-3">
           <div class="card bg-gradient-dark text-white text-center py-2">
@@ -112,5 +112,18 @@
         </div>
         
       @endforeach
+      @else
+      <div class="container-fluid py-4">
+        <div class="row">
+          <div class="col-md-12">      
+            <div class="card">
+              <div class="card-body">
+              <p class="text-center">There's No Department Has Been Added. Please Contact Your Moderator For This System</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      @endif
     </div>
 @endsection

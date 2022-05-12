@@ -154,32 +154,27 @@ Route::get("/findowner", [FindOwnerController::class, "index"]);
 //ADD FUNCTION
 Route::get('/add-function', [Moderator::class, 'function'])->name('add-function');
 Route::post('/moderator/create/function', [Moderator::class, 'create_function']);
-Route::get('/moderator/up/function/{id}', [Moderator::class, 'up_function']);
-Route::get('/moderator/down/function/{id}', [Moderator::class, 'down_function']);
+Route::get('/moderator/delete/function/{id}', [Moderator::class, 'delete_function']);
 
 //ADD DEPARTMENT
 Route::get('/add-department', [Moderator::class, 'department'])->name('add-department');
 Route::post('/moderator/create/department', [Moderator::class, 'create_department']);
-Route::get('/moderator/up/department/{id}', [Moderator::class, 'up_department']);
-Route::get('/moderator/down/department/{id}', [Moderator::class, 'down_department']);
+Route::get('/moderator/delete/department/{id}', [Moderator::class, 'delete_department']);
 
 //ADD POSITION
 Route::get('/add-position', [Moderator::class, 'position'])->name('add-position');
 Route::post('/moderator/create/position', [Moderator::class, 'create_position']);
-Route::get('/moderator/up/position/{id}', [Moderator::class, 'up_position']);
-Route::get('/moderator/down/position/{id}', [Moderator::class, 'down_position']);
+Route::get('/moderator/delete/position/{id}', [Moderator::class, 'delete_position']);
 
 //ADD ROLE
 Route::get('/add-role', [Moderator::class, 'role'])->name('add-role');
 Route::post('/moderator/create/role', [Moderator::class, 'create_role']);
-Route::get('/moderator/up/role/{id}', [Moderator::class, 'up_role']);
-Route::get('/moderator/down/role/{id}', [Moderator::class, 'down_role']);
+Route::get('/moderator/delete/role/{id}', [Moderator::class, 'delete_role']);
 
 //ADD UNIT
 Route::get('/add-unit', [Moderator::class, 'unit'])->name('add-unit');
 Route::post('/moderator/create/unit', [Moderator::class, 'create_unit']);
-Route::get('/moderator/up/unit/{id}', [Moderator::class, 'up_unit']);
-Route::get('/moderator/down/unit/{id}', [Moderator::class, 'down_unit']);
+Route::get('/moderator/delete/unit/{id}', [Moderator::class, 'delete_unit']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard-hr',  [\App\Http\Controllers\DashboardHR::class, 'searchDashboard'])->name('dashboard-hr');
