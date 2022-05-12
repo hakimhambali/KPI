@@ -11,7 +11,7 @@
           @endforeach
         @endforeach
       @endforeach
-      @if(!empty($numOfTeamAll) && $numOfTeamAll->count())
+      @if(!empty($numOfTeamAll))
       <div class="row">
         <div class="col-md-4 pb-3">
           <div class="card bg-gradient-dark text-white text-center py-2">
