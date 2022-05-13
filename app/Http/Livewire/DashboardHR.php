@@ -74,6 +74,5 @@ class DashboardHR extends Component
             array_push($departmentArr, $user);
         }
         return view('livewire.dashboard.all-hr')->with(compact('department', 'departmentArr', 'unit'));
-        // return view('livewire.dashboard.all-hr');
     }
 }

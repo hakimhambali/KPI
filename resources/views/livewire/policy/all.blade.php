@@ -125,7 +125,7 @@
                                 <a href="{{ $policys->policy_path }}" class="btn btn-info btn-sm btn-icon my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-file-earmark-pdf-fill"></i></a>
                                 @if (auth()->user()->role == 'hr' || auth()->user()->role == 'admin')
                                   <a href="{{ url('hr/edit/policy/'.$policys->id) }}" class="btn btn-dark btn-sm btn-icon my-auto" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a>
-                                  <button type="button" wire:click="selectItem({{$policys->id}})" class="btn btn-danger btn-sm btn-icon data-delete" data-form="{{$policys->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
+                                  <button type="button" wire:click="selectItem({{$policys->id}})" class="btn btn-danger btn-sm my-auto btn-icon data-delete" data-form="{{$policys->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
                                 @endif
                               </td>
                             </tr>

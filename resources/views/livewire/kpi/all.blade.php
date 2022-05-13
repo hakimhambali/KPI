@@ -81,7 +81,7 @@ input[type=file]::file-selector-button:hover {
                       <label class="form-label">Function<span class="text-danger">*</span></label>
                       <div class="mb-0" class="@error('fungsi') @enderror">
                         <select class="form-select" id="fungsi" name="fungsi" required>
-                          <option value="">-- Choose Function --</option>
+                          <option value="">-- Select Function --</option>
 
                           @foreach ($function as $functions)
                             <option value="{{$functions->name}}">{{$functions->name}}</option>
@@ -122,12 +122,12 @@ input[type=file]::file-selector-button:hover {
                       <table class="text-center text-sm">
                         <thead>
                           <tr>
-                            <th rowspan="2">(%)</th>
+                            <th rowspan="2" class="col-md-1">(%)</th>
                             <th rowspan="2">Measurement</th>
                             <th colspan="3">KPI Targets</th>
                             <th rowspan="2">Achievement</th>
-                            <th rowspan="2">KPI Score</th>
-                            <th rowspan="2">Actual Score</th>
+                            <th rowspan="2" class="col-1">KPI Score</th>
+                            <th rowspan="2" class="col-1">Actual Score</th>
                           </tr>
                           <tr>
                             <th>Threshold</th>
@@ -139,12 +139,12 @@ input[type=file]::file-selector-button:hover {
                         <tbody>
                           <tr>
                             <td>
-                              <input type="text" class="form-control input_ukuran" pattern="[0-9]+" maxlength="3" id="peratus" name="peratus" onkeyup="masterClac();" min="0"  >
+                              <input type="number" class="form-control" min="1" max="100" id="peratus" name="peratus" onkeyup="masterClac();" required>
                               @error('peratus') <div class="text-danger text-xs pt-2">{{ $message }}</div> @enderror
                             </td>
                             <td style="word-break: break-all;" class="border-dark">
-                              <select class="form-select " id="ukuran" name="ukuran">
-                                <option selected disabled value=""></option>
+                              <select class="form-select " id="ukuran" name="ukuran" required>
+                                <option value="">-- Select --</option>
                                 <option value="Unit">Unit</option>
                                 <option value="Quantity" >Quantity</option>
                                 <option value="Ratio" >Ratio</option>
@@ -159,19 +159,19 @@ input[type=file]::file-selector-button:hover {
                               @error('ukuran') <div class="text-danger text-xs pt-2">{{ $message }}</div> @enderror
                             </td>
                             <td>
-                              <input type="text" class="form-control input_threshold" pattern="^\d*(\.\d{0,2})?$\-^\d*(\.\d{0,2})?$" maxlength="7" id="threshold" name="threshold" onkeyup="masterClac();" min="0" >
+                              <input type="number" min="0" max="100" step=".01" class="form-control" id="threshold" name="threshold" onkeyup="masterClac();" required>
                               @error('threshold') <div class="text-danger text-xs pt-2">{{ $message }}</div> @enderror
                             </td>
                             <td>
-                              <input type="text" class="form-control input_base" pattern="^\d*(\.\d{0,2})?$\-^\d*(\.\d{0,2})?$" maxlength="7" id="base" name="base" onkeyup="masterClac();" min="0" >
+                              <input type="number" min="1" max="100" step=".01" class="form-control" id="base" name="base" onkeyup="masterClac();" required>
                               @error('base') <div class="text-danger text-xs pt-2">{{ $message }}</div> @enderror
                             </td>
                             <td>
-                              <input type="text" class="form-control input_stretch" pattern="^\d*(\.\d{0,2})?$\-^\d*(\.\d{0,2})?$" maxlength="7" id="stretch" name="stretch" onkeyup="masterClac();" min="0" >
+                              <input type="number" min="1" max="100" step=".01" class="form-control input_stretch" pattern="^\d*(\.\d{0,2})?$\-^\d*(\.\d{0,2})?$" maxlength="7" id="stretch" name="stretch" onkeyup="masterClac();" required>
                               @error('stretch') <div class="text-danger text-xs pt-2">{{ $message }}</div> @enderror
                             </td>
                             <td>
-                              <input type="text" class="form-control input_pencapaian" pattern="^\d*(\.\d{0,2})?$\-^\d*(\.\d{0,2})?$" maxlength="7" id="pencapaian" name="pencapaian" onkeyup="masterClac();" min="0" >
+                              <input type="number" min="1" max="100" step=".01" class="form-control input_pencapaian" pattern="^\d*(\.\d{0,2})?$\-^\d*(\.\d{0,2})?$" maxlength="7" id="pencapaian" name="pencapaian" onkeyup="masterClac();" required>
                               @error('pencapaian') <div class="text-danger text-xs pt-2">{{ $message }}</div> @enderror
                             </td>
                             <td>

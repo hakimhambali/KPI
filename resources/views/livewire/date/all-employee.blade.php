@@ -145,7 +145,8 @@
                               </div>
 
                               <div class="modal-body">
-                                <h6 class="text-center">Update Month & Year</h6>
+                                <h6 class="text-center mb-0">Update Month & Year</h6>
+                                <div class="text-danger text-center text-xxs mb-2">(Make sure use different Month or Year)</div>
                                 <div class="col-md-12 mb-3">
                                   <label class="form-label">Year<span class="text-danger">*</span></label>
                                   <div class="mb-0" class="@error('year') @enderror">

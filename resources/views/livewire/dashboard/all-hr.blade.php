@@ -56,7 +56,7 @@
             <div class="card mb-3">
               <div class="table-responsive">
                 <table class="table table-hover align-middle">
-                  <tbody>
+                  
                       
                     @foreach ($departmentArr as $key2 => $departmentArrs)
                       @foreach ($departmentArrs as $key3 => $departmentArrss)
@@ -79,32 +79,33 @@
                                 </tr>
                               </thead>
                           @endif
+                          
+                          <tbody>
+                            <tr>
+                              <td class="text-xs fw-bolder text-uppercase">
+                                    <img src="../assets/img/profileavatar.png" class="avatar avatar-sm me-3" alt="user1">
 
-                          <tr>
-                            <td class="text-xs fw-bolder text-uppercase">
-                                  <img src="../assets/img/profileavatar.png" class="avatar avatar-sm me-3" alt="user1">
-
-                              {{$departmentArrss->name}}
-                            </td>
-                            <td class="text-xs fw-bold text-center">{{$departmentArrss->position}}</td>
-                            <td class="text-xs fw-bold text-center">{{$departmentArrss->nostaff}}</td>
-                            <td class="text-xs fw-bold text-center">{{$departmentArrss->unit}}</td>
-                            <td class="text-center">
-                              <a type="button" id="dropdownMenuButton" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-ellipsis-v"></i>
-                              </a>
-                              <div class="dropdown-menu">
-                                <a href="{{ url('view-date/'.$departmentArrss->id) }}" class="dropdown-item text-dark fw-bold">KPI</a>
-                                <a href="{{ url('/hr-manager/view/training-coaching/'.$departmentArrss->id) }}" class="dropdown-item text-dark fw-bold">Training & Coaching</a>
-                              </div>
-                            </td>
-                          </tr>
-                           
+                                {{$departmentArrss->name}}
+                              </td>
+                              <td class="text-xs fw-bold text-center">{{$departmentArrss->position}}</td>
+                              <td class="text-xs fw-bold text-center">{{$departmentArrss->nostaff}}</td>
+                              <td class="text-xs fw-bold text-center">{{$departmentArrss->unit}}</td>
+                              <td class="text-center">
+                                <a type="button" id="dropdownMenuButton" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fa fa-ellipsis-v"></i>
+                                </a>
+                                <div class="dropdown-menu">
+                                  <a href="{{ url('view-date/'.$departmentArrss->id) }}" class="dropdown-item text-dark fw-bold">KPI</a>
+                                  <a href="{{ url('/hr-manager/view/training-coaching/'.$departmentArrss->id) }}" class="dropdown-item text-dark fw-bold">Training & Coaching</a>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
                         @endif
                       @endforeach
                     @endforeach
 
-                  </tbody>
+                  
                 </table>
               </div>
             </div>

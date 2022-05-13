@@ -144,9 +144,9 @@
                     <table class="text-center text-sm" style="width: 100%">
                       <thead>
                         <tr>
-                          <th>(%)</th>
+                          <th class="col-2">(%)</th>
                           <th>Measurement</th>
-                          <th>Employee Score <span class="text-danger">*</span></th>
+                          <th class="col-md-3">Employee Score <span class="text-danger">*</span></th>
                           <th>Actual Score</th>
                         </tr>
                       </thead>
@@ -156,7 +156,7 @@
                           <td><input type="text" class="form-control" id="peratus" name="peratus" value="20" onkeyup="masterClac();" readonly></td>
                           <td><input type="text"  class="form-control" id="ukuran" name="ukuran" value="Percentage" readonly></td>
                           <td>
-                            <input type="text" pattern="[1-4]+" maxlength="1"  class="form-control" id="skor_pekerja" name="skor_pekerja" placeholder="Enter score from 1 to 4 only" onkeyup="masterClac();" min="0" required>
+                            <input type="number" class="form-control" id="skor_pekerja" name="skor_pekerja" placeholder="Enter score from 1 to 4 only" onkeyup="masterClac();" min="1" max="4" required>
                             @error('skor_pekerja') <div class="text-danger">{{ $message }}</div> @enderror
                           </td>
                           <td><input type="text"  class="form-control"  id="skor_sebenar" name="skor_sebenar" value="0" readonly></td>

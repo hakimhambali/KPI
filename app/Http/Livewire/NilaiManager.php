@@ -15,21 +15,37 @@ use Illuminate\Support\Carbon;
 
 class NilaiManager extends Component
 {
-    public function nilai_edit($id_user, $id, $date_id, $user_id, $year, $month) {
-        $nilai = Nilai_::find($id);
+    public function nilai_edit($id_user, $date_id, $user_id, $year, $month) {
+        $nilai = Nilai_::where('user_id', $id_user)->where('year', $year)->where('month', $month)->orderBy('created_at','desc')->get();
         $user = User::find($id_user);
         
         return view('livewire.nilai-manager.edit' , compact('nilai', 'user', 'date_id', 'user_id', 'year', 'month'));
     }
 
-    public function nilai_update(Request $request,$id_user, $id, $date_id, $user_id, $year, $month) {
-        $validatedData = $request->validate([
-            'skor_penyelia' => ['required'],
-        ]);
-        $update = Nilai_::find($id)->update([
-            'skor_penyelia'=> $request->skor_penyelia,
-            'skor_sebenar' => $request->skor_sebenar,
-        ]);
+    public function kecekapan_update(Request $request, $id_user, $date_id, $user_id, $year, $month) 
+    {
+        $kecekapan = Kecekapan_::where('user_id', $id_user)->where('year', $year)->where('month', $month)->orderBy('created_at','desc')->get();
+        $count = count($kecekapan);
+        for($i = 0; $i<$count; $i++){
+            
+            $kecekapan[$i]->update([
+                'skor_penyelia'=> $request->skor_penyelia[$i],
+                'skor_sebenar' => $request->skor_sebenar[$i],
+            ]);
+        }
+    }
+    public function nilai_update(Request $request, $id_user, $date_id, $user_id, $year, $month) 
+    {
+        $nilai = Nilai_::where('user_id', $id_user)->where('year', $year)->where('month', $month)->orderBy('created_at','desc')->get();
+        
+        for($i = 0; $i<count($nilai); $i++){
+            
+            $nilai[$i]->update([
+                'skor_penyelia'=> $request->skor_penyelia[$i],
+                'skor_sebenar' => $request->skor_sebenar[$i],
+            ]);
+        }
+        
         if (KPIAll_::where('user_id', '=', $id_user)->where('year', '=', $year)->where('month', '=', $month)->count() == 1) {
             $kpiall = KPIAll_::where('user_id', '=', $id_user)->where('year', '=', $year)->where('month', '=', $month)->get();
             $kpiall_id = count($kpiall) > 0 ? $kpiall->sortByDesc('created_at')->first()->id : '0';

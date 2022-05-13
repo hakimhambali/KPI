@@ -15,22 +15,25 @@ use Illuminate\Support\Carbon;
 
 class KecekapanManager extends Component
 {
-    public function kecekapan_edit($id_user, $id, $date_id, $user_id, $year, $month) {
-        $kecekapan = Kecekapan_::find($id);
+    public function kecekapan_edit($id_user, $date_id, $user_id, $year, $month) {
+        // $kecekapan = Kecekapan_::find($id);
+        $kecekapan = Kecekapan_::where('user_id', $id_user)->where('year', $year)->where('month', $month)->orderBy('created_at','desc')->get();
         $user = User::find($id_user);
 
         return view('livewire.kecekapan-manager.edit' , compact('kecekapan', 'user', 'date_id', 'user_id', 'year', 'month'));
     }
-    
-    public function kecekapan_update(Request $request,$id_user, $id, $date_id, $user_id, $year, $month) {
-        $validatedData = $request->validate([
-            'skor_penyelia' => ['required'],
-        ]);
-    
-        $update = Kecekapan_::find($id)->update([
-            'skor_penyelia'=> $request->skor_penyelia,
-            'skor_sebenar' => $request->skor_sebenar,
-        ]);
+
+    public function kecekapan_update(Request $request, $id_user, $date_id, $user_id, $year, $month) 
+    {
+        $kecekapan = Kecekapan_::where('user_id', $id_user)->where('year', $year)->where('month', $month)->orderBy('created_at','desc')->get();
+        
+        for($i = 0; $i<count($kecekapan); $i++){
+            
+            $kecekapan[$i]->update([
+                'skor_penyelia'=> $request->skor_penyelia[$i],
+                'skor_sebenar' => $request->skor_sebenar[$i],
+            ]);
+        }
 
         if (KPIAll_::where('user_id', '=', $id_user)->where('year', '=', $year)->where('month', '=', $month)->count() == 1) {
             $kpiall = KPIAll_::where('user_id', '=', $id_user)->where('year', '=', $year)->where('month', '=', $month)->get();
@@ -85,11 +88,6 @@ class KecekapanManager extends Component
 
     public function render()
     {
-        // $kecekapan = Kecekapan_::where('user_id', '=', auth()->user()->id)->orderBy('kecekapan_teras')->get();
-        // $userdepartment = auth()->user()->department;
-        // $users = User::where([['department', '=', $userdepartment] , ['role', '=', 'employee']])->orderBy('created_at','desc')->get();
-        
-        // return view('livewire.kecekapan.all', compact('kecekapan', 'users'));
         return view('livewire.kecekapan.all');
     }
 }

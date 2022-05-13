@@ -75,10 +75,11 @@ Route::get('/employee/edit/date/{date_id}/{user_id}/{year}/{month}', [Date::clas
 Route::post('/employee/update/date/{date_id}/{user_id}/{year}/{month}', [Date::class, 'date_update']);
 
 //Manager Route
-Route::get('/manager/edit/kecekapan/{id_user}/{id}/{date_id}/{user_id}/{year}/{month}', [KecekapanManager::class, 'kecekapan_edit']);
-Route::post('/manager/update/kecekapan/{id_user}/{id}/{date_id}/{user_id}/{year}/{month}', [KecekapanManager::class, 'kecekapan_update']);
-Route::get('/manager/edit/nilai/{id_user}/{id}/{date_id}/{user_id}/{year}/{month}', [NilaiManager::class, 'nilai_edit']);
-Route::post('/manager/update/nilai/{id_user}/{id}/{date_id}/{user_id}/{year}/{month}', [NilaiManager::class, 'nilai_update']);
+Route::get('/manager/edit/kecekapan/{id_user}/{date_id}/{user_id}/{year}/{month}', [KecekapanManager::class, 'kecekapan_edit']);
+// Route::get('/manager/edit/kecekapan/{id_user}/{id}/{date_id}/{user_id}/{year}/{month}', [KecekapanManager::class, 'kecekapan_edit']);
+Route::post('/manager/update/kecekapan/{id_user}/{date_id}/{user_id}/{year}/{month}', [KecekapanManager::class, 'kecekapan_update']);
+Route::get('/manager/edit/nilai/{id_user}/{date_id}/{user_id}/{year}/{month}', [NilaiManager::class, 'nilai_edit']);
+Route::post('/manager/update/nilai/{id_user}/{date_id}/{user_id}/{year}/{month}', [NilaiManager::class, 'nilai_update']);
 
 // Route::get('/manager/changeup/kpi/{date_id}', [\App\Http\Controllers\ManagerKPI::class, 'changeupmanager']);
 // Route::get('/manager/changedown/kpi/{date_id}', [\App\Http\Controllers\ManagerKPI::class, 'changedownmanager']);

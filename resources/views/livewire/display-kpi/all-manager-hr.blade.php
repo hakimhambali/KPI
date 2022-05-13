@@ -79,7 +79,7 @@
                         <th>MEASUREMENT</th>
                         <th>KPI TARGET</th>
                         <th class="col-1">KPI SCORE</th>
-                        <th class="col-1">ACTUAL SCORE</th>
+                        <th class="col-1 bg-gradient-dark text-white">ACTUAL SCORE</th>
                       </tr>
                     </thead>
 
@@ -159,7 +159,7 @@
                                           </div>
                                         </td>
                                         <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">{{ $kpiArrss->kpimasters->skor_KPI }}</td>
-                                        <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">{{ round($kpiArrss->kpimasters->skor_sebenar,2) }} %</td>
+                                        <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center bg-gradient-dark text-white">{{ round($kpiArrss->kpimasters->skor_sebenar,2) }} %</td>
                                       @else
                                       @endif
                                     </tr>
@@ -204,7 +204,15 @@
                     
           <div class="card"> 
             <div class="card-body">
-              <h6>SCORE CARD - Kecekapan Teras <span class="text-danger">(Current total weightage = {{$kecekapan_master}})</h6><hr>
+              <div class="row">
+                <div class="col-md-8">
+                  <h6>SCORE CARD - Kecekapan Teras <span class="text-danger">(Current total weightage = {{$kecekapan_master}})</h6>
+                </div>
+                <div class="col-md-4 text-end">
+                  <a href="{{ url('manager/edit/kecekapan/'.$data->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="btn btn-warning text-xs btn-sm"><i class="bi bi-pencil-square"></i> Update Manager Score</a>
+                </div>
+              </div>
+              <hr>
 
               @if(!empty($kecekapan) && $kecekapan->count())
                 <div class="table-responsive">
@@ -217,8 +225,7 @@
                         <th>MEASUREMENT</th>
                         <th class="col-1">EMPLOYEE SCORE</th>
                         <th class="col-1">MANAGER SCORE</th>
-                        <th class="col-1">ACTUAL SCORE</th>
-                        <th></th>
+                        <th class="col-1 bg-gradient-dark text-white">ACTUAL SCORE</th>
                       </tr>
                     </thead>
 
@@ -294,8 +301,7 @@
                           <td class="text-xs fw-bold text-center">{{ 'Percentage (%)' }}</td>
                           <td class="text-xs fw-bold text-center">{{ $kecekapans -> skor_pekerja }}</td>
                           <td class="text-xs fw-bold text-center">{{ $kecekapans -> skor_penyelia }}</td>
-                          <td class="text-xs fw-bold text-center">{{ $kecekapans -> skor_sebenar }}</td>
-                          <td><a href="{{ url('manager/edit/kecekapan/'.$user_id.'/'.$kecekapans->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="btn btn-dark btn-sm btn-icon my-auto" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a></td>
+                          <td class="text-xs fw-bold text-center bg-gradient-dark text-white">{{ $kecekapans -> skor_sebenar }}</td>
                         </tr>
                       @endforeach
                     </tbody>
@@ -329,7 +335,15 @@
                     
           <div class="card"> 
             <div class="card-body">
-              <h6>SCORE CARD - Nilai Teras <span class="text-danger">(Current total weightage = {{$nilai_master}})</h6><hr>
+              <div class="row">
+                <div class="col-md-8">
+                  <h6>SCORE CARD - Nilai Teras <span class="text-danger">(Current total weightage = {{$nilai_master}})</h6>
+                </div>
+                <div class="col-md-4 text-end">
+                  <a href="{{ url('manager/edit/nilai/'.$data->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="btn btn-danger text-xs btn-sm"><i class="bi bi-pencil-square"></i> Update Manager Score</a>
+                </div>
+              </div>
+              <hr>
 
               @if(!empty($nilai) && $nilai->count())
                 <div class="table-responsive">
@@ -342,8 +356,7 @@
                         <th>MEASUREMENT</th>
                         <th class="col-1">EMPLOYEE SCORE</th>
                         <th class="col-1">MANAGER SCORE</th>
-                        <th class="col-1">ACTUAL SCORE</th>
-                        <th></th>
+                        <th class="col-1 bg-gradient-dark text-white">ACTUAL SCORE</th>
                       </tr>
                     </thead>
 
@@ -424,12 +437,11 @@
                           @else
                           @endif
 
-                          <td class="text-xs fw-bold text-center">{{  '20%' }}</td>
+                          <td class="text-xs fw-bold text-center">{{ '20%' }}</td>
                           <td class="text-xs fw-bold text-center">{{ 'Percentage (%)' }}</td>
                           <td class="text-xs fw-bold text-center">{{ $nilais -> skor_pekerja }}</td>
                           <td class="text-xs fw-bold text-center">{{ $nilais -> skor_penyelia }}</td>
-                          <td class="text-xs fw-bold text-center">{{ $nilais -> skor_sebenar }}</td>
-                          <td><a href="{{ url('manager/edit/nilai/'.$user_id.'/'.$nilais->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="btn btn-dark btn-sm btn-icon my-auto" data-bs-toggle="tooltip" data-bs-original-title="Edit"><i class="bi bi-pencil-square"></i></a></td>
+                          <td class="text-xs fw-bold text-center bg-gradient-dark text-white">{{ $nilais -> skor_sebenar }}</td>
                         </tr>
                       @endforeach
                     </tbody>
@@ -457,15 +469,31 @@
                     <div class="table-responsive">
                       <table class="table-sm text-xs align-middle mx-auto">
                         <tr>
-                          <td>KPI</td>
+                          <td class="fw-bold">KPI</td>
                           <td>
                             @foreach ($kpiall as $key => $kpialls)
-                              <span class="fw-bolder">: {{ $kpialls -> total_score_master }} %</span></span>
+                              <span class="fw-bold">: {{ $kpialls -> total_score_master }} %</span></span>
                             @endforeach
                           </td>
                         </tr>
                         <tr>
-                          <td>Final Score</td>
+                          <td class="fw-bold">Kecekapan Teras</td>
+                          <td>
+                            @foreach ($kpiall as $key => $kpialls)
+                              <span class="fw-bold">: {{ $kpialls -> total_score_kecekapan }} %</span></span>
+                            @endforeach
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="fw-bold">Nilai Teras</td>
+                          <td>
+                            @foreach ($kpiall as $key => $kpialls)
+                              <span class="fw-bold">: {{ $kpialls -> total_score_nilai }} %</span></span>
+                            @endforeach
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="fw-bolder">Final Score</td>
                           <td>
                             @foreach ($kpiall as $key => $kpialls)
                               <span class="fw-bolder">: {{ round($kpialls -> total_score_all,2) }} %</span></span>
@@ -473,23 +501,7 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Kecekapan Teras</td>
-                          <td>
-                            @foreach ($kpiall as $key => $kpialls)
-                              <span class="fw-bolder">: {{ $kpialls -> total_score_kecekapan }} %</span></span>
-                            @endforeach
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Nilai Teras</td>
-                          <td>
-                            @foreach ($kpiall as $key => $kpialls)
-                              <span class="fw-bolder">: {{ $kpialls -> total_score_nilai }} %</span></span>
-                            @endforeach
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Grade</td>
+                          <td class="fw-bolder">Grade</td>
                           <td>
                             @foreach ($kpiall as $key => $kpialls)
                               <span class="fw-bolder">: {{ $kpialls -> grade_all }}</span></span>
@@ -502,10 +514,10 @@
                     <div class="table-responsive">
                       <table class="table-sm text-xs align-middle mx-auto">
                         <tr><td>KPI</td><td class="fw-bolder">:</td></tr>
-                        <tr><td>Final Score</td><td class="fw-bolder">:</td></tr>
                         <tr><td>Kecekapan Teras</td><td class="fw-bolder">:</td></tr>
                         <tr><td>Nilai Teras</td><td class="fw-bolder">:</td></tr>
-                        <tr><td>Grade</td><td class="fw-bolder">:</td></tr>
+                        <tr><td class="fw-bolder">Final Score</td><td class="fw-bolder">:</td></tr>
+                        <tr><td class="fw-bolder">Grade</td><td class="fw-bolder">:</td></tr>
                       </table>
                     </div>
                   @endif

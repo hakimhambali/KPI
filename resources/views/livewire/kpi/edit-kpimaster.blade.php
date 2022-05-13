@@ -34,7 +34,7 @@
                       @error('objektif') <div class="text-danger">{{ $message }}</div> @enderror
 
                       <label class="form-label">KPI Master Percentage (%)<span class="text-danger">*</span></label>
-                      <input type="text" pattern="[0-9]+" maxlength="3"  class="form-control mb-3" id="percent_master" name="percent_master" value="{{ $kpimasters->percent_master }}" placeholder="Enter any number from 1 to 100 only" required>
+                      <input type="number" min="1" max="100" class="form-control mb-3" id="percent_master" name="percent_master" value="{{ $kpimasters->percent_master }}" placeholder="Enter any number from 1 to 100 only" required>
                       @error('percent_master') <div class="text-danger">{{ $message }}</div> @enderror
                     </div>
                 
