@@ -114,7 +114,7 @@ Route::post('/hr/create/training', [Training::class, 'create']);
 Route::get('/hr/edit/training/{id}', [Training::class, 'edit'])->name('training_edit');
 Route::post('/hr/update/training/{id}', [Training::class, 'update']);
 // Route::get('/hr/view/training-coaching/{id}', Training::class);
-Route::get('/hr-manager/view/training-coaching/{id}', [Training::class, 'view']);
+Route::get('/hr-manager/view/training-coaching/{id}', [Training::class, 'manager_view']);
 Route::get('/view-hours', [Training::class, 'employee_view'])->name('view-hours');
 //get team name
 Route::get('autocomplete', [Training::class, 'autocomplete'])->name('autocomplete');

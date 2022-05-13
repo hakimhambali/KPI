@@ -106,7 +106,7 @@ class Training extends Component
         }
     }
 
-    public function view($user_id) 
+    public function manager_view($user_id) 
     {
         $training = Training_::where('student_id', $user_id)->orderBy('updated_at', 'DESC')->get();
         $coaching = Coaching_::where('trainer_id', $user_id)->orderBy('updated_at', 'DESC')->get();
@@ -114,7 +114,7 @@ class Training extends Component
         // $user = User::find($student_id);
         // $name = $user->name;
         // $searchName = User::where('name' , 'like' , '%'.$name.'%')->orderBy('created_at','desc')->get();
-        return view('livewire.training.all', compact('training', 'coaching', 'user', 'user_id'));
+        return view('livewire.training.all-manager', compact('training', 'coaching', 'user', 'user_id'));
     }
 
     public function employee_view() 
@@ -122,7 +122,7 @@ class Training extends Component
         $training = Training_::where('student_id', auth()->user()->id)->get();
         $coaching = Coaching_::where('trainer_id', auth()->user()->id)->get();
         $user = User::where('id', auth()->user()->id)->get();
-        return view('livewire.training.all', compact('training', 'coaching', 'user'));
+        return view('livewire.training.all-employee', compact('training', 'coaching', 'user'));
     }
 
     public function employee_month_save(Request $request, $user_id) 
