@@ -1,3 +1,4 @@
+@include('layouts.navbars.auth.nav')
 <div>
     @livewire('user-management.user-management-form-wire')
     <!--------------------------- DISPLAY USER ACCORDING TO THEIR ROLE ------------------------------------------------------------------------------------>

@@ -1,3 +1,4 @@
+@include('layouts.navbars.auth.nav')
 <div>
     {{-- START SECTION - USER FORM  --}}
     <div class="container-fluid pb-4">

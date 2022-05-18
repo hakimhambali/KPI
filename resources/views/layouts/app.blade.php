@@ -9,7 +9,7 @@
         @if (auth()->user()->role == 'admin')
             @include('layouts.navbars.auth.sidebar')
             {{-- @include('livewire.kpi.edit') --}}
-            @include('layouts.navbars.auth.nav')
+            {{-- @include('layouts.navbars.auth.nav') --}}
             @include('components.plugins.fixed-plugin')
             @if (isset($slot))
                 {{ $slot }} 

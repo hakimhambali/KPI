@@ -1,3 +1,4 @@
+@include('layouts.navbars.auth.nav')
 <div>
     @livewire('user-management.user-management-admin-form-wire')
     <div class="container-fluid pb-4">
