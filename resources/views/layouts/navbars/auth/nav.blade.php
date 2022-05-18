@@ -86,10 +86,10 @@
                         </li>
                     @endif
 
-                    @if (Route::currentRouteName() == 'user-management')
+                    {{-- @if (Route::currentRouteName() == 'user-management')
                         <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="javascript:;">User Management</a>
                         </li>
-                    @endif
+                    @endif --}}
                     
                     <li class="breadcrumb-item text-sm text-dark active text-capitalize" aria-current="page">
                         @if (Route::currentRouteName() == 'coaching_edit')
