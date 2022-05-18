@@ -21,6 +21,7 @@
   @endif
 @endforeach
 @section('content')
+@include('layouts.navbars.auth.nav')
   @extends('layouts.app')
 <div>
     <div>

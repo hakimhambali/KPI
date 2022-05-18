@@ -1,6 +1,7 @@
 {{--------------------------------------------------- EDIT DATE --------------------------------------------------}}
 <div>
 @section('content')
+@include('layouts.navbars.auth.nav')
   @extends('layouts.app')
     <div class="wrapper">
       <div id="content">    

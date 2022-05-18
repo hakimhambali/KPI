@@ -1,4 +1,5 @@
 @section('content')
+@include('layouts.navbars.auth.nav')
   @extends('layouts.app')
 
   <style>

@@ -1,3 +1,4 @@
+@include('layouts.navbars.auth.nav')
 <div>
 {{------------------------------------- KECEKAPAN (ALL USER) ----------------------------------------}}
   <div class="container-fluid pb-4">

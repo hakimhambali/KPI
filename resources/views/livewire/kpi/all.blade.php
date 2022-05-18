@@ -12,6 +12,7 @@
   {{($key)}}
   @endforeach
 @endforeach --}}
+@include('layouts.navbars.auth.nav')
 {{--------------------------------------------------- CREATE KPI --------------------------------------------------}}
 <div>
   <style>

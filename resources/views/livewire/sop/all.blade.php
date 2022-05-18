@@ -1,3 +1,4 @@
+@include('layouts.navbars.auth.nav')
 <div>
   <div>
       <style>

@@ -1,4 +1,5 @@
 @section('content')
+@include('layouts.navbars.auth.nav')
   @extends('layouts.app')
 
   <div class="container-fluid pb-4">

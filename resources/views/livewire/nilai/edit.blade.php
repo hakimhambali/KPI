@@ -1,5 +1,6 @@
 {{--------------------------------------------------- EDIT NILAI (ALL USER) --------------------------------------------------}}
 @section('content')
+@include('layouts.navbars.auth.nav')
 <div>
   @extends('layouts.app')
 

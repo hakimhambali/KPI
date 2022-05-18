@@ -1,8 +1,17 @@
+{{-- {{dd($kpiall)}} --}}
+@include('layouts.navbars.auth.nav')
 @section('content')
 <body>  
 <div>
   <div>
     <div class="container-fluid">
+      {{-- <div class="col-md-12 mt-3 pr-10">
+        <small><nav aria-label="breadcrumb">
+            <ol class="breadcrumb" >
+              <li class="breadcrumb-item"><a href="{{ url('/profile/view') }}" style="color: blue">View Profile</a></li>
+            </ol>
+        </nav></small>
+      </div> --}}
         <div class="page-header min-height-250 border-radius-xl mt-4" style="background-image: url('../assets/img/curved-images/curved0.jpg'); background-position-y: 50%;">
           <span class="mask bg-gradient-primary opacity-6"></span>
         </div>

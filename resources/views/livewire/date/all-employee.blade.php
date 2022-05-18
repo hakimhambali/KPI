@@ -1,3 +1,4 @@
+@include('layouts.navbars.auth.nav')
 <div>
   <!-------------------------------- ADD DATE --------------------------------------------->
   <div class="container-fluid pb-4">

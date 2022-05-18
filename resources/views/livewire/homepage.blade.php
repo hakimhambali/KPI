@@ -1,4 +1,4 @@
-
+@include('layouts.navbars.auth.nav')
 <?php $id_announcement=1 ?>
 <div>
   <style>

@@ -1,3 +1,4 @@
+@include('layouts.navbars.auth.nav')
 <div class="container-fluid py-4">
     <div class="row px-2">
         <div class="card bg-gradient-danger">

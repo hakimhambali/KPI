@@ -1,6 +1,17 @@
+@include('layouts.navbars.auth.nav')
 <body>
 
 <div class="container-fluid py-4">
+  {{-- <div class="col-md-12 mt-3 pr-10">
+    <small>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" >
+            <li class="breadcrumb-item"><a href="{{ url('/profile/view') }}" style="color: blue">View Profile</a></li>
+            <li class="breadcrumb-item"><a href="{{ url('/profile/edit') }}" style="color: blue">Edit Profile</a></li>
+        </ol>
+      </nav>
+    </small>
+  </div> --}}
     <div class="row">
         <form action="{{ url('employee/profile/update/'.Auth::user()->id) }}" method="post">   
         @csrf 

@@ -1,3 +1,4 @@
+@include('layouts.navbars.auth.nav')
 <div>
   <div>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">        

@@ -1,4 +1,5 @@
 @section('content')
+@include('layouts.navbars.auth.nav')
   @extends('layouts.app')
   <div>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"> 

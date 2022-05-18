@@ -24,7 +24,7 @@
             </main>
         @else
             @include('layouts.navbars.auth.sidebar')
-            @include('layouts.navbars.auth.nav')
+            {{-- @include('layouts.navbars.auth.nav') --}}
             @include('components.plugins.fixed-plugin')
             @if (isset($slot))
                 {{ $slot }} 

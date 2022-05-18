@@ -1,3 +1,4 @@
+{{-- {{dd($kpiall)}} --}}
 <main class="main-content mt-1 border-radius-lg">
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
         navbar-scroll="true">
@@ -9,13 +10,79 @@
                         </li>
                     @endif
 
-                    @if (Route::currentRouteName() == 'Kpi' || Route::currentRouteName() == 'Kecekapan' || Route::currentRouteName() == 'Nilai' || Route::currentRouteName() == 'Display-KPI')
+                    {{-- {{dd(request()->route()->uri)}} --}}
+                    {{-- {{dd(Route::currentRouteName())}} --}}
+                    @if (Auth::user()->role == "hr")
+                        @if (request()->route()->uri == 'view-date/{user_id}' || request()->route()->uri == 'hr-manager/view/training-coaching/{id}')
+                            <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/dashboard-hr">Dashboard Hr</a>
+                            </li>
+                        @endif
+                    @endif
+
+                    @if (Auth::user()->role == "manager")
+                        @if (request()->route()->uri == 'view-date/{user_id}' || request()->route()->uri == 'hr-manager/view/training-coaching/{id}')
+                            <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/dashboard-manager">Dashboard Manager</a>
+                            </li>
+                        @endif
+
+                        {{-- @if (request()->route()->uri == 'manager-hr/view/kpi/{id}/{date_id}/{user_id}/{year}/{month}')
+                            <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/dashboard-manager">Dashboard Manager</a>
+                            </li>
+                            <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/view-date/{user_id}">View Date KPI Employee</a>
+                            </li>
+                        @endif
+
+                        @if (request()->route()->uri == 'manager/edit/kecekapan/{id_user}/{date_id}/{user_id}/{year}/{month}')
+                            <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/dashboard-manager">Dashboard Manager</a>
+                            </li>
+                            <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/view-date/{user_id}">View Date KPI Employee</a>
+                            </li>
+                            <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/manager-hr/view/kpi/{id}/{date_id}/{user_id}/{year}/{month}">View KPI Employee</a>
+                            </li>
+                        @endif --}}
+                    @endif
+
+                    @if (request()->route()->uri == 'hr/edit/coaching/{id}')
+                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/dashboard-hr">Dashboard Hr</a>
+                        </li>
+                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/hr-manager/view/training-coaching/{{$id}}">View Training & Coaching Employee</a>
+                        </li>
+                    @endif
+
+                    @if (request()->route()->uri == 'employee/edit/kpi/{id}/{date_id}/{user_id}/{year}/{month}' || request()->route()->uri == 'employee/edit/kpimaster/{id}/{date_id}/{user_id}/{year}/{month}')
+                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/add-date">Add Date</a>
+                        </li>
+                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/employee/kpi/{date_id}/{user_id}/{year}/{month}">Kpi</a>
+                        </li>
+                    @endif
+
+                    @if (request()->route()->uri == 'employee/edit/kecekapan/{id}/{date_id}/{user_id}/{year}/{month}')
                         <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/add-date">Add Date</a>
                         </li>
                     @endif
 
-                    @if (Route::currentRouteName() == 'sop' || Route::currentRouteName() == 'policy')
+                    @if (request()->route()->uri == 'employee/edit/nilai/{id}/{date_id}/{user_id}/{year}/{month}')
                         <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/add-date">Add Date</a>
+                        </li>
+                    @endif
+
+                    @if (Route::currentRouteName() == 'Kpi' || Route::currentRouteName() == 'Kecekapan' || Route::currentRouteName() == 'Nilai' || Route::currentRouteName() == 'Display-KPI' || Route::currentRouteName() == 'Edit')
+                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/add-date">Add Date</a>
+                        </li>
+                    @endif
+
+                    @if (Route::currentRouteName() == 'policy_edit')
+                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/policy">Policy</a>
+                        </li>
+                    @endif
+
+                    @if (Route::currentRouteName() == 'sop_edit')
+                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/sop">SOP</a>
+                        </li>
+                    @endif
+
+                    @if (Route::currentRouteName() == 'memo_edit')
+                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/memo">Memo</a>
                         </li>
                     @endif
 
@@ -23,12 +90,72 @@
                         <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="javascript:;">User Management</a>
                         </li>
                     @endif
-
+                    
                     <li class="breadcrumb-item text-sm text-dark active text-capitalize" aria-current="page">
-                        {{ str_replace('-', ' ', Route::currentRouteName()) }}</li>
+                        @if (Route::currentRouteName() == 'coaching_edit')
+                            {{ str_replace('-', ' ', 'Edit Training & Coaching Employee') }}</li>
+                        @elseif (Route::currentRouteName() == 'policy_edit')
+                            {{ str_replace('-', ' ', 'Edit Policy') }}</li>
+                        @elseif (Route::currentRouteName() == 'sop_edit')
+                            {{ str_replace('-', ' ', 'Edit SOP') }}</li>
+                        @elseif (Route::currentRouteName() == 'Edit')
+                            {{ str_replace('-', ' ', 'Edit Date') }}</li>
+                        @elseif (Route::currentRouteName() == 'memo_edit')
+                            {{ str_replace('-', ' ', 'Edit Memo') }}</li>
+                        @elseif (Route::currentRouteName() != NULL)
+                            {{ str_replace('-', ' ', Route::currentRouteName()) }}</li>
+                        @elseif (request()->route()->uri == 'view-date/{user_id}')
+                            {{ str_replace('-', ' ', 'View KPI Employee') }}</li>
+                        @elseif (request()->route()->uri == 'hr-manager/view/training-coaching/{id}')
+                            {{ str_replace('-', ' ', 'View Training & Coaching Employee') }}</li>
+                        @elseif (request()->route()->uri == 'employee/edit/kpi/{id}/{date_id}/{user_id}/{year}/{month}')
+                            {{ str_replace('-', ' ', 'Edit KPI') }}</li>
+                        @elseif (request()->route()->uri == 'employee/edit/kpimaster/{id}/{date_id}/{user_id}/{year}/{month}')
+                            {{ str_replace('-', ' ', 'Edit KPIMaster') }}</li>
+                        @elseif (request()->route()->uri == 'employee/edit/kecekapan/{id}/{date_id}/{user_id}/{year}/{month}')
+                            {{ str_replace('-', ' ', 'Edit Kecekapan') }}</li>
+                        @elseif (request()->route()->uri == 'employee/edit/nilai/{id}/{date_id}/{user_id}/{year}/{month}')
+                            {{ str_replace('-', ' ', 'Edit Nilai') }}</li>
+                        @elseif (request()->route()->uri == 'view-date/{user_id}')
+                            {{ str_replace('-', ' ', 'View Date KPI Employee') }}</li>
+                        {{-- @elseif (request()->route()->uri == 'manager-hr/view/kpi/{id}/{date_id}/{user_id}/{year}/{month}')
+                            {{ str_replace('-', ' ', 'View KPI Employee') }}</li>
+                        @elseif (request()->route()->uri == 'manager/edit/kecekapan/{id_user}/{date_id}/{user_id}/{year}/{month}')
+                            {{ str_replace('-', ' ', 'Edit KPI Employee') }}</li> --}}
+                        @endif
                 </ol>
                 <h6 class="font-weight-bolder mb-0 text-capitalize">
-                    {{ str_replace('-', ' ', Route::currentRouteName()) }}</h6>
+                        @if (Route::currentRouteName() == 'coaching_edit')
+                            {{ str_replace('-', ' ', 'Edit Training & Coaching Employee') }}</li>
+                        @elseif (Route::currentRouteName() == 'policy_edit')
+                            {{ str_replace('-', ' ', 'Edit Policy') }}</li>
+                        @elseif (Route::currentRouteName() == 'sop_edit')
+                            {{ str_replace('-', ' ', 'Edit SOP') }}</li>
+                        @elseif (Route::currentRouteName() == 'Edit')
+                            {{ str_replace('-', ' ', 'Edit Date') }}</li>
+                        @elseif (Route::currentRouteName() == 'memo_edit')
+                            {{ str_replace('-', ' ', 'Edit Memo') }}</li>
+                        @elseif (Route::currentRouteName() != NULL)
+                            {{ str_replace('-', ' ', Route::currentRouteName()) }}</li>
+                        @elseif (request()->route()->uri == 'view-date/{user_id}')
+                            {{ str_replace('-', ' ', 'View KPI Employee') }}</li>
+                        @elseif (request()->route()->uri == 'hr-manager/view/training-coaching/{id}')
+                            {{ str_replace('-', ' ', 'View Training & Coaching Employee') }}</li>
+                        @elseif (request()->route()->uri == 'employee/edit/kpi/{id}/{date_id}/{user_id}/{year}/{month}')
+                            {{ str_replace('-', ' ', 'Edit KPI') }}</li>
+                        @elseif (request()->route()->uri == 'employee/edit/kpimaster/{id}/{date_id}/{user_id}/{year}/{month}')
+                            {{ str_replace('-', ' ', 'Edit KPIMaster') }}</li>
+                        @elseif (request()->route()->uri == 'employee/edit/kecekapan/{id}/{date_id}/{user_id}/{year}/{month}')
+                            {{ str_replace('-', ' ', 'Edit Kecekapan') }}</li>
+                        @elseif (request()->route()->uri == 'employee/edit/nilai/{id}/{date_id}/{user_id}/{year}/{month}')
+                            {{ str_replace('-', ' ', 'Edit Nilai') }}</li>
+                        @elseif (request()->route()->uri == 'view-date/{user_id}')
+                            {{ str_replace('-', ' ', 'View Date KPI Employee') }}</li>
+                        {{-- @elseif (request()->route()->uri == 'manager-hr/view/kpi/{id}/{date_id}/{user_id}/{year}/{month}')
+                            {{ str_replace('-', ' ', 'View KPI Employee') }}</li>
+                        @elseif (request()->route()->uri == 'manager/edit/kecekapan/{id_user}/{date_id}/{user_id}/{year}/{month}')
+                            {{ str_replace('-', ' ', 'Edit KPI Employee') }}</li> --}}
+                        @endif
             </nav>
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 d-flex justify-content-end" id="navbar">
                 <ul class="navbar-nav justify-content-end">

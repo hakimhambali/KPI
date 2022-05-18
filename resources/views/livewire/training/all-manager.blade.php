@@ -21,6 +21,7 @@
   @endif
 @endforeach 
 @section('content')
+@include('layouts.navbars.auth.nav')
   @extends('layouts.app')
 <div>
     <div>
@@ -50,7 +51,7 @@
       </div>	
       @endif
 
-    @if ((Auth::user()->role == "admin") ||  (Auth::user()->role == "hr") || ($user_id != NULL))
+    @if ((Auth::user()->role == "admin") ||  (Auth::user()->role == "hr"))
       <div class="row">
         <div class="col-md-12 mb-3">      
           <div class="card">
