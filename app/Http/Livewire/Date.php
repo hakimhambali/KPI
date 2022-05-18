@@ -271,10 +271,10 @@ class Date extends Component
 
         $kpiall = KPIAll_::all();
         $user = User::where('id', '=', $user_id)->get();
-        if (auth()->user()->role == "manager") {
+        if (auth()->user()->role == "manager" || auth()->user()->role == "admin") {
             $date = Date_::where('user_id', '=', $user_id)->orderByRaw($yearOrder)->orderByRaw($monthOrder)->get();
             $kpi = KPI_::where('user_id', '=', $user_id)->get();
-        } else if(auth()->user()->role == "hr"){
+        } else if(auth()->user()->role == "hr" || auth()->user()->role == "admin"){
             $date = Date_::where('user_id', '=', $user_id)->orderByRaw($yearOrder)->orderByRaw($monthOrder)->get();
             $kpi = KPI_::where('user_id', '=', $user_id)->get();
         }

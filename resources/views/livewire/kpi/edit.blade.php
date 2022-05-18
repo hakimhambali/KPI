@@ -14,8 +14,7 @@
     background-color: #000000;
     border: 2px solid #000000;
   }
-</style>  
-
+</style>
 
 @section('content')
 @include('layouts.navbars.auth.nav')
@@ -38,7 +37,6 @@
         </div>
         @enderror
 
-        <!----------------------------------------------------------------------------------------------------->
         <div class="row">
           <div class="col-md-12 mb-lg-0">
             @if (session('message'))
@@ -78,10 +76,10 @@
                       <label class="form-label">Function<span class="text-danger">*</span></label>
                       <div class="mb-0" class="@error('fungsi') @enderror">
                         <select class="form-select" id="fungsi" name="fungsi" required>
-                          <option selected class="bg-secondary text-white" value="{{  $kpi->fungsi  }}" >{{  $kpi->fungsi  }}</option>
+                          <option selected class="bg-secondary text-white" value="{{ $kpi->fungsi }}" >{{ $kpi->fungsi }}</option>
 
                           @foreach ($function as $functions)
-                            <option value="{{$functions->name}}">{{$functions->name}}</option>
+                            <option value="{{ $functions->name }}">{{ $functions->name }}</option>
                           @endforeach 
 
                         </select>
@@ -200,9 +198,7 @@
     </div>
   </div>    
 
-   <!-- Calculation JS -->
-   <script src="{{asset('assets/js/master.js')}}"></script>
+  <!-- Calculation JS -->
+  <script src="{{asset('assets/js/master.js')}}"></script>
   <script src="{{url('assets/js/core/bootstrap.min.js')}}"></script>
- 
-
-  @endsection
+@endsection

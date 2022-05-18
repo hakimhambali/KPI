@@ -5,8 +5,9 @@
             <p class="text-white text-center my-2 fst-italic fs-2 fw-bolder">ORGANIZATIONAL CHART</p>
         </div>
     </div>
-
+    
     <div class="my-2 p-4 bg-dark">
+        {{-- FIRST ROW -------------------------------------------------------------------------------------------------}}
         <div class="row">
             <div class="col-md-3 mb-2 mx-auto mb-4">
                 <div class="card bg-light">
@@ -14,12 +15,14 @@
                         <div class="row mx-auto">
                             <img src="../assets/img/najib.png" alt="img-blur-shadow" class="float-center">
                         </div>
-                            <p class="fw-bolder text-center text-md mb-0">Najib Assadok</p>
-                            <p class="fw-bolder text-center text-xs">Chief Executive Officer (CEO)</p>
+                        <p class="fw-bolder text-center text-md mb-0">Najib Assadok</p>
+                        <p class="fw-bolder text-center text-xs">Chief Executive Officer (CEO)</p>
                     </div>
                 </div>
             </div>
         </div>
+
+        {{-- SECOND ROW -------------------------------------------------------------------------------------------------}}
         <div class="row">
             <div class="col-md-3 mb-2 mx-auto mb-4">
                 <div class="card bg-light">
@@ -27,13 +30,14 @@
                         <div class="row mx-auto">
                             <img src="../assets/img/iyzah.png" alt="img-blur-shadow" class="float-center">
                         </div>
-                            <p class="fw-bolder text-center text-md mb-0">Iyzah Rahiman</p>
-                            <p class="fw-bolder text-center text-xs">Board of Director (BOD)</p>
+                        <p class="fw-bolder text-center text-md mb-0">Iyzah Rahiman</p>
+                        <p class="fw-bolder text-center text-xs">Board of Director (BOD)</p>
                     </div>
-                    
                 </div>
             </div>
         </div>
+
+        {{-- THIRD ROW -------------------------------------------------------------------------------------------------}}
         <div class="row justify-content-center">
             <div class="col-md-3 mb-2 mb-4">
                 <div class="card bg-light">
@@ -41,12 +45,11 @@
                         <div class="row ">
                             <img src="../assets/img/afida.png" alt="img-blur-shadow" class="float-center">
                         </div>
-                            <p class="fw-bolder text-center text-md mb-0">Afida Azimi</p>
-                            <p class="fw-bolder text-center text-xs">Chief Administrative Officer (CAO)</p>
-                            <p class="text-center text-xs mb-1">afida@momentuminternet.com</p>
-                            <p class="text-center text-xs">60107048894</p>
+                        <p class="fw-bolder text-center text-md mb-0">Afida Azimi</p>
+                        <p class="fw-bolder text-center text-xs">Chief Administrative Officer (CAO)</p>
+                        <p class="text-center text-xs mb-1">afida@momentuminternet.com</p>
+                        <p class="text-center text-xs">60107048894</p>
                     </div>
-                    
                 </div>
             </div>
             <div class="col-md-3 mb-2 mb-4">
@@ -55,12 +58,11 @@
                         <div class="row">
                             <img src="../assets/img/redza.png" alt="img-blur-shadow" class="float-center">
                         </div>
-                            <p class="fw-bolder text-center text-md mb-0">Redza Nazri</p>
-                            <p class="fw-bolder text-center text-xs">Chief Operating Officer (COO)</p>
-                            <p class="text-center text-xs mb-1">redza@momentuminternet.com</p>
-                            <p class="text-center text-xs">60182139984</p>
+                        <p class="fw-bolder text-center text-md mb-0">Redza Nazri</p>
+                        <p class="fw-bolder text-center text-xs">Chief Operating Officer (COO)</p>
+                        <p class="text-center text-xs mb-1">redza@momentuminternet.com</p>
+                        <p class="text-center text-xs">60182139984</p>
                     </div>
-                    
                 </div>
             </div>
             <div class="col-md-3 mb-2 mb-4">
@@ -78,6 +80,8 @@
                 </div>
             </div>
         </div>
+
+        {{-- FOURTH ROW -------------------------------------------------------------------------------------------------}}
         <div class="row">
             <div class="col-md-3 mb-2 mx-auto mb-4">
                 <div class="card bg-light">
@@ -92,6 +96,8 @@
                 </div>
             </div>
         </div>
+
+        {{-- FIFTH ROW -------------------------------------------------------------------------------------------------}}
         <div class="row">
             <div class="col-md-3 mb-2 mx-auto mb-4">
                 <div class="card bg-light">
@@ -141,6 +147,6 @@
                 </div>
             </div>
         </div>
+
     </div>
 </div>
-

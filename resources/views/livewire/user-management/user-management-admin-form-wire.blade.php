@@ -23,7 +23,7 @@
                                     <div class="row">
                                         <div class="col-md-3 mb-3">
                                             <label class="form-label">Team Name</label>
-                                            <input wire:model="name" type="text" id="name" name="name" class="form-control text-xs" placeholder="Tema Full Name">
+                                            <input wire:model="name" type="text" id="name" name="name" class="form-control text-xs" placeholder="Tema Full Name" autofocus>
                                             @error('name') <span class="error">{{ $message }}</span> @enderror
                                         </div>
 

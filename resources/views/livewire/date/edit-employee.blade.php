@@ -3,6 +3,7 @@
 @section('content')
 @include('layouts.navbars.auth.nav')
   @extends('layouts.app')
+
     <div class="wrapper">
       <div id="content">    
           
@@ -91,37 +92,29 @@
 
       </div>  
     </div>
-    
-</div>
-      @push('scripts')
-        
+      
+    @push('scripts')
       <script>
         document.addEventListener('livewire:load', function () {
-      
-      
-          $(document).on("click", ".data-delete", function (e) 
-              {
-                  e.preventDefault();
-                  swal({
-                  title: "Are you sure?",
-                  text: "Once deleted, you will not be able to recover!",
-                  icon: "warning",
-                  buttons: true,
-                  dangerMode: true,
-                  })
-                  .then((willDelete) => {
-                  if (willDelete) {
-                      e.preventDefault();
-                      Livewire.emit('delete')
-                  } 
-                  });
-              });
+          $(document).on("click", ".data-delete", function (e) {
+            e.preventDefault();
+            swal({
+              title: "Are you sure?",
+              text: "Once deleted, you will not be able to recover!",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+            })
+            .then((willDelete) => {
+              if (willDelete) {
+                e.preventDefault();
+                Livewire.emit('delete')
+              } 
+            });
+          });
         })
       </script>
+    @endpush
       
-      @endpush
-    
-    </body>
-    </div>
-    @endsection
-  </div>
+  @endsection
+</div>

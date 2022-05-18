@@ -1,13 +1,12 @@
-{{--------------------------------------------------- EDIT KPI MASTER --------------------------------------------------}}
+{{--------------------------------------------------- EDIT KPI MASTER(EMPLOYEE) --------------------------------------------------}}
 @section('content')
 @include('layouts.navbars.auth.nav')
-@extends('layouts.app')
+  @extends('layouts.app')
 
-<div class="container-fluid pb-4">
-  <div class="row">
-    <div class="col-lg-12">
+  <div class="container-fluid pb-4">
+    <div class="row">
+      <div class="col-lg-12">
 
-      <!----------------------------------------------------------------------------------------------------->
         <div class="row">
           <div class="col-md-12 mb-lg-0">
             @if (session('message'))

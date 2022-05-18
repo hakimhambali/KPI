@@ -1,99 +1,93 @@
 @include('layouts.navbars.auth.nav')
 <div>
   {{--------------------------------------------------- NILAI (ALL USER) --------------------------------------------------}}
-  <div class="container-fluid pb-4">
+  <div class="container-fluid my-3">
     <div class="row">
-      <div class="col-lg-12">
-
-        <div class="row">
-          <div class="col-md-12 mb-lg-0">
+      <div class="col-md-12 ">
                   
-            <div class="card mb-4 bg-gradient-light">  
-              <div class="card-body">
-                <h6>List Nilai Teras (For Reference Only)</h6><hr>
+        <div class="card bg-gradient-light">  
+          <div class="card-body">
+            <h6>List Nilai Teras (For Reference Only)</h6><hr>
 
-                <div class="row">
-                  <div class="table-responsive">
-                    <table class="table table-sm align-middle fw-bold">
-                      <thead class="text-center text-xxs fw-bolder">
-                        <tr>
-                          <th class="col-1">NO</th>
-                          <th>NILAI TERAS</th>
-                          <th class="col-8">EXPECTED RESULT</th>
-                        </tr>
-                      </thead>
+            <div class="row">
+              <div class="table-responsive">
+                <table class="table table-sm align-middle fw-bold">
+                  <thead class="text-center text-xxs fw-bolder">
+                    <tr>
+                      <th class="col-1">NO</th>
+                      <th>NILAI TERAS</th>
+                      <th class="col-8">EXPECTED RESULT</th>
+                    </tr>
+                  </thead>
 
-                      <tbody>
-                        <tr>
-                          <td class="text-xs text-center">1</td>
-                          <td class="text-xs text-center">Kepimpinan</td>
-                          <td class="text-xs"><br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami adalah pemimpin yang bertanggungjawab.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami memberikan contoh yang baik.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami melaksanakan setiap apa yang diperkatakan.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami menjadi inspirasi untuk berubah lebih baik.<br><br>
-                          </td>
-                        </tr>
+                  <tbody>
+                    <tr>
+                      <td class="text-xs text-center">1</td>
+                      <td class="text-xs text-center">Kepimpinan</td>
+                      <td class="text-xs"><br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami adalah pemimpin yang bertanggungjawab.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami memberikan contoh yang baik.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami melaksanakan setiap apa yang diperkatakan.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami menjadi inspirasi untuk berubah lebih baik.<br><br>
+                      </td>
+                    </tr>
 
-                        <tr>
-                          <td class="text-xs text-center">2</td>
-                          <td class="text-xs text-center">Perkembangan</td>
-                          <td class="text-xs"><br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami ambil peduli dengan peningkatan hidup sendiri.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami sentiasa menambah dan meningkatkan ilmu pengetahuan.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami memupuk sikap ingin sentiasa berjaya.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami sentiasa memperbaiki dan memajukan diri di setiap saat.<br><br>
-                          </td>
-                        </tr>
+                    <tr>
+                      <td class="text-xs text-center">2</td>
+                      <td class="text-xs text-center">Perkembangan</td>
+                      <td class="text-xs"><br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami ambil peduli dengan peningkatan hidup sendiri.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami sentiasa menambah dan meningkatkan ilmu pengetahuan.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami memupuk sikap ingin sentiasa berjaya.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami sentiasa memperbaiki dan memajukan diri di setiap saat.<br><br>
+                      </td>
+                    </tr>
 
-                        <tr>
-                          <td class="text-xs text-center">3</td>
-                          <td class="text-xs text-center">Keputusan</td>
-                          <td class="text-xs"><br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami membantu menggilap potensi orang lain.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami memastikan pelanggan mencapai keputusan cemerlang.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami komited dengan hasil usaha yang dilakukan.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami berusaha untuk memberikan yang terbaik.<br><br>
-                          </td>
-                        </tr>
+                    <tr>
+                      <td class="text-xs text-center">3</td>
+                      <td class="text-xs text-center">Keputusan</td>
+                      <td class="text-xs"><br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami membantu menggilap potensi orang lain.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami memastikan pelanggan mencapai keputusan cemerlang.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami komited dengan hasil usaha yang dilakukan.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami berusaha untuk memberikan yang terbaik.<br><br>
+                      </td>
+                    </tr>
 
-                        <tr>
-                          <td class="text-xs text-center">4</td>
-                          <td class="text-xs text-center">Sumbangan</td>
-                          <td class="text-xs"><br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami menghulurkan bantuan dengan sepenuh semangat dan jiwa kami.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami membantu mengatasi kelemahan dan membina kekuatan pelanggan.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami komited untuk memberi manfaat dan menyebarkan kebaikan.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami bertanggungjawab dengan orang sekeliling dan persekitaran.<br><br>
-                          </td>
-                        </tr>
+                    <tr>
+                      <td class="text-xs text-center">4</td>
+                      <td class="text-xs text-center">Sumbangan</td>
+                      <td class="text-xs"><br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami menghulurkan bantuan dengan sepenuh semangat dan jiwa kami.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami membantu mengatasi kelemahan dan membina kekuatan pelanggan.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami komited untuk memberi manfaat dan menyebarkan kebaikan.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami bertanggungjawab dengan orang sekeliling dan persekitaran.<br><br>
+                      </td>
+                    </tr>
 
-                        <tr>
-                          <td class="text-xs text-center">5</td>
-                          <td class="text-xs text-center">Rohani</td>
-                          <td class="text-xs"><br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami adalah hamba Allah.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami membantu orang untuk mendapat kehidupan yang lebih baik.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami bangkit berjaya dengan memajukan orang lain.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami sentiasa beriman dan percaya dengan Qada’ dan Qadar.<br><br>
-                          </td>
-                        </tr>
+                    <tr>
+                      <td class="text-xs text-center">5</td>
+                      <td class="text-xs text-center">Rohani</td>
+                      <td class="text-xs"><br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami adalah hamba Allah.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami membantu orang untuk mendapat kehidupan yang lebih baik.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami bangkit berjaya dengan memajukan orang lain.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami sentiasa beriman dan percaya dengan Qada’ dan Qadar.<br><br>
+                      </td>
+                    </tr>
 
-                        <tr>
-                          <td class="text-xs text-center">6</td>
-                          <td class="text-xs text-center">Keluarga</td>
-                          <td class="text-xs"><br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami sangat menyayangi keluarga kami.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami berusaha untuk berikan yang terbaik kepada keluarga kami.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami tidak akan mengabaikan keluarga kami.<br>
-                            <i class="bi bi-heart-pulse-fill"></i> Kami percaya kebahagiaan keluarga adalah kebahagiaan kami.
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-
+                    <tr>
+                      <td class="text-xs text-center">6</td>
+                      <td class="text-xs text-center">Keluarga</td>
+                      <td class="text-xs"><br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami sangat menyayangi keluarga kami.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami berusaha untuk berikan yang terbaik kepada keluarga kami.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami tidak akan mengabaikan keluarga kami.<br>
+                        <i class="bi bi-heart-pulse-fill"></i> Kami percaya kebahagiaan keluarga adalah kebahagiaan kami.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
 
@@ -103,13 +97,11 @@
       </div>
     </div>
   </div>
-
   
   <!---------------------------------- NILAI FORM ------------------------------------------------------------------------------------------>
-
-  <div class="container-fluid pb-4">
+  <div class="container-fluid pb-3">
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-md-12">
         @if (session('message'))
           <div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>{{ session('message') }}</strong>
@@ -123,9 +115,9 @@
         @endif
 
         @if ($status == 'Submitted' || $status == 'Signed By Manager' || $status == 'Completed') 
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <strong>Warning ! If you want to add, edit or delete any Nilai Teras, status of this KPI will set to default (Not Submitted)</strong>
-        </div>
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Warning ! If you want to add, edit or delete any Nilai Teras, status of this KPI will set to default (Not Submitted)</strong>
+          </div>
         @else
         @endif
 
@@ -190,6 +182,7 @@
       </div>
     </div>
   </div>
+
   {{--------------------------------- Inserted Nilai Teras ---------------------------------------------------------------}}
   @if(!empty($nilai) && $nilai->count())
     <div class="container-fluid pb-4">
@@ -210,7 +203,7 @@
                       <th>EMPLOYEE SCORE</th>
                       <th>MANAGER SCORE</th>
                       <th>ACTUAL SCORE</th>
-                      <th></th>
+                      <th>ACTION</th>
                     </tr>
                   </thead>
 
@@ -226,13 +219,8 @@
                         <td class="text-xs fw-bold text-center">{{ $nilais -> skor_penyelia }}</td>
                         <td class="text-xs fw-bold text-center">{{ $nilais -> skor_sebenar }}</td>
                         <td class="text-center">
-                          <a type="button" id="dropdownMenuButton" data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-ellipsis-v"></i>
-                          </a>
-                          <div class="dropdown-menu">
-                            <a href="{{ url('employee/edit/nilai/'.$nilais->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="dropdown-item text-dark fw-bold">EDIT</a>
-                            <button type="button" wire:click="selectItem({{$nilais->id}})" class="dropdown-item text-danger fw-bold data-delete" data-form="{{$nilais->id}}">DELETE</a>
-                          </div>
+                          <a href="{{ url('employee/edit/nilai/'.$nilais->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" class="btn btn-dark btn-sm btn-icon my-auto" data-bs-toggle="tooltip" data-bs-original-title="Edit Nilai"><i class="bi bi-pencil-square"></i></a>
+                          <button type="button" wire:click="selectItem({{$nilais->id}})" class="btn btn-danger btn-sm btn-icon my-auto data-delete" data-form="{{$nilais->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete Nilai"><i class="bi bi-trash3-fill"></i></button>
                         </td>
                       </tr>
                     @endforeach
@@ -248,41 +236,30 @@
     </div>
   @else
   @endif
-{{-- ------------------------------------------------------------------------------------------------------------------- --}}
-       
-  </div>
 
-  @push('scripts')
-    
   {{-- START SECTION - SCRIPT FOR DELETE BUTTON  --}}
-  <script>
-    document.addEventListener('livewire:load', function () {
-  
-  
-      $(document).on("click", ".data-delete", function (e) 
-          {
+  @push('scripts') 
+    <script>
+      document.addEventListener('livewire:load', function () {
+        $(document).on("click", ".data-delete", function (e) {
+          e.preventDefault();
+          swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
               e.preventDefault();
-              swal({
-              title: "Are you sure?",
-              text: "Once deleted, you will not be able to recover!",
-              icon: "warning",
-              buttons: true,
-              dangerMode: true,
-              })
-              .then((willDelete) => {
-              if (willDelete) {
-                  e.preventDefault();
-                  Livewire.emit('delete')
-              } 
-              });
+              Livewire.emit('delete')
+            } 
           });
-    })
-  </script>
-  {{-- END SECTION - SCRIPT FOR DELETE BUTTON  --}}
-  
+        });
+      })
+    </script>
   @endpush
- <!-- Master Pencapaian JS -->
-<script src="{{asset('assets/js/nilai.js')}}"></script>
-
-</body>
+  <!-- Master Pencapaian JS -->
+  <script src="{{asset('assets/js/nilai.js')}}"></script>
 </div>

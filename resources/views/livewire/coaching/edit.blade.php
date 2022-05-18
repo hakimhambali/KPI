@@ -2,6 +2,7 @@
 @include('layouts.navbars.auth.nav')
   @extends('layouts.app')
   <div>
+    {{-- EDIT COACHING FORM (HR) -----------------------------------------------------------------------------------------}}
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"> 
     <body>
       <div class="container-fluid py-4">

@@ -18,7 +18,7 @@
       </div>
     </div>
     
-    {{---------------------------- View All Date ---------------------------------}}
+    {{---------------------------- View All Date (HR & MANAGER) ---------------------------------}}
     <div class="card">
       <div class="card-body">
         <h6 class="mb-3">KPI HISTORY</h6>

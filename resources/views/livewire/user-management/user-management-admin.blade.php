@@ -77,7 +77,7 @@
                                         <td class="text-xs text-center font-weight-bold text-xs">{{$employee->role}}</td>
                                         <td class="text-xs text-center font-weight-bold text-xs">{{$employee->created_at}}</td>
                                         <td>
-                                        <button type="button" wire:click="selectItem({{$employee->id}} , 'update' )" class="btn btn-sm waves-effect waves-light btn-dark" style="font-size: 10px" data-bs-toggle="tooltip" data-bs-original-title="Edit Employee Profile"><i class="fa fa-edit"></i></button>
+                                            <button type="button" wire:click="selectItem({{$employee->id}} , 'update' )" class="btn btn-sm waves-effect waves-light btn-dark" style="font-size: 10px" data-bs-toggle="tooltip" data-bs-original-title="Edit Employee Profile"><i class="fa fa-edit"></i></button>
                                             <button type="button" wire:click="selectItem({{$employee->id}} , 'delete' )" class="btn btn-sm waves-effect waves-light btn-danger data-delete" data-form="{{$employee->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete Employee"><i class="fas fa-trash-alt"></i></button>
                                         </td>
                                     </tr>

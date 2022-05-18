@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        {{---------------------------------------------------- manager update nilai -------------------------------------------}}
+        {{---------------------------------------------------- Manager Update Nilai -------------------------------------------}}
         <div class="card">
           <form action="{{ url('/manager/update/nilai/'.$user->id.'/'.$date_id.'/'.$user_id.'/'.$year.'/'.$month) }}" method="post">
             @csrf  
@@ -102,110 +102,110 @@
   </div>  
 
   {{----------------------------------------------------- REFERENCE NILAI TERAS --------------------------------------------}}
-<div class="container-fluid pb-4">
-  <div class="row">
-    <div class="col-lg-12">
+  <div class="container-fluid pb-4">
+    <div class="row">
+      <div class="col-lg-12">
 
-      <div class="row">
-        <div class="col-md-12 mb-lg-0">
-                
-          <div class="card mb-4 bg-gradient-light">  
-            <div class="card-body">
-              <h6>List Nilai Teras (For Reference Only)</h6><hr>
+        <div class="row">
+          <div class="col-md-12 mb-lg-0">
+                  
+            <div class="card mb-4 bg-gradient-light">  
+              <div class="card-body">
+                <h6>List Nilai Teras (For Reference Only)</h6><hr>
 
-              <div class="row">
-                <div class="table-responsive">
-                  <table class="table table-sm align-middle fw-bold">
-                    <thead class="text-center text-xxs fw-bolder">
-                      <tr>
-                        <th class="col-1">NO</th>
-                        <th>NILAI TERAS</th>
-                        <th class="col-8">EXPECTED RESULT</th>
-                      </tr>
-                    </thead>
+                <div class="row">
+                  <div class="table-responsive">
+                    <table class="table table-sm align-middle fw-bold">
+                      <thead class="text-center text-xxs fw-bolder">
+                        <tr>
+                          <th class="col-1">NO</th>
+                          <th>NILAI TERAS</th>
+                          <th class="col-8">EXPECTED RESULT</th>
+                        </tr>
+                      </thead>
 
-                    <tbody>
-                      <tr>
-                        <td class="text-xs text-center">1</td>
-                        <td class="text-xs text-center">Kepimpinan</td>
-                        <td class="text-xs"><br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami adalah pemimpin yang bertanggungjawab.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami memberikan contoh yang baik.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami melaksanakan setiap apa yang diperkatakan.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami menjadi inspirasi untuk berubah lebih baik.<br><br>
-                        </td>
-                      </tr>
+                      <tbody>
+                        <tr>
+                          <td class="text-xs text-center">1</td>
+                          <td class="text-xs text-center">Kepimpinan</td>
+                          <td class="text-xs"><br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami adalah pemimpin yang bertanggungjawab.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami memberikan contoh yang baik.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami melaksanakan setiap apa yang diperkatakan.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami menjadi inspirasi untuk berubah lebih baik.<br><br>
+                          </td>
+                        </tr>
 
-                      <tr>
-                        <td class="text-xs text-center">2</td>
-                        <td class="text-xs text-center">Perkembangan</td>
-                        <td class="text-xs"><br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami ambil peduli dengan peningkatan hidup sendiri.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami sentiasa menambah dan meningkatkan ilmu pengetahuan.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami memupuk sikap ingin sentiasa berjaya.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami sentiasa memperbaiki dan memajukan diri di setiap saat.<br><br>
-                        </td>
-                      </tr>
+                        <tr>
+                          <td class="text-xs text-center">2</td>
+                          <td class="text-xs text-center">Perkembangan</td>
+                          <td class="text-xs"><br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami ambil peduli dengan peningkatan hidup sendiri.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami sentiasa menambah dan meningkatkan ilmu pengetahuan.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami memupuk sikap ingin sentiasa berjaya.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami sentiasa memperbaiki dan memajukan diri di setiap saat.<br><br>
+                          </td>
+                        </tr>
 
-                      <tr>
-                        <td class="text-xs text-center">3</td>
-                        <td class="text-xs text-center">Keputusan</td>
-                        <td class="text-xs"><br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami membantu menggilap potensi orang lain.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami memastikan pelanggan mencapai keputusan cemerlang.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami komited dengan hasil usaha yang dilakukan.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami berusaha untuk memberikan yang terbaik.<br><br>
-                        </td>
-                      </tr>
+                        <tr>
+                          <td class="text-xs text-center">3</td>
+                          <td class="text-xs text-center">Keputusan</td>
+                          <td class="text-xs"><br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami membantu menggilap potensi orang lain.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami memastikan pelanggan mencapai keputusan cemerlang.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami komited dengan hasil usaha yang dilakukan.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami berusaha untuk memberikan yang terbaik.<br><br>
+                          </td>
+                        </tr>
 
-                      <tr>
-                        <td class="text-xs text-center">4</td>
-                        <td class="text-xs text-center">Sumbangan</td>
-                        <td class="text-xs"><br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami menghulurkan bantuan dengan sepenuh semangat dan jiwa kami.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami membantu mengatasi kelemahan dan membina kekuatan pelanggan.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami komited untuk memberi manfaat dan menyebarkan kebaikan.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami bertanggungjawab dengan orang sekeliling dan persekitaran.<br><br>
-                        </td>
-                      </tr>
+                        <tr>
+                          <td class="text-xs text-center">4</td>
+                          <td class="text-xs text-center">Sumbangan</td>
+                          <td class="text-xs"><br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami menghulurkan bantuan dengan sepenuh semangat dan jiwa kami.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami membantu mengatasi kelemahan dan membina kekuatan pelanggan.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami komited untuk memberi manfaat dan menyebarkan kebaikan.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami bertanggungjawab dengan orang sekeliling dan persekitaran.<br><br>
+                          </td>
+                        </tr>
 
-                      <tr>
-                        <td class="text-xs text-center">5</td>
-                        <td class="text-xs text-center">Rohani</td>
-                        <td class="text-xs"><br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami adalah hamba Allah.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami membantu orang untuk mendapat kehidupan yang lebih baik.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami bangkit berjaya dengan memajukan orang lain.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami sentiasa beriman dan percaya dengan Qada’ dan Qadar.<br><br>
-                        </td>
-                      </tr>
+                        <tr>
+                          <td class="text-xs text-center">5</td>
+                          <td class="text-xs text-center">Rohani</td>
+                          <td class="text-xs"><br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami adalah hamba Allah.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami membantu orang untuk mendapat kehidupan yang lebih baik.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami bangkit berjaya dengan memajukan orang lain.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami sentiasa beriman dan percaya dengan Qada’ dan Qadar.<br><br>
+                          </td>
+                        </tr>
 
-                      <tr>
-                        <td class="text-xs text-center">6</td>
-                        <td class="text-xs text-center">Keluarga</td>
-                        <td class="text-xs"><br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami sangat menyayangi keluarga kami.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami berusaha untuk berikan yang terbaik kepada keluarga kami.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami tidak akan mengabaikan keluarga kami.<br>
-                          <i class="bi bi-heart-pulse-fill"></i> Kami percaya kebahagiaan keluarga adalah kebahagiaan kami.
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                        <tr>
+                          <td class="text-xs text-center">6</td>
+                          <td class="text-xs text-center">Keluarga</td>
+                          <td class="text-xs"><br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami sangat menyayangi keluarga kami.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami berusaha untuk berikan yang terbaik kepada keluarga kami.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami tidak akan mengabaikan keluarga kami.<br>
+                            <i class="bi bi-heart-pulse-fill"></i> Kami percaya kebahagiaan keluarga adalah kebahagiaan kami.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
+
               </div>
-
             </div>
+
           </div>
-
         </div>
-      </div>
 
+      </div>
     </div>
   </div>
-</div>
-{{------------------------------------------------- End Testing -------------------------------------------------}}
-   <!-- Calculation JS -->
+  
+  <!-- Calculation JS -->
   <script src="{{asset('assets/js/nilai.js')}}"></script>
 
 </div>
