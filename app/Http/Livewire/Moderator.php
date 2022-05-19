@@ -103,6 +103,7 @@ class Moderator extends Component
             'created_at'=> Carbon::now(),
             'updated_at'=> Carbon::now(),
             'name'=> $request->name,
+            'desc'=> $request->desc,
             'status'=> 'active',
         ]);
 

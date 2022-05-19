@@ -22,21 +22,21 @@
                   <h6>ADD ROLE FORM</h6><hr>
 
                   <div class="row">
-                    <div class="col-md-7">
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text fw-bold">Role Name<span class="text-danger">* </span></span>
-                        </div>
-                        <input class="form-control" type="text" name="name" value="{{ old('name') }}" placeholder="Eg: Employee" required>
-                      </div>
+                    <div class="col-md-4 mb-3">
+                      <label class="form-label">Role Name<span class="text-danger">*</span></label>
+                      <input class="form-control" type="text" name="name" value="{{ old('name') }}" placeholder="Eg: Employee" required>
                     </div>
-                  
-                    
-                    <div class="col-md-5 my-auto">
-                      <button class="btn bg-gradient-dark btn-sm px-4" type="submit" href="javascript:;">SAVE</button>
+
+                    <div class="col-md-8 mb-3">
+                      <label class="form-label">Description<span class="text-danger">*</span></label>
+                      <input class="form-control" type="text" name="desc" value="{{ old('desc') }}" placeholder="Describe the role of user" required>
                     </div>
                   </div>
-                    
+                  
+                  <div class="col-md-12 text-end my-auto">
+                    <button class="btn bg-gradient-dark btn-sm px-4" type="submit" href="javascript:;">SAVE</button>
+                  </div>
+                  
                 </div>
               </div>
             </form>
@@ -59,6 +59,7 @@
                       <tr>
                         <th>NO</th>
                         <th>NAME</th>
+                        <th>DESCRIPTION</th>
                         <th>STATUS</th>
                         <th>ACTION</th>
                       </tr>
@@ -70,6 +71,7 @@
                         <tr>
                           <td class="text-sm text-center">{{$key + 1}}</td>
                           <td class="text-xs fw-bold text-uppercase">{{ $roles->name }}</td>
+                          <td class="text-xs fw-bold">{{ $roles->desc }}</td>
                           <td class="text-xs fw-bold text-center text-capitalize">{{ $roles->status }}</td>
                           <td class="text-center">
                             <button type="button" datax="{{$roles->id}}" class="btn btn-danger my-auto btn-sm btn-icon data-delete" data-bs-toggle="tooltip" data-bs-original-title="Delete"><i class="bi bi-trash3-fill"></i></button>
