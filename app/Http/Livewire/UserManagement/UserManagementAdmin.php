@@ -32,8 +32,8 @@ class UserManagementAdmin extends Component
 
     public function render()
     {
-        $users = User::where('role', 'admin')->orWhere('role', 'manager')->orWhere('role', 'hr')->orWhere('role', 'moderator')->get();
-        $employees = User::where('role', 'employee')->get();
+        $users = User::where('role', 'admin')->orWhere('role', 'manager')->orWhere('role', 'hr')->orWhere('role', 'moderator')->orderBy('role', 'ASC')->get();
+        $employees = User::where('role', 'employee')->orderBy('name', 'ASC')->get();
         $userscount = $users->count();
 
         return view('livewire.user-management.user-management-admin')->with(compact('userscount', 'users', 'employees'));

@@ -1,10 +1,7 @@
 @include('layouts.navbars.auth.nav')
 <body>
-
-<div class="container-fluid py-4">
-{{--------------------------------------------------- EDIT PERSONAL PROFILE --------------------------------------------------}}
-<body>
-  <div class="container-fluid pb-4">
+  {{--------------------------------------------------- EDIT PERSONAL PROFILE --------------------------------------------------}}
+  <div class="container-fluid py-4">
     <div class="row">
       <form action="{{ url('employee/profile/update/'.Auth::user()->id) }}" method="post">   
         @csrf 
@@ -15,8 +12,9 @@
             </div>	
           @endif
 
-          <div class="col-md-12 mb-lg-0 mb-4">
+          <div class="col-md-12 mb-4">
             <div class="card">
+
               <div class="card-header pb-0 p-3">
                 <div class="row">
                   <div class="col-6 d-flex align-items-center">
@@ -90,11 +88,11 @@
                 </div>
               </div>
 
-              
             </div>
           </div>
+          
         </div>
-        </form>  
+      </form>  
     </div>
-</div>
+  </div>
 </body>

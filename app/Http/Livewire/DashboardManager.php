@@ -24,8 +24,8 @@ class DashboardManager extends Component
         $unitOrder .= "ELSE 12 END";
 
         $userdepartment = auth()->user()->department;
-        $users = User::where([['department', '=', $userdepartment], ['role', '!=', 'admin'], ['role', '!=', 'moderator']])->orderByRaw($unitOrder)->get();
-        $units = User::selectRaw('count(id) as total, unit')->groupBy('unit')->where('department', $userdepartment)->get();
+        $users = User::where([['department', '=', $userdepartment], ['role', '!=', 'admin'], ['role', '!=', 'moderator']])->where('name', 'not like', "%Test%")->orderByRaw($unitOrder)->get();
+        $units = User::selectRaw('count(id) as total, unit')->groupBy('unit')->where('department', $userdepartment)->where('name', 'not like', "%Test%")->get();
         
         return view('livewire.dashboard.all-manager')->with(compact('users', 'userdepartment', 'units'));
     }

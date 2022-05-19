@@ -25,9 +25,9 @@
                                 <tbody>
                                     <tr>
                                         <td class="text-xs text-center font-weight-bold text-xs">{{$key+1}}</td>
-                                        <td class="text-xs font-weight-bold text-xs">{{$user->name}}</td>
+                                        <td class="text-xs font-weight-bold text-xs text-uppercase">{{$user->name}}</td>
                                         <td class="text-xs text-center font-weight-bold text-xs">{{$user->ic}}</td>
-                                        <td class="text-xs text-center font-weight-bold text-xs">{{$user->role}}</td>
+                                        <td class="text-xs text-center font-weight-bold text-xs text-uppercase">{{$user->role}}</td>
                                         <td class="text-xs text-center font-weight-bold text-xs">{{$user->created_at}}</td>
                                         <td class="text-center">
                                             <button type="button" wire:click="selectItem({{$user->id}} , 'update' )" class="btn btn-sm waves-effect waves-light btn-dark" style="font-size: 10px" data-bs-toggle="tooltip" data-bs-original-title="Edit User Profile"><i class="fa fa-edit"></i></button>
@@ -72,9 +72,9 @@
                                 <tbody>
                                     <tr>
                                         <td class="text-xs text-center font-weight-bold text-xs">{{$key+1}}</td>
-                                        <td class="text-xs font-weight-bold text-xs">{{$employee->name}}</td>
+                                        <td class="text-xs font-weight-bold text-xs text-uppercase">{{$employee->name}}</td>
                                         <td class="text-xs text-center font-weight-bold text-xs">{{$employee->ic}}</td>
-                                        <td class="text-xs text-center font-weight-bold text-xs">{{$employee->role}}</td>
+                                        <td class="text-xs text-center font-weight-bold text-xs text-uppercase">{{$employee->role}}</td>
                                         <td class="text-xs text-center font-weight-bold text-xs">{{$employee->created_at}}</td>
                                         <td>
                                             <button type="button" wire:click="selectItem({{$employee->id}} , 'update' )" class="btn btn-sm waves-effect waves-light btn-dark" style="font-size: 10px" data-bs-toggle="tooltip" data-bs-original-title="Edit Employee Profile"><i class="fa fa-edit"></i></button>

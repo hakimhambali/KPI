@@ -43,7 +43,7 @@ class DashboardHR extends Controller
         } else {
             $departmentArr[] = array();
             foreach ($department as $key => $departments) {
-                $user = User::where('role', '!=', 'moderator')->where('role', '!=', 'admin')->where('department', $departments->name)->orderByRaw($unitOrder)->orderBy('name')->get();
+                $user = User::where('role', '!=', 'moderator')->where('role', '!=', 'admin')->where('department', $departments->name)->where('name', 'not like', "%Test%")->orderByRaw($unitOrder)->orderBy('name')->get();
                 array_push($departmentArr, $user);
             }
         }

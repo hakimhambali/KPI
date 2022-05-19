@@ -52,7 +52,7 @@ class Homepage extends Component
     {        
         $data = Http::get("http://miapp.admin.x61tbrxchx-ewx3lmoq56zq.p.runcloud.link/api/programs/latest");
         $test= json_decode($data);
-
+        
         $announcement = Announcement_::all();
         $memo = Memo_::orderBy('created_at','desc')->take(4)->get();
         $users = User::orderBy('created_at','desc')->get();

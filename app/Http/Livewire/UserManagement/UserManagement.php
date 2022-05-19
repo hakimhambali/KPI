@@ -37,7 +37,7 @@ class UserManagement extends Component
 
         $roleArr[] = array();
         foreach ($role as $key => $roles) {
-            $user = User::where('role', $roles->name)->get();
+            $user = User::where('role', $roles->name)->orderBy('name', 'ASC')->get();
             array_push($roleArr, $user);
         }
 
