@@ -11,7 +11,7 @@ use Illuminate\Support\Carbon;
 class Training extends Component
 {
 
-    public function delete1($id)
+    public function delCoach($id)
     {
         $coaching = Coaching_::find($id);
         $coaching->delete();
@@ -19,7 +19,7 @@ class Training extends Component
         return redirect()->back()->with('message', 'Coaching deleted successfully');
     }
 
-    public function delete2($id)
+    public function delTrain($id)
     {
         $training = Training_::find($id);
         $training->delete();
@@ -106,23 +106,47 @@ class Training extends Component
         }
     }
 
-    public function manager_view($user_id) 
+    // display training & coaching as MANAGER & HR
+    public function manager_view(Request $request, $user_id) 
     {
-        $training = Training_::where('student_id', $user_id)->orderBy('updated_at', 'DESC')->get();
-        $coaching = Coaching_::where('trainer_id', $user_id)->orderBy('updated_at', 'DESC')->get();
         $user = User::where('id', $user_id)->get();
-        // $user = User::find($student_id);
-        // $name = $user->name;
-        // $searchName = User::where('name' , 'like' , '%'.$name.'%')->orderBy('created_at','desc')->get();
-        return view('livewire.training.all-manager', compact('training', 'coaching', 'user', 'user_id'));
+        $thisyear = Carbon::now()->format('Y');
+        $selectYear = $request->query('year');
+
+        // foreach($user as $users) {
+        //     dd(date('n', strtotime($users->starting_month)));
+        // }
+        
+
+        if($selectYear) 
+        {
+            $training = Training_::where('student_id', $user_id)->whereYear('date', $selectYear)->orderBy('date', 'desc')->get();
+            $coaching = Coaching_::where('trainer_id', $user_id)->whereYear('date', $selectYear)->orderBy('date', 'desc')->get();
+        } else {
+            $training = Training_::where('student_id', $user_id)->whereYear('date', $thisyear)->orderBy('date', 'desc')->get();
+            $coaching = Coaching_::where('trainer_id', $user_id)->whereYear('date', $thisyear)->orderBy('date', 'desc')->get();
+        }
+        
+        return view('livewire.training.all-manager', compact('training', 'coaching', 'user', 'user_id', 'thisyear', 'selectYear' ));
     }
 
-    public function employee_view() 
+    // display PERSONAL training & coaching
+    public function employee_view(Request $request) 
     {
-        $training = Training_::where('student_id', auth()->user()->id)->get();
-        $coaching = Coaching_::where('trainer_id', auth()->user()->id)->get();
         $user = User::where('id', auth()->user()->id)->get();
-        return view('livewire.training.all-employee', compact('training', 'coaching', 'user'));
+        $selectYear = $request->query('year');
+        $thisyear = Carbon::now()->format('Y');
+        
+        if($selectYear) 
+        {
+            $training = Training_::where('student_id', auth()->user()->id)->whereYear('date', $selectYear)->orderBy('date', 'desc')->get();
+            $coaching = Coaching_::where('trainer_id', auth()->user()->id)->whereYear('date', $selectYear)->orderBy('date', 'desc')->get();
+        } else {
+            $training = Training_::where('student_id', auth()->user()->id)->whereYear('date', $thisyear)->orderBy('date', 'desc')->get();
+            $coaching = Coaching_::where('trainer_id', auth()->user()->id)->whereYear('date', $thisyear)->orderBy('date', 'desc')->get();
+        }
+
+        return view('livewire.training.all-employee', compact('training', 'coaching', 'user', 'thisyear', 'selectYear'));
     }
 
     public function employee_month_save(Request $request, $user_id) 
@@ -132,6 +156,17 @@ class Training extends Component
             ]);
 
         return redirect()->back()->with('messagemonth', 'User training updated successfully');
+    }
+
+    public function index()
+    {
+        $user = User::all();
+        $names = [];
+        foreach($user as $numering => $num) {
+            $names[] = ucwords(strtolower($num->name));
+        }
+
+        return view('livewire.training.create', compact('user', 'names'));
     }
 
     public function render()

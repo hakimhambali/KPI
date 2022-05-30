@@ -9,17 +9,55 @@
   <?php $total_coaching += $coachings->hours ?>
 @endforeach
 
-@foreach ($user as $users)
-  @if ($users->starting_month != NULL)
-    <?php $trainingprorate = number_format( (80/12*(13-$users->starting_month)), 2); ?>
+@foreach ( $user as $users )
+  @if ( $users->starting_month != NULL )
+
+    @if ($selectYear == '')
+      @if ( $thisyear > date('Y', strtotime($users->starting_month)) )
+        <?php $trainingprorate = 80; ?>
+      @else
+        <?php $month = date('n', strtotime($users->starting_month)); ?>
+        <?php $trainingprorate = number_format( (80/12*(13-$month)), 2); ?>
+      @endif
+
+    @else
+      @if ( $selectYear > date('Y', strtotime($users->starting_month)) )
+        <?php $trainingprorate = 80; ?>
+      @elseif ( $selectYear < date('Y', strtotime($users->starting_month)) )
+        <?php $trainingprorate = NULL ?>
+      @else
+        <?php $month = date('n', strtotime($users->starting_month)); ?>
+        <?php $trainingprorate = number_format( (80/12*(13-$month)), 2); ?>
+      @endif
+    @endif
+
   @else
     <?php $trainingprorate = NULL ?>
   @endif
 @endforeach 
 
 @foreach ($user as $users)
-  @if ($users->starting_month != NULL)  
-    <?php $coachingprorate = number_format( (15/12*(13-$users->starting_month)), 2); ?>
+  @if ($users->starting_month != NULL)
+
+    @if ($selectYear == '')
+      @if ( $thisyear > date('Y', strtotime($users->starting_month)) )
+        <?php $coachingprorate = 15; ?>
+      @else 
+        <?php $month = date('n', strtotime($users->starting_month)); ?>
+        <?php $coachingprorate = number_format( (15/12*(13-$month)), 2); ?>
+      @endif
+
+    @else
+      @if ( $selectYear > date('Y', strtotime($users->starting_month)) )
+        <?php $coachingprorate = 15; ?>
+      @elseif ( $selectYear < date('Y', strtotime($users->starting_month)) )
+        <?php $coachingprorate = NULL ?>
+      @else 
+        <?php $month = date('n', strtotime($users->starting_month)); ?>
+        <?php $coachingprorate = number_format( (15/12*(13-$month)), 2); ?>
+      @endif
+    @endif
+
   @else
     <?php $coachingprorate = NULL ?>
   @endif
@@ -30,23 +68,6 @@
   @extends('layouts.app')
     <div>
       <div>
-        <style>
-          .solid {border-style: solid;}
-          input[type=file]::file-selector-button {
-            border: 2px solid #ffffff;
-            padding: .2em .4em;
-            border-radius: .7em;
-            background-color: #252f40;
-            border-color: #252f40;
-            color: white;
-            transition: 1s;
-          }
-          input[type=file]::file-selector-button:hover {
-            background-color: #000000;
-            border: 2px solid #000000;
-          }
-        </style> 
-
         <body>
           <div class="container-fluid">      
             <div class="row">
@@ -69,53 +90,61 @@
               </div>	
             @endif
 
+            <div class="row">
+              <div class="col-12">
+                <div class="alert alert-secondary mb-2">
+                  
+                  <form action="{{ url('/hr-manager/view/training-coaching/'.$user_id) }}" method="GET">
+                    <div class="row">
+                      <div class="col-3">
+                        @if ($selectYear == '')
+                          <h4 class="fw-bolder text-end">{{ $thisyear }}</h4>
+                        @else
+                          <h4 class="fw-bolder text-end">{{ $selectYear }}</h4>
+                        @endif
+                      </div>
+                      <div class="col-7">
+                        <select name="year" class="form-select form-select-sm  my-auto">
+                          @if ($selectYear == '')
+                            <option value="">-- Select Year --</option>
+                          @else
+                            <option selected value="{{$selectYear}}" class="bg-gray">{{ $selectYear }}</option>
+                          @endif
+                          <?php $yearArray = range(2021, 2050); ?>
+                          <?php
+                              foreach ($yearArray as $year) {
+                                echo '<option value="'.$year.'">'.$year.'</option>';
+                              }
+                          ?>
+                        </select>
+                      </div>
+                      <div class="col-1">
+                        <button class="btn btn-icon btn-sm btn-success  my-auto">
+                          <span class="fas fa-search"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+    
+                </div>
+              </div>
+            </div>
+
             {{-- START WORKING FORM (HR & ADMIN Only) -----------------------------------------------------------}}
             @if ((Auth::user()->role == "admin") ||  (Auth::user()->role == "hr") || ($user_id != NULL))
               <div class="row">
-                <div class="col-md-12 mb-2">      
-                  <div class="card">
+                <div class="col-md-12 mb-3">      
+                  <div class="card bg-gray">
                     <div class="card-body">
 
                       <form action="{{ url('employee/month/save/'.$user_id) }}" method="post">
                         @csrf  
                         <div class="row">
-                          <div class="col-md-6 mb-3">
+                          <div class="col-md-6">
                             <label class="form-label">Start Working (Month)<span class="text-danger">*</span></label>
-                            <div class="mb-0" class="@error('month') @enderror">
-                              <select class="form-select" wire:model="month" name="month" id="month" tabindex="1" required>
-                                @foreach ($user as $users)
-                                <option selected class="bg-secondary text-white" value="{{ $users->starting_month }}" >
-                                  @if ($users->starting_month == '1') 1 (January) 
-                                  @elseif ($users->starting_month == '2') 2 (February) 
-                                  @elseif ($users->starting_month == '3') 3 (March)
-                                  @elseif ($users->starting_month == '4') 4 (April)
-                                  @elseif ($users->starting_month == '5') 5 (May)
-                                  @elseif ($users->starting_month == '6') 6 (June)
-                                  @elseif ($users->starting_month == '7') 7 (July)
-                                  @elseif ($users->starting_month == '8') 8 (August)
-                                  @elseif ($users->starting_month == '9') 9 (September)
-                                  @elseif ($users->starting_month == '10') 10 (October)
-                                  @elseif ($users->starting_month == '11') 11 (November)
-                                  @elseif ($users->starting_month == '12') 12 (December)
-                                  @endif
-                                </option>
-                                @endforeach  
-                                <option value="">-- Choose Months --</option>
-                                <option value="1" >1 (January)</option>
-                                <option value="2" >2 (February)</option> 
-                                <option value="3" >3 (March)</option> 
-                                <option value="4" >4 (April)</option>
-                                <option value="5" >5 (May)</option>
-                                <option value="6" >6 (June)</option>
-                                <option value="7" >7 (July)</option>
-                                <option value="8" >8 (August)</option>
-                                <option value="9" >9 (September)</option>
-                                <option value="10" >10 (October)</option>
-                                <option value="11" >11 (November)</option>
-                                <option value="12" >12 (December)</option>
-                              </select>
-                              @error('month') <div class="text-danger">{{ $message }}</div> @enderror
-                            </div>
+                            @foreach ($user as $users)
+                              <input type="date" name="month" value="{{ $users->starting_month }}" class="form-control" required>
+                            @endforeach
                           </div>
                           <div class="col-md-6 my-auto text-end">
                             <button class="btn bg-gradient-dark btn-sm px-4" type="submit" href="javascript:;">SAVE</button>

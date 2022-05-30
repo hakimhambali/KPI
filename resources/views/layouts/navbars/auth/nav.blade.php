@@ -1,4 +1,3 @@
-{{-- {{dd($kpiall)}} --}}
 <main class="main-content mt-1 border-radius-lg">
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
         navbar-scroll="true">
@@ -10,8 +9,6 @@
                         </li>
                     @endif
 
-                    {{-- {{dd(request()->route()->uri)}} --}}
-                    {{-- {{dd(Route::currentRouteName())}} --}}
                     @if (Auth::user()->role == "hr")
                         @if (request()->route()->uri == 'view-date/{user_id}' || request()->route()->uri == 'hr-manager/view/training-coaching/{id}')
                             <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/dashboard-hr">Dashboard Hr</a>
@@ -24,22 +21,6 @@
                             <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/dashboard-manager">Dashboard Manager</a>
                             </li>
                         @endif
-
-                        {{-- @if (request()->route()->uri == 'manager-hr/view/kpi/{id}/{date_id}/{user_id}/{year}/{month}')
-                            <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/dashboard-manager">Dashboard Manager</a>
-                            </li>
-                            <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/view-date/{user_id}">View Date KPI Employee</a>
-                            </li>
-                        @endif
-
-                        @if (request()->route()->uri == 'manager/edit/kecekapan/{id_user}/{date_id}/{user_id}/{year}/{month}')
-                            <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/dashboard-manager">Dashboard Manager</a>
-                            </li>
-                            <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/view-date/{user_id}">View Date KPI Employee</a>
-                            </li>
-                            <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/manager-hr/view/kpi/{id}/{date_id}/{user_id}/{year}/{month}">View KPI Employee</a>
-                            </li>
-                        @endif --}}
                     @endif
 
                     @if (request()->route()->uri == 'hr/edit/coaching/{id}')
@@ -86,10 +67,6 @@
                         </li>
                     @endif
 
-                    {{-- @if (Route::currentRouteName() == 'user-management')
-                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="javascript:;">User Management</a>
-                        </li>
-                    @endif --}}
                     
                     <li class="breadcrumb-item text-sm text-dark active text-capitalize" aria-current="page">
                         @if (Route::currentRouteName() == 'coaching_edit')
@@ -118,10 +95,6 @@
                             {{ str_replace('-', ' ', 'Edit Nilai') }}</li>
                         @elseif (request()->route()->uri == 'view-date/{user_id}')
                             {{ str_replace('-', ' ', 'View Date KPI Employee') }}</li>
-                        {{-- @elseif (request()->route()->uri == 'manager-hr/view/kpi/{id}/{date_id}/{user_id}/{year}/{month}')
-                            {{ str_replace('-', ' ', 'View KPI Employee') }}</li>
-                        @elseif (request()->route()->uri == 'manager/edit/kecekapan/{id_user}/{date_id}/{user_id}/{year}/{month}')
-                            {{ str_replace('-', ' ', 'Edit KPI Employee') }}</li> --}}
                         @endif
                 </ol>
                 <h6 class="font-weight-bolder mb-0 text-capitalize">
@@ -151,10 +124,6 @@
                             {{ str_replace('-', ' ', 'Edit Nilai') }}</li>
                         @elseif (request()->route()->uri == 'view-date/{user_id}')
                             {{ str_replace('-', ' ', 'View Date KPI Employee') }}</li>
-                        {{-- @elseif (request()->route()->uri == 'manager-hr/view/kpi/{id}/{date_id}/{user_id}/{year}/{month}')
-                            {{ str_replace('-', ' ', 'View KPI Employee') }}</li>
-                        @elseif (request()->route()->uri == 'manager/edit/kecekapan/{id_user}/{date_id}/{user_id}/{year}/{month}')
-                            {{ str_replace('-', ' ', 'Edit KPI Employee') }}</li> --}}
                         @endif
             </nav>
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 d-flex justify-content-end" id="navbar">

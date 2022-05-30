@@ -155,7 +155,7 @@
                                     <label class="form-label">Year<span class="text-danger">*</span></label>
                                     <div class="mb-0" class="@error('year') @enderror">
                                       <select class="form-select" name="year" id="year" tabindex="1" required>
-                                        <option selected value="{{$dates->year}}">{{ $dates->year }}</option>
+                                        <option selected value="{{$dates->year}}" class="bg-gray">{{ $dates->year }}</option>
                                         <?php $yearArray = range(2021, 2050); ?>
                                         <?php
                                             foreach ($yearArray as $year) {
