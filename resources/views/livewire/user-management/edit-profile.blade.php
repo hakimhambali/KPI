@@ -47,7 +47,7 @@
                   </div>
                   <div class="col-md-4 mb-3">
                     <label>IC Number<span class="text-danger">*</span></label>
-                    <input class="form form-control bg-white" type="text" name="ic" value="{{ Auth::user()->ic }}" readonly>
+                    <input class="form form-control" type="text" name="ic" value="{{ Auth::user()->ic }}" readonly>
                   </div>
                   <div class="col-md-6 mb-3">
                     <label>Email<span class="text-danger">*</span></label>
@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-md-6 mb-3">
+                  <div class="col-md-4 mb-3">
                     <label>Department<span class="text-danger">*</span></label>
                     <select class="form-select form-select" id="department" name="department">
                       <option selected class="bg-secondary text-white" value="{{ Auth::user()->department }}" >{{ Auth::user()->department }}</option>
@@ -66,15 +66,19 @@
                     </select>
                   </div>
 
-                  <div class="col-md-6 mb-3">
+                  <div class="col-md-4 mb-3">
                     <label>Unit Staff<span class="text-danger">*</span></label>
                     <select class="form-select form-select" id="unit" name="unit">
                       <option selected class="bg-secondary text-white" value="{{ Auth::user()->unit }}" >{{ Auth::user()->unit }}</option>
                       @foreach ($unit as $units)
                         <option value="{{$units->name}}">{{$units->name}}</option>
                       @endforeach
-
                     </select>
+                  </div>
+
+                  <div class="col-md-4 mb-3">
+                    <label>Date Start Working<span class="text-danger">*</span></label>
+                    <input type="text" class="form form-control" name="starting_month" value="{{ date('j F Y', strtotime(Auth::user()->starting_month)) }}" readonly>
                   </div>
                 </div>
               </div>

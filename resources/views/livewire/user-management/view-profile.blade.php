@@ -59,7 +59,7 @@
                 <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Department:</strong> {{ Auth::user()->department }}</li>
                 <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Unit:</strong> {{ Auth::user()->unit }}</li>
                 <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">IC Number:</strong> {{ Auth::user()->ic}}</li>
-                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Date Start Working:</strong> {{ Auth::user()->starting_month}}</li>
+                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Date Start Working:</strong> {{ date('j F Y', strtotime(Auth::user()->starting_month)) }}</li>
               </ul>
             </div>
 
