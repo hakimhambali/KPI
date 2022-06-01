@@ -78,7 +78,11 @@
 
                   <div class="col-md-4 mb-3">
                     <label>Date Start Working<span class="text-danger">*</span></label>
-                    <input type="text" class="form form-control" name="starting_month" value="{{ date('j F Y', strtotime(Auth::user()->starting_month)) }}" readonly>
+                    @if(Auth::user()->starting_month == '')
+                      <input type="text" class="form form-control" name="starting_month" value="" readonly>
+                    @else
+                      <input type="text" class="form form-control" name="starting_month" value="{{ date('j F Y', strtotime(Auth::user()->starting_month)) }}" readonly>
+                    @endif
                   </div>
                 </div>
               </div>
