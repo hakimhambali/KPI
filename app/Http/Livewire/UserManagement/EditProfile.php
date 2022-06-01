@@ -14,15 +14,11 @@ class EditProfile extends Component
 {
     public User $user;
     public $showSuccesNotification  = false;
-
     public $showDemoNotification = false;
     
     protected $rules = [
         'user.name' => 'max:40|min:3',
-        'user.ic' => 'required|min:12|unique:users',
-        'user.phone' => 'max:10',
-        'user.about' => 'max:200',
-        'user.location' => 'min:3'
+        'user.ic' => 'required|min:12|unique:users'
     ];
 
     public function mount() { 
@@ -41,12 +37,12 @@ class EditProfile extends Component
 
     public function profile_update(Request $request, $id) { 
         $profile = User::find($id)->update([
-            'name' => $request->name,
+            'name' => ucwords($request->name),
             'ic' => $request->ic,
             'nostaff' => $request->nostaff,
             'position' => $request->position,
             'department' => $request->department,
-            'unit' => $request->unit,
+            'unit' => $request->unit
         ]);
         return redirect()->back()->with('message', 'Profile Updated Successfully');
     }

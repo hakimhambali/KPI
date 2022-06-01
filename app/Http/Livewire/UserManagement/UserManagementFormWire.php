@@ -65,6 +65,7 @@ class UserManagementFormWire extends Component
             $add->ic = $this->ic;
             $add->password = Hash::make($this->password);
             $add->role = $this->role;
+            $add->starting_month = '';
             $add->save();
             session()->flash('message', 'New user successfully added');
         }

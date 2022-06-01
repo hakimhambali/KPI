@@ -8,7 +8,16 @@
                             <h3 class="font-weight-bolder text-info text-gradient">{{ __('Welcome back') }}</h3>
                             <p class="mb-0">{{__('Login with your credentials:') }}</p>
                         </div>
+
                         <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12 mb-2">
+                                  @if (session('message'))
+                                    <div class="alert alert-success alert-dismissible fade show my-0" role="alert"><strong class="text-xxs">{{ session('message') }}</strong></div>	
+                                  @endif
+                                </div>
+                            </div>
+
                             <form wire:submit.prevent="login" action="#" method="POST" role="form text-left">
                                 {{-- <div class="mb-3">
                                     <label for="email">{{ __('Email') }}</label>

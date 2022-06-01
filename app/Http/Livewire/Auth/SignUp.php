@@ -21,16 +21,18 @@ class SignUp extends Component
     public $hr = '';
     public $role = '';
     public $password = '';
+    public $starting_month = '';
 
     protected $rules = [
-        'name' => 'required|min:3',
+        'name' => 'required',
         'email' => 'required|email:rfc,dns|unique:users',
         'ic' => 'required|min:12|unique:users',
-        'password' => 'required|min:6',
-        'nostaff' => 'required|min:3',
-        'position' => 'required|min:3',
-        'department' => 'required|min:3',
-        'unit' => 'required|min:3'
+        'password' => 'required',
+        'nostaff' => 'required|unique:users',
+        'position' => 'required',
+        'department' => 'required',
+        'unit' => 'required',
+        'starting_month' => 'required'
     ];
 
     public function mount() {
@@ -41,30 +43,38 @@ class SignUp extends Component
 
     public function register() {
         $this->validate();
+        if ($this->position == 'CEO (TM2)' || $this->position ==  'Director (TM1)' || $this->position == 'Senior Leadership Team (SLT) (UM1)') {
+            $role = 'hr';
+        } elseif ($this->position == 'Assistant Manager (M1)' || $this->position == 'Manager (M2)' || $this->position == 'Senior Manager (M3)') {
+            $role = 'manager';
+        } else {
+            $role = 'employee';
+        }
+
         $user = User::create([
-            'name' => $this->name,
+            'name' => ucwords($this->name),
             'email' => $this->email,
             'ic' => $this->ic,
             'nostaff' => $this->nostaff,
             'position' => $this->position,
             'department' => $this->department,
             'unit' => $this->unit,
-            'role' => 'employee',
-            'password' => Hash::make($this->password)
+            'role' => $role,
+            'password' => Hash::make($this->password),
+            'starting_month' => $this->starting_month,
         ]);
 
-        auth()->login($user);
+        // auth()->login($user);
 
-        return redirect('/homepage');
+        return redirect('/login')->with('message', 'Your Account Has Been Created Successfully. Please Log In');
     }
 
     public function render()
     {
-        // TAK FUNCTION PUN, TENGOK KAT FILE APPSERVICEPROVIDER.PHP, DECLARE VARIABLE KAT SITU
         $position = Position_::all();
         $department = Department_::all();
         $unit = Unit_::all();
-        // return view('livewire.auth.sign-up')->with(compact('position', 'department', 'unit'));
+        
         return view('livewire.auth.sign-up')->with(compact('position', 'department', 'unit'));
     }
 }

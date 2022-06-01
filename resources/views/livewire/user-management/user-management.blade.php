@@ -32,7 +32,7 @@
                                             <td class="text-xs text-center font-weight-bold text-xs">{{$roleArrss->created_at}}</td>
                                             <td>
                                                 <button type="button" wire:click="selectItem({{$roleArrss->id}} , 'update' )" class="btn btn-sm waves-effect waves-light btn-dark" style="font-size: 10px" data-bs-toggle="tooltip" data-bs-original-title="Edit Profile"><i class="fa fa-edit"></i></button>
-                                                <button type="button" wire:click="selectItem({{$roleArrss->id}} , 'delete' )" class="btn btn-sm waves-effect waves-light btn-danger data-delete" data-form="{{$roleArrss->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete Moderator"><i class="fas fa-trash-alt"></i></button>
+                                                <button type="button" wire:click="selectItem({{$roleArrss->id}} , 'delete' )" class="btn btn-sm waves-effect waves-light btn-danger data-delete" data-form="{{$roleArrss->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete User"><i class="fas fa-trash-alt"></i></button>
                                             </td>
                                         </tr>
                                             @endif
