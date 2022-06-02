@@ -149,15 +149,15 @@
                                 @error('threshold') <div class="text-danger text-xs pt-2">{{ $message }}</div> @enderror
                               </td>
                               <td>
-                                <input type="number" min="1" max="100" step=".01" class="form-control" id="base" name="base" onkeyup="masterClac();" required>
+                                <input type="number" min="0" max="100" step=".01" class="form-control" id="base" name="base" onkeyup="masterClac();" required>
                                 @error('base') <div class="text-danger text-xs pt-2">{{ $message }}</div> @enderror
                               </td>
                               <td>
-                                <input type="number" min="1" max="100" step=".01" class="form-control input_stretch" pattern="^\d*(\.\d{0,2})?$\-^\d*(\.\d{0,2})?$" maxlength="7" id="stretch" name="stretch" onkeyup="masterClac();" required>
+                                <input type="number" min="0" max="100" step=".01" class="form-control input_stretch" pattern="^\d*(\.\d{0,2})?$\-^\d*(\.\d{0,2})?$" maxlength="7" id="stretch" name="stretch" onkeyup="masterClac();" required>
                                 @error('stretch') <div class="text-danger text-xs pt-2">{{ $message }}</div> @enderror
                               </td>
                               <td>
-                                <input type="number" min="1" max="100" step=".01" class="form-control input_pencapaian" pattern="^\d*(\.\d{0,2})?$\-^\d*(\.\d{0,2})?$" maxlength="7" id="pencapaian" name="pencapaian" onkeyup="masterClac();" required>
+                                <input type="number" min="0" max="100" step=".01" class="form-control input_pencapaian" pattern="^\d*(\.\d{0,2})?$\-^\d*(\.\d{0,2})?$" maxlength="7" id="pencapaian" name="pencapaian" onkeyup="masterClac();" required>
                                 @error('pencapaian') <div class="text-danger text-xs pt-2">{{ $message }}</div> @enderror
                               </td>
                               <td>
