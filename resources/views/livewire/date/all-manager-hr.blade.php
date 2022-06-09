@@ -45,13 +45,13 @@
                     </td>
                     <td class="text-xs fw-bold text-center">
                       @if ($dates->status == "Not Submitted")
-                        <span class="badge bg-gradient-secondary px-4 badge-sm">{{ $dates->status }}</span>
+                        <span class="badge bg-gradient-secondary px-4">{{ $dates->status }}</span>
                       @elseif ($dates->status == "Submitted")
-                        <span class="badge bg-gradient-info px-4 badge-sm">{{ $dates->status }}</span>
+                        <span class="badge bg-gradient-info px-4">{{ $dates->status }}</span>
                       @elseif ($dates->status == "Signed By Manager")
-                        <span class="badge bg-gradient-dark px-4 badge-sm">{{ $dates->status }}</span>
+                        <span class="badge bg-gradient-dark px-4">{{ $dates->status }}</span>
                       @elseif ($dates->status == "Completed")
-                        <span class="badge bg-gradient-success px-4 badge-sm">{{ $dates->status }}</span>
+                        <span class="badge bg-gradient-success px-4">{{ $dates->status }}</span>
                       @endif
                     </td>
                   </tr>
