@@ -75,14 +75,16 @@
                     <div class="col-md-6 mb-3">
                       <label class="form-label">Function<span class="text-danger">*</span></label>
                       <div class="mb-0" class="@error('fungsi') @enderror">
-                        <select class="form-control bg-white" id="fungsi" name="fungsi" disabled>
+                        <input class="form-control bg-white" id="fungsi" name="fungsi" value="{{ $kpi->fungsi }}" readonly>
+                        {{-- <select class="form-control bg-white" id="fungsi" name="fungsi">
+
                           <option selected class="bg-secondary text-white" value="{{ $kpi->fungsi }}" >{{ $kpi->fungsi }}</option>
 
-                          {{-- @foreach ($function as $functions)
+                          @foreach ($function as $functions)
                             <option value="{{ $functions->name }}">{{ $functions->name }}</option>
-                          @endforeach  --}}
+                          @endforeach 
 
-                        </select>
+                        </select> --}}
                         @error('fungsi') <div class="text-danger text-sm pt-2">{{ $message }}</div> @enderror
                       </div>
                     </div>
