@@ -14,7 +14,7 @@
                             <div class="alert alert-success alert-dismissible p-2 mx-2">
                                 <strong><small>{{ session('success') }}</small></strong>
                             </div>
-                            <a href="{{ route('login') }}" class="btn bg-gradient-info text-white btn-sm">Log In Now!</a>
+                            <a href="{{ route('login') }}" class="btn bg-gradient-info text-white">Log In Now!</a>
                         @elseif (session('error'))
                             <div class="alert alert-warning alert-dismissible p-2 mx-2">
                                 <strong><small>{{ session('error') }}</small></strong>
