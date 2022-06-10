@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\UserManagement;
 use App\Models\User;
 use App\Models\KPIAll_;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 use Livewire\Component;
 
@@ -31,6 +33,31 @@ class ViewProfile extends Component
             $this->user->save();
             $this->showSuccesNotification = true;
         }
+    }
+
+    // update password
+    public function pwd_update(Request $request, $id)
+    {
+        if (!(Hash::check($request->get('current-password'), auth()->user()->password))) {
+            // The passwords matches
+            return redirect('profile/view')->with("error", "Your current password does not matches with the password.");
+        }
+
+        if(strcmp($request->get('current-password'), $request->get('new-password')) == 0){
+            // Current password and new password same
+            return redirect('profile/view')->with("error", "New Password cannot be same as your current password.");
+        }
+
+        $validatedData = $request->validate([
+            'current-password' => 'required',
+            'new-password' => 'required|string|min:8|confirmed',
+        ]);
+
+        $update = User::find(auth()->user()->id)->update([
+            'password' => Hash::make($request->get('new-password'))
+        ]);
+
+        return redirect('profile/view')->with("success", "Password successfully changed!");
     }
     
     public function render()

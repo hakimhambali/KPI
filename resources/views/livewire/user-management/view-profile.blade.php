@@ -44,7 +44,7 @@
                   </a>
                 </div>
               </div>
-            </div>
+            </div><hr>
 
             <div class="card-body p-3">
               <p class="text-sm">
@@ -64,7 +64,67 @@
             </div>
 
           </div>
-        </div> 
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-header pb-0 p-3">
+              <div class="row">
+                <h6 class="mb-0">Update Password</h6>
+              </div>
+            </div><hr>
+
+            @if (session('success'))
+              <div class="alert alert-success alert-dismissible p-2 mx-2">
+                  <strong><small>{{ session('success') }}</small></strong>
+              </div>	
+            @elseif (session('error'))
+              <div class="alert alert-warning alert-dismissible p-2 mx-2">
+                <strong><small>{{ session('error') }}</small></strong>
+              </div>
+            @endif
+
+            <form action="{{ url('employee/password/update/'.Auth::user()->id) }}" method="post">   
+              @csrf 
+              <div class="card-body p-3">
+                <div class="row justify-content-center">
+                  <div class="col-md-10 mb-2">
+                    <label>Current Password<span class="text-danger">*</span></label>
+                    <input type="password" name="current-password" id="current-password" class="form-control" placeholder="Enter Current Password" required>
+                    @if ($errors->has('current-password'))
+                      <span class="help-block mb-1">
+                        <strong><small class="text-danger">{{ $errors->first('current-password') }}</small></strong>
+                      </span>
+                    @endif
+                  </div>
+                  
+                  <div class="col-md-10 mb-2">
+                    <label>New Password<span class="text-danger">*</span></label>
+                    <input type="password" name="new-password" id="new-password" class="form-control" placeholder="Enter New Password" required>
+                    @if ($errors->has('new-password'))
+                      <span class="help-block mb-1">
+                        <strong><small class="text-danger">{{ $errors->first('new-password') }}</small></strong>
+                      </span>
+                    @endif
+                  </div>
+                  
+                  <div class="col-md-10 mb-4">
+                    <label>Confirm New Password<span class="text-danger">*</span></label>
+                    <input type="password" name="new-password_confirmation" id="new-password_confirmation" class="form-control" placeholder="Enter Confirm Password" required>
+                  </div>
+                </div>
+
+                <div class="row justify-content-end">
+                  <div class="col-4">
+                    <button class="btn bg-gradient-dark btn-sm" type="submit">Save Change</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
       </div>
     </div> 
   </body>

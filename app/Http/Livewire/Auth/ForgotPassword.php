@@ -21,6 +21,7 @@ class ForgotPassword extends Component
 
     protected $rules = [
         'ic' => 'required|min:12|unique:users',
+        'email' => 'required|unique:users',
     ];  
 
     public function mount() {
@@ -31,6 +32,7 @@ class ForgotPassword extends Component
 
     public function routeNotificationForMail() {
         return $this->ic;
+        return $this->email;
     }
 
     public function recoverPassword() { 

@@ -3,7 +3,7 @@
   {{--------------------------------------------------- EDIT PERSONAL PROFILE --------------------------------------------------}}
   <div class="container-fluid py-4">
     <div class="row">
-      <form action="{{ url('employee/profile/update/'.Auth::user()->id) }}" method="post">   
+      <form action="{{ url('employee/password/update/'.Auth::user()->id) }}" method="post">   
         @csrf 
         <div class="col-12">
           @if (session('message'))

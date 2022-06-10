@@ -48,7 +48,8 @@ Route::get('/', Login::class)->name('login');
 Route::get('/sign-up', SignUp::class)->name('sign-up');
 Route::get('/login', Login::class)->name('login');
 Route::get('/login/forgot-password', ForgotPassword::class)->name('forgot-password');
-Route::get('/reset-password/{id}',ResetPassword::class)->name('reset-password')->middleware('signed');
+Route::get('/reset-password',ResetPassword::class)->name('reset-password');
+Route::post('/reset-password/update',[ResetPassword::class, 'reset_password'])->name('reset-save');
 
 /////////////////// EMPLOYEE KPI //////////////////////////////////////////////////////////////////////////////////
 // Date KPI
@@ -180,6 +181,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/view', ViewProfile::class)->name('view-profile');
     Route::get('/profile/edit', EditProfile::class)->name('edit-profile');
     Route::post('/employee/profile/update/{id}',[EditProfile::class, 'profile_update']);
+    Route::post('/employee/password/update/{id}',[ViewProfile::class, 'pwd_update']);
 
     Route::get('/add-date', Date::class)->name('add-date');
     Route::post('employee/duplicate/date/{date_id}/{user_id}/{year}/{month}',[Date::class, 'duplicate_all']);

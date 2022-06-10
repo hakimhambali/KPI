@@ -7,43 +7,49 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 use Livewire\Component;
 
 class ResetPassword extends Component
 {
-    public $ic = '';
-    public $password = '';
-    public $passwordConfirmation = '';
+    // public $ic = '';
+    // public $email = '';
+    // public $password = '';
+    // public $password_confirmation = '';
 
-    public $showSuccesNotification = false; 
-    public $showFailureNotification = false;
+    // public $showSuccesNotification = false; 
+    // public $showFailureNotification = false;
 
-    public $showDemoNotification = false;
+    // // public $showDemoNotification = false;
 
-    public $urlID = '';
+    // // public $urlID = '';
 
-    protected $rules = [
-        'ic' => 'required|ic|unique:users',
-        'password' => 'required|min:6|same:passwordConfirmation'
-    ];  
+    // protected $rules = [
+    //     'ic' => 'required|ic|unique:users',
+    //     'email' => 'required|unique:users',
+    //     'password' => 'required|min:8|confirmed'
+    // ];  
 
-    public function mount($id) {
-        $existingUser = User::find($id);
-        $this->urlID = intval($existingUser->id);
-    }
+    // // public function mount($id) {
+    // //     $existingUser = User::find($id);
+    // //     $this->urlID = intval($existingUser->id);
+    // // }
 
-    public function resetPassword() {
-        $this->validate();
-        $existingUser = User::where('ic', $this->ic)->first();
-        if($existingUser && $existingUser->id == $this->urlID) { 
-            $existingUser->update([
-                'password' => Hash::make($this->password) 
+    public function reset_password(Request $request) {
+        $existingUser = User::where('ic', $request->ic)->where('email', $request->email)->first();
+
+        if($existingUser) { 
+            $validatedData = $request->validate([
+                'password' => 'required|string|min:8|confirmed',
             ]);
-            $this->showSuccesNotification = true;
-            $this->showFailureNotification = false;
+
+            $existingUser->update([
+                'password' => Hash::make($request->password) 
+            ]);
+            
+            return redirect('reset-password')->with("success", "Password successfully changed!");
         } else {
-            $this->showFailureNotification = true;
+            return redirect('reset-password')->with("error", "Please make sure the IC Number or Email Address you entered is correct.");
         }
     }
 
