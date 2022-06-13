@@ -137,20 +137,35 @@ class ManagerKPI extends Component
             array_push($kpiMasterArr, $kpimaster);
         }
 
-        $kpi = KPI_::where('user_id', '=', $user_id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->get();
-        $kpimaster = KPIMaster_::where('user_id', '=', $user_id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->get();
-        $user = User::where('id', '=', $user_id)->get();
-        $kecekapan = Kecekapan_::where('user_id', '=', $user_id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->get();
-        $nilai = Nilai_::where('user_id', '=', $user_id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->get();
-        $kpiall = KPIAll_::where('user_id', '=', $user_id)->where('year', '=', $year)->where('month', '=', $month)->get();
-        $date = Date_::where('user_id', '=', $user_id)->where('year', '=', $year)->where('month', '=', $month)->get();
-        $weightage_master = KPIAll_::where('user_id', '=', $user_id)->where('year', '=', $year)->where('month', '=', $month)->value('weightage_master');
-        $kecekapanscount2 = Kecekapan_::where('user_id', '=', $user_id)->where('year', '=', $year)->where('month', '=', $month)->count();
-        $nilaiscount2 = Nilai_::where('user_id', '=', $user_id)->where('year', '=', $year)->where('month', '=', $month)->count();
+        $date = Date_::where('user_id', $user_id)->where('year', $year)->where('month', $month)->get();
+        $user = User::where('id', $user_id)->get();
+        $kpi = KPI_::where('user_id', $user_id)->where('year', $year)->where('month', $month)->orderBy('created_at','desc')->get();
+        
+        // All Data
+        $kpiall = KPIAll_::where('user_id', $user_id)->where('year', $year)->where('month', $month)->get();
+        $weightage_master = KPIAll_::where('user_id', $user_id)->where('year', $year)->where('month', $month)->value('weightage_master');
+
+        // KPI Data
+        $kpimaster = KPIMaster_::where('user_id', $user_id)->where('year', $year)->where('month', $month)->orderBy('created_at','desc')->get();
+        $countKPI = KPIMaster_::where('user_id', $user_id)->where('year', $year)->where('month', $month)->count();
+        $totalPercent = KPIMaster_::where('user_id', $user_id)->where('year', $year)->where('month', $month)->sum('skor_KPI');
+        $totalSebenar = KPIMaster_::where('user_id', $user_id)->where('year', $year)->where('month', $month)->sum('skor_sebenar');
+       
+        // KECEKAPAN Data
+        $kecekapan = Kecekapan_::where('user_id', $user_id)->where('year', $year)->where('month', $month)->orderBy('created_at','desc')->get();
+        $kecekapanscount2 = Kecekapan_::where('user_id', $user_id)->where('year', '=', $year)->where('month', '=', $month)->count();
+        $kecSebenar = Kecekapan_::where('user_id', $user_id)->where('year', $year)->where('month', $month)->sum('skor_sebenar');
         $kecekapan_master = $kecekapanscount2 * 20;
+
+        // Nilai Data
+        $nilai = Nilai_::where('user_id', $user_id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->get();
+        $nilaiscount2 = Nilai_::where('user_id', $user_id)->where('year', '=', $year)->where('month', '=', $month)->count();
+        $nilaiSebenar = Nilai_::where('user_id', $user_id)->where('year', $year)->where('month', $month)->sum('skor_sebenar');
         $nilai_master = $nilaiscount2 * 20;
 
-        return view('livewire.display-kpi.all-manager-hr', compact('kpi', 'kpimaster', 'user', 'kecekapan' , 'nilai', 'kpiall', 'date_id', 'user_id', 'year', 'month', 'date', 
-        'weightage_master', 'kecekapan_master', 'nilai_master', 'function', 'kpiArr', 'kpiMasterArr'));
+        return view('livewire.display-kpi.all-manager-hr',
+        compact('date_id', 'user_id', 'year', 'month', 'function', 'kpiArr', 'kpiMasterArr', 'date', 'user', 'kpi', 'kpiall', 'weightage_master',
+                'kpimaster', 'countKPI', 'totalPercent', 'totalSebenar', 'kecekapan', 'kecekapanscount2', 'kecSebenar', 'kecekapan_master',
+                'nilai', 'nilaiscount2', 'nilaiSebenar', 'nilai_master'));
     }
 }

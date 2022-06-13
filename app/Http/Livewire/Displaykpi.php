@@ -41,29 +41,45 @@ class Displaykpi extends Component
 
         $kpiArr[] = array();
         foreach ($function as $key => $functions) {
-            $kpi = KPI_::where('fungsi', '=', $functions->name)->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('bukti','asc')->orderBy('created_at','asc')->get();
+            $kpi = KPI_::where('fungsi', $functions->name)->Where('user_id', auth()->user()->id)->where('year', $year)->where('month', $month)->orderBy('bukti','asc')->orderBy('created_at','asc')->get();
             array_push($kpiArr, $kpi);
         }
 
         $kpiMasterArr[] = array();
         foreach ($function as $key => $functions) {
-            $kpimaster = KPIMaster_::where('fungsi', '=', $functions->name)->Where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->get();
+            $kpimaster = KPIMaster_::where('fungsi', $functions->name)->Where('user_id', auth()->user()->id)->where('year', $year)->where('month', $month)->orderBy('created_at','desc')->get();
             array_push($kpiMasterArr, $kpimaster);
         }
 
         $users = User::whereIn('position', ['Junior Non-Executive (NE1)','Senior Non-Executive (NE2)'])->Where('role' , 'employee')->get();
         $hrs = User::Where('department' , 'Human Resource (HR) & Administration')->orWhere('role' , 'admin')->get();
-        $kecekapan = Kecekapan_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->get();
-        $nilai = Nilai_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->get();
-        $kpiall = KPIAll_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->get();
-        $weightage_master = KPIAll_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->value('weightage_master');
-        $kecekapanscount2 = Kecekapan_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->count();
-        $nilaiscount2 = Nilai_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->count();
-        $kecekapan_master = $kecekapanscount2 * 20;
-        $nilai_master = $nilaiscount2 * 20;
-        $date = Date_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->get();
+        $date = Date_::where('user_id', auth()->user()->id)->where('year', $year)->where('month', $month)->get();
 
-        return view('livewire.display-kpi.all-employee', compact('users', 'hrs', 'kecekapan', 'nilai', 'kpiall', 'weightage_master', 'date', 'kecekapan_master', 'nilai_master',  'function', 'kpiArr', 'kpiMasterArr'));
+        // All Data
+        $kpiall = KPIAll_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->get();
+        $weightage_master = KPIAll_::where('user_id', Auth::user()->id)->where('year', $year)->where('month', $month)->value('weightage_master');
+
+        // KPI Data
+        $countKPI = KPIMaster_::where('user_id', auth()->user()->id)->where('year', $year)->where('month', $month)->count();
+        $totalPercent = KPIMaster_::where('user_id', Auth::user()->id)->where('year', $year)->where('month', $month)->sum('skor_KPI');
+        $totalSebenar = KPIMaster_::where('user_id', Auth::user()->id)->where('year', $year)->where('month', $month)->sum('skor_sebenar');
+       
+        // KECEKAPAN Data
+        $kecekapan = Kecekapan_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->get();
+        $kecekapanscount2 = Kecekapan_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->count();
+        $kecSebenar = Kecekapan_::where('user_id', auth()->user()->id)->where('year', $year)->where('month', $month)->sum('skor_sebenar');
+        $kecekapan_master = $kecekapanscount2 * 20;
+
+        // Nilai Data
+        $nilai = Nilai_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->orderBy('created_at','desc')->get();
+        $nilaiscount2 = Nilai_::where('user_id', '=', auth()->user()->id)->where('year', '=', $year)->where('month', '=', $month)->count();
+        $nilaiSebenar = Nilai_::where('user_id', auth()->user()->id)->where('year', $year)->where('month', $month)->sum('skor_sebenar');
+        $nilai_master = $nilaiscount2 * 20;
+
+        return view('livewire.display-kpi.all-employee',
+        compact( 'id', 'year', 'month', 'function', 'kpiArr', 'kpi', 'kpiMasterArr', 'kpimaster', 'users', 'hrs', 'date',
+        'kpiall', 'weightage_master', 'countKPI', 'totalPercent', 'totalSebenar', 'kecekapan', 'kecekapanscount2', 'kecSebenar',
+        'kecekapan_master', 'nilai', 'nilaiscount2', 'nilaiSebenar', 'nilai_master' ));
     }
     
         public function render()

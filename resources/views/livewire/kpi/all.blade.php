@@ -57,9 +57,9 @@
                 @csrf  
                   <div class="card-body">
                     @if ($weightage_master == 0 || $weightage_master == NULL) 
-                      <h6>SCORE CARD - CREATE FUNCTION <span style="color:red;">(Current total weightage = 0)</span></h6><hr>
+                      <h6>SCORE CARD - CREATE FUNCTION <span style="color:red;">(Current KPI weightage = 0)</span></h6><hr>
                     @else
-                      <h6>SCORE CARD - CREATE FUNCTION <span style="color:red;">(Current total weightage = {{$weightage_master}})</span></h6><hr>
+                      <h6>SCORE CARD - CREATE FUNCTION <span style="color:red;">(Current KPI weightage = {{$weightage_master}})</span></h6><hr>
                     @endif
 
                     <div class="row">
@@ -207,9 +207,9 @@
                       @endforeach
 
                       @if ($total_weightage == 0 || $total_weightage == NULL)
-                        <h6 class="mb-3">{{$kpiMasterArrss->fungsi}} <span style="color:red;">(Current weightage = 0)</span></h6>
+                        <h6 class="mb-3">{{$kpiMasterArrss->fungsi}} <span style="color:red;">(Function weightage = 0)</span></h6>
                       @else
-                        <h6 class="mb-3">{{$kpiMasterArrss->fungsi}} <span style="color:red;">(Current weightage = {{$total_weightage}})</span></h6>
+                        <h6 class="mb-3">{{$kpiMasterArrss->fungsi}} <span style="color:red;">(Function weightage = {{$total_weightage}})</span></h6>
                       @endif
                       
                       <div class="table-responsive">

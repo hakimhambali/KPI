@@ -67,118 +67,128 @@
                 <h6>SCORE CARD - KPI <span style="color:red;">(Current total weightage = {{$weightage_master}})</span></h6><hr>
               @endif
 
-              <div class="row">
-                <div class="table-responsive">
-                  <table class="table table-sm align-middle fw-bold">
-                    <thead class="text-center text-xxs fw-bolder">
-                      <tr>
-                        <th>FUNCTION</th>
-                        <th>KPI OBJECTIVE</th>
-                        <th>EVIDENCE</th>
-                        <th class="col-1">FILE</th>
-                        <th>EVIDENCE LINK</th>
-                        <th class="col-1">%</th>
-                        <th>MEASUREMENT</th>
-                        <th>KPI TARGET</th>
-                        <th class="col-1">KPI SCORE</th>
-                        <th class="col-1 bg-gradient-dark text-white">ACTUAL SCORE</th>
-                      </tr>
-                    </thead>
+              @if ($countKPI > 0)
+                <div class="row">
+                  <div class="table-responsive">
+                    <table class="table table-sm align-middle fw-bold">
+                      <thead class="text-center text-xxs fw-bolder">
+                        <tr>
+                          <th>FUNCTION</th>
+                          <th>KPI OBJECTIVE</th>
+                          <th>EVIDENCE</th>
+                          <th class="col-1">FILE</th>
+                          <th>EVIDENCE LINK</th>
+                          <th class="col-1">%</th>
+                          <th>MEASUREMENT</th>
+                          <th>KPI TARGET</th>
+                          <th class="col-1">KPI SCORE</th>
+                          <th class="col-1 bg-gradient-dark text-white">ACTUAL SCORE</th>
+                        </tr>
+                      </thead>
 
-                    <tbody>
-                      @php($i = 1)
+                      <tbody>
+                        @php($i = 1)
 
-                      @foreach ($kpiMasterArr as $key1 => $kpiMasterArrs)
-                        @foreach ($kpiMasterArrs as $key2 => $kpiMasterArrss)
+                        @foreach ($kpiMasterArr as $key1 => $kpiMasterArrs)
+                          @foreach ($kpiMasterArrs as $key2 => $kpiMasterArrss)
 
-                          @foreach ($kpiArr as $key3 => $kpiArrs)
-                            @foreach ($kpiArrs as $key4 => $kpiArrss)
-                              @foreach ($function as $key5 => $functions)
-                                @if($kpiMasterArrss->fungsi == $functions->name)
-                        
-                                  @if($kpiArrss->fungsi == $functions->name)
-                                    <tr>
-                                      @if ($key4 == 0)
-                                        <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">{{ $kpiArrss->fungsi }}</td>
-                                        <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold">{{ $kpiArrss->kpimasters->objektif }}</td>
-                                      @else
-                                      @endif
-                                      @if ($loop->parent->last)
-                                        <td class="text-xs fw-bold">{{ $kpiArrss->bukti }}</td>
-                                        <td class="text-xs fw-bold text-center">
-                                          @if ($kpiArrss->bukti_path == '') -
-                                          @else
-                                          <a href="{{ $kpiArrss->bukti_path }}" class="btn btn-icon btn-sm btn-info" target="_blank"><i class="bi bi-folder-symlink"></i></a>
-                                          @endif
-                                        </td>
-                                      @else
-                                        <td class="text-xs fw-bold good">{{ $kpiArrss->bukti }}</td>
-                                        <td class="text-xs fw-bold text-center good">
-                                          @if ($kpiArrss->bukti_path == '') -
-                                          @else
-                                          <a href="{{ $kpiArrss->bukti_path }}" class="btn btn-sm btn-info my-auto" target="_blank"><i class="bi bi-folder-symlink"></i></a>
-                                          @endif
-                                        </td>
-                                      @endif
-                                        
-                                      @if ($key4 == 0)
-                                        <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">
-
-                                          @if ($kpiArrss->kpimasters->link != '')
-                                          <?php $links = json_decode($kpiArrss->kpimasters->link); ?>
-                                          
-                                          @if ($links != NULL)
-                                            @if ($links[0] != NULL)
-                                              @if ($links[0] == NULL)
-                                                <?php $num_of_link=0 ?>
-                                              @elseif ($links[1] == NULL)
-                                                <?php $num_of_link=1 ?>
-                                              @elseif ($links[2] == NULL)
-                                                <?php $num_of_link=2 ?>
-                                              @elseif ($links[3] == NULL)
-                                                <?php $num_of_link=3 ?>
-                                              @elseif ($links[4] == NULL)
-                                                <?php $num_of_link=4 ?>
-                                              @elseif ($links[4] != NULL)
-                                                <?php $num_of_link=5 ?>
-                                              @endif
-                        
-                                              @for($i=0 ; $i<$num_of_link; $i++)
-                                                <a href=" {{ $links[$i] }}" class="btn btn-sm btn-info my-auto mb-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
-                                                <br>
-                                              @endfor
+                            @foreach ($kpiArr as $key3 => $kpiArrs)
+                              @foreach ($kpiArrs as $key4 => $kpiArrss)
+                                @foreach ($function as $key5 => $functions)
+                                  @if($kpiMasterArrss->fungsi == $functions->name)
+                          
+                                    @if($kpiArrss->fungsi == $functions->name)
+                                      <tr>
+                                        @if ($key4 == 0)
+                                          <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">{{ $kpiArrss->fungsi }}</td>
+                                          <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold">{{ $kpiArrss->kpimasters->objektif }}</td>
+                                        @else
+                                        @endif
+                                        @if ($loop->parent->last)
+                                          <td class="text-xs fw-bold">{{ $kpiArrss->bukti }}</td>
+                                          <td class="text-xs fw-bold text-center">
+                                            @if ($kpiArrss->bukti_path == '') -
+                                            @else
+                                            <a href="{{ $kpiArrss->bukti_path }}" class="btn btn-icon btn-sm btn-info" target="_blank"><i class="bi bi-folder-symlink"></i></a>
                                             @endif
-                                          @endif
+                                          </td>
+                                        @else
+                                          <td class="text-xs fw-bold good">{{ $kpiArrss->bukti }}</td>
+                                          <td class="text-xs fw-bold text-center good">
+                                            @if ($kpiArrss->bukti_path == '') -
+                                            @else
+                                            <a href="{{ $kpiArrss->bukti_path }}" class="btn btn-sm btn-info my-auto" target="_blank"><i class="bi bi-folder-symlink"></i></a>
+                                            @endif
+                                          </td>
                                         @endif
                                           
-                                        </td>
-                                        <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">{{ $kpiArrss->kpimasters->percent_master }}</td>
-                                        <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">Percentage (%)</td>
-                                        <td rowspan="{{ $kpiArrs->count() }}" class="mx-auto">
-                                          <span class="me-2 text-xs fw-bolder" value="{{ $kpiArrss -> pencapaian }}">{{ number_format( (integer)($kpiArrss->kpimasters->skor_KPI)) }}%</span>
-                                          <div class="progress">
-                                            <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ $kpiArrss->kpimasters->skor_KPI }}%;"></div>
-                                          </div>
-                                        </td>
-                                        <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">{{ $kpiArrss->kpimasters->skor_KPI }}</td>
-                                        <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center bg-gradient-dark text-white">{{ round($kpiArrss->kpimasters->skor_sebenar,2) }} %</td>
-                                      @else
-                                      @endif
-                                    </tr>
-                                  @endif
+                                        @if ($key4 == 0)
+                                          <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">
 
-                                @endif
+                                            @if ($kpiArrss->kpimasters->link != '')
+                                            <?php $links = json_decode($kpiArrss->kpimasters->link); ?>
+                                            
+                                            @if ($links != NULL)
+                                              @if ($links[0] != NULL)
+                                                @if ($links[0] == NULL)
+                                                  <?php $num_of_link=0 ?>
+                                                @elseif ($links[1] == NULL)
+                                                  <?php $num_of_link=1 ?>
+                                                @elseif ($links[2] == NULL)
+                                                  <?php $num_of_link=2 ?>
+                                                @elseif ($links[3] == NULL)
+                                                  <?php $num_of_link=3 ?>
+                                                @elseif ($links[4] == NULL)
+                                                  <?php $num_of_link=4 ?>
+                                                @elseif ($links[4] != NULL)
+                                                  <?php $num_of_link=5 ?>
+                                                @endif
+                          
+                                                @for($i=0 ; $i<$num_of_link; $i++)
+                                                  <a href=" {{ $links[$i] }}" class="btn btn-sm btn-info my-auto mb-1" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
+                                                  <br>
+                                                @endfor
+                                              @endif
+                                            @endif
+                                          @endif
+                                            
+                                          </td>
+                                          <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">{{ $kpiArrss->kpimasters->percent_master }}</td>
+                                          <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">Percentage (%)</td>
+                                          <td rowspan="{{ $kpiArrs->count() }}" class="mx-auto">
+                                            <span class="me-2 text-xs fw-bolder" value="{{ $kpiArrss -> pencapaian }}">{{ number_format( (integer)($kpiArrss->kpimasters->skor_KPI)) }}%</span>
+                                            <div class="progress">
+                                              <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ $kpiArrss->kpimasters->skor_KPI }}%;"></div>
+                                            </div>
+                                          </td>
+                                          <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center">{{ $kpiArrss->kpimasters->skor_KPI }}</td>
+                                          <td rowspan="{{ $kpiArrs->count() }}" class="text-xs fw-bold text-center bg-gradient-dark text-white">{{ round($kpiArrss->kpimasters->skor_sebenar,2) }} %</td>
+                                        @else
+                                        @endif
+                                      </tr>
+                                    @endif
+
+                                  @endif
+                                @endforeach
                               @endforeach
                             @endforeach
+
                           @endforeach
-
                         @endforeach
-                      @endforeach
-                    </tbody>  
-
-                  </table>
+                        <tr class="align-middle bg-gradient-dark text-white">
+                          <td colspan='5' class="text-sm text-end">Total Current weightage</td>
+                          <td class="fw-bold text-center">{{ $weightage_master }} %</td>
+                          <td colspan='2' class="text-sm text-end">Total Score</td>
+                          <td class="fw-bold text-center">{{ $totalPercent }}</td>
+                          <td class="fw-bold text-center">{{ round($totalSebenar, 2) }} %</td>
+                        </tr>
+                      </tbody>  
+                    </table>
+                  </div>
                 </div>
-              </div>
+              @else
+                <p class="text-center">There's No KPI Has Been Added.</p>
+              @endif
 
             </div>
           </div>
@@ -305,6 +315,15 @@
                           <td class="text-xs fw-bold text-center">{{ $kecekapans -> skor_penyelia }}</td>
                           <td class="text-xs fw-bold text-center bg-gradient-dark text-white">{{ $kecekapans -> skor_sebenar }}</td>
                         </tr>
+                        
+                        @if($loop->last)
+                          <tr class="align-middle bg-gradient-dark text-white">
+                            <td colspan='2' class="text-sm text-end">Total Current Weightage</td>
+                            <td class="fw-bold text-center">{{ $kecekapan_master }} %</td>
+                            <td colspan='3' class="text-sm text-end">Total Score</td>
+                            <td class="fw-bold text-center">{{ $kecSebenar }} %</td>
+                          </tr>
+                        @endif
                       @endforeach
                     </tbody>
                   </table>
@@ -445,6 +464,15 @@
                           <td class="text-xs fw-bold text-center">{{ $nilais -> skor_penyelia }}</td>
                           <td class="text-xs fw-bold text-center bg-gradient-dark text-white">{{ $nilais -> skor_sebenar }}</td>
                         </tr>
+                        
+                        @if($loop->last)
+                          <tr class="align-middle bg-gradient-dark text-white">
+                            <td colspan='2' class="text-sm text-end">Total Current Weightage</td>
+                            <td class="fw-bold text-center">{{ $nilai_master }} %</td>
+                            <td colspan='3' class="text-sm text-end">Total Score</td>
+                            <td class="fw-bold text-center">{{ $nilaiSebenar }} %</td>
+                          </tr>
+                        @endif
                       @endforeach
                     </tbody>
                   </table>
@@ -585,7 +613,7 @@
                   </form>
                 @else
                   <p class="text-xs fw-bold">Comment From Manager</p>
-                  <textarea class="form-control text-danger bg-white mb-2" rows="6" disabled>{{ $dates -> message_manager }}</textarea>
+                  <textarea class="form-control mb-2" rows="6" disabled>{{ $dates -> message_manager }}</textarea>
                 @endif
               @endforeach
 
@@ -622,7 +650,7 @@
                   </form>
                 @else
                   <p class="text-xs fw-bold">Comment From HR</p>
-                  <textarea class="form-control text-dark bg-white mb-2" rows="6" disabled>{{ $dates -> message_hr }}</textarea>
+                  <textarea class="form-control mb-2" rows="6" disabled>{{ $dates -> message_hr }}</textarea>
                 @endif
               @endforeach
 
