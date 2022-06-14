@@ -176,11 +176,11 @@
                           @endforeach
                         @endforeach
                         <tr class="align-middle bg-gradient-dark text-white">
-                          <td colspan='5' class="text-sm text-end">Total Current weightage</td>
-                          <td class="fw-bold text-center">{{ $weightage_master }} %</td>
-                          <td colspan='2' class="text-sm text-end">Total Score</td>
-                          <td class="fw-bold text-center">{{ $totalPercent }}</td>
-                          <td class="fw-bold text-center">{{ round($totalSebenar, 2) }} %</td>
+                          <td colspan='5' class="text-sm text-end border border-secondary">Current Total weightage</td>
+                          <td class="fw-bold text-center border border-secondary">{{ $weightage_master }} %</td>
+                          <td colspan='2' class="text-sm text-end border border-secondary">Total Score</td>
+                          <td class="fw-bold text-center border border-secondary">{{ $totalPercent }}</td>
+                          <td class="fw-bold text-center border border-secondary">{{ round($totalSebenar, 2) }} %</td>
                         </tr>
                       </tbody>  
                     </table>
@@ -318,10 +318,10 @@
                         
                         @if($loop->last)
                           <tr class="align-middle bg-gradient-dark text-white">
-                            <td colspan='2' class="text-sm text-end">Total Current Weightage</td>
-                            <td class="fw-bold text-center">{{ $kecekapan_master }} %</td>
-                            <td colspan='3' class="text-sm text-end">Total Score</td>
-                            <td class="fw-bold text-center">{{ $kecSebenar }} %</td>
+                            <td colspan='2' class="text-sm text-end border border-secondary">Current Total Weightage</td>
+                            <td class="fw-bold text-center border border-secondary">{{ $kecekapan_master }} %</td>
+                            <td colspan='3' class="text-sm text-end border border-secondary">Total Score</td>
+                            <td class="fw-bold text-center border border-secondary">{{ $kecSebenar }} %</td>
                           </tr>
                         @endif
                       @endforeach
@@ -467,10 +467,10 @@
                         
                         @if($loop->last)
                           <tr class="align-middle bg-gradient-dark text-white">
-                            <td colspan='2' class="text-sm text-end">Total Current Weightage</td>
-                            <td class="fw-bold text-center">{{ $nilai_master }} %</td>
-                            <td colspan='3' class="text-sm text-end">Total Score</td>
-                            <td class="fw-bold text-center">{{ $nilaiSebenar }} %</td>
+                            <td colspan='2' class="text-sm text-end border border-secondary">Current Total Weightage</td>
+                            <td class="fw-bold text-center border border-secondary">{{ $nilai_master }} %</td>
+                            <td colspan='3' class="text-sm text-end border border-secondary">Total Score</td>
+                            <td class="fw-bold text-center border border-secondary">{{ $nilaiSebenar }} %</td>
                           </tr>
                         @endif
                       @endforeach
