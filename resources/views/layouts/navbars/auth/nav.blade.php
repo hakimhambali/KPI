@@ -33,7 +33,7 @@
                     @if (request()->route()->uri == 'employee/edit/kpi/{id}/{date_id}/{user_id}/{year}/{month}' || request()->route()->uri == 'employee/edit/kpimaster/{id}/{date_id}/{user_id}/{year}/{month}')
                         <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/add-date">Add Date</a>
                         </li>
-                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href="/employee/kpi/{date_id}/{user_id}/{year}/{month}">Kpi</a>
+                        <li class="breadcrumb-item text-md"><a class="opacity-5 text-dark" href='/employee/kpi/{{$date_id}}/{{$user_id}}/{{$year}}/{{$month}}'>Kpi</a>
                         </li>
                     @endif
 

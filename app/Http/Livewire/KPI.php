@@ -551,22 +551,42 @@ class KPI extends Component
     }
 
     public function kpi_update(Request $request, $id, $date_id, $user_id, $year, $month, $fungsikpi) {
-        $validatedData = $request->validate([
-            'fungsi' => ['required'],
-            'bukti' => ['required'],
-            'peratus' => ['required'],
-            'ukuran' => ['required'],
-            'threshold' => ['required'],
-            'base' => ['required'],
-            'stretch' => ['required'],
-            'pencapaian' => ['required'],
-            'skor_KPI' => ['required'],
-            'skor_sebenar' => ['required'],
-        ]);
-
         Date_::find($date_id)->update([
             'status'=> 'Not Submitted',
         ]);
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+        $kpi = KPI_::find($id);
+
+        if($kpi->fungsi != $request->fungsi) {
+            $master = KPIMaster_::where('user_id', Auth::user()->id)->where('year', $year)->where('month', $month)->where('fungsi', $request->fungsi)->first();
+            if(!$master) {
+                $getid = KPIMaster_::create([
+                    'fungsi'=> $request->fungsi,
+                    'user_id'=> Auth::user()->id,
+                    'pencapaian'=> $request->skor_sebenar,
+                    'kpiall_id'=>  KPIAll_::where('user_id', Auth::user()->id)->where('year', $year)->where('month', $month)->value('id'),
+                    'year'=>  $year,
+                    'month'=>  $month,
+                ]);
+                $kpimaster_id = $getid->id;
+            } else {
+                $kpimaster_id = $master->id;
+            }
+        } else {
+            $kpimaster_id = $kpi->kpimaster_id;
+        }
+
+        $kpi->fungsi        = $request->fungsi;
+        $kpi->bukti         = $request->bukti;
+        $kpi->ukuran        = $request->ukuran;
+        $kpi->peratus       = $request->peratus;
+        $kpi->threshold     = $request->threshold;
+        $kpi->base          = $request->base;
+        $kpi->stretch       = $request->stretch;
+        $kpi->pencapaian    = $request->pencapaian;
+        $kpi->skor_KPI      = $request->skor_KPI;
+        $kpi->skor_sebenar  = $request->skor_sebenar;
+        $kpi->kpimaster_id  = $kpimaster_id;
 
         $this->bukti_path = $request->bukti_path;
         if ($this->bukti_path != NULL) {
@@ -577,44 +597,20 @@ class KPI extends Component
             $this->bukti_path->storeAs('public' . DIRECTORY_SEPARATOR . 'filebukti', $fileNameToStore);
             $path = '' . DIRECTORY_SEPARATOR . 'storage' . DIRECTORY_SEPARATOR . 'filebukti' . DIRECTORY_SEPARATOR . '' . $fileNameToStore;
 
-            $update = KPI_::find($id)->update([
-                'user_id'=> Auth::user()->id,
-                'created_at'=> Carbon::now(),
-                'updated_at'=> Carbon::now(),
-                'year'=> $request->year,
-                'month'=> $request->month,
-                'fungsi'=> $request->fungsi,
-                'bukti'=> $request->bukti,
-                'ukuran'=> $request->ukuran,
-                'peratus'=> $request->peratus,
-                'threshold'=> $request->threshold,
-                'base'=> $request->base,
-                'stretch'=> $request->stretch,
-                'pencapaian'=> $request->pencapaian,
-                'skor_KPI'=> $request->skor_KPI,
-                'skor_sebenar'=> $request->skor_sebenar,
-                'bukti_path'=> ''.URL::to('').$path.'',
-            ]);
+            $kpi->bukti_name = ''.URL::to('').$path.'';
+
+            $kpi->save();
+        } else {
+            $kpi->save();
         }
 
-        if ($this->bukti_path == NULL) {
-            $update = KPI_::find($id)->update([
-                'user_id'=> Auth::user()->id,
-                'created_at'=> Carbon::now(),
-                'updated_at'=> Carbon::now(),
-                'year'=> $request->year,
-                'month'=> $request->month,
-                'fungsi'=> $request->fungsi,
-                'bukti'=> $request->bukti,
-                'ukuran'=> $request->ukuran,
-                'peratus'=> $request->peratus,
-                'threshold'=> $request->threshold,
-                'base'=> $request->base,
-                'stretch'=> $request->stretch,
-                'pencapaian'=> $request->pencapaian,
-                'skor_KPI'=> $request->skor_KPI,
-                'skor_sebenar'=> $request->skor_sebenar,
-            ]);
+        // Compare & delete any different between KPI & KPIMaster
+        $masterLists = KPIMaster_::where('user_id', Auth::user()->id)->where('year', $year)->where('month', $month)->pluck('fungsi', 'id');
+        $kpiLists = KPI_::where('user_id', Auth::user()->id)->where('year', $year)->where('month', $month)->pluck('fungsi');
+    
+        $notExist = $masterLists->diff($kpiLists)->all();
+        foreach($notExist as $key=> $del) {
+            $masters = KPIMaster_::find($key)->delete();
         }
 
         if (KPIAll_::where('user_id', '=', Auth::user()->id)->where('year', '=', $year)->where('month', '=', $month)->count() == 1) {
