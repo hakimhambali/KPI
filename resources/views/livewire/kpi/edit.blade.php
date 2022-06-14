@@ -76,7 +76,7 @@
                       <label class="form-label">Function<span class="text-danger">*</span></label>
                       <div class="mb-0" class="@error('fungsi') @enderror">
                         {{-- <input class="form-control bg-white" id="fungsi" name="fungsi" value="{{ $kpi->fungsi }}" readonly> --}}
-                        <select class="form-select bg-white" id="fungsi" name="fungsi">
+                        <select class="form-select bg-white" id="fungsi" name="fungsi" required>
                           <option selected class="bg-secondary text-white" value="{{ $kpi->fungsi }}">{{ $kpi->fungsi }}</option>
                           @foreach ($function as $functions)
                             <option value="{{ $functions->name }}">{{ $functions->name }}</option>
