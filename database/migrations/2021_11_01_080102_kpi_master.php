@@ -18,7 +18,7 @@ class KpiMaster extends Migration
 
             $table->string('fungsi')->nullable();
             $table->string('percent_master')->nullable();
-            $table->string('link')->nullable();
+            $table->longText('link')->nullable();
 
             $table->string('objektif')->nullable();
             $table->string('pencapaian')->nullable();
