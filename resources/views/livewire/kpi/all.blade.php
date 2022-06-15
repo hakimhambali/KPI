@@ -110,7 +110,7 @@
                             <tr>
                               <th rowspan="2" class="col-md-1">(%)</th>
                               <th rowspan="2">Measurement</th>
-                              <th colspan="3" class="border-bottom border-dark">KPI Targets</th>
+                              <th colspan="3">KPI Targets</th>
                               <th rowspan="2">Achievement</th>
                               <th rowspan="2" class="col-1">KPI Score</th>
                               <th rowspan="2" class="col-1">Actual Score</th>
