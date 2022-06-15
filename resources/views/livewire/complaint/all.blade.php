@@ -110,7 +110,7 @@
                               {{ $complaints->user->position }}
                             </td>
                             <td class="text-xs fw-bold">{{ $complaints->user->department }}</td>
-                            <td class="text-xs fw-bold">{{ date('d/m/Y', strtotime($complaints->updated_at)) }}</td>
+                            <td class="text-xs fw-bold">{{ date('d/m/Y', strtotime($complaints->created_at)) }}</td>
                             <td class="text-xs fw-bold">
                               {{ $complaints->location }}<br>
                               @if($complaints->office != NULL)
