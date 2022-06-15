@@ -597,7 +597,7 @@ class KPI extends Component
             $this->bukti_path->storeAs('public' . DIRECTORY_SEPARATOR . 'filebukti', $fileNameToStore);
             $path = '' . DIRECTORY_SEPARATOR . 'storage' . DIRECTORY_SEPARATOR . 'filebukti' . DIRECTORY_SEPARATOR . '' . $fileNameToStore;
 
-            $kpi->bukti_name = ''.URL::to('').$path.'';
+            $kpi->bukti_path = ''.URL::to('').$path.'';
 
             $kpi->save();
         } else {
