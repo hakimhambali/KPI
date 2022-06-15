@@ -601,7 +601,13 @@ class KPI extends Component
 
             $kpi->save();
         } else {
-            $kpi->save();
+            if ($request->file_null == '1'){
+                $kpi->bukti_path = null;
+
+                $kpi->save();
+            } else {
+                $kpi->save();
+            }
         }
 
         // Compare & delete any different between KPI & KPIMaster

@@ -86,52 +86,32 @@
                       </div>
                     </div>
 
-                    @if ($kpi->bukti_path == '')
-                      <div class="col-md-6" id="buktiupload">
-                        <div class="form-group">
-                          <label class="form-label">Upload Evidence (Optional)</label>
-                          <div
-                            x-data="{ isUploading: false, progress: 0 }"
-                            x-on:livewire-upload-start="isUploading = true"
-                            x-on:livewire-upload-finish="isUploading = false"
-                            x-on:livewire-upload-error="isUploading = false"
-                            x-on:livewire-upload-progress="progress = $event.detail.progress">
-                            <div wire:loading wire:target="bukti_path"><i class="mdi mdi-loading mdi-spin mdi-24px"></i></div>
-                            <input type="file" wire:model="bukti_path" id="bukti_path" name="bukti_path" class="form-control bg-white border-white" />
-                            @error('bukti_path') <span class="error" style="color:red"><b>{{ $message }}</b></span> @enderror
-                            <div x-show="isUploading"><progress max="100" x-bind:value="progress"></progress></div>
-                          </div>
-                        </div>
-                      </div>
-                    @else
-                      <div class="col-md-6" id="buktiupload">
-                        <div class="form-group">
-                          <label class="form-label">Upload Evidence (Optional)</label>
-                          <div
-                            x-data="{ isUploading: false, progress: 0 }"
-                            x-on:livewire-upload-start="isUploading = true"
-                            x-on:livewire-upload-finish="isUploading = false"
-                            x-on:livewire-upload-error="isUploading = false"
-                            x-on:livewire-upload-progress="progress = $event.detail.progress">
-                            <div wire:loading wire:target="bukti_path"><i class="mdi mdi-loading mdi-spin mdi-24px"></i></div>
-                            <input type="file" wire:model="bukti_path" id="bukti_path" name="bukti_path" class="form-control bg-white border-white" />
-                            @error('bukti_path') <span class="error" style="color:red"><b>{{ $message }}</b></span> @enderror
-                            <div x-show="isUploading"><progress max="100" x-bind:value="progress"></progress></div>
-                          </div>
-                          <div class="row mt-1">
-                            <div class="col-2 text-end">
-                              <a href="{{ $kpi->bukti_path }}" class="btn btn-icon btn-info px-3" data-bs-toggle="tooltip" data-bs-original-title="View Previous File" target="_blank"><i class="bi bi-folder-symlink"></i></a>
-                            </div>
-                            <div class="col-10 mt-1">
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="1" name="file_null">
-                                <label class="mt-1">Remove evidence file</label>
-                              </div>
+                    <div class="col-md-6" id="buktiupload">
+                      <div class="form-group">
+                        <label class="form-label">Upload Evidence (Optional)</label>
+                        <div class="row">
+                          <div class="col-8">
+                            <div
+                              x-data="{ isUploading: false, progress: 0 }"
+                              x-on:livewire-upload-start="isUploading = true"
+                              x-on:livewire-upload-finish="isUploading = false"
+                              x-on:livewire-upload-error="isUploading = false"
+                              x-on:livewire-upload-progress="progress = $event.detail.progress">
+                              <div wire:loading wire:target="bukti_path"><i class="mdi mdi-loading mdi-spin mdi-24px"></i></div>
+                              <input type="file" wire:model="bukti_path" id="bukti_path" name="bukti_path" class="form-control bg-white border-white" />
+                              @error('bukti_path') <span class="error" style="color:red"><b>{{ $message }}</b></span> @enderror
+                              <div x-show="isUploading"><progress max="100" x-bind:value="progress"></progress></div>
                             </div>
                           </div>
+                          @if ($kpi->bukti_path != '')
+                            <div class="col-4">
+                              <a href="{{ $kpi->bukti_path }}" class="btn btn-icon btn-info my-auto" target="_blank" data-bs-toggle="tooltip" data-bs-original-title="View File"><i class="bi bi-folder-symlink fs-5"></i></a>
+                              <button type="button" wire:click="selectItem({{$kpi->id}}, 'delete' )" class="btn btn-danger btn-sm btn-icon my-auto data-delete" data-form="{{$dates->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete KPI"><i class="bi bi-trash3-fill"></i></button>
+                            </div>
+                          @endif
                         </div>
                       </div>
-                    @endif
+                    </div>
                   </div>
 
                   <div class="col-md-12 mb-3">

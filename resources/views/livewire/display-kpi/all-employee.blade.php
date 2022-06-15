@@ -94,6 +94,7 @@
                                             @if ($kpiArrss->bukti_path == '') -
                                             @else
                                             <a href="{{ $kpiArrss->bukti_path }}" class="btn btn-icon btn-sm btn-info" target="_blank"><i class="bi bi-folder-symlink"></i></a>
+                                            <button type="button" wire:click="selectItem({{$dates->id}}, 'delete' )" class="btn btn-danger btn-sm btn-icon my-auto data-delete" data-form="{{$dates->id}}" data-bs-toggle="tooltip" data-bs-original-title="Delete KPI"><i class="bi bi-trash3-fill"></i></button>
                                             @endif
                                           </td>
                                         @else
